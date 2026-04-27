@@ -217,7 +217,7 @@ a.meta-title:focus-visible {
 
 .project-card {
   position: relative;
-  height: 400px;
+  height: 560px;
   min-height: 0;
   padding: 20px;
   overflow: hidden;
@@ -635,7 +635,7 @@ a.project-card {
   margin: 0 0 42px;
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1200px) {
   :root {
     --page-gutter: 20px;
   }
@@ -662,13 +662,25 @@ a.project-card {
     gap: 28px;
   }
 
+  .meta-group:first-child {
+    justify-self: start;
+  }
+
+  .meta-group:nth-child(2) {
+    justify-self: center;
+  }
+
+  .meta-group:nth-child(3) {
+    justify-self: end;
+  }
+
   .project-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
 
   .project-card {
-    height: 420px;
+    height: 620px;
     min-height: 0;
   }
 
@@ -702,7 +714,7 @@ a.project-card {
   }
 
   .project-card {
-    height: 360px;
+    height: 460px;
     min-height: 0;
     padding: 18px;
   }
