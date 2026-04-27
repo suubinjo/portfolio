@@ -1,4 +1,4 @@
-const SITE_EMAIL = "hello@example.com";
+const SITE_EMAIL = "suubinjo@gmail.com";
 const RESUME_URL = "https://drive.google.com/file/d/19NEW1CUlaJjbJ3I4x2WTdFNShMXOpIA7/view?usp=sharing";
 const LINKEDIN_URL = "https://www.linkedin.com/in/subinjo68/";
 
@@ -16,8 +16,8 @@ function createFooter() {
       <div class="email-copy" data-email="${SITE_EMAIL}">
         <button class="email-copy-button" type="button" aria-label="Copy email">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8" />
-            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M16.5 12C16.5 14.7614 14.4853 17 12 17C9.51472 17 7.5 14.7614 7.5 12C7.5 9.23858 9.51472 7 12 7C14.4853 7 16.5 9.23858 16.5 12Z" stroke="currentColor" stroke-width="1.8" />
+            <path d="M16.5 12V14C16.5 15.1046 17.1716 16 18 16C18.8284 16 19.5 15.1046 19.5 14V12C19.5 7.85786 16.1421 4.5 12 4.5C7.85786 4.5 4.5 7.85786 4.5 12C4.5 16.1421 7.85786 19.5 12 19.5H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </button>
         <div class="email-copy-popup">Copy email</div>
@@ -59,8 +59,13 @@ document.querySelectorAll(".email-copy").forEach((wrapper) => {
   const popup = wrapper.querySelector(".email-copy-popup");
   const email = wrapper.dataset.email || SITE_EMAIL;
 
+  wrapper.addEventListener("mouseenter", () => {
+    wrapper.classList.remove("hide-popup");
+  });
+
   button?.addEventListener("click", async () => {
     try {
+      wrapper.classList.remove("hide-popup");
       await navigator.clipboard.writeText(email);
       wrapper.classList.add("is-copied");
       button.classList.add("is-copied");
@@ -68,6 +73,7 @@ document.querySelectorAll(".email-copy").forEach((wrapper) => {
 
       window.setTimeout(() => {
         wrapper.classList.remove("is-copied");
+        wrapper.classList.add("hide-popup");
         button.classList.remove("is-copied");
         if (popup) popup.textContent = "Copy email";
       }, 1600);
@@ -101,15 +107,7 @@ const eaCard = document.querySelector(".ea-card");
 if (eaCard) {
   const cursor = document.createElement("div");
   cursor.className = "ea-cursor";
-  cursor.innerHTML = `
-    <span>Work on progress</span>
-    <span class="ea-cursor-bolt" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M7.5 15.5h9l1.7 1.7c1.1 1.1 2.9.4 3-1.2l.2-4.4A5.6 5.6 0 0 0 15.8 6H8.2a5.6 5.6 0 0 0-5.6 5.6l.2 4.4c.1 1.6 1.9 2.3 3 1.2l1.7-1.7Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" />
-        <path d="M8 10v3M6.5 11.5h3M15.5 10.8h.1M18 12.8h.1" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" />
-      </svg>
-    </span>
-  `;
+  cursor.textContent = "Work on progress";
   document.body.appendChild(cursor);
 
   eaCard.addEventListener("pointerenter", () => {

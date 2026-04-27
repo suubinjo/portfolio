@@ -39,7 +39,7 @@ img {
 }
 
 .site-shell {
-  width: min(1880px, calc(100vw - 88px));
+  width: min(1760px, calc(100vw - 140px));
   min-height: 100vh;
   margin: 0 auto;
   padding: 34px 0 30px;
@@ -52,7 +52,7 @@ img {
 .topbar {
   display: grid;
   grid-template-columns: minmax(360px, 1fr) auto;
-  gap: clamp(120px, 18vw, 360px);
+  gap: clamp(96px, 15vw, 300px);
   align-items: start;
 }
 
@@ -104,8 +104,8 @@ img {
 
 .meta-nav {
   display: grid;
-  grid-template-columns: repeat(3, minmax(132px, max-content));
-  gap: 46px;
+  grid-template-columns: 170px 170px 132px;
+  gap: 34px;
   align-items: start;
 }
 
@@ -162,6 +162,12 @@ a.meta-title:focus-visible {
 .meta-link:focus-visible svg {
   opacity: 1;
   transform: translateX(0);
+}
+
+.meta-contact-links {
+  display: grid;
+  gap: 1px;
+  justify-items: start;
 }
 
 .project-grid {
@@ -401,7 +407,7 @@ a.project-card {
   transition: opacity 200ms ease, transform 200ms ease, background 200ms ease, color 200ms ease;
 }
 
-.email-copy:hover .email-copy-popup,
+.email-copy:not(.hide-popup):hover .email-copy-popup,
 .email-copy:focus-within .email-copy-popup,
 .email-copy.is-copied .email-copy-popup {
   opacity: 1;
@@ -412,6 +418,11 @@ a.project-card {
   background: #5e5e5e;
   color: #f2f2f2;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.email-copy.hide-popup .email-copy-popup {
+  opacity: 0;
+  transform: translateX(-50%) translateY(6px);
 }
 
 .date-stamp {
@@ -426,8 +437,7 @@ a.project-card {
   top: 0;
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 12px 16px 12px 18px;
+  padding: 12px 18px;
   border-radius: 999px;
   background: #6f6f6f;
   color: #f7f7f7;
@@ -445,22 +455,6 @@ a.project-card {
 .ea-cursor.is-visible {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
-}
-
-.ea-cursor-bolt {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #7c57ff;
-  display: grid;
-  place-items: center;
-  font-size: 13px;
-}
-
-.ea-cursor-bolt svg {
-  width: 14px;
-  height: 14px;
 }
 
 .case-shell {
