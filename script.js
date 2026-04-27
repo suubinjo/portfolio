@@ -1,4 +1,6 @@
 const SITE_EMAIL = "hello@example.com";
+const RESUME_URL = "https://drive.google.com/file/d/19NEW1CUlaJjbJ3I4x2WTdFNShMXOpIA7/view?usp=sharing";
+const LINKEDIN_URL = "https://www.linkedin.com/in/subinjo68/";
 
 function createFooter() {
   const footer = document.createElement("footer");
@@ -6,7 +8,7 @@ function createFooter() {
   footer.innerHTML = `
     <div class="connect">
       <span>Thanks for stopping by ₍^. .^₎⟆ Let's connect:</span>
-      <a class="footer-icon" href="mailto:${SITE_EMAIL}" aria-label="Resume">
+      <a class="footer-icon" href="${RESUME_URL}" target="_blank" rel="noreferrer" aria-label="Resume">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M7 3h8.2L19 6.8V21H7V3Zm7.5 1.8v2.7H17.2L14.5 4.8ZM9.7 10.2h6.1v1.5H9.7v-1.5Zm0 3.2h6.1v1.5H9.7v-1.5Zm0 3.2h4.3v1.5H9.7v-1.5Z" />
         </svg>
@@ -20,7 +22,7 @@ function createFooter() {
         </button>
         <div class="email-copy-popup">Copy email</div>
       </div>
-      <a class="footer-icon" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+      <a class="footer-icon" href="${LINKEDIN_URL}" target="_blank" rel="noreferrer" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M6.7 8.8H3.8V20h2.9V8.8ZM5.3 4a1.7 1.7 0 1 0 0 3.4A1.7 1.7 0 0 0 5.3 4Zm6.1 4.8H8.6V20h2.9v-5.9c0-1.6.7-2.6 2.1-2.6 1.2 0 1.8.8 1.8 2.6V20h2.9v-6.5c0-3.1-1.6-4.8-4.1-4.8-1.4 0-2.3.7-2.8 1.5V8.8Z" />
         </svg>
@@ -99,7 +101,15 @@ const eaCard = document.querySelector(".ea-card");
 if (eaCard) {
   const cursor = document.createElement("div");
   cursor.className = "ea-cursor";
-  cursor.innerHTML = `<span>Work on progress</span><span class="ea-cursor-bolt">↯</span>`;
+  cursor.innerHTML = `
+    <span>Work on progress</span>
+    <span class="ea-cursor-bolt" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M7.5 15.5h9l1.7 1.7c1.1 1.1 2.9.4 3-1.2l.2-4.4A5.6 5.6 0 0 0 15.8 6H8.2a5.6 5.6 0 0 0-5.6 5.6l.2 4.4c.1 1.6 1.9 2.3 3 1.2l1.7-1.7Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" />
+        <path d="M8 10v3M6.5 11.5h3M15.5 10.8h.1M18 12.8h.1" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" />
+      </svg>
+    </span>
+  `;
   document.body.appendChild(cursor);
 
   eaCard.addEventListener("pointerenter", () => {
