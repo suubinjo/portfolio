@@ -29,7 +29,7 @@ function createFooter() {
       </a>
     </div>
     <div class="date-stamp">
-      <span>Last updated: Monday, 4/27/2026</span>
+      <span>4/27/2026</span>
       <span>©2026 Subin Jo</span>
     </div>
   `;
@@ -75,7 +75,9 @@ document.querySelectorAll(".email-copy").forEach((wrapper) => {
         wrapper.classList.remove("is-copied");
         wrapper.classList.add("hide-popup");
         button.classList.remove("is-copied");
-        if (popup) popup.textContent = "Copy email";
+        window.setTimeout(() => {
+          if (popup) popup.textContent = "Copy email";
+        }, 220);
       }, 1600);
     } catch (error) {
       window.location.href = `mailto:${email}`;
