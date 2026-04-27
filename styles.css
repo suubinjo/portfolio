@@ -90,7 +90,6 @@ img {
 
 .intro p,
 .meta-group p,
-.meta-group a,
 .site-footer,
 .case-hero p,
 .case-content p,
@@ -123,6 +122,15 @@ img {
   font-weight: 400;
   line-height: 1.1;
   transition: color 180ms ease;
+}
+
+.meta-group a.meta-title {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
 }
 
 a.meta-title:hover,
