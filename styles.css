@@ -130,6 +130,9 @@ img {
 
 .meta-group:nth-child(3) {
   justify-self: end;
+  text-align: right;
+  display: grid;
+  justify-items: end;
 }
 
 .meta-title {
@@ -201,7 +204,7 @@ a.meta-title:focus-visible {
 .meta-contact-links {
   display: grid;
   gap: 1px;
-  justify-items: start;
+  justify-items: end;
 }
 
 .project-grid {
@@ -695,6 +698,8 @@ a.project-card {
   .meta-group:nth-child(2),
   .meta-group:nth-child(3) {
     justify-self: start;
+    justify-items: start;
+    text-align: left;
   }
 
   .project-card {
