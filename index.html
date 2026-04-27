@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -20,8 +20,8 @@
     <main class="site-shell">
       <header class="topbar" aria-label="Portfolio overview">
         <section class="intro">
-          <a class="brand" href="#home" aria-label="Subin Jo home">© Subin Jo</a>
-          <p>UX Designer who designs meaningful experience that connects people and ideas worldwide</p>
+          <a class="brand animate-letters" href="#home" aria-label="Subin Jo home">© Subin Jo</a>
+          <p class="intro-copy animate-letters">UX Designer who designs meaningful experience that connects people and ideas worldwide</p>
         </section>
 
         <nav class="meta-nav" aria-label="Profile links">
@@ -42,7 +42,7 @@
       </header>
 
       <section class="project-grid" id="home" aria-label="Selected work">
-        <article class="project-card locked" style="--image-scale: 1" data-page="ea-games">
+        <article class="project-card locked ea-card" style="--image-scale: 1" data-page="ea-games">
           <div class="project-category">Companion Design</div>
           <div class="project-image-wrap" aria-hidden="true">
             <img class="project-image" src="assets/ea-preview.svg" alt="" />
@@ -99,18 +99,7 @@
         </a>
       </section>
 
-      <footer class="site-footer">
-        <div class="connect">
-          <span>Thanks for stopping by ₍^. .^₎⟆ Let's connect:</span>
-          <a href="mailto:hello@example.com" aria-label="Resume">◨</a>
-          <a href="mailto:hello@example.com" aria-label="Email">@</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
-        </div>
-        <div class="date-stamp">
-          <span>Monday, 4/27/2026</span>
-          <span>©2026 Subin Jo</span>
-        </div>
-      </footer>
+      <site-footer></site-footer>
     </main>
 
     <script src="script.js"></script>
