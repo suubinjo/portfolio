@@ -15,6 +15,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
 }
 
 body {
@@ -70,7 +72,7 @@ img {
   font-family: var(--serif);
   font-size: 20px;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.1;
 }
 
@@ -104,7 +106,7 @@ img {
 .meta-nav {
   display: grid;
   grid-template-columns: 178px 178px 132px;
-  gap: 18px;
+  gap: 8px;
   align-items: start;
 }
 
@@ -119,7 +121,7 @@ img {
   font-family: var(--serif);
   font-size: 20px;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.1;
   transition: color 180ms ease;
 }
@@ -129,7 +131,7 @@ img {
   font-family: var(--serif);
   font-size: 20px;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.1;
 }
 
@@ -195,8 +197,8 @@ a.meta-title:focus-visible {
 
 .project-card {
   position: relative;
-  min-height: 238px;
-  padding: 22px;
+  min-height: 208px;
+  padding: 20px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 3px;
@@ -225,8 +227,8 @@ a.project-card {
 
 .project-category {
   position: absolute;
-  top: 22px;
-  left: 22px;
+  top: 20px;
+  left: 20px;
   z-index: 2;
   color: var(--soft);
   font-family: var(--mono);
@@ -239,8 +241,8 @@ a.project-card {
 
 .project-image-wrap {
   flex: 1;
-  min-height: 108px;
-  padding: 24px 0 2px;
+  min-height: 84px;
+  padding: 22px 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -276,7 +278,7 @@ a.project-card {
 
 .project-text {
   width: 72%;
-  min-height: 38px;
+  min-height: 34px;
   display: flex;
   align-items: center;
 }
@@ -315,7 +317,7 @@ a.project-card {
 .project-icon {
   flex-shrink: 0;
   width: 28px;
-  height: 38px;
+  height: 34px;
   color: #6c6c6c;
   display: flex;
   align-items: center;
@@ -627,7 +629,7 @@ a.project-card {
 
   .meta-nav {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+    gap: 10px;
   }
 
   .project-grid {
@@ -636,11 +638,11 @@ a.project-card {
   }
 
   .project-card {
-    min-height: 286px;
+    min-height: 254px;
   }
 
   .project-image-wrap {
-    min-height: 150px;
+    min-height: 122px;
   }
 }
 
@@ -658,7 +660,7 @@ a.project-card {
   }
 
   .project-card {
-    min-height: 252px;
+    min-height: 226px;
     padding: 18px;
   }
 
@@ -668,8 +670,8 @@ a.project-card {
   }
 
   .project-image-wrap {
-    min-height: 112px;
-    padding-top: 32px;
+    min-height: 92px;
+    padding-top: 30px;
   }
 
   .project-text {
