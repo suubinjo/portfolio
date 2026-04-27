@@ -56,7 +56,9 @@ img {
 .topbar {
   width: var(--content-width);
   margin: 0 auto;
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) auto;
+  column-gap: 56px;
   align-items: start;
 }
 
@@ -106,10 +108,11 @@ img {
 }
 
 .meta-nav {
-  width: 100%;
+  width: max-content;
+  justify-self: end;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, max-content);
+  gap: 48px;
   align-items: start;
 }
 
@@ -641,7 +644,9 @@ a.project-card {
   }
 
   .topbar {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 34px;
   }
 
   .intro-line {
@@ -649,6 +654,8 @@ a.project-card {
   }
 
   .meta-nav {
+    width: 100%;
+    justify-self: stretch;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
   }
