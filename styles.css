@@ -130,7 +130,8 @@ img {
 }
 
 .meta-group:nth-child(3) {
-  justify-self: start;
+  justify-self: end;
+  width: max-content;
   text-align: left;
   display: block;
 }
