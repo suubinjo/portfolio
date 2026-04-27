@@ -29,7 +29,7 @@ function createFooter() {
       </a>
     </div>
     <div class="date-stamp">
-      <span>4/27/2026</span>
+      <span>Last updated: 4/27/2026</span>
       <span>©2026 Subin Jo</span>
     </div>
   `;
