@@ -44,12 +44,12 @@ img {
 
 .site-shell {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
   margin: 0;
-  padding: 34px 0 30px;
+  padding: 28px 0 18px;
   display: grid;
   grid-template-rows: auto auto auto;
-  gap: 38px;
+  gap: clamp(22px, 4vh, 38px);
   animation: page-rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -217,7 +217,8 @@ a.meta-title:focus-visible {
 
 .project-card {
   position: relative;
-  height: 560px;
+  height: clamp(360px, 46vh, 460px);
+  aspect-ratio: 1 / 1.08;
   min-height: 0;
   padding: 20px;
   overflow: hidden;
@@ -366,7 +367,7 @@ a.project-card {
   justify-content: space-between;
   gap: 24px;
   margin-top: 0;
-  padding: 24px 0 14px;
+  padding: 18px 0 8px;
   letter-spacing: -0.03em;
   font-weight: 300;
 }
@@ -680,7 +681,7 @@ a.project-card {
   }
 
   .project-card {
-    height: 620px;
+    height: clamp(420px, 50vh, 520px);
     min-height: 0;
   }
 
@@ -714,7 +715,7 @@ a.project-card {
   }
 
   .project-card {
-    height: 460px;
+    height: clamp(360px, 58vh, 430px);
     min-height: 0;
     padding: 18px;
   }
