@@ -1,8 +1,8 @@
-const lockedCard = document.querySelector(".project-card.locked");
+const lockedCards = document.querySelectorAll(".project-card.locked");
 
-if (lockedCard) {
-  lockedCard.addEventListener("click", () => {
-    lockedCard.animate(
+lockedCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    card.animate(
       [
         { transform: "translateX(0)" },
         { transform: "translateX(-4px)" },
@@ -15,4 +15,4 @@ if (lockedCard) {
       }
     );
   });
-}
+});
