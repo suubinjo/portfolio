@@ -52,7 +52,7 @@ img {
 .topbar {
   display: grid;
   grid-template-columns: minmax(360px, 1fr) auto;
-  gap: clamp(88px, 13vw, 260px);
+  gap: clamp(112px, 16vw, 340px);
   align-items: start;
 }
 
@@ -104,7 +104,7 @@ img {
 .meta-nav {
   display: grid;
   grid-template-columns: 178px 178px 132px;
-  gap: 32px;
+  gap: 18px;
   align-items: start;
 }
 
@@ -195,8 +195,8 @@ a.meta-title:focus-visible {
 
 .project-card {
   position: relative;
-  min-height: 278px;
-  padding: 24px;
+  min-height: 238px;
+  padding: 22px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 3px;
@@ -225,8 +225,8 @@ a.project-card {
 
 .project-category {
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: 22px;
+  left: 22px;
   z-index: 2;
   color: var(--soft);
   font-family: var(--mono);
@@ -239,8 +239,8 @@ a.project-card {
 
 .project-image-wrap {
   flex: 1;
-  min-height: 142px;
-  padding: 28px 0 6px;
+  min-height: 108px;
+  padding: 24px 0 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -276,7 +276,7 @@ a.project-card {
 
 .project-text {
   width: 72%;
-  min-height: 42px;
+  min-height: 38px;
   display: flex;
   align-items: center;
 }
@@ -315,7 +315,7 @@ a.project-card {
 .project-icon {
   flex-shrink: 0;
   width: 28px;
-  height: 42px;
+  height: 38px;
   color: #6c6c6c;
   display: flex;
   align-items: center;
@@ -341,7 +341,12 @@ a.project-card {
   justify-content: space-between;
   gap: 24px;
   margin-top: 0;
+  padding: 24px 0;
   letter-spacing: -0.03em;
+  font-weight: 300;
+}
+
+.connect > span {
   font-weight: 300;
 }
 
@@ -622,7 +627,7 @@ a.project-card {
 
   .meta-nav {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+    gap: 16px;
   }
 
   .project-grid {
@@ -631,11 +636,11 @@ a.project-card {
   }
 
   .project-card {
-    min-height: 320px;
+    min-height: 286px;
   }
 
   .project-image-wrap {
-    min-height: 184px;
+    min-height: 150px;
   }
 }
 
@@ -653,18 +658,18 @@ a.project-card {
   }
 
   .project-card {
-    min-height: 284px;
-    padding: 20px;
+    min-height: 252px;
+    padding: 18px;
   }
 
   .project-category {
-    top: 20px;
-    left: 20px;
+    top: 18px;
+    left: 18px;
   }
 
   .project-image-wrap {
-    min-height: 142px;
-    padding-top: 36px;
+    min-height: 112px;
+    padding-top: 32px;
   }
 
   .project-text {
