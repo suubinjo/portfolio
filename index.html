@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subin Jo | UX Designer</title>
+    <meta
+      name="description"
+      content="Portfolio of Subin Jo, a UX designer creating meaningful experiences that connect people and ideas worldwide."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="site-shell">
+      <header class="topbar" aria-label="Portfolio overview">
+        <section class="intro">
+          <a class="brand" href="#home" aria-label="Subin Jo home">© Subin Jo</a>
+          <p>UX Designer who designs meaningful experience that connects people and ideas worldwide</p>
+        </section>
+
+        <nav class="meta-nav" aria-label="Profile links">
+          <div class="meta-group">
+            <a class="meta-title" href="about-me.html">About Me</a>
+            <p>UW HCDE '26<br />based on Seattle</p>
+          </div>
+          <div class="meta-group">
+            <span class="meta-title">Currently I Am</span>
+            <p>Designing for<br />EA Games</p>
+          </div>
+          <div class="meta-group">
+            <span class="meta-title">Contact</span>
+            <a href="mailto:hello@example.com">Resumé</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">Linkedin</a>
+          </div>
+        </nav>
+      </header>
+
+      <section class="project-grid" id="home" aria-label="Selected work">
+        <article class="project-card locked" data-page="ea-games">
+          <div class="project-type">Companion Design</div>
+          <div class="preview ea-preview" aria-hidden="true">
+            <div class="ea-logo">EA</div>
+          </div>
+          <div class="card-footer">
+            <h1>EA Games</h1>
+            <span class="lock" aria-label="Private case study">▣</span>
+          </div>
+        </article>
+
+        <a class="project-card" href="identifit.html">
+          <div class="project-type">0-1 Product Design</div>
+          <div class="preview phone-preview" aria-hidden="true">
+            <div class="phone">
+              <div class="speaker"></div>
+              <div class="phone-panel dark">
+                <span>Good Morning, user.name</span>
+                <strong>What are you wearing today?</strong>
+                <div class="weather-row">
+                  <i></i><i></i><i></i><i></i>
+                </div>
+                <div class="mini-grid">
+                  <b></b><b></b><b></b>
+                </div>
+                <div class="avatar-row">
+                  <em></em><em></em><em></em>
+                </div>
+              </div>
+            </div>
+            <div class="phone">
+              <div class="speaker"></div>
+              <div class="phone-panel closet">
+                <span>Outfit Recommendations</span>
+                <div class="cloth"></div>
+                <div class="controls">
+                  <i></i><i></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <h1>Identifit</h1>
+            <span aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a class="project-card" href="milestone.html">
+          <div class="project-type">Service Design</div>
+          <div class="preview milestone-preview" aria-hidden="true">
+            <div class="orbit">
+              <span>60%</span>
+            </div>
+            <div class="dashboard"></div>
+            <div class="tall-phone">
+              <div class="speaker"></div>
+              <div class="timeline"></div>
+              <div class="bottom-sheet"></div>
+            </div>
+            <div class="paper-stack"></div>
+          </div>
+          <div class="card-footer">
+            <h1>Milestone Seed</h1>
+            <span aria-hidden="true">→</span>
+          </div>
+        </a>
+      </section>
+
+      <footer class="site-footer">
+        <div class="connect">
+          <span>Thanks for stopping by (^-^ ) Let's connect:</span>
+          <a href="mailto:hello@example.com" aria-label="Resume">◨</a>
+          <a href="mailto:hello@example.com" aria-label="Email">@</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+        </div>
+        <div class="date-stamp">
+          <span>Monday, 4/27/2026</span>
+          <span>©2026 Subin Jo</span>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
