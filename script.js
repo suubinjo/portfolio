@@ -125,3 +125,77 @@ if (eaCard) {
     cursor.classList.remove("is-visible");
   });
 }
+
+document.querySelectorAll(".case-top-link").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    document.getElementById("top")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+});
+
+document.querySelectorAll(".section-index").forEach((nav) => {
+  const rawSections = nav.dataset.sections || "";
+  const sections = rawSections
+    .split(",")
+    .map((item) => {
+      const [id, label] = item.split(":");
+      return { id: id?.trim(), label: label?.trim() };
+    })
+    .filter((section) => section.id && section.label);
+
+  sections.forEach((section) => {
+    const link = document.createElement("a");
+    link.href = `#${section.id}`;
+    link.textContent = section.label;
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      document.getElementById(section.id)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+    nav.appendChild(link);
+  });
+
+  const links = Array.from(nav.querySelectorAll("a"));
+  let ticking = false;
+
+  const updateActiveSection = () => {
+    const hero = document.getElementById("top");
+    const trigger = window.innerHeight * 0.3;
+
+    if (hero && hero.getBoundingClientRect().bottom > trigger) {
+      links.forEach((link) => link.classList.remove("is-active"));
+      return;
+    }
+
+    let activeId = "";
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (!element) return;
+      if (element.getBoundingClientRect().top <= trigger) {
+        activeId = section.id;
+      }
+    });
+
+    links.forEach((link) => {
+      link.classList.toggle("is-active", link.getAttribute("href") === `#${activeId}`);
+    });
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      updateActiveSection();
+      ticking = false;
+    });
+  };
+
+  updateActiveSection();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", updateActiveSection);
+});
