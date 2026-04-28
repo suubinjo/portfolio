@@ -2,6 +2,49 @@ const SITE_EMAIL = "suubinjo@gmail.com";
 const RESUME_URL = "https://drive.google.com/file/d/19NEW1CUlaJjbJ3I4x2WTdFNShMXOpIA7/view?usp=sharing";
 const LINKEDIN_URL = "https://www.linkedin.com/in/subinjo68/";
 
+const FALLBACK_UPDATED_DATE = "April, 27th";
+const GITHUB_REPO = "subinjo68/portfolio";
+
+function formatMonthDay(dateString) {
+  const date = new Date(dateString);
+
+  if (Number.isNaN(date.getTime())) {
+    return FALLBACK_UPDATED_DATE;
+  }
+
+  const month = date.toLocaleDateString("en-US", { month: "long" });
+  const day = date.getDate();
+
+  function getOrdinal(n) {
+    const s = ["th", "st", "nd", "rd"];
+    const v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+  }
+
+  return `${month}, ${getOrdinal(day)}`;
+}
+
+async function updateFooterDate() {
+  const dateElement = document.querySelector(".js-last-updated");
+
+  if (!dateElement) return;
+
+  try {
+    const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/commits?per_page=1`);
+
+    if (!response.ok) throw new Error("Could not fetch latest commit date");
+
+    const commits = await response.json();
+    const latestCommitDate = commits?.[0]?.commit?.committer?.date;
+
+    dateElement.textContent = `Last updated: ${formatMonthDay(latestCommitDate)}`;
+    dateElement.dataset.loaded = "true";
+  } catch (error) {
+    dateElement.textContent = `Last updated: ${FALLBACK_UPDATED_DATE}`;
+    dateElement.dataset.loaded = "fallback";
+  }
+}
+
 function createFooter() {
   const footer = document.createElement("footer");
   footer.className = "site-footer";
@@ -29,7 +72,7 @@ function createFooter() {
       </a>
     </div>
     <div class="date-stamp">
-      <span>Last updated: 4/27/2026</span>
+      <span class="js-last-updated">Last updated: ${FALLBACK_UPDATED_DATE}</span>
       <span>©2026 Subin Jo</span>
     </div>
   `;
@@ -39,6 +82,8 @@ function createFooter() {
 document.querySelectorAll("site-footer").forEach((placeholder) => {
   placeholder.replaceWith(createFooter());
 });
+
+updateFooterDate();
 
 document.querySelectorAll(".animate-letters").forEach((element) => {
   const text = element.textContent || "";
