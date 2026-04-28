@@ -871,12 +871,12 @@ a.project-card {
 }
 
 .about-shell {
-  --content-width: min(1120px, calc(100vw - 120px));
+  --about-body-width: min(1120px, calc(100vw - 120px));
   width: 100%;
   min-height: 100svh;
-  padding: 32px 0 18px;
+  padding: 40px 0 18px;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   gap: 34px;
   animation: page-rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -928,7 +928,7 @@ a.project-card {
 }
 
 .about-content {
-  width: var(--content-width);
+  width: var(--about-body-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 463px 571px;
@@ -1091,6 +1091,7 @@ a.project-card {
 .about-letter {
   width: min(571px, 100%);
   max-width: 571px;
+  font-size: 15px;
 }
 
 .hcde-line {
@@ -1193,8 +1194,8 @@ a.project-card {
 
 @media (max-width: 680px) {
   .about-shell {
-    --content-width: calc(100vw - 40px);
-    padding-top: 24px;
+    --about-body-width: calc(100vw - 40px);
+    padding-top: 32px;
     gap: 30px;
   }
 
