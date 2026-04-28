@@ -109,7 +109,7 @@ const eaCard = document.querySelector(".ea-card");
 if (eaCard) {
   const cursor = document.createElement("div");
   cursor.className = "ea-cursor";
-  cursor.textContent = "Work on progress";
+  cursor.innerHTML = 'Work in progress ... <span class="ea-caret">|</span>';
   document.body.appendChild(cursor);
 
   eaCard.addEventListener("pointerenter", () => {

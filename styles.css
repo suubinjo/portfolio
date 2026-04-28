@@ -156,7 +156,7 @@ img {
 
 a.meta-title:hover,
 a.meta-title:focus-visible {
-  color: #2d5bff;
+  color: #0099ff;
   outline: none;
 }
 
@@ -188,8 +188,8 @@ a.meta-title:focus-visible {
 
 .meta-link:hover,
 .meta-link:focus-visible {
-  color: #111111;
-  border-color: #111111;
+  color: #0099ff;
+  border-color: #0099ff;
   outline: none;
 }
 
@@ -241,7 +241,7 @@ a.project-card {
 
 .project-card:hover,
 .project-card:focus-visible {
-  transform: scale(1.03);
+  transform: translateY(-8px);
   outline: none;
 }
 
@@ -514,7 +514,7 @@ a.project-card {
   align-items: center;
   padding: 12px 18px;
   border-radius: 999px;
-  background: #6f6f6f;
+  background: rgba(0, 153, 255, 0.9);
   color: #f7f7f7;
   font-family: var(--mono);
   font-size: 11px;
@@ -530,6 +530,18 @@ a.project-card {
 .ea-cursor.is-visible {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
+}
+
+.ea-caret {
+  display: inline-block;
+  margin-left: 6px;
+  animation: caret-blink 900ms steps(1, end) infinite;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .case-shell {
@@ -875,7 +887,7 @@ a.project-card {
 
   .project-card:hover,
   .project-card:focus-visible {
-    transform: scale(1.015);
+    transform: translateY(-6px);
   }
 
   .case-shell {
@@ -943,15 +955,15 @@ a.project-card {
 .about-back::before {
   content: "";
   order: 1;
-  width: 23px;
+  width: 21px;
   height: 16px;
   margin-right: 5px;
   display: inline-block;
   transform: translateY(1px);
   transition: transform 180ms ease;
   background: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg width='23' height='16' viewBox='0 0 23 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.4 1.2L1.6 8L8.4 14.8M2 8H22' stroke='black' stroke-width='1.85' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg width='23' height='16' viewBox='0 0 23 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.4 1.2L1.6 8L8.4 14.8M2 8H22' stroke='black' stroke-width='1.85' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg width='21' height='16' viewBox='0 0 21 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.4 1.2L1.6 8L8.4 14.8M2 8H19' stroke='black' stroke-width='1.85' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg width='21' height='16' viewBox='0 0 21 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.4 1.2L1.6 8L8.4 14.8M2 8H19' stroke='black' stroke-width='1.85' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 .about-back span {
@@ -965,7 +977,7 @@ a.project-card {
 
 .about-back:hover,
 .about-back:focus-visible {
-  color: #2f5bff;
+  color: #0099ff;
   transform: translateX(-6px);
   outline: none;
 }
