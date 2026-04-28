@@ -866,6 +866,10 @@ a.project-card {
 }
 
 /* About Me Page */
+.about-page {
+  overflow-x: hidden;
+}
+
 .about-shell {
   --content-width: min(1120px, calc(100vw - 120px));
   width: 100%;
@@ -898,12 +902,13 @@ a.project-card {
   order: 1;
   width: 23px;
   height: 16px;
+  margin-right: 5px;
   display: inline-block;
   transform: translateY(1px);
   transition: transform 180ms ease;
   background: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg width='23' height='16' viewBox='0 0 23 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.4 1.2L1.6 8L8.4 14.8M2 8H22' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg width='23' height='16' viewBox='0 0 23 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.4 1.2L1.6 8L8.4 14.8M2 8H22' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg width='23' height='16' viewBox='0 0 23 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.4 1.2L1.6 8L8.4 14.8M2 8H22' stroke='black' stroke-width='1.85' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg width='23' height='16' viewBox='0 0 23 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.4 1.2L1.6 8L8.4 14.8M2 8H22' stroke='black' stroke-width='1.85' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 .about-back span {
@@ -1030,7 +1035,8 @@ a.project-card {
 }
 
 .about-letter {
-  max-width: 720px;
+  width: min(571px, 100%);
+  max-width: 571px;
   color: var(--ink);
   font-family: var(--sans);
   font-size: 15px;
@@ -1083,7 +1089,12 @@ a.project-card {
 }
 
 .about-letter {
+  width: min(571px, 100%);
   max-width: 571px;
+}
+
+.hcde-line {
+  white-space: nowrap;
 }
 
 .hcde-tooltip-wrap {
@@ -1166,6 +1177,7 @@ a.project-card {
     grid-template-columns: 1fr;
     gap: 56px;
     align-items: start;
+    justify-items: center;
   }
 
   .about-collage {
@@ -1174,7 +1186,8 @@ a.project-card {
   }
 
   .about-letter {
-    max-width: none;
+    width: min(571px, 100%);
+    max-width: 100%;
   }
 }
 
@@ -1189,38 +1202,27 @@ a.project-card {
     gap: 42px;
   }
 
+  .hcde-line {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 503px) {
   .about-collage {
-    --about-scale: calc((100vw - 40px) / 463);
-    grid-template-columns: calc(219px * var(--about-scale)) calc(237px * var(--about-scale));
-    grid-template-rows: calc(174px * var(--about-scale)) calc(90px * var(--about-scale)) calc(183px * var(--about-scale)) auto;
+    grid-template-columns: 219fr 237fr;
+    grid-template-rows: calc(37.58vw - 15px) calc(19.44vw - 8px) calc(39.52vw - 16px) auto;
     gap: 7px;
-    width: calc(463px * var(--about-scale));
+    width: calc(100vw - 40px);
     max-width: 100%;
     justify-self: center;
   }
 
   .about-photo-1,
-  .about-photo-1 img {
-    width: calc(219px * var(--about-scale)) !important;
-    height: calc(174px * var(--about-scale)) !important;
-  }
-
   .about-photo-2,
-  .about-photo-2 img {
-    width: calc(237px * var(--about-scale)) !important;
-    height: calc(271px * var(--about-scale)) !important;
-  }
-
   .about-photo-3,
-  .about-photo-3 img {
-    width: calc(219px * var(--about-scale)) !important;
-    height: calc(280px * var(--about-scale)) !important;
-  }
-
-  .about-photo-4,
-  .about-photo-4 img {
-    width: calc(237px * var(--about-scale)) !important;
-    height: calc(183px * var(--about-scale)) !important;
+  .about-photo-4 {
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .about-caption {
