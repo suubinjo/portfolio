@@ -13,48 +13,78 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="case-shell about-shell">
-      <nav class="case-nav">
-        <a class="brand" href="index.html">© Subin Jo</a>
-        <a href="index.html">Work</a>
-      </nav>
+    <main class="about-shell">
+      <a class="about-back" href="index.html" aria-label="Back to home">
+        <span>Back</span>
+      </a>
 
-      <header class="about-hero">
-        <p class="project-type">About Me</p>
-        <h1 class="about-greeting animate-letters">hey there:)</h1>
-        <p>
-          I am a UX designer studying Human Centered Design & Engineering at the University of Washington, currently
-          exploring product and companion experiences in Seattle.
-        </p>
-        <span class="hcde-tooltip-wrap" tabindex="0">
-          <span class="hcde-trigger">UW HCDE '26</span>
-          <span class="hcde-tooltip">Human Centered Design & Engineering</span>
-        </span>
-      </header>
+      <section class="about-content" aria-label="About Subin Jo">
+        <div class="about-collage" aria-label="Personal photo collage">
+          <figure class="about-photo about-photo-1">
+            <span class="photo-number">1</span>
+            <img src="assets/about 1.jpeg" alt="Subin as a child" />
+          </figure>
 
-      <section class="about-photo-grid" aria-label="About Subin photo moments">
-        <img src="assets/about1.jpeg" alt="Subin Jo personal moment 1" />
-        <img src="assets/about2.jpeg" alt="Subin Jo personal moment 2" />
-        <img src="assets/about3.jpeg" alt="Subin Jo personal moment 3" />
-        <img src="assets/about4.jpeg" alt="Subin Jo personal moment 4" />
+          <figure class="about-photo about-photo-2">
+            <span class="photo-number">2</span>
+            <img src="assets/about 2.jpeg" alt="Subin after moving to Seattle" />
+          </figure>
+
+          <figure class="about-photo about-photo-3">
+            <span class="photo-number">3</span>
+            <img src="assets/about 3.jpeg" alt="Subin studying abroad in Singapore" />
+          </figure>
+
+          <figure class="about-photo about-photo-4">
+            <span class="photo-number">4</span>
+            <img src="assets/about 4.jpeg" alt="Subin building what is next" />
+          </figure>
+
+          <div class="about-caption">
+            <span>1&nbsp; Born and raised in Korea</span>
+            <span>2&nbsp; Moved to Seattle</span>
+            <span>3&nbsp; Studied abroad in Singapore</span>
+            <span>4&nbsp; Building what's next</span>
+          </div>
+        </div>
+
+        <article class="about-letter">
+          <h1 class="about-title about-title-effect animate-letters">hey there:)</h1>
+
+          <p>I am Subin, and feel free to call me Sue.</p>
+
+          <p>
+            Originally from Seoul, South Korea, I moved to Seattle in 2022 and have been
+            shaping my path toward UX design through design, research, and product thinking.
+            I am currently a senior studying
+            <span class="hcde-tooltip-wrap" tabindex="0">
+              <span class="hcde-link">Human Centered Design and Engineering (HCDE)</span>
+              <span class="hcde-tooltip" role="tooltip">
+                <strong>What is HCDE?</strong>
+                <span>We learn how people think &amp; use that<br />to design better tech (｡'ᴗ'｡)ﾉ*</span>
+              </span>
+            </span>
+            with a minor in Informatics at the University of Washington.
+          </p>
+
+          <p>
+            Having lived and studied across different cultural contexts (Seoul, Seattle,
+            London, Singapore), I bring a global perspective to my design process. Grounded
+            in this background, my work focuses on understanding human behavior and translating
+            research insights into intuitive, meaningful user experiences.
+          </p>
+
+          <p>Hope you enjoy exploring my work.</p>
+
+          <p>Kind regards,</p>
+
+          <img class="about-signature" src="assets/Signature.png" alt="Subin Jo signature" />
+        </article>
       </section>
 
-      <section class="about-grid">
-        <div>
-          <h2>Now</h2>
-          <p>Designing for EA Games and building thoughtful interfaces that make complex systems easier to enter.</p>
-        </div>
-        <div>
-          <h2>Practice</h2>
-          <p>Research synthesis, product thinking, interaction design, prototyping, and visual systems.</p>
-        </div>
-        <div>
-          <h2>Looking For</h2>
-          <p>Teams shaping useful, humane tools through sharp craft and generous collaboration.</p>
-        </div>
-      </section>
       <site-footer></site-footer>
     </main>
+
     <script src="script.js"></script>
   </body>
 </html>
