@@ -724,18 +724,18 @@ a.project-card {
 
 .case-study-header {
   position: fixed;
-  top: 24px;
-  left: var(--page-gutter);
-  right: var(--page-gutter);
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 80;
   display: flex;
   justify-content: space-between;
   align-items: center;
   pointer-events: none;
-  padding: 7px 0;
+  padding: 24px var(--page-gutter) 12px;
   background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .case-back,
@@ -796,7 +796,7 @@ a.project-card {
 
 .section-index {
   position: fixed;
-  top: 96px;
+  top: clamp(176px, 21vh, 220px);
   left: var(--page-gutter);
   z-index: 50;
   display: flex;
@@ -887,6 +887,17 @@ a.project-card {
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 0.95;
+}
+
+.case-title-effect .char {
+  opacity: 0;
+  transform: none;
+  animation: about-char-fade 520ms ease forwards;
+  animation-delay: calc(var(--char-index) * 42ms + 120ms);
+}
+
+.case-title-effect .char-space {
+  width: 0.25em;
 }
 
 .case-deck {
