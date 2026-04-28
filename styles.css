@@ -154,6 +154,7 @@ img {
   line-height: 1.1;
 }
 
+/* About Me stays blue on hover */
 a.meta-title:hover,
 a.meta-title:focus-visible {
   color: #0099ff;
@@ -186,10 +187,11 @@ a.meta-title:focus-visible {
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
+/* HCDE, EA Games, Resumé, LinkedIn links hover → black instead of blue */
 .meta-link:hover,
 .meta-link:focus-visible {
-  color: #0099ff;
-  border-color: #0099ff;
+  color: #111111;
+  border-color: #111111;
   outline: none;
 }
 
@@ -245,8 +247,10 @@ a.project-card {
   outline: none;
 }
 
+/* WIP card: grey background */
 .ea-card {
   cursor: none;
+  background: #5e5e5e;
 }
 
 .project-category {
@@ -261,6 +265,11 @@ a.project-card {
   letter-spacing: 0.5px;
   line-height: 1;
   text-transform: uppercase;
+}
+
+/* WIP card category label color override */
+.ea-card .project-category {
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .project-image-wrap {
@@ -338,6 +347,13 @@ a.project-card {
   transform: translateY(0);
 }
 
+/* WIP card title/description color override */
+.ea-card .project-title,
+.ea-card .project-description,
+.ea-card .project-icon {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .project-icon {
   flex-shrink: 0;
   width: 28px;
@@ -362,6 +378,7 @@ a.project-card {
   transform: rotate(-45deg);
 }
 
+/* ─── Footer ─────────────────────────────────────────── */
 .site-footer {
   width: var(--content-width);
   margin-inline: auto;
@@ -372,6 +389,9 @@ a.project-card {
   padding: 0 0 8px;
   letter-spacing: -0.03em;
   font-weight: 300;
+  /* Keep single row unless gap < 50px — use flex-wrap with a min-width trick */
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .connect > span {
@@ -385,6 +405,15 @@ a.project-card {
   gap: 8px;
   flex-wrap: nowrap;
   white-space: nowrap;
+}
+
+/* Prevent wrapping until content itself forces it */
+.connect {
+  flex-shrink: 0;
+}
+
+.date-stamp {
+  flex-shrink: 0;
 }
 
 .connect a {
@@ -480,16 +509,17 @@ a.project-card {
   font-weight: 400;
 }
 
+/* Footer wraps to 2 lines only when truly too narrow (gap < 50px equivalent) */
 @media (max-width: 980px) {
   .site-footer {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
   }
 
   .connect {
     gap: 4px;
-    width: 100%;
     font-size: clamp(11px, 2.8vw, 14px);
   }
 
@@ -500,11 +530,20 @@ a.project-card {
 
   .date-stamp {
     gap: 14px;
-    width: 100%;
     font-size: clamp(11px, 2.8vw, 14px);
   }
 }
 
+/* Only wrap to 2 lines when there's genuinely no room (< ~420px) */
+@media (max-width: 420px) {
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* ─── EA cursor (WIP typing) ─────────────────────────── */
 .ea-cursor {
   position: fixed;
   z-index: 100;
@@ -514,7 +553,7 @@ a.project-card {
   align-items: center;
   padding: 12px 18px;
   border-radius: 999px;
-  background: rgba(0, 153, 255, 0.9);
+  background: rgba(94, 94, 94, 0.92);
   color: #f7f7f7;
   font-family: var(--mono);
   font-size: 11px;
@@ -781,6 +820,7 @@ a.project-card {
     white-space: nowrap;
   }
 
+  /* FIX 1: meta-nav width matches content-width on responsive */
   .meta-nav {
     display: grid;
     width: 100%;
