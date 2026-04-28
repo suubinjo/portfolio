@@ -383,7 +383,8 @@ a.project-card {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .connect a {
@@ -833,6 +834,20 @@ a.project-card {
 
   .site-footer {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .connect {
+    gap: 6px;
+    width: 100%;
+    font-size: clamp(12px, 3.4vw, 15px);
+  }
+
+  .date-stamp {
+    gap: 14px;
+    width: 100%;
+    font-size: clamp(12px, 3.4vw, 15px);
   }
 
   .case-shell {
