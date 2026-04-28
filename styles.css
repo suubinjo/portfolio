@@ -867,7 +867,7 @@ a.project-card {
 
 /* About Me Page */
 .about-shell {
-  --content-width: min(1180px, calc(100vw - 120px));
+  --content-width: min(1060px, calc(100vw - 120px));
   width: 100%;
   min-height: 100svh;
   padding: 32px 0 18px;
@@ -882,7 +882,7 @@ a.project-card {
   margin: 0 auto;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 0;
   color: var(--ink);
   font-family: var(--serif);
   font-size: clamp(18px, 1.35vw, 24px);
@@ -895,19 +895,41 @@ a.project-card {
 
 .about-back::before {
   content: "";
-  width: 18px;
-  height: 14px;
+  order: 1;
+  width: 10px;
+  height: 10px;
   display: inline-block;
-  transform: translateY(1px);
+  border-left: 1.7px solid currentColor;
+  border-bottom: 1.7px solid currentColor;
+  border-radius: 1px;
+  transform: rotate(45deg);
   transition: transform 180ms ease;
-  background:
-    linear-gradient(currentColor, currentColor) 2px 6px / 16px 2px no-repeat,
-    linear-gradient(135deg, transparent 43%, currentColor 44% 56%, transparent 57%) 0 0 / 14px 14px no-repeat;
+}
+
+.about-back::after {
+  content: "";
+  order: 2;
+  width: 17px;
+  height: 1.7px;
+  margin-left: -10px;
+  margin-right: 10px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 180ms ease;
+}
+
+.about-back span {
+  order: 3;
 }
 
 .about-back:hover::before,
 .about-back:focus-visible::before {
-  transform: translate(-4px, 1px);
+  transform: translateX(-4px) rotate(45deg);
+}
+
+.about-back:hover::after,
+.about-back:focus-visible::after {
+  transform: translateX(-4px);
 }
 
 .about-back:hover,
@@ -921,9 +943,10 @@ a.project-card {
   width: var(--content-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(360px, 0.9fr) minmax(440px, 1.1fr);
-  gap: clamp(48px, 7vw, 96px);
+  grid-template-columns: 463px minmax(390px, 500px);
+  gap: clamp(54px, 6vw, 86px);
   align-items: center;
+  justify-content: center;
 }
 
 .about-collage {
@@ -998,6 +1021,12 @@ a.project-card {
   left: auto;
 }
 
+.about-photo-3 .photo-number {
+  top: auto;
+  bottom: -24px;
+  left: 0;
+}
+
 .about-caption {
   grid-column: 1 / -1;
   display: grid;
@@ -1066,12 +1095,14 @@ a.project-card {
 }
 
 .about-letter {
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .hcde-tooltip-wrap {
   position: relative;
   display: inline-block;
+  color: inherit;
+  border-bottom: 0;
 }
 
 .hcde-link {
@@ -1079,6 +1110,13 @@ a.project-card {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+}
+
+.hcde-tooltip-wrap:hover,
+.hcde-tooltip-wrap:focus-visible,
+.hcde-tooltip-wrap:focus-within {
+  color: inherit;
+  border-bottom: 0;
 }
 
 .hcde-tooltip {
@@ -1154,7 +1192,7 @@ a.project-card {
 
 @media (max-width: 680px) {
   .about-shell {
-    --content-width: min(100% - 40px, 440px);
+    --content-width: calc(100vw - 40px);
     padding-top: 24px;
     gap: 30px;
   }
@@ -1164,11 +1202,37 @@ a.project-card {
   }
 
   .about-collage {
-    grid-template-columns: 219px 237px;
-    grid-template-rows: 174px 90px 183px auto;
+    --about-scale: calc((100vw - 40px) / 463);
+    grid-template-columns: calc(219px * var(--about-scale)) calc(237px * var(--about-scale));
+    grid-template-rows: calc(174px * var(--about-scale)) calc(90px * var(--about-scale)) calc(183px * var(--about-scale)) auto;
     gap: 7px;
-    width: 463px;
-    max-width: none;
+    width: calc(463px * var(--about-scale));
+    max-width: 100%;
+    justify-self: center;
+  }
+
+  .about-photo-1,
+  .about-photo-1 img {
+    width: calc(219px * var(--about-scale)) !important;
+    height: calc(174px * var(--about-scale)) !important;
+  }
+
+  .about-photo-2,
+  .about-photo-2 img {
+    width: calc(237px * var(--about-scale)) !important;
+    height: calc(271px * var(--about-scale)) !important;
+  }
+
+  .about-photo-3,
+  .about-photo-3 img {
+    width: calc(219px * var(--about-scale)) !important;
+    height: calc(280px * var(--about-scale)) !important;
+  }
+
+  .about-photo-4,
+  .about-photo-4 img {
+    width: calc(237px * var(--about-scale)) !important;
+    height: calc(183px * var(--about-scale)) !important;
   }
 
   .about-caption {
