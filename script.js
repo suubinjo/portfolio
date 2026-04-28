@@ -99,6 +99,36 @@ document.querySelectorAll(".animate-letters").forEach((element) => {
   });
 });
 
+const animatedCaseElements = document.querySelectorAll(
+  ".case-study-shell .case-award, .case-study-shell .case-deck, .case-study-shell .case-facts > div, .case-study-shell .case-hero-media, .case-study-section"
+);
+
+animatedCaseElements.forEach((element) => {
+  element.classList.add("scroll-fade");
+});
+
+if ("IntersectionObserver" in window) {
+  const fadeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        fadeObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.14,
+      rootMargin: "0px 0px -8% 0px",
+    }
+  );
+
+  animatedCaseElements.forEach((element) => fadeObserver.observe(element));
+} else {
+  animatedCaseElements.forEach((element) => {
+    element.classList.add("is-visible");
+  });
+}
+
 document.querySelectorAll(".email-copy").forEach((wrapper) => {
   const button = wrapper.querySelector(".email-copy-button");
   const popup = wrapper.querySelector(".email-copy-popup");

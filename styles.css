@@ -732,10 +732,10 @@ a.project-card {
   justify-content: space-between;
   align-items: center;
   pointer-events: none;
-  padding: 24px var(--page-gutter) 12px;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  padding: 24px var(--page-gutter) 14px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px) saturate(1.05);
+  -webkit-backdrop-filter: blur(18px) saturate(1.05);
 }
 
 .case-back,
@@ -796,7 +796,7 @@ a.project-card {
 
 .section-index {
   position: fixed;
-  top: clamp(76px, 11vh, 120px);
+  top: clamp(116px, 15vh, 150px);
   left: var(--page-gutter);
   z-index: 50;
   display: flex;
@@ -842,7 +842,7 @@ a.project-card {
   gap: 100px;
   align-items: center;
   align-self: center;
-  transform: translate(-100px, -70px);
+  transform: translate(-50px, -24px);
 }
 
 .case-hero-copy {
@@ -895,6 +895,19 @@ a.project-card {
   transform: none;
   animation: about-char-fade 520ms ease forwards;
   animation-delay: calc(var(--char-index) * 42ms + 120ms);
+}
+
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 620ms ease,
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .case-title-effect .char-space {
