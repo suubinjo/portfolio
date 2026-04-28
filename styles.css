@@ -796,7 +796,7 @@ a.project-card {
 
 .section-index {
   position: fixed;
-  top: clamp(116px, 15vh, 150px);
+  top: clamp(96px, 13vh, 128px);
   left: var(--page-gutter);
   z-index: 50;
   display: flex;
@@ -842,7 +842,7 @@ a.project-card {
   gap: 100px;
   align-items: center;
   align-self: center;
-  transform: translate(-50px, -24px);
+  transform: translate(-50px, -64px);
 }
 
 .case-hero-copy {
@@ -877,6 +877,19 @@ a.project-card {
   font-weight: 500;
   line-height: 1;
   vertical-align: middle;
+  overflow: hidden;
+}
+
+.case-award-badge::after {
+  content: attr(data-fallback);
+}
+
+.case-award-badge img {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  display: block;
+  object-fit: cover;
 }
 
 .case-hero-copy h1 {

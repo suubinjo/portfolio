@@ -5,6 +5,16 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/subinjo68/";
 const FALLBACK_UPDATED_DATE = "April, 28th";
 const GITHUB_REPO = "suubinjo/portfolio";
 
+if (window.location.protocol.startsWith("http")) {
+  const cleanPath = window.location.pathname
+    .replace(/\/index\.html$/, "/")
+    .replace(/\/([^/]+)\.html$/, "/$1/");
+
+  if (cleanPath !== window.location.pathname) {
+    window.history.replaceState(null, "", `${cleanPath}${window.location.search}${window.location.hash}`);
+  }
+}
+
 function formatMonthDay(dateString) {
   const date = new Date(dateString);
 
