@@ -1109,6 +1109,11 @@ a.project-card {
   font-size: 15px;
 }
 
+.about-letter p {
+  text-align: justify;
+  text-align-last: left;
+}
+
 .hcde-line {
   white-space: nowrap;
 }
@@ -1220,6 +1225,10 @@ a.project-card {
 
   .hcde-line {
     white-space: normal;
+  }
+
+  .about-letter p {
+    text-align: left;
   }
 }
 
