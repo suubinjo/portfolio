@@ -243,8 +243,20 @@ a.project-card {
 
 .project-card:hover,
 .project-card:focus-visible {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.05);
   outline: none;
+}
+
+.project-grid > .project-card:nth-child(1) {
+  --image-scale: 0.1;
+}
+
+.project-grid > .project-card:nth-child(2) {
+  --image-scale: 1.14;
+}
+
+.project-grid > .project-card:nth-child(3) {
+  --image-scale: 1.18;
 }
 
 /* WIP card: white background */
@@ -275,7 +287,7 @@ a.project-card {
 .project-image-wrap {
   flex: 1;
   min-height: 0;
-  padding: 42px 0 8px;
+  padding: 34px 0 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -297,7 +309,7 @@ a.project-card {
 
 .project-card:hover .project-image,
 .project-card:focus-visible .project-image {
-  transform: scale(calc(var(--image-scale, 1) * 1.05));
+  transform: translateY(-18px) scale(calc(var(--image-scale, 1) * 1.1));
 }
 
 .project-footer {
@@ -328,11 +340,37 @@ a.project-card {
 
 .project-description {
   position: absolute;
-  max-width: min(320px, calc(72% - 4px));
+  width: min(275px, calc(72% - 4px));
+  max-width: min(275px, calc(72% - 4px));
   opacity: 0;
   transform: translateY(6px);
   color: #6c6c6c;
   font-weight: 300;
+  line-height: 1.4;
+  text-wrap: balance;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+@media (max-width: 1200px) and (min-width: 681px) {
+  .project-description {
+    width: calc(100% - 72px);
+    max-width: calc(100% - 72px);
+    text-wrap: nowrap;
+    -webkit-line-clamp: 1;
+  }
+}
+
+@media (max-width: 680px) {
+  .project-description {
+    width: min(300px, calc(100% - 72px));
+    max-width: min(300px, calc(100% - 72px));
+    text-wrap: balance;
+    -webkit-line-clamp: 2;
+  }
 }
 
 .project-card:hover .project-title,
@@ -943,7 +981,7 @@ a.project-card {
 
   .project-image-wrap {
     min-height: 0;
-    padding-top: 30px;
+    padding-top: 26px;
   }
 
   .project-text {
@@ -951,12 +989,15 @@ a.project-card {
   }
 
   .project-description {
-    max-width: calc(100% - 72px);
+    width: min(300px, calc(100% - 72px));
+    max-width: min(300px, calc(100% - 72px));
+    text-wrap: balance;
+    -webkit-line-clamp: 2;
   }
 
   .project-card:hover,
   .project-card:focus-visible {
-    transform: translateY(-6px);
+    transform: translateY(-6px) scale(1.03);
   }
 
   .case-shell {
@@ -1338,6 +1379,11 @@ a.project-card {
 
   .about-letter p {
     text-align: left;
+  }
+
+  .project-card:hover .project-image,
+  .project-card:focus-visible .project-image {
+    transform: translateY(-10px) scale(calc(var(--image-scale, 1) * 1.08));
   }
 }
 
