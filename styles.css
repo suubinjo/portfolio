@@ -893,6 +893,11 @@ a.project-card {
   object-fit: cover;
 }
 
+.case-award-badge-maybank {
+  background: #ffd400;
+  color: var(--ink);
+}
+
 .case-award-pill {
   display: inline-flex;
   height: 24px;
