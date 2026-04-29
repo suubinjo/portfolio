@@ -860,13 +860,18 @@ a.project-card {
 }
 
 .case-award a {
+  display: inline-block;
+  padding: 0 3px 1px;
+  border-radius: 3px;
   border-bottom: 1px solid currentColor;
-  transition: color 180ms ease;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
 .case-award a:hover,
 .case-award a:focus-visible {
-  color: #4b3084;
+  border-color: #4b3084;
+  background: #4b3084;
+  color: #fff;
   outline: none;
 }
 
@@ -1032,7 +1037,7 @@ a.project-card {
 }
 
 .case-study-hero + .case-study-section {
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 .case-study-section h2 {
