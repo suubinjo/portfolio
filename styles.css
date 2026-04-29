@@ -861,6 +861,13 @@ a.project-card {
 
 .case-award a {
   border-bottom: 1px solid currentColor;
+  transition: color 180ms ease;
+}
+
+.case-award a:hover,
+.case-award a:focus-visible {
+  color: #4b3084;
+  outline: none;
 }
 
 .case-award-badge {
@@ -1024,6 +1031,10 @@ a.project-card {
   text-align: left;
 }
 
+.case-study-hero + .case-study-section {
+  margin-top: 70px;
+}
+
 .case-study-section h2 {
   max-width: 100%;
   margin: 0;
@@ -1056,6 +1067,10 @@ a.project-card {
   font-weight: 400;
   line-height: 1.7;
   text-wrap: pretty;
+}
+
+.case-study-section p:not(.project-type) + p:not(.project-type) {
+  margin-top: 25px;
 }
 
 .case-section-image {
