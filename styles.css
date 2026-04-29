@@ -796,7 +796,7 @@ a.project-card {
 
 .section-index {
   position: fixed;
-  top: clamp(96px, 13vh, 128px);
+  top: clamp(82px, 11vh, 112px);
   left: var(--page-gutter);
   z-index: 50;
   display: flex;
@@ -842,7 +842,7 @@ a.project-card {
   gap: 72px;
   align-items: center;
   align-self: center;
-  transform: translate(-50px, -64px);
+  transform: translate(-50px, -82px);
 }
 
 .case-hero-copy {
