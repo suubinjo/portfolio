@@ -895,22 +895,23 @@ a.project-card {
 
 .case-award-pill {
   display: inline-flex;
-  width: 42px;
-  height: 42px;
-  margin-left: 6px;
+  height: 24px;
+  margin-right: 8px;
+  padding: 0 11px;
   border: 1px solid var(--ink);
-  border-radius: 50%;
+  border-radius: 999px;
   background: #fff;
   color: var(--ink);
   align-items: center;
   justify-content: center;
   font-family: var(--sans);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 400;
-  line-height: 0.95;
+  line-height: 1;
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .case-hero-copy h1 {
@@ -949,7 +950,8 @@ a.project-card {
 }
 
 .case-deck {
-  max-width: 560px;
+  width: min(440px, 100%);
+  max-width: 440px;
   margin: 0 0 30px;
   color: var(--ink);
   font-family: var(--sans);
@@ -960,16 +962,20 @@ a.project-card {
 }
 
 .case-facts {
-  width: min(100%, 560px);
+  width: min(440px, 100%);
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 60px;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  column-gap: 42px;
   row-gap: 30px;
   margin: 0;
 }
 
 .case-facts div {
   min-width: 0;
+}
+
+.case-facts div:nth-child(even) {
+  justify-self: end;
 }
 
 .case-facts dt {
