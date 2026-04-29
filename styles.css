@@ -1016,24 +1016,55 @@ a.project-card {
 }
 
 .case-study-section {
-  width: min(920px, calc(100vw - (var(--page-gutter) * 2)));
-  min-height: 62vh;
-  margin: 0 auto;
-  padding: 90px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: min(698px, calc(100vw - 48px));
+  min-height: 0;
+  margin: 0 auto 50px;
+  padding: 0;
+  display: block;
+  text-align: left;
 }
 
 .case-study-section h2 {
-  max-width: 780px;
-  margin: 12px 0 0;
+  max-width: 100%;
+  margin: 0;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 50px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.case-study-section .project-type {
+  margin: 0 0 25px;
+  color: #ababab;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.case-study-section p:not(.project-type) {
+  max-width: 100%;
+  margin: 25px 0 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.case-section-image {
+  width: 100%;
+  min-height: 320px;
+  margin: 25px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  background: #f7f7f7;
 }
 
 .about-shell .case-hero {
