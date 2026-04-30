@@ -214,20 +214,27 @@ if (eaCard) {
 document.querySelectorAll(".case-top-link").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
-    document.getElementById("top")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    scrollToSection("top");
   });
 });
+
+function scrollToSection(id) {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  const offset = id === "top" ? 0 : 100;
+  const top = element.getBoundingClientRect().top + window.scrollY - offset;
+
+  window.scrollTo({
+    top,
+    behavior: "smooth",
+  });
+}
 
 document.querySelectorAll(".jump-solution-button").forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
-    document.getElementById("solution")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    scrollToSection("solution");
   });
 });
 
@@ -247,10 +254,7 @@ document.querySelectorAll(".section-index").forEach((nav) => {
     link.textContent = section.label;
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      document.getElementById(section.id)?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      scrollToSection(section.id);
     });
     nav.appendChild(link);
   });
