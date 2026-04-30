@@ -1,24 +1,42 @@
 # Subin Jo Portfolio
 
-Static portfolio website for Subin Jo.
+Personal portfolio website for Subin Jo, designed and built as a static site.
+
+Live site: [subinjo.com](https://subinjo.com)
 
 ## Pages
 
-- `index.html` - Home and selected work
-- `about-me.html` - About page
-- `identifit.html` - Identifit case study
-- `milestone.html` - Milestone Seed case study
+- `/` - Home and selected work
+- `/about-me/` - About page
+- `/identifit/` - Identifit case study
+- `/milestone/` - Milestone Seed case study
+- `/ea-games/` - EA Games case study preview
+
+## Stack
+
+- HTML
+- CSS
+- JavaScript
+- GitHub Pages
 
 ## Local Preview
 
-Open `index.html` directly in a browser, or run:
+Run a local server from the project root:
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Then visit `http://localhost:4173`.
+Then visit:
 
-## GitHub Pages
+```text
+http://localhost:4173
+```
 
-This site is ready to deploy from the repository root on the `main` branch.
+## Deployment
+
+The site deploys through GitHub Pages from the `main` branch. Clean URLs are handled with page permalinks, so public routes do not need `.html` in the address.
+
+## Notes
+
+This repository contains portfolio source code and visual assets. Please do not reuse the design, writing, or project materials without permission.
