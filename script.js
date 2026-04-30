@@ -221,6 +221,16 @@ document.querySelectorAll(".case-top-link").forEach((link) => {
   });
 });
 
+document.querySelectorAll(".jump-solution-button").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    document.getElementById("solution")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+});
+
 document.querySelectorAll(".section-index").forEach((nav) => {
   const rawSections = nav.dataset.sections || "";
   const sections = rawSections

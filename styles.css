@@ -1140,6 +1140,38 @@ a.project-card {
   margin-top: 25px;
 }
 
+.jump-solution-button {
+  display: inline-flex;
+  min-height: 32px;
+  margin-top: 25px;
+  padding: 0 16px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.jump-solution-button:hover,
+.jump-solution-button:focus-visible {
+  background: var(--ink);
+  color: #fff;
+  outline: none;
+  transform: translateY(-2px);
+}
+
 .case-section-image {
   width: 100%;
   min-height: 320px;
