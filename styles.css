@@ -1180,7 +1180,7 @@ a.project-card {
   background: var(--ink);
   color: #fff;
   outline: none;
-  transform: translateY(-2px);
+  transform: translateY(3px);
 }
 
 .jump-solution-button:hover .jump-solution-arrow,
@@ -1201,6 +1201,11 @@ a.project-card {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.problem-image-placeholder {
+  border: 0;
+  background: transparent;
 }
 
 .about-shell .case-hero {
