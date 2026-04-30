@@ -1287,9 +1287,9 @@ a.project-card {
 }
 
 .research-competitive {
-  width: min(920px, calc(100vw - 48px));
-  margin: 50px 0 0 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  margin: 50px 0 0;
+  transform: none;
 }
 
 .research-competitive h2 {
@@ -1310,8 +1310,8 @@ a.project-card {
 .competitive-matrix {
   --matrix-line: rgba(128, 128, 128, 0.4);
   display: grid;
-  grid-template-columns: 190px repeat(5, minmax(104px, 1fr));
-  grid-auto-rows: 72px;
+  grid-template-columns: 150px repeat(5, minmax(92px, 1fr));
+  grid-auto-rows: 62px;
   margin-top: 50px;
   background: #f7f7f7;
   color: #808080;
@@ -1341,7 +1341,7 @@ a.project-card {
 
 .matrix-feature {
   justify-content: flex-start !important;
-  padding-left: 36px;
+  padding-left: 18px;
   background: #fff;
   border-right: 2px solid var(--matrix-line);
   text-align: left;
