@@ -238,6 +238,40 @@ document.querySelectorAll(".jump-solution-button").forEach((button) => {
   });
 });
 
+document.querySelectorAll(".image-zoom-trigger").forEach((button) => {
+  button.addEventListener("click", () => {
+    const image = button.querySelector("img");
+    if (!image) return;
+
+    const lightbox = document.createElement("div");
+    lightbox.className = "image-lightbox";
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-label", image.alt || "Expanded image");
+
+    lightbox.innerHTML = `
+      <button class="image-lightbox-close" type="button" aria-label="Close expanded image">×</button>
+      <img src="${image.currentSrc || image.src}" alt="${image.alt}" />
+    `;
+
+    const closeLightbox = () => {
+      lightbox.remove();
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", handleKeydown);
+    };
+
+    function handleKeydown(event) {
+      if (event.key === "Escape") closeLightbox();
+    }
+
+    lightbox.addEventListener("click", closeLightbox);
+    document.addEventListener("keydown", handleKeydown);
+    document.body.style.overflow = "hidden";
+    document.body.appendChild(lightbox);
+    lightbox.querySelector(".image-lightbox-close")?.focus();
+  });
+});
+
 document.querySelectorAll(".section-index").forEach((nav) => {
   const rawSections = nav.dataset.sections || "";
   const sections = rawSections
