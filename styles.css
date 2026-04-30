@@ -1182,6 +1182,15 @@ a.project-card {
   line-height: 1.2;
 }
 
+.validation-stats span {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.validation-stats strong {
+  font-size: 40px;
+}
+
 .jump-solution-button {
   display: inline-flex;
   margin-top: 25px;
