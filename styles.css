@@ -1191,6 +1191,11 @@ a.project-card {
   font-size: 40px;
 }
 
+.validation-quotes {
+  border: 0;
+  background: transparent;
+}
+
 .jump-solution-button {
   display: inline-flex;
   margin-top: 25px;
