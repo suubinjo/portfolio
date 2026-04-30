@@ -1192,8 +1192,11 @@ a.project-card {
 }
 
 .validation-quotes {
+  margin-top: 25px;
   border: 0;
+  border-radius: 0;
   background: transparent;
+  overflow: visible;
 }
 
 .jump-solution-button {
