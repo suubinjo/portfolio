@@ -1140,6 +1140,47 @@ a.project-card {
   margin-top: 25px;
 }
 
+.research-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+  margin-top: 25px;
+}
+
+.research-stats article {
+  min-height: 128px;
+  padding: 24px 18px;
+  border-radius: 3px;
+  background: #f7f7f7;
+  color: #5e5e5e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-weight: 400;
+  text-align: center;
+}
+
+.research-stats strong {
+  display: block;
+  color: #5e5e5e;
+  font-family: var(--mono);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.research-stats span {
+  display: block;
+  margin-top: 24px;
+  color: #5e5e5e;
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
 .jump-solution-button {
   display: inline-flex;
   margin-top: 25px;
@@ -1197,6 +1238,11 @@ a.project-card {
 }
 
 .problem-image-placeholder {
+  border: 0;
+  background: transparent;
+}
+
+.research-image-placeholder {
   border: 0;
   background: transparent;
 }
@@ -2046,5 +2092,14 @@ a.project-card {
   .case-study-section {
     min-height: 52vh;
     padding: 64px 0;
+  }
+
+  .research-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .research-stats article {
+    min-height: 118px;
   }
 }
