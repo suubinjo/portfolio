@@ -1288,11 +1288,12 @@ a.project-card {
 
 .ideation-assets {
   display: grid;
-  gap: 50px;
+  gap: 25px;
   margin-top: 25px;
 }
 
 .ideation-image {
+  margin: 0;
   border: 0;
   background: transparent;
 }
@@ -1311,6 +1312,10 @@ a.project-card {
   font-weight: 400;
   line-height: 1.7;
   text-wrap: pretty;
+}
+
+.ideation-assets > .ideation-flow-note {
+  margin: 0;
 }
 
 .user-flow-image {
@@ -1347,9 +1352,7 @@ a.project-card {
   inset: 0;
   z-index: 200;
   padding: 56px;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.72);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1367,27 +1370,27 @@ a.project-card {
   position: fixed;
   top: 24px;
   right: 24px;
-  width: 36px;
-  height: 36px;
+  width: auto;
+  height: auto;
+  padding: 0;
   border: 0;
-  border-radius: 999px;
-  background: #f7f7f7;
-  color: var(--ink);
+  background: transparent;
+  color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: var(--sans);
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 400;
   line-height: 1;
   cursor: pointer;
-  transition: background 180ms ease, color 180ms ease;
+  transition: color 180ms ease, transform 180ms ease;
 }
 
 .image-lightbox-close:hover,
 .image-lightbox-close:focus-visible {
-  background: var(--ink);
-  color: #fff;
+  color: #0099ff;
+  transform: scale(1.06);
   outline: none;
 }
 
