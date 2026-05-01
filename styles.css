@@ -1254,13 +1254,20 @@ a.project-card {
   line-height: 1;
 }
 
-.milestone-stat-card p {
+.case-study-section .milestone-stat-card p {
   margin: 0;
   color: #5e5e5e;
   font-family: var(--mono);
   font-size: 13px;
   font-weight: 400;
   line-height: 1.5;
+}
+
+.milestone-problem-copy {
+  min-height: 277px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .milestone-problem-copy p {
@@ -1278,7 +1285,7 @@ a.project-card {
 }
 
 .milestone-jump-solution {
-  margin-top: 24px;
+  margin-top: auto;
   transition:
     color 180ms ease,
     border-color 180ms ease,
@@ -1358,6 +1365,15 @@ a.project-card {
 .milestone-wide-image {
   border: 0;
   background: transparent;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+
+.milestone-wide-image img {
+  width: 100%;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 .milestone-focus-grid {
