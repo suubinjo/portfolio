@@ -1238,7 +1238,7 @@ a.project-card {
   aspect-ratio: 1;
   margin: 2px 0 0;
   border-radius: 50%;
-  background: conic-gradient(#f7f7f7 0deg, #faebb2 126deg, #ffd627 252deg, transparent 252deg 360deg);
+  background: conic-gradient(#ffd627 0deg 252deg, transparent 252deg 360deg);
   filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.18));
 }
 
@@ -1341,6 +1341,77 @@ a.project-card {
 
 .tooltip-panel span {
   font-weight: 300;
+}
+
+.milestone-research-quote {
+  border: 0;
+  background: transparent;
+}
+
+.milestone-wide-image,
+.milestone-focus-grid {
+  width: min(1308px, calc(100vw - 612px));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.milestone-wide-image {
+  border: 0;
+  background: transparent;
+}
+
+.milestone-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 44px;
+}
+
+.milestone-focus-grid article {
+  min-height: 300px;
+  border: 1px solid #ababab;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.milestone-focus-goal {
+  min-height: 144px;
+  padding: 34px 32px 28px;
+  background: #f7f7f7;
+}
+
+.milestone-focus-goal h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.case-study-section .milestone-focus-goal p {
+  margin: 34px 0 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.milestone-focus-grid ul {
+  margin: 0;
+  padding: 28px 28px 32px 44px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.milestone-focus-grid li + li {
+  margin-top: 6px;
 }
 
 .term-tooltip:hover .tooltip-panel,
@@ -2560,6 +2631,23 @@ a.project-card {
   .milestone-stat-card {
     width: 277px;
   }
+
+  .milestone-wide-image,
+  .milestone-focus-grid {
+    width: min(100%, calc(100vw - 48px));
+  }
+
+  .milestone-focus-grid {
+    gap: 16px;
+  }
+
+  .milestone-focus-goal {
+    padding: 28px 24px 24px;
+  }
+
+  .milestone-focus-grid ul {
+    padding: 24px 22px 28px 38px;
+  }
 }
 
 @media (max-width: 680px) {
@@ -2658,6 +2746,18 @@ a.project-card {
     right: 36px;
     bottom: 30px;
     font-size: 24px;
+  }
+
+  .milestone-focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .milestone-focus-grid article {
+    min-height: 0;
+  }
+
+  .milestone-focus-goal {
+    min-height: 0;
   }
 
   .tooltip-panel {
