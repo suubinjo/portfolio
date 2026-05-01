@@ -1195,16 +1195,17 @@ a.project-card {
 
 .milestone-problem-grid {
   display: grid;
-  grid-template-columns: minmax(280px, 444px) minmax(320px, 1fr);
+  grid-template-columns: 277px minmax(320px, 1fr);
   gap: 24px;
   align-items: center;
   margin-top: 34px;
 }
 
 .milestone-stat-card {
-  min-height: 360px;
+  width: 277px;
+  height: 277px;
   margin: 0;
-  padding: 20px 24px 30px;
+  padding: 16px 18px 20px;
   background: #f7f7f7;
   color: #666666;
   display: flex;
@@ -1219,7 +1220,7 @@ a.project-card {
   width: 100%;
   color: #ababab;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
   line-height: 1.2;
   text-align: left;
@@ -1227,9 +1228,9 @@ a.project-card {
 
 .milestone-pie {
   position: relative;
-  width: 190px;
+  width: 128px;
   aspect-ratio: 1;
-  margin: 10px 0 0;
+  margin: 2px 0 0;
   border-radius: 50%;
   background: conic-gradient(#fff0ad 0deg 252deg, transparent 252deg 360deg);
   filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.18));
@@ -1245,12 +1246,12 @@ a.project-card {
 
 .milestone-pie span {
   position: absolute;
-  right: 54px;
-  bottom: 44px;
+  right: 36px;
+  bottom: 30px;
   z-index: 1;
   color: #606060;
   font-family: var(--mono);
-  font-size: 31px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1;
 }
@@ -1259,9 +1260,9 @@ a.project-card {
   margin: 0;
   color: #666666;
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .milestone-problem-copy p {
@@ -1303,7 +1304,7 @@ a.project-card {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  cursor: help;
+  cursor: default;
   outline: none;
 }
 
@@ -2558,7 +2559,7 @@ a.project-card {
   }
 
   .milestone-stat-card {
-    width: min(444px, 100%);
+    width: 277px;
   }
 }
 
@@ -2645,18 +2646,19 @@ a.project-card {
   }
 
   .milestone-stat-card {
-    min-height: 320px;
-    padding: 18px 18px 26px;
+    width: 277px;
+    height: 277px;
+    padding: 16px 18px 20px;
   }
 
   .milestone-pie {
-    width: 160px;
+    width: 128px;
   }
 
   .milestone-pie span {
-    right: 44px;
-    bottom: 37px;
-    font-size: 27px;
+    right: 36px;
+    bottom: 30px;
+    font-size: 24px;
   }
 
   .tooltip-panel {
