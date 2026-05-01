@@ -943,6 +943,14 @@ a.project-card {
   flex: 0 0 auto;
 }
 
+.milestone-award a:hover,
+.milestone-award a:focus-visible {
+  background: #ffd637;
+  color: var(--ink);
+  text-decoration-color: transparent;
+  outline: none;
+}
+
 .case-award-pill {
   display: inline-flex;
   height: 24px;
@@ -1268,6 +1276,23 @@ a.project-card {
 
 .milestone-problem-copy p + p {
   margin-top: 36px;
+}
+
+.milestone-jump-solution {
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.milestone-jump-solution:hover,
+.milestone-jump-solution:focus-visible {
+  transform: translateY(8px);
+}
+
+.milestone-jump-solution:hover .jump-solution-arrow,
+.milestone-jump-solution:focus-visible .jump-solution-arrow {
+  transform: translateY(3px);
 }
 
 .term-tooltip {
