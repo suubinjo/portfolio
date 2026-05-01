@@ -1166,15 +1166,15 @@ a.project-card {
 }
 
 .milestone-overview-section {
-  width: min(880px, calc(100vw - 48px));
+  width: min(880px, calc(100vw - 742px));
 }
 
 .milestone-problem-section {
-  width: min(1040px, calc(100vw - 48px));
+  width: min(880px, calc(100vw - 742px));
 }
 
 .milestone-research-section {
-  width: min(1368px, calc(100vw - 92px));
+  width: min(880px, calc(100vw - 742px));
 }
 
 .milestone-research-section h2 {
@@ -1273,8 +1273,11 @@ a.project-card {
 .term-tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px solid currentColor;
-  color: #606060;
+  border-bottom: 0;
+  color: #777777;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
   cursor: help;
   outline: none;
 }
@@ -1282,24 +1285,37 @@ a.project-card {
 .tooltip-panel {
   position: absolute;
   left: 50%;
-  bottom: calc(100% + 10px);
+  bottom: calc(100% + 12px);
   z-index: 20;
-  width: min(260px, 72vw);
-  padding: 9px 11px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 3px;
-  background: #111111;
-  color: #ffffff;
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.35;
+  width: max-content;
+  max-width: 340px;
+  padding: 14px 18px 16px;
+  border-radius: 18px;
+  background: rgba(248, 248, 248, 0.98);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.08);
+  color: #555555;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: -0.03em;
   text-align: left;
   white-space: normal;
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, 4px);
+  transform: translate(-50%, 10px);
   transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.tooltip-panel strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #4a4a4a;
+  font-weight: 500;
+}
+
+.tooltip-panel span {
+  font-weight: 300;
 }
 
 .term-tooltip:hover .tooltip-panel,
@@ -2503,6 +2519,12 @@ a.project-card {
   .case-hero-media img {
     width: min(600px, 100%);
     max-height: none;
+  }
+
+  .milestone-overview-section,
+  .milestone-problem-section,
+  .milestone-research-section {
+    width: min(760px, calc(100vw - (var(--page-gutter) * 2)));
   }
 
   .milestone-problem-grid {
