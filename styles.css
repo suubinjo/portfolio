@@ -1375,13 +1375,13 @@ a.project-card {
 .milestone-direction-head,
 .milestone-direction-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
-  column-gap: 74px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  column-gap: 40px;
+  align-items: start;
 }
 
 .milestone-direction-head {
-  margin-bottom: 34px;
+  margin-bottom: 40px;
 }
 
 .milestone-direction-head span {
@@ -1395,8 +1395,12 @@ a.project-card {
 }
 
 .milestone-direction-row {
-  min-height: 142px;
+  padding-bottom: 25px;
   border-bottom: 2px solid #eeeeee;
+}
+
+.milestone-direction-row + .milestone-direction-row {
+  margin-top: 25px;
 }
 
 .case-study-section .milestone-direction-row p {
@@ -1409,8 +1413,7 @@ a.project-card {
   line-height: 1.5;
 }
 
-.milestone-direction-row strong,
-.milestone-focus-goal h3 span {
+.milestone-direction-row strong {
   position: relative;
   z-index: 0;
   display: inline-block;
@@ -1423,34 +1426,37 @@ a.project-card {
   text-transform: uppercase;
 }
 
-.milestone-direction-row strong::before,
-.milestone-focus-goal h3 span::before {
+.milestone-direction-row strong::before {
   content: "";
   position: absolute;
   z-index: -1;
-  left: -2px;
-  right: -2px;
-  bottom: 0.08em;
-  height: 0.78em;
+  left: -3px;
+  right: -3px;
+  top: 0;
+  bottom: 0;
   background: #fce27b;
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 420ms ease;
+  animation: milestone-highlight-swipe linear both;
+  animation-timeline: view();
+  animation-range: entry 18% cover 38%;
 }
 
-.milestone-direction-row:hover strong::before,
-.milestone-direction-row:focus-within strong::before,
-.milestone-focus-grid article:hover .milestone-focus-goal h3 span::before,
-.milestone-focus-grid article:focus-within .milestone-focus-goal h3 span::before {
-  transform: scaleX(1);
+@keyframes milestone-highlight-swipe {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
 }
 
 .milestone-direction-row strong {
   justify-self: center;
 }
 
-.milestone-wide-image,
-.milestone-focus-matrix {
+.milestone-wide-image {
   width: min(1308px, max(0px, calc(100vw - 612px)));
   margin-left: 50%;
   transform: translateX(-50%);
@@ -1472,13 +1478,16 @@ a.project-card {
 
 .milestone-focus-matrix {
   position: relative;
+  width: 877px;
   margin-top: 44px;
+  margin-left: 50%;
   padding-left: 58px;
+  transform: translateX(-50%);
 }
 
 .milestone-focus-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 253px);
   gap: 30px;
 }
 
@@ -1486,7 +1495,7 @@ a.project-card {
   position: absolute;
   left: 0;
   width: 40px;
-  border-left: 1px solid #ababab;
+  border-right: 1px solid #ababab;
   color: #5e5e5e;
   font-family: var(--sans);
   font-size: 15px;
@@ -1503,7 +1512,7 @@ a.project-card {
 .milestone-axis::after {
   content: "";
   position: absolute;
-  left: 0;
+  right: 0;
   width: 40px;
   border-top: 1px solid #ababab;
 }
@@ -1518,16 +1527,18 @@ a.project-card {
 
 .milestone-axis-goal {
   top: 0;
-  height: 144px;
+  height: 134px;
 }
 
 .milestone-axis-feature {
-  top: 144px;
+  top: 134px;
   bottom: 0;
 }
 
 .milestone-focus-grid article {
-  min-height: 300px;
+  width: 253px;
+  height: 301px;
+  min-height: 0;
   border: 1px solid #ababab;
   border-radius: 4px;
   overflow: hidden;
@@ -1536,8 +1547,9 @@ a.project-card {
 }
 
 .milestone-focus-goal {
-  min-height: 144px;
-  padding: 34px 32px 28px;
+  height: 134px;
+  min-height: 0;
+  padding: 24px 25px 22px;
   background: #f7f7f7;
 }
 
@@ -1567,13 +1579,17 @@ a.project-card {
 }
 
 .milestone-focus-goal h3 span {
+  color: var(--ink);
   font-family: var(--sans);
+  font-size: 20px;
   font-weight: 500;
+  letter-spacing: -0.04em;
   line-height: 1.7;
+  text-transform: none;
 }
 
 .case-study-section .milestone-focus-goal p {
-  margin: 34px 0 0;
+  margin: 26px 0 0;
   color: var(--ink);
   font-family: var(--sans);
   font-size: 15px;
@@ -1583,7 +1599,8 @@ a.project-card {
 
 .milestone-focus-grid ul {
   margin: 0;
-  padding: 28px 28px 32px 44px;
+  height: 167px;
+  padding: 24px 22px 26px 34px;
   color: var(--ink);
   font-family: var(--sans);
   font-size: 15px;
