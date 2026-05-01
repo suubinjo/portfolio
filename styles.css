@@ -1174,15 +1174,15 @@ a.project-card {
 }
 
 .milestone-overview-section {
-  width: min(880px, calc(100vw - 742px));
+  width: min(698px, calc(100vw - 48px));
 }
 
 .milestone-problem-section {
-  width: min(880px, calc(100vw - 742px));
+  width: min(698px, calc(100vw - 48px));
 }
 
 .milestone-research-section {
-  width: min(880px, calc(100vw - 742px));
+  width: min(698px, calc(100vw - 48px));
 }
 
 .milestone-research-section h2 {
@@ -2550,7 +2550,7 @@ a.project-card {
   .milestone-overview-section,
   .milestone-problem-section,
   .milestone-research-section {
-    width: min(760px, calc(100vw - (var(--page-gutter) * 2)));
+    width: min(698px, calc(100vw - 48px));
   }
 
   .milestone-problem-grid {
