@@ -1197,8 +1197,14 @@ a.project-card {
   display: grid;
   grid-template-columns: 277px minmax(320px, 1fr);
   gap: 24px;
-  align-items: center;
+  align-items: start;
   margin-top: 34px;
+}
+
+.milestone-problem-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .milestone-stat-card {
@@ -1232,16 +1238,8 @@ a.project-card {
   aspect-ratio: 1;
   margin: 2px 0 0;
   border-radius: 50%;
-  background: conic-gradient(#fff0ad 0deg 252deg, transparent 252deg 360deg);
+  background: conic-gradient(#f7f7f7 0deg, #faebb2 126deg, #ffd627 252deg, transparent 252deg 360deg);
   filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.18));
-}
-
-.milestone-pie::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(transparent 0deg 252deg, #f7f7f7 252deg 360deg);
 }
 
 .milestone-pie span {
@@ -1258,9 +1256,9 @@ a.project-card {
 
 .milestone-stat-card p {
   margin: 0;
-  color: #666666;
+  color: #5e5e5e;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -1280,6 +1278,7 @@ a.project-card {
 }
 
 .milestone-jump-solution {
+  margin-top: 24px;
   transition:
     color 180ms ease,
     border-color 180ms ease,
