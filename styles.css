@@ -870,6 +870,15 @@ a.project-card {
   object-fit: cover;
 }
 
+.ea-award-badge {
+  background: transparent;
+}
+
+.ea-award-badge img {
+  border-radius: 0;
+  object-fit: contain;
+}
+
 .case-award-badge-maybank {
   background: #ffd400;
   color: var(--ink);
@@ -937,24 +946,6 @@ a.project-card {
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 0.95;
-}
-
-.case-title-row {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin: 0 0 30px;
-}
-
-.case-title-row h1 {
-  margin-bottom: 0;
-}
-
-.ea-title-logo {
-  width: clamp(48px, 6vw, 72px);
-  height: clamp(48px, 6vw, 72px);
-  flex: 0 0 auto;
-  object-fit: contain;
 }
 
 .case-title-effect .char {
@@ -1053,23 +1044,6 @@ a.project-card {
 
 .case-study-hero + .case-study-section {
   margin-top: 50px;
-}
-
-.ea-progress-section {
-  width: min(980px, calc(100vw - (var(--page-gutter) * 2)));
-  margin: 50px auto 0;
-  padding-bottom: 70px;
-}
-
-.ea-order-image {
-  width: min(298px, 100%);
-  margin: 0 auto 50px;
-}
-
-.ea-order-image img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 .case-study-section h2 {
@@ -2846,20 +2820,6 @@ a.project-card {
   .case-hero-copy h1 {
     margin-bottom: 30px;
     font-size: 50px;
-  }
-
-  .case-title-row {
-    gap: 12px;
-    margin-bottom: 30px;
-  }
-
-  .case-title-row h1 {
-    margin-bottom: 0;
-  }
-
-  .ea-title-logo {
-    width: 44px;
-    height: 44px;
   }
 
   .case-deck {
