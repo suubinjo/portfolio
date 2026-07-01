@@ -189,28 +189,6 @@ lockedCards.forEach((card) => {
   });
 });
 
-const eaCard = document.querySelector(".ea-card");
-
-if (eaCard) {
-  const cursor = document.createElement("div");
-  cursor.className = "ea-cursor";
-  cursor.innerHTML = 'Work in progress ... <span class="ea-caret">|</span>';
-  document.body.appendChild(cursor);
-
-  eaCard.addEventListener("pointerenter", () => {
-    cursor.classList.add("is-visible");
-  });
-
-  eaCard.addEventListener("pointermove", (event) => {
-    cursor.style.left = `${event.clientX + 24}px`;
-    cursor.style.top = `${event.clientY - 24}px`;
-  });
-
-  eaCard.addEventListener("pointerleave", () => {
-    cursor.classList.remove("is-visible");
-  });
-}
-
 document.querySelectorAll(".case-top-link").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
