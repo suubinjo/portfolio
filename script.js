@@ -2,7 +2,7 @@ const SITE_EMAIL = "suubinjo@gmail.com";
 const RESUME_URL = "https://drive.google.com/file/d/19NEW1CUlaJjbJ3I4x2WTdFNShMXOpIA7/view?usp=sharing";
 const LINKEDIN_URL = "https://www.linkedin.com/in/subinjo68/";
 
-const FALLBACK_UPDATED_DATE = "July, 1st";
+const FALLBACK_UPDATED_DATE = formatMonthDay(new Date());
 const GITHUB_REPO = "suubinjo/portfolio";
 
 if (window.location.protocol.startsWith("http")) {
