@@ -879,6 +879,25 @@ a.project-card {
   object-fit: contain;
 }
 
+.ea-case-page .case-award {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ea-award-client {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.ea-award-client .case-award-badge {
+  margin-left: 0;
+  flex: 0 0 auto;
+}
+
 .case-award-badge-maybank {
   background: #ffd400;
   color: var(--ink);
@@ -1671,13 +1690,13 @@ a.project-card {
   width: min(698px, calc(100vw - 48px));
 }
 
-.ea-hmw-title {
+.ea-problem-section .ea-hmw-title {
   width: min(1120px, calc(100vw - 96px));
   max-width: none;
   text-wrap: normal;
 }
 
-.ea-problem-image {
+.case-section-image.ea-problem-image {
   width: min(560px, 100%);
   margin: 25px auto;
   border: 0;
@@ -2750,6 +2769,10 @@ a.project-card {
 
   .section-index a.is-active {
     transform: translateX(6px);
+  }
+
+  .case-study-shell .site-footer {
+    margin-bottom: 104px;
   }
 
   .case-hero-content {
