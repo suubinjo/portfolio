@@ -1689,6 +1689,31 @@ a.project-card {
   font-weight: 500;
 }
 
+.ea-placeholder-section {
+  min-height: 0;
+  margin-bottom: 50px;
+}
+
+.ea-delivery-section {
+  min-height: 0;
+}
+
+.ea-video-embed {
+  width: 100%;
+  margin-top: 25px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #f7f7f7;
+}
+
+.ea-video-embed iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
 .research-image-placeholder {
   border: 0;
   background: transparent;
