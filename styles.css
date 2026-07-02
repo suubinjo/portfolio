@@ -1667,7 +1667,7 @@ a.project-card {
 }
 
 .ea-hmw-title {
-  width: min(760px, calc(100vw - 48px));
+  width: min(1160px, calc(100vw - 96px));
   max-width: none;
 }
 
