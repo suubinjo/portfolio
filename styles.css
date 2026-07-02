@@ -1666,8 +1666,13 @@ a.project-card {
   background: transparent;
 }
 
+.ea-hmw-title {
+  width: min(760px, calc(100vw - 48px));
+  max-width: none;
+}
+
 .ea-problem-image {
-  width: min(640px, 100%);
+  width: min(560px, 100%);
   margin: 34px auto 40px;
   border: 0;
   background: transparent;
