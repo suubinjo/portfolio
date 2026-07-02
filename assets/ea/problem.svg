@@ -1,0 +1,95 @@
+<svg width="760" height="520" viewBox="0 0 760 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="520" fill="white"/>
+  <g opacity="0.58" filter="url(#shadow-soft)">
+    <rect x="80" y="54" width="392" height="360" rx="3" fill="#78698C"/>
+    <rect x="80" y="54" width="392" height="42" rx="3" fill="#4E4268"/>
+    <circle cx="109" cy="75" r="14" fill="#D9A6A9"/>
+    <text x="132" y="72" fill="#F8F4FF" font-family="Arial, sans-serif" font-size="14" font-weight="700">r/seriousfifacareers</text>
+    <text x="132" y="90" fill="#D9CEE8" font-family="Arial, sans-serif" font-size="10">4 yr ago</text>
+    <text x="100" y="122" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="700">FIFA 23 Career Mode stat tracking template</text>
+    <text x="100" y="146" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16">Check it out! Link in comments.</text>
+    <rect x="111" y="188" width="124" height="55" fill="#5D5B5F" stroke="#EEE7D7" stroke-width="2"/>
+    <text x="142" y="211" fill="#FFF6E7" font-family="Georgia, serif" font-size="15" font-weight="700">Competition</text>
+    <text x="151" y="229" fill="#FFF6E7" font-family="Georgia, serif" font-size="15" font-weight="700">history</text>
+    <rect x="235" y="188" width="91" height="55" fill="#615D6B" stroke="#EEE7D7" stroke-width="2"/>
+    <text x="268" y="212" fill="#FFF6E7" font-family="Georgia, serif" font-size="15" font-weight="700">1</text>
+    <text x="254" y="230" fill="#FFF6E7" font-family="Georgia, serif" font-size="15" font-weight="700">2020</text>
+    <rect x="326" y="188" width="91" height="55" fill="#615D6B" stroke="#EEE7D7" stroke-width="2"/>
+    <text x="358" y="212" fill="#FFF6E7" font-family="Georgia, serif" font-size="15" font-weight="700">2</text>
+    <text x="344" y="230" fill="#FFF6E7" font-family="Georgia, serif" font-size="15" font-weight="700">2021</text>
+    <g font-family="Georgia, serif" font-size="15" fill="#9B7E91">
+      <rect x="111" y="243" width="124" height="30" fill="#F4CDE3" stroke="#EEE7D7" stroke-width="2"/>
+      <text x="145" y="263">Premier League</text>
+      <rect x="111" y="273" width="124" height="30" fill="#F1C4DC" stroke="#EEE7D7" stroke-width="2"/>
+      <text x="164" y="293">La Liga</text>
+      <rect x="111" y="303" width="124" height="30" fill="#F4CDE3" stroke="#EEE7D7" stroke-width="2"/>
+      <text x="154" y="323">Bundesliga</text>
+      <rect x="111" y="333" width="124" height="30" fill="#F1C4DC" stroke="#EEE7D7" stroke-width="2"/>
+      <text x="169" y="353">Serie A</text>
+    </g>
+    <g opacity="0.9">
+      <circle cx="272" cy="258" r="17" fill="#8EC0DD"/>
+      <circle cx="361" cy="258" r="17" fill="#D85A63"/>
+      <circle cx="272" cy="289" r="17" fill="#ECE481"/>
+      <circle cx="361" cy="289" r="17" fill="#637FD8"/>
+      <circle cx="272" cy="320" r="17" fill="#AA7ED8"/>
+      <circle cx="361" cy="320" r="17" fill="#84B76F"/>
+      <circle cx="272" cy="351" r="17" fill="#D8AF63"/>
+      <circle cx="361" cy="351" r="17" fill="#C56AD2"/>
+    </g>
+  </g>
+  <g filter="url(#shadow-deep)">
+    <rect x="244" y="118" width="438" height="344" rx="3" fill="#180534"/>
+    <rect x="244" y="118" width="438" height="44" rx="3" fill="#1A0638"/>
+    <circle cx="274" cy="140" r="14" fill="#B5535A"/>
+    <text x="296" y="136" fill="#F3EFFF" font-family="Arial, sans-serif" font-size="14" font-weight="700">r/seriousfifacareers</text>
+    <text x="296" y="154" fill="#BFAEDB" font-family="Arial, sans-serif" font-size="10">5 mo ago</text>
+    <circle cx="664" cy="139" r="2" fill="#D6CBE8"/>
+    <circle cx="672" cy="139" r="2" fill="#D6CBE8"/>
+    <circle cx="680" cy="139" r="2" fill="#D6CBE8"/>
+    <text x="267" y="192" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="700">FC26 Realistic Career Mode Spreadsheet</text>
+    <rect x="267" y="206" width="54" height="18" rx="4" fill="#AEBA65"/>
+    <text x="277" y="219" fill="#2C2340" font-family="Arial, sans-serif" font-size="11" font-weight="700">Realism</text>
+    <g font-family="Arial, sans-serif" font-size="11" fill="#D8CCE8">
+      <text x="267" y="250">Hi All,</text>
+      <text x="267" y="274">I built a career mode spreadsheet to track transfer windows, budgets, scouting,</text>
+      <text x="267" y="292">training, and club history across multiple seasons.</text>
+      <text x="267" y="326" fill="#BFAEFF">https://drive.google.com/file/d/example-career-mode-sheet</text>
+      <text x="267" y="360">Features include:</text>
+      <text x="267" y="382">A dashboard, transfer tracker, youth academy, training facilities,</text>
+      <text x="267" y="400">club reputation, competition history, and editable rule sections.</text>
+    </g>
+    <g transform="translate(267 430)">
+      <rect width="392" height="18" fill="#F4D1B2"/>
+      <text x="210" y="13" fill="#2A1734" font-family="Arial, sans-serif" font-size="12" font-weight="700">TSV 1860 Munchen</text>
+      <rect y="18" width="210" height="110" fill="#FCFBF6"/>
+      <rect x="210" y="18" width="182" height="110" fill="#F9F4EC"/>
+      <g stroke="#D8D2C9" stroke-width="1">
+        <path d="M0 40H392"/>
+        <path d="M0 62H392"/>
+        <path d="M0 84H392"/>
+        <path d="M0 106H392"/>
+        <path d="M54 18V128"/>
+        <path d="M108 18V128"/>
+        <path d="M162 18V128"/>
+        <path d="M210 18V128"/>
+        <path d="M256 18V128"/>
+        <path d="M302 18V128"/>
+        <path d="M348 18V128"/>
+      </g>
+      <rect x="298" y="31" width="78" height="31" fill="#171717"/>
+      <text x="311" y="52" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="800">SEASON 2</text>
+      <rect x="230" y="86" width="44" height="8" fill="#88C778"/>
+      <rect x="230" y="101" width="62" height="8" fill="#E0A15E"/>
+      <rect x="230" y="116" width="28" height="8" fill="#D96A6A"/>
+    </g>
+  </g>
+  <defs>
+    <filter id="shadow-soft" x="44" y="26" width="464" height="424" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#000000" flood-opacity="0.13"/>
+    </filter>
+    <filter id="shadow-deep" x="198" y="86" width="530" height="430" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#000000" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+</svg>
