@@ -1673,7 +1673,7 @@ a.project-card {
 
 .ea-problem-image {
   width: min(560px, 100%);
-  margin: 34px auto 40px;
+  margin: 25px auto;
   border: 0;
   background: transparent;
   overflow: visible;
