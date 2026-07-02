@@ -1666,16 +1666,6 @@ a.project-card {
   background: transparent;
 }
 
-.ea-overview-section,
-.ea-problem-section {
-  width: min(820px, calc(100vw - 48px));
-}
-
-.ea-problem-section h2 {
-  font-size: clamp(28px, 3.35vw, 42px);
-  line-height: 1.35;
-}
-
 .ea-problem-image {
   width: min(640px, 100%);
   margin: 34px auto 40px;
