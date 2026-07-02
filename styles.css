@@ -1672,12 +1672,13 @@ a.project-card {
 }
 
 .ea-hmw-title {
-  width: 100%;
-  max-width: 100%;
+  width: min(1120px, calc(100vw - 96px));
+  max-width: none;
+  text-wrap: normal;
 }
 
 .ea-problem-image {
-  width: 100%;
+  width: min(560px, 100%);
   margin: 25px auto;
   border: 0;
   background: transparent;
