@@ -2,7 +2,7 @@ const SITE_EMAIL = "suubinjo@gmail.com";
 const RESUME_URL = "https://drive.google.com/file/d/19NEW1CUlaJjbJ3I4x2WTdFNShMXOpIA7/view?usp=sharing";
 const LINKEDIN_URL = "https://www.linkedin.com/in/subinjo68/";
 
-const FALLBACK_UPDATED_DATE = "April, 28th";
+const FALLBACK_UPDATED_DATE = formatMonthDay(new Date());
 const GITHUB_REPO = "suubinjo/portfolio";
 
 if (window.location.protocol.startsWith("http")) {
@@ -188,28 +188,6 @@ lockedCards.forEach((card) => {
     );
   });
 });
-
-const eaCard = document.querySelector(".ea-card");
-
-if (eaCard) {
-  const cursor = document.createElement("div");
-  cursor.className = "ea-cursor";
-  cursor.innerHTML = 'Work in progress ... <span class="ea-caret">|</span>';
-  document.body.appendChild(cursor);
-
-  eaCard.addEventListener("pointerenter", () => {
-    cursor.classList.add("is-visible");
-  });
-
-  eaCard.addEventListener("pointermove", (event) => {
-    cursor.style.left = `${event.clientX + 24}px`;
-    cursor.style.top = `${event.clientY - 24}px`;
-  });
-
-  eaCard.addEventListener("pointerleave", () => {
-    cursor.classList.remove("is-visible");
-  });
-}
 
 document.querySelectorAll(".case-top-link").forEach((link) => {
   link.addEventListener("click", (event) => {
