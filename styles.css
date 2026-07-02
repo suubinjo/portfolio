@@ -31,6 +31,7 @@ body {
   font-size: 15px;
   font-weight: 300;
   line-height: 1.4;
+  overflow-x: hidden;
 }
 
 a {
@@ -1691,7 +1692,7 @@ a.project-card {
 }
 
 .ea-problem-section .ea-hmw-title {
-  width: min(1120px, calc(100vw - 96px));
+  width: min(1040px, calc(100vw - 96px));
   max-width: none;
   text-wrap: normal;
 }
