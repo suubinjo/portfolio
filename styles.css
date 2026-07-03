@@ -1304,8 +1304,11 @@ a.project-card {
 }
 
 .milestone-research-quote {
-  border: 0;
+  padding: 18px;
+  border: 1px dashed #e8e8e8;
+  border-radius: 3px;
   background: transparent;
+  overflow: hidden;
 }
 
 .milestone-opportunity-section {
@@ -1637,10 +1640,11 @@ a.project-card {
 
 .validation-quotes {
   margin-top: 25px;
-  border: 0;
-  border-radius: 0;
+  padding: 18px;
+  border: 1px dashed #e8e8e8;
+  border-radius: 3px;
   background: transparent;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .jump-solution-button {
