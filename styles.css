@@ -1838,7 +1838,7 @@ a.project-card {
   text-align: center;
 }
 
-.ea-reflection-callout + p {
+.ea-reflection-section .ea-reflection-callout + p {
   margin-top: 0;
 }
 
