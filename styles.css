@@ -1739,6 +1739,8 @@ a.project-card {
 
 .ea-validation-media {
   --ea-validation-gap: 20px;
+  --ea-poster-width: calc((100% - var(--ea-validation-gap)) * 0.288);
+  --ea-poster-height: calc(var(--ea-poster-width) * 1.4998);
   width: 100%;
   min-height: 430px;
   margin: 25px 0;
@@ -1785,9 +1787,9 @@ a.project-card {
 }
 
 .ea-validation-media .ea-video-embed {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   min-height: 0;
-  height: auto;
+  height: var(--ea-poster-height);
   margin-top: 0;
   aspect-ratio: auto;
 }
