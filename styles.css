@@ -1306,10 +1306,15 @@ a.project-card {
 .milestone-research-quote {
   box-sizing: border-box;
   padding: 18px;
-  border: 1px dashed #e8e8e8;
+  border: 1px dashed #e8e8e8 !important;
   border-radius: 3px;
-  background: transparent;
+  background: transparent !important;
   overflow: hidden;
+}
+
+.case-section-image.milestone-research-quote {
+  border: 1px dashed #e8e8e8 !important;
+  background: transparent !important;
 }
 
 .milestone-opportunity-section {
@@ -1643,10 +1648,15 @@ a.project-card {
   box-sizing: border-box;
   margin-top: 25px;
   padding: 18px;
-  border: 1px dashed #e8e8e8;
+  border: 1px dashed #e8e8e8 !important;
   border-radius: 3px;
-  background: transparent;
+  background: transparent !important;
   overflow: hidden;
+}
+
+.case-section-image.validation-quotes {
+  border: 1px dashed #e8e8e8 !important;
+  background: transparent !important;
 }
 
 .jump-solution-button {
@@ -3236,6 +3246,7 @@ a.project-card {
   height: clamp(420px, 46vh, 500px);
   aspect-ratio: 1 / 1.14;
   padding: 28px 30px 34px;
+  overflow: hidden;
 
   border: 1px solid var(--line);
   border-radius: 3px;
@@ -3275,6 +3286,8 @@ a.project-card {
 }
 
 .other-work-image-wrap img {
+  max-width: 100%;
+  max-height: 84%;
   object-fit: contain;
   transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -3284,8 +3297,9 @@ a.project-card {
 }
 
 .other-work-fc img {
-  max-width: 68%;
-  max-height: 84%;
+  width: auto;
+  max-width: 56%;
+  max-height: 74%;
 }
 
 .other-work-milestone img {
