@@ -268,11 +268,15 @@ a.project-card {
   pointer-events: auto;
 }
 
-.project-category {
+.project-category,
+.project-tags {
   position: absolute;
   top: 20px;
   left: 20px;
   z-index: 2;
+}
+
+.project-category {
   color: var(--soft);
   font-family: var(--mono);
   font-size: 11px;
@@ -280,6 +284,39 @@ a.project-card {
   letter-spacing: 0.5px;
   line-height: 1;
   text-transform: uppercase;
+}
+
+.project-tags {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.project-tags span {
+  display: inline-flex;
+  min-height: 28px;
+  padding: 0 16px;
+  border: 1px solid rgba(172, 172, 172, 0.28);
+  border-radius: 999px;
+  background: rgba(247, 247, 247, 0.68);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06) inset;
+  color: var(--soft);
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.project-tags span::before {
+  content: "•";
+  color: currentColor;
+  font-size: 13px;
+  line-height: 1;
 }
 
 /* WIP card category label color override */
@@ -2517,6 +2554,18 @@ a.project-card {
     left: 18px;
   }
 
+  .project-tags {
+    top: 18px;
+    left: 18px;
+    gap: 7px;
+  }
+
+  .project-tags span {
+    min-height: 25px;
+    padding: 0 12px;
+    font-size: 10px;
+  }
+
   .project-image-wrap {
     min-height: 0;
     padding-top: 26px;
@@ -3686,4 +3735,29 @@ a.project-card {
     height: 38px;
     font-size: 26px;
   }
+}
+
+.tooltip-panel,
+.hcde-tooltip {
+  border-radius: 4px !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22) !important;
+  color: #f5f5f5 !important;
+}
+
+.tooltip-panel strong,
+.hcde-tooltip strong {
+  color: #ffffff !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.tooltip-panel span,
+.hcde-tooltip span {
+  color: #ececec !important;
+}
+
+.prototype-lightbox iframe {
+  width: min(92vw, 430px) !important;
+  height: min(86vh, 900px) !important;
 }
