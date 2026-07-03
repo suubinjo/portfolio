@@ -1687,7 +1687,8 @@ a.project-card {
 }
 
 .ea-overview-section,
-.ea-problem-section {
+.ea-problem-section,
+.ea-validation-section {
   width: min(698px, calc(100vw - 48px));
 }
 
@@ -1714,8 +1715,44 @@ a.project-card {
   margin-bottom: 50px;
 }
 
-.ea-delivery-section {
+.ea-validation-section {
   min-height: 0;
+}
+
+.ea-validation-media {
+  width: 100%;
+  margin: 25px 0;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: minmax(150px, 0.72fr) minmax(0, 1.78fr);
+  gap: 20px;
+  border: 1px dashed #e8e8e8;
+  border-radius: 3px;
+}
+
+.ea-validation-media figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.ea-validation-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 3px;
+}
+
+.ea-validation-media figcaption {
+  margin-top: 12px;
+  color: #ababab;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.ea-validation-media .ea-video-embed {
+  margin-top: 0;
 }
 
 .ea-video-embed {
@@ -2920,8 +2957,17 @@ a.project-card {
   .milestone-overview-section,
   .milestone-problem-section,
   .milestone-research-section,
-  .milestone-opportunity-section {
+  .milestone-opportunity-section,
+  .ea-overview-section,
+  .ea-problem-section,
+  .ea-validation-section {
     width: min(100% - 28px, 440px);
+  }
+
+  .ea-validation-media {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 14px;
   }
 
   .milestone-direction-head,
