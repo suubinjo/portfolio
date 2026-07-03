@@ -1720,12 +1720,15 @@ a.project-card {
 }
 
 .ea-validation-media {
+  --ea-validation-gap: 20px;
+  --ea-poster-width: calc((100% - var(--ea-validation-gap)) * 0.288);
+  --ea-media-height: calc(var(--ea-poster-width) * 1.4998);
   width: 100%;
   margin: 25px 0;
   padding: 18px;
   display: grid;
   grid-template-columns: minmax(150px, 0.72fr) minmax(0, 1.78fr);
-  gap: 20px;
+  gap: var(--ea-validation-gap);
   border: 1px dashed #e8e8e8;
   border-radius: 3px;
 }
@@ -1733,13 +1736,23 @@ a.project-card {
 .ea-validation-media figure {
   min-width: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .ea-validation-media img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
   border-radius: 3px;
+}
+
+.ea-poster-zoom {
+  height: var(--ea-media-height);
+  overflow: hidden;
+  border-radius: 3px;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 6v20M6 16h20' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, zoom-in;
 }
 
 .ea-validation-media figcaption {
@@ -1752,7 +1765,9 @@ a.project-card {
 }
 
 .ea-validation-media .ea-video-embed {
+  height: var(--ea-media-height);
   margin-top: 0;
+  aspect-ratio: auto;
 }
 
 .ea-video-embed {
@@ -2968,6 +2983,20 @@ a.project-card {
     grid-template-columns: 1fr;
     gap: 18px;
     padding: 14px;
+  }
+
+  .ea-poster-zoom {
+    height: auto;
+  }
+
+  .ea-validation-media img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .ea-validation-media .ea-video-embed {
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 
   .milestone-direction-head,
