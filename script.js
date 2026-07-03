@@ -250,6 +250,35 @@ document.querySelectorAll(".image-zoom-trigger").forEach((button) => {
   });
 });
 
+function syncEaValidationVideoHeight() {
+  document.querySelectorAll(".ea-validation-media").forEach((media) => {
+    const poster = media.querySelector(".ea-poster-zoom");
+    const video = media.querySelector(".ea-video-embed");
+    if (!poster || !video) return;
+
+    const isStacked = window.matchMedia("(max-width: 680px)").matches;
+    if (isStacked) {
+      video.style.height = "";
+      return;
+    }
+
+    const posterHeight = poster.getBoundingClientRect().height;
+    if (posterHeight > 0) {
+      video.style.height = `${posterHeight}px`;
+    }
+  });
+}
+
+window.addEventListener("load", syncEaValidationVideoHeight);
+window.addEventListener("resize", syncEaValidationVideoHeight);
+
+if ("ResizeObserver" in window) {
+  document.querySelectorAll(".ea-poster-zoom").forEach((poster) => {
+    const observer = new ResizeObserver(syncEaValidationVideoHeight);
+    observer.observe(poster);
+  });
+}
+
 document.querySelectorAll(".section-index").forEach((nav) => {
   const rawSections = nav.dataset.sections || "";
   const sections = rawSections
