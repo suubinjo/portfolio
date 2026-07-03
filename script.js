@@ -252,16 +252,19 @@ document.querySelectorAll(".image-zoom-trigger").forEach((button) => {
 
 document.querySelectorAll(".milestone-solution-prototype").forEach((button) => {
   button.addEventListener("click", () => {
+    const prototypeSrc = button.dataset.prototypeSrc;
+    if (!prototypeSrc) return;
+
     const lightbox = document.createElement("div");
-    lightbox.className = "prototype-lightbox";
+    lightbox.className = `prototype-lightbox ${button.dataset.prototypeSize === "wide" ? "prototype-lightbox-wide" : "prototype-lightbox-mobile"}`;
     lightbox.setAttribute("role", "dialog");
     lightbox.setAttribute("aria-modal", "true");
-    lightbox.setAttribute("aria-label", "Milestone Seed Figma prototype");
+    lightbox.setAttribute("aria-label", button.dataset.prototypeLabel || "Figma prototype");
 
     lightbox.innerHTML = `
       <button class="prototype-lightbox-close" type="button" aria-label="Close prototype">×</button>
       <iframe
-        src="https://embed.figma.com/proto/fo6tJFaEXZoQI8lHkvkDmD/NUS?page-id=1%3A3&node-id=567-740&p=f&viewport=1323%2C-2662%2C0.23&scaling=scale-down&content-scaling=fixed&starting-point-node-id=567%3A740&embed-host=share"
+        src="${prototypeSrc}"
         allowfullscreen
       ></iframe>
     `;
@@ -287,6 +290,26 @@ document.querySelectorAll(".milestone-solution-prototype").forEach((button) => {
     lightbox.querySelector(".prototype-lightbox-close")?.focus();
   });
 });
+
+const navInvertTargets = Array.from(document.querySelectorAll(".nav-invert-target"));
+const sectionIndexes = Array.from(document.querySelectorAll(".section-index"));
+
+if (navInvertTargets.length && sectionIndexes.length) {
+  const updateNavTone = () => {
+    const triggerX = window.innerWidth < 760 ? 24 : 80;
+    const triggerY = window.innerHeight * 0.32;
+    const shouldInvert = navInvertTargets.some((target) => {
+      const rect = target.getBoundingClientRect();
+      return rect.left <= triggerX && rect.right >= triggerX && rect.top <= triggerY && rect.bottom >= triggerY;
+    });
+
+    sectionIndexes.forEach((nav) => nav.classList.toggle("is-light", shouldInvert));
+  };
+
+  updateNavTone();
+  window.addEventListener("scroll", updateNavTone, { passive: true });
+  window.addEventListener("resize", updateNavTone);
+}
 
 const milestoneGalleryItems = Array.from(document.querySelectorAll(".milestone-gallery-item"));
 
