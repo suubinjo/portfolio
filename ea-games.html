@@ -13,7 +13,7 @@ permalink: /ea-games/
       href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=reflection-dashed-fix-20260702" />
+    <link rel="stylesheet" href="/styles.css?v=fc-tooltip-role-fix-20260703" />
   </head>
   <body class="ea-case-page">
     <main class="case-study-shell">
@@ -26,7 +26,7 @@ permalink: /ea-games/
         <aside
           class="section-index"
           aria-label="Case study index"
-          data-sections="overview:OVERVIEW,problem:THE PROBLEM,research:RESEARCH,ideation:IDEATION,pivot:PIVOT,solution:SOLUTION,validation:VALIDATION,reflection:REFLECTION"
+          data-sections="overview:OVERVIEW,problem:THE PROBLEM,research:RESEARCH,pivot:PIVOT,solution:SOLUTION,validation:VALIDATION,reflection:REFLECTION"
         ></aside>
 
         <div class="case-hero-content">
@@ -53,8 +53,8 @@ permalink: /ea-games/
                 <dd>Jan 2026 - June 2026</dd>
               </div>
               <div>
-                <dt>Team</dt>
-                <dd>Annie Chang<br />Samuel Lopez<br />Subin Jo<br />Yuri Yang<br />Rigo Ordaz (Mentor)</dd>
+                <dt>Role</dt>
+                <dd>Mentor (Sponsor)<br />PM<br />UX Researcher<br />UX Designer (Me)</dd>
               </div>
               <div>
                 <dt>Deliverables</dt>
@@ -78,7 +78,9 @@ permalink: /ea-games/
           for sports video games.
         </p>
         <p>
-          Rather than designing for a specific title, we started with an open-ended challenge: understand how players engage with digital experiences before, during, and after gameplay. Through interviews, concept exploration, and iterative testing, we identified an opportunity within EA SPORTS FC 26 Career Mode and designed an AI-powered companion app that extends the immersive experience beyond the game.
+          Rather than designing for a specific title, we started with an open-ended challenge: understand how players engage with digital experiences before, during, and after gameplay. Through interviews, concept exploration, and iterative testing, we identified an opportunity within EA SPORTS
+          <span class="term-tooltip" tabindex="0" aria-describedby="career-mode-tooltip">FC 26 Career Mode<span class="tooltip-panel" id="career-mode-tooltip" role="tooltip"><strong>What is Career Mode?</strong><span>Career Mode is one of FC 26’s game modes, where players take on the role of a football manager building their own club.</span></span></span>
+          and designed an AI-powered companion app that extends the immersive experience beyond the game.
         </p>
       </section>
 
@@ -102,10 +104,6 @@ permalink: /ea-games/
 
       <section id="research" class="case-study-section ea-placeholder-section">
         <p class="project-type">Research</p>
-      </section>
-
-      <section id="ideation" class="case-study-section ea-placeholder-section">
-        <p class="project-type">Ideation</p>
       </section>
 
       <section id="pivot" class="case-study-section ea-placeholder-section">
@@ -190,6 +188,6 @@ permalink: /ea-games/
 
       <site-footer></site-footer>
     </main>
-    <script src="/script.js?v=reflection-dashed-fix-20260702"></script>
+    <script src="/script.js?v=fc-tooltip-role-fix-20260703"></script>
   </body>
 </html>

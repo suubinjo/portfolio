@@ -2869,6 +2869,80 @@ a.project-card {
   transform: translate(-50%, 10px);
 }
 
+.term-tooltip,
+.hcde-tooltip-wrap {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  border-bottom: 0;
+  outline: none;
+  cursor: default;
+}
+
+.term-tooltip,
+.hcde-link {
+  color: #777;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.tooltip-panel,
+.hcde-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  z-index: 40;
+  width: max-content;
+  max-width: 320px;
+  padding: 12px 14px 13px;
+  border-radius: 4px;
+  background: #070707;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  color: #f5f5f5;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-align: left;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.tooltip-panel strong,
+.hcde-tooltip strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tooltip-panel span,
+.hcde-tooltip span {
+  display: block;
+  color: #e4e4e4;
+  font-weight: 300;
+}
+
+.term-tooltip:hover .tooltip-panel,
+.term-tooltip:focus-visible .tooltip-panel,
+.hcde-tooltip-wrap:hover .hcde-tooltip,
+.hcde-tooltip-wrap:focus-within .hcde-tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.term-tooltip:not(:hover):not(:focus-visible) .tooltip-panel,
+.hcde-tooltip-wrap:not(:hover):not(:focus-within) .hcde-tooltip {
+  opacity: 0;
+}
+
 .about-signature {
   display: block;
   width: clamp(95px, 8vw, 130px);
