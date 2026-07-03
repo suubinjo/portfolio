@@ -1304,6 +1304,7 @@ a.project-card {
 }
 
 .milestone-research-quote {
+  box-sizing: border-box;
   padding: 18px;
   border: 1px dashed #e8e8e8;
   border-radius: 3px;
@@ -1409,9 +1410,9 @@ a.project-card {
 }
 
 .milestone-wide-image {
-  width: min(1308px, max(0px, calc(100vw - 612px)));
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: min(877px, calc(100vw - 48px));
+  margin: 25px auto 0;
+  transform: none;
 }
 
 .milestone-wide-image {
@@ -1639,6 +1640,7 @@ a.project-card {
 }
 
 .validation-quotes {
+  box-sizing: border-box;
   margin-top: 25px;
   padding: 18px;
   border: 1px dashed #e8e8e8;
@@ -3281,14 +3283,9 @@ a.project-card {
   transform: scale(1.1);
 }
 
-.other-work-ea img {
-  max-width: 120px;
-  max-height: 50%;
-}
-
-/* Make EA card behave like WIP card (cursor trigger) */
-.other-work-card.other-work-ea {
-  cursor: none;
+.other-work-fc img {
+  max-width: 68%;
+  max-height: 84%;
 }
 
 .other-work-milestone img {
