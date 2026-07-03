@@ -279,6 +279,7 @@ document.querySelectorAll(".milestone-solution-prototype").forEach((button) => {
     lightbox.addEventListener("click", (event) => {
       if (event.target === lightbox) closeLightbox();
     });
+    lightbox.querySelector("iframe")?.addEventListener("click", (event) => event.stopPropagation());
     lightbox.querySelector(".prototype-lightbox-close")?.addEventListener("click", closeLightbox);
     document.addEventListener("keydown", handleKeydown);
     document.body.style.overflow = "hidden";
@@ -371,12 +372,17 @@ function openMilestoneGallery(startIndex, images) {
     if (event.key === "ArrowLeft") showPrevious();
   }
 
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) closeLightbox();
-  });
+  lightbox.addEventListener("click", closeLightbox);
   lightbox.querySelector(".gallery-lightbox-close")?.addEventListener("click", closeLightbox);
-  lightbox.querySelector(".gallery-lightbox-next")?.addEventListener("click", showNext);
-  lightbox.querySelector(".gallery-lightbox-prev")?.addEventListener("click", showPrevious);
+  lightbox.querySelector(".gallery-lightbox-dots")?.addEventListener("click", (event) => event.stopPropagation());
+  lightbox.querySelector(".gallery-lightbox-next")?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    showNext();
+  });
+  lightbox.querySelector(".gallery-lightbox-prev")?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    showPrevious();
+  });
   document.addEventListener("keydown", handleKeydown);
   document.body.style.overflow = "hidden";
   document.body.appendChild(lightbox);

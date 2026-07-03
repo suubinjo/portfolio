@@ -3518,7 +3518,7 @@ a.project-card {
   background: transparent;
   display: block;
   overflow: hidden;
-  cursor: pointer;
+  cursor: zoom-in;
 }
 
 .milestone-solution-prototype img {
@@ -3537,8 +3537,8 @@ a.project-card {
   background: rgba(0, 0, 0, 0.58);
   color: #ffffff;
   font-family: var(--mono);
-  font-size: clamp(16px, 2vw, 24px);
-  font-weight: 400;
+  font-size: 13px;
+  font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   opacity: 0;
@@ -3546,8 +3546,11 @@ a.project-card {
 }
 
 .milestone-prototype-icon {
-  font-size: 28px;
+  font-family: var(--sans);
+  font-size: 22px;
+  font-weight: 700;
   line-height: 1;
+  text-shadow: 0 0 0 currentColor, 0.6px 0 currentColor;
 }
 
 .milestone-solution-prototype:hover img,
@@ -3571,7 +3574,7 @@ a.project-card {
   box-sizing: border-box;
   width: 100%;
   margin-top: 44px;
-  padding: 42px;
+  padding: 28px;
   border: 2px dashed #e8e8e8;
   background: transparent;
 }
@@ -3582,7 +3585,7 @@ a.project-card {
   border: 0;
   background: transparent;
   display: block;
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 6v20M6 16h20' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, zoom-in;
+  cursor: zoom-in;
 }
 
 .milestone-gallery-item img {
@@ -3597,7 +3600,7 @@ a.project-card {
 }
 
 .milestone-gallery-blueprint {
-  margin-bottom: 44px;
+  margin-bottom: 28px;
 }
 
 .milestone-flyer-row {
@@ -3609,11 +3612,11 @@ a.project-card {
 
 .milestone-gallery-item span {
   display: block;
-  margin-top: 18px;
+  margin-top: 12px;
   color: #acacac;
   font-family: var(--mono);
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: 500;
   letter-spacing: 0.02em;
   text-align: center;
   text-transform: uppercase;
@@ -3629,6 +3632,7 @@ a.project-card {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: zoom-out;
 }
 
 .prototype-lightbox iframe {
@@ -3645,6 +3649,7 @@ a.project-card {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: default;
 }
 
 .gallery-lightbox-stage img {
