@@ -287,6 +287,10 @@ a.project-card {
   color: var(--soft);
 }
 
+.ea-card .project-image {
+  max-height: 86%;
+}
+
 .project-image-wrap {
   flex: 1;
   min-height: 0;
@@ -1779,6 +1783,69 @@ a.project-card {
   aspect-ratio: auto;
 }
 
+.ea-reflection-section {
+  width: min(860px, calc(100vw - 48px));
+  min-height: 0;
+}
+
+.ea-reflection-post {
+  width: 100%;
+  margin: 25px 0 36px;
+}
+
+.ea-reflection-post img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ea-reflection-post figcaption {
+  margin-top: 14px;
+  color: #ababab;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.ea-reflection-callout {
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 25px;
+  padding: 22px 24px;
+  background: #f7f7f7;
+  color: #5f5f5f;
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.ea-reflection-next {
+  min-width: 222px;
+  text-align: center;
+}
+
+.ea-reflection-section a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.ea-reflection-section a:hover,
+.ea-reflection-section a:focus-visible {
+  color: #255af6;
+  outline: none;
+}
+
+.ea-reflection-divider {
+  width: 100%;
+  height: 2px;
+  margin: 38px 0 28px;
+  background: #eeeeee;
+}
+
 .ea-video-embed {
   width: 100%;
   margin-top: 25px;
@@ -2989,7 +3056,8 @@ a.project-card {
   .milestone-opportunity-section,
   .ea-overview-section,
   .ea-problem-section,
-  .ea-validation-section {
+  .ea-validation-section,
+  .ea-reflection-section {
     width: min(100% - 28px, 440px);
   }
 
