@@ -250,6 +250,140 @@ document.querySelectorAll(".image-zoom-trigger").forEach((button) => {
   });
 });
 
+document.querySelectorAll(".milestone-solution-prototype").forEach((button) => {
+  button.addEventListener("click", () => {
+    const lightbox = document.createElement("div");
+    lightbox.className = "prototype-lightbox";
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-label", "Milestone Seed Figma prototype");
+
+    lightbox.innerHTML = `
+      <button class="prototype-lightbox-close" type="button" aria-label="Close prototype">×</button>
+      <iframe
+        src="https://embed.figma.com/proto/fo6tJFaEXZoQI8lHkvkDmD/NUS?page-id=1%3A3&node-id=567-740&p=f&viewport=1323%2C-2662%2C0.23&scaling=scale-down&content-scaling=fixed&starting-point-node-id=567%3A740&embed-host=share"
+        allowfullscreen
+      ></iframe>
+    `;
+
+    const closeLightbox = () => {
+      lightbox.remove();
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", handleKeydown);
+    };
+
+    function handleKeydown(event) {
+      if (event.key === "Escape") closeLightbox();
+    }
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    lightbox.querySelector(".prototype-lightbox-close")?.addEventListener("click", closeLightbox);
+    document.addEventListener("keydown", handleKeydown);
+    document.body.style.overflow = "hidden";
+    document.body.appendChild(lightbox);
+    lightbox.querySelector(".prototype-lightbox-close")?.focus();
+  });
+});
+
+const milestoneGalleryItems = Array.from(document.querySelectorAll(".milestone-gallery-item"));
+
+if (milestoneGalleryItems.length) {
+  const galleryImages = milestoneGalleryItems.map((item) => {
+    const image = item.querySelector("img");
+    const caption = item.querySelector("span")?.textContent || image?.alt || "";
+    return {
+      src: image?.currentSrc || image?.src || "",
+      alt: image?.alt || caption,
+      caption,
+    };
+  });
+
+  milestoneGalleryItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      openMilestoneGallery(Number(item.dataset.galleryIndex || 0), galleryImages);
+    });
+  });
+}
+
+function openMilestoneGallery(startIndex, images) {
+  let currentIndex = startIndex;
+  const lightbox = document.createElement("div");
+  lightbox.className = "gallery-lightbox";
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Milestone Seed delivery gallery");
+
+  lightbox.innerHTML = `
+    <button class="gallery-lightbox-close" type="button" aria-label="Close gallery">×</button>
+    <button class="gallery-lightbox-nav gallery-lightbox-prev" type="button" aria-label="Previous image">‹</button>
+    <div class="gallery-lightbox-stage">
+      <img alt="" />
+    </div>
+    <button class="gallery-lightbox-nav gallery-lightbox-next" type="button" aria-label="Next image">›</button>
+    <div class="gallery-lightbox-dots" aria-label="Gallery pagination"></div>
+  `;
+
+  const image = lightbox.querySelector(".gallery-lightbox-stage img");
+  const dots = lightbox.querySelector(".gallery-lightbox-dots");
+
+  images.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", `View image ${index + 1}`);
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      updateGallery();
+    });
+    dots?.appendChild(dot);
+  });
+
+  const updateGallery = () => {
+    const current = images[currentIndex];
+    if (!current || !image) return;
+    image.src = current.src;
+    image.alt = current.alt;
+    dots?.querySelectorAll("button").forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === currentIndex);
+    });
+  };
+
+  const showNext = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateGallery();
+  };
+
+  const showPrevious = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateGallery();
+  };
+
+  const closeLightbox = () => {
+    lightbox.remove();
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", handleKeydown);
+  };
+
+  function handleKeydown(event) {
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowRight") showNext();
+    if (event.key === "ArrowLeft") showPrevious();
+  }
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  lightbox.querySelector(".gallery-lightbox-close")?.addEventListener("click", closeLightbox);
+  lightbox.querySelector(".gallery-lightbox-next")?.addEventListener("click", showNext);
+  lightbox.querySelector(".gallery-lightbox-prev")?.addEventListener("click", showPrevious);
+  document.addEventListener("keydown", handleKeydown);
+  document.body.style.overflow = "hidden";
+  document.body.appendChild(lightbox);
+  updateGallery();
+  lightbox.querySelector(".gallery-lightbox-close")?.focus();
+}
+
 function syncEaValidationVideoHeight() {
   document.querySelectorAll(".ea-validation-media").forEach((media) => {
     const poster = media.querySelector(".ea-poster-zoom");
