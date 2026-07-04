@@ -2756,6 +2756,7 @@ a.project-card {
 .history-heading {
   display: flex;
   align-items: baseline;
+  justify-content: flex-start;
   gap: 30px;
   margin-bottom: 25px;
 }
@@ -3039,18 +3040,8 @@ a.project-card {
   font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 0.9;
-  color: #8c8c8c;
+  color: var(--ink);
   animation: none;
-}
-
-.about-title-effect,
-.history-heading .history-title {
-  background: linear-gradient(90deg, #777777 0%, #a6a6a6 42%, #777777 84%);
-  background-size: 220% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: title-gradient-drift 5.2s ease-in-out infinite;
 }
 
 .about-title .char {
@@ -3067,17 +3058,6 @@ a.project-card {
 @keyframes about-char-fade {
   to {
     opacity: 1;
-  }
-}
-
-@keyframes title-gradient-drift {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
   }
 }
 
@@ -3864,23 +3844,23 @@ a.project-card {
   top: 0;
   z-index: 260;
   display: inline-flex;
-  min-height: 38px;
-  padding: 0 18px;
-  border: 1px solid rgba(255, 255, 255, 0.68);
+  min-height: 42px;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.28) 46%, rgba(255, 255, 255, 0.5)),
-    rgba(245, 245, 245, 0.42);
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.32), transparent 28%),
+    linear-gradient(135deg, rgba(9, 30, 42, 0.72), rgba(16, 46, 70, 0.46) 48%, rgba(23, 94, 98, 0.5)),
+    rgba(8, 18, 28, 0.42);
   box-shadow:
-    0 18px 38px rgba(0, 0, 0, 0.26),
-    0 2px 4px rgba(255, 255, 255, 0.26),
-    inset 0 1px 1px rgba(255, 255, 255, 0.96),
-    inset 0 -16px 28px rgba(0, 0, 0, 0.08),
-    inset 12px 0 22px rgba(255, 255, 255, 0.24),
-    inset -12px 0 22px rgba(255, 255, 255, 0.12);
-  -webkit-backdrop-filter: blur(18px) saturate(1.75) contrast(1.08);
-  backdrop-filter: blur(18px) saturate(1.75) contrast(1.08);
-  color: #111111;
+    0 18px 42px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.12),
+    inset 18px 18px 46px rgba(255, 255, 255, 0.08),
+    inset -18px -18px 42px rgba(0, 0, 0, 0.18);
+  -webkit-backdrop-filter: blur(20px) saturate(1.55) contrast(1.08);
+  backdrop-filter: blur(20px) saturate(1.55) contrast(1.08);
+  color: #ffffff;
   align-items: center;
   gap: 9px;
   font-family: var(--mono);
@@ -3894,17 +3874,6 @@ a.project-card {
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.96);
   transition: opacity 140ms ease, transform 140ms ease;
-}
-
-.prototype-cursor-pill::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  border-radius: inherit;
-  border-top: 1px solid rgba(255, 255, 255, 0.9);
-  border-left: 1px solid rgba(255, 255, 255, 0.36);
-  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.16);
-  pointer-events: none;
 }
 
 .prototype-cursor-pill::before {
