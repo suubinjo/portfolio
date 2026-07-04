@@ -2774,6 +2774,16 @@ a.project-card {
   color: var(--ink);
 }
 
+.history-heading .history-title .char {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-style: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  color: inherit !important;
+}
+
 .history-heading span {
   margin-bottom: 0;
   color: var(--body);
@@ -2846,10 +2856,6 @@ a.project-card {
   .history-heading {
     gap: 13px;
     margin-bottom: 16px;
-  }
-
-  .history-heading .history-title {
-    font-size: clamp(31px, 9vw, 42px);
   }
 
   .history-heading span {
@@ -3779,7 +3785,7 @@ a.project-card {
   background: transparent;
   display: block;
   overflow: hidden;
-  cursor: url("/assets/cursor.svg") 18 18, pointer;
+  cursor: none;
 }
 
 .ea-solution-section {
@@ -3841,6 +3847,23 @@ a.project-card {
 .milestone-gallery-item:focus-visible {
   outline: 1px solid #222;
   outline-offset: 8px;
+}
+
+.prototype-asset-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 260;
+  width: 261px;
+  height: 45px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-18px, -22px);
+  transition: opacity 120ms ease;
+}
+
+.prototype-asset-cursor.is-visible {
+  opacity: 1;
 }
 
 .milestone-delivery-gallery {

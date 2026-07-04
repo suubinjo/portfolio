@@ -250,8 +250,40 @@ document.querySelectorAll(".image-zoom-trigger").forEach((button) => {
   });
 });
 
+let prototypeAssetCursor;
+
+function getPrototypeAssetCursor() {
+  if (!prototypeAssetCursor) {
+    prototypeAssetCursor = document.createElement("img");
+    prototypeAssetCursor.className = "prototype-asset-cursor";
+    prototypeAssetCursor.src = "/assets/cursor.svg";
+    prototypeAssetCursor.alt = "";
+    prototypeAssetCursor.setAttribute("aria-hidden", "true");
+    document.body.appendChild(prototypeAssetCursor);
+  }
+
+  return prototypeAssetCursor;
+}
+
 document.querySelectorAll(".milestone-solution-prototype").forEach((button) => {
+  const moveAssetCursor = (event) => {
+    const cursor = getPrototypeAssetCursor();
+    cursor.style.left = `${event.clientX}px`;
+    cursor.style.top = `${event.clientY}px`;
+    cursor.classList.add("is-visible");
+  };
+
+  const hideAssetCursor = () => {
+    prototypeAssetCursor?.classList.remove("is-visible");
+  };
+
+  button.addEventListener("mouseenter", moveAssetCursor);
+  button.addEventListener("mousemove", moveAssetCursor);
+  button.addEventListener("mouseleave", hideAssetCursor);
+  button.addEventListener("blur", hideAssetCursor);
+
   button.addEventListener("click", () => {
+    hideAssetCursor();
     const prototypeSrc = button.dataset.prototypeSrc;
     if (!prototypeSrc) return;
 
