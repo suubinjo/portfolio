@@ -3533,14 +3533,14 @@ a.project-card {
 /* ─── Other Works Section ─────────────────────────── */
 
 .other-works {
-  width: min(698px, calc(100vw - 48px));
+  width: min(920px, calc(100vw - 48px));
   margin: 120px auto 96px;
 }
 
 .other-works h2 {
-  margin: 0 0 32px;
+  margin: 0 0 44px;
   font-family: var(--serif);
-  font-size: 25px;
+  font-size: clamp(30px, 3vw, 42px);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.03em;
@@ -3549,95 +3549,116 @@ a.project-card {
 
 .other-work-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
 .other-work-card {
   position: relative;
   width: 100%;
-  height: clamp(420px, 46vh, 500px);
-  aspect-ratio: 1 / 1.14;
-  padding: 28px 30px 34px;
+  min-height: 128px;
+  padding: 24px 36px 24px 72px;
   overflow: hidden;
-
   border: 1px solid var(--line);
   border-radius: 3px;
   background: #ffffff;
   box-shadow: var(--shadow);
-
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) 32px;
+  gap: 28px;
   align-items: center;
-
   text-decoration: none;
   cursor: pointer;
-
-  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.other-work-card:hover {
+.other-work-card:hover,
+.other-work-card:focus-visible {
   transform: translateY(-8px) scale(1.05);
+  outline: none;
 }
 
 .other-work-card h3 {
   margin: 0;
-  font-family: var(--serif);
-  font-size: 20px;
-  font-style: italic;
-  font-weight: 300;
-  text-align: center;
+  color: #5f5f5f;
+  font-family: var(--sans);
+  font-size: clamp(18px, 2vw, 22px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
 }
 
 .other-work-image-wrap {
-  flex: 1;
   width: 100%;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 34px 0 0;
+  padding: 0;
 }
 
 .other-work-image-wrap img {
   max-width: 100%;
-  max-height: 84%;
+  max-height: 100%;
   object-fit: contain;
   transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.other-work-card:hover img {
-  transform: scale(1.1);
+.other-work-arrow {
+  color: #6c6c6c;
+  font-family: var(--sans);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
+  transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.other-work-card:hover .other-work-arrow,
+.other-work-card:focus-visible .other-work-arrow {
+  transform: rotate(-45deg);
 }
 
 .other-work-fc img {
   width: auto;
-  max-width: 56%;
-  max-height: 74%;
+  max-width: 72px;
+  max-height: 86px;
 }
 
 .other-work-milestone img {
   max-width: 100%;
-  max-height: 92%;
+  max-height: 94px;
 }
 
 @media (max-width: 1200px) {
   .other-works {
-    width: min(698px, calc(100vw - 48px));
+    width: min(820px, calc(100vw - 48px));
   }
 }
 
 @media (max-width: 760px) {
-  .other-work-grid {
-    grid-template-columns: 1fr;
-  }
-
   .other-work-card {
-    height: clamp(360px, 58vh, 460px);
-    padding: 20px;
+    min-height: 104px;
+    grid-template-columns: 92px minmax(0, 1fr) 24px;
+    gap: 18px;
+    padding: 18px 20px;
   }
 
   .other-work-card:hover {
     transform: translateY(-6px) scale(1.03);
+  }
+
+  .other-work-image-wrap {
+    height: 68px;
+  }
+
+  .other-work-card h3 {
+    font-size: 16px;
+  }
+
+  .other-work-arrow {
+    font-size: 23px;
   }
 }
 
