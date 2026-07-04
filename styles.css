@@ -2735,6 +2735,7 @@ a.project-card {
 
 .history-shell {
   --history-card-width: min(900px, calc(100vw - (var(--page-gutter) * 2)));
+  --history-card-inset: calc(var(--history-card-width) * 15 / 1095);
   position: relative;
   width: 100%;
   height: 100svh;
@@ -2759,17 +2760,18 @@ a.project-card {
   justify-content: flex-start;
   gap: 30px;
   margin-bottom: 25px;
+  padding-left: var(--history-card-inset);
 }
 
 .history-heading .history-title {
   margin: 0;
   font-family: var(--serif);
-  font-size: 50px;
+  font-size: 50px !important;
   font-weight: 300;
   font-style: italic;
-  line-height: 1;
+  line-height: 0.9;
   letter-spacing: -0.03em;
-  color: #8c8c8c;
+  color: var(--ink);
 }
 
 .history-heading span {
@@ -2795,6 +2797,7 @@ a.project-card {
   align-items: center;
   gap: 9px;
   margin-top: 25px;
+  padding-left: var(--history-card-inset);
   color: #6c6c6c;
   font-family: var(--sans);
   font-size: 15px;
@@ -2826,10 +2829,6 @@ a.project-card {
 
   .history-heading {
     margin-bottom: 18px;
-  }
-
-  .history-heading .history-title {
-    font-size: 42px;
   }
 
   .history-built-with {
