@@ -1127,13 +1127,17 @@ a.project-card {
 
 .ea-case-page .case-study-hero {
   min-height: auto;
-  padding-top: clamp(74px, 8vh, 92px);
+  padding-top: 150px;
   padding-bottom: 0;
-  align-items: start;
+  align-items: center;
 }
 
 .ea-case-page .case-hero-content {
+  width: min(1080px, calc(100vw - (var(--page-gutter) * 2) - var(--case-nav-space)));
+  grid-template-columns: minmax(360px, 0.95fr) minmax(340px, 0.75fr);
+  gap: 44px;
   align-items: center;
+  justify-content: center;
 }
 
 .case-study-section h2 {
