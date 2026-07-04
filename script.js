@@ -251,7 +251,35 @@ document.querySelectorAll(".image-zoom-trigger").forEach((button) => {
 });
 
 document.querySelectorAll(".milestone-solution-prototype").forEach((button) => {
+  let cursorPill;
+
+  const showCursorPill = () => {
+    if (!cursorPill) {
+      cursorPill = document.createElement("div");
+      cursorPill.className = "prototype-cursor-pill";
+      cursorPill.textContent = "Click to view full prototype";
+      document.body.appendChild(cursorPill);
+    }
+    cursorPill.classList.add("is-visible");
+  };
+
+  const moveCursorPill = (event) => {
+    showCursorPill();
+    cursorPill.style.left = `${event.clientX}px`;
+    cursorPill.style.top = `${event.clientY}px`;
+  };
+
+  const hideCursorPill = () => {
+    cursorPill?.classList.remove("is-visible");
+  };
+
+  button.addEventListener("mouseenter", showCursorPill);
+  button.addEventListener("mousemove", moveCursorPill);
+  button.addEventListener("mouseleave", hideCursorPill);
+  button.addEventListener("blur", hideCursorPill);
+
   button.addEventListener("click", () => {
+    hideCursorPill();
     const prototypeSrc = button.dataset.prototypeSrc;
     if (!prototypeSrc) return;
 
