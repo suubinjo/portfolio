@@ -256,7 +256,7 @@ function getPrototypeAssetCursor() {
   if (!prototypeAssetCursor) {
     prototypeAssetCursor = document.createElement("img");
     prototypeAssetCursor.className = "prototype-asset-cursor";
-    prototypeAssetCursor.src = "/assets/cursor.svg";
+    prototypeAssetCursor.src = "/assets/cursor.svg?v=cursor-glass-20260704";
     prototypeAssetCursor.alt = "";
     prototypeAssetCursor.setAttribute("aria-hidden", "true");
     document.body.appendChild(prototypeAssetCursor);

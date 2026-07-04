@@ -1126,8 +1126,10 @@ a.project-card {
 }
 
 .ea-case-page .case-study-hero {
-  min-height: 92vh;
-  padding-top: 108px;
+  min-height: auto;
+  padding-top: clamp(74px, 8vh, 92px);
+  padding-bottom: 0;
+  align-items: start;
 }
 
 .ea-case-page .case-hero-content {
@@ -3859,6 +3861,7 @@ a.project-card {
   pointer-events: none;
   opacity: 0;
   transform: translate(-18px, -22px);
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.36));
   transition: opacity 120ms ease;
 }
 
