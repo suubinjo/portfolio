@@ -8,6 +8,7 @@ Live site: [subinjo.com](https://subinjo.com)
 
 - `/` - Home and selected work
 - `/about-me/` - About page
+- `/journey/` - Portfolio journey page
 - `/identifit/` - Identifit case study
 - `/milestone/` - Milestone Seed case study
 - `/ea-games/` - EA Games case study preview
