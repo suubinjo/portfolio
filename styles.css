@@ -1996,15 +1996,26 @@ a.project-card {
   font-family: var(--mono);
   font-size: 40px;
   font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wght" 400;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
 }
 
 .ea-research-stat span {
   font-family: var(--mono);
   font-size: 15px;
   font-weight: 400;
-  letter-spacing: -0.03em;
+  font-style: normal;
+  font-variation-settings: "wght" 400;
+  letter-spacing: 0;
+}
+
+.ea-research-stat strong,
+.ea-research-stat span {
+  font-synthesis: none;
 }
 
 .ea-research-blocks {
