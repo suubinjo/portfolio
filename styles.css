@@ -840,7 +840,10 @@ a.project-card {
 }
 
 .section-index.is-light a:hover,
-.section-index.is-light a:focus-visible,
+.section-index.is-light a:focus-visible {
+  color: #3b82f6;
+}
+
 .section-index.is-light a.is-active {
   color: #ffffff;
 }
@@ -3958,6 +3961,10 @@ a.project-card {
   cursor: zoom-out;
 }
 
+.gallery-lightbox {
+  background: #f7f7f7;
+}
+
 .prototype-lightbox iframe {
   width: min(92vw, 1120px);
   height: min(72vh, 630px);
@@ -4007,20 +4014,31 @@ a.project-card {
   cursor: pointer;
 }
 
+.gallery-lightbox-close {
+  color: #111111;
+}
+
 .gallery-lightbox-nav {
   position: fixed;
   top: 50%;
-  width: 48px;
-  height: 48px;
+  width: auto;
+  height: auto;
   border: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.14);
-  color: #ffffff;
+  border-radius: 0;
+  background: transparent;
+  color: #111111;
   font-family: var(--sans);
   font-size: 34px;
   line-height: 1;
   cursor: pointer;
+  padding: 8px 12px;
   transform: translateY(-50%);
+}
+
+.gallery-lightbox-nav:hover,
+.gallery-lightbox-nav:focus-visible {
+  color: #3b82f6;
+  outline: none;
 }
 
 .gallery-lightbox-prev {
@@ -4046,12 +4064,12 @@ a.project-card {
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.38);
+  background: #d4d4d4;
   cursor: pointer;
 }
 
 .gallery-lightbox-dots button.is-active {
-  background: #ffffff;
+  background: #111111;
 }
 
 @media (max-width: 760px) {
