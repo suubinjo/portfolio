@@ -2099,35 +2099,9 @@ a.project-card {
 }
 
 .ea-inline-fc-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: #101010;
-  font-family: var(--sans);
-  font-size: 29px;
-  font-style: italic;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.08em;
-}
-
-.ea-inline-fc-logo::before {
-  content: "EA SPORTS";
-  width: 34px;
-  height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #171717;
-  color: #ffffff;
-  font-family: var(--sans);
-  font-size: 6px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: -0.05em;
-  text-align: center;
+  width: auto;
+  height: 32px;
+  display: inline-block;
 }
 
 .ea-focus-layout {
@@ -2137,38 +2111,12 @@ a.project-card {
   align-items: center;
 }
 
-.ea-worldcup-placeholder {
+.ea-worldcup-image {
+  width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 4px;
-  background:
-    radial-gradient(circle at 50% 50%, #ffffff 0 12%, transparent 12%),
-    linear-gradient(135deg, #7d54ff 0 18%, #ff192e 18% 34%, #b20c13 34% 52%, #ffffff 52% 63%, #c91019 63% 79%, #7d54ff 79% 100%);
-  color: #ffffff;
-  display: grid;
-  place-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.ea-worldcup-placeholder span {
-  color: #ffffff;
-  font-family: var(--sans);
-  font-size: clamp(82px, 13vw, 132px);
-  font-weight: 900;
-  line-height: 0.8;
-  letter-spacing: -0.12em;
-}
-
-.ea-worldcup-placeholder strong {
-  position: absolute;
-  left: 50%;
-  bottom: 18%;
-  transform: translateX(-50%);
-  color: #101010;
-  font-family: var(--sans);
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  display: block;
+  object-fit: cover;
 }
 
 .ea-research-insights {
