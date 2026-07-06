@@ -1454,7 +1454,6 @@ a.project-card {
 
 .milestone-research-insights {
   margin-top: 50px;
-  border-bottom: 2px solid #eeeeee;
 }
 
 .milestone-research-insight {
@@ -2166,7 +2165,6 @@ a.project-card {
 
 .ea-research-insights {
   margin: 50px 0 26px;
-  border-bottom: 2px solid #eeeeee;
 }
 
 .ea-research-insight {
@@ -2208,8 +2206,8 @@ a.project-card {
   -webkit-box-decoration-break: clone;
 }
 
-.ea-research-section.is-visible .ea-highlight {
-  animation: ea-highlight-swipe 720ms cubic-bezier(0.22, 1, 0.36, 1) 420ms both;
+.ea-highlight.is-highlight-visible {
+  animation: ea-highlight-swipe 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes ea-highlight-swipe {
@@ -4275,7 +4273,7 @@ a.project-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: zoom-out;
+  cursor: default;
 }
 
 .gallery-lightbox {
@@ -4287,6 +4285,7 @@ a.project-card {
   height: min(72vh, 630px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: #ffffff;
+  cursor: default;
 }
 
 .prototype-lightbox-mobile iframe {
@@ -4329,6 +4328,39 @@ a.project-card {
   font-size: 36px;
   line-height: 1;
   cursor: pointer;
+}
+
+.prototype-lightbox-fullscreen {
+  position: fixed;
+  top: 28px;
+  right: 76px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #111111;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.prototype-lightbox-fullscreen svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.prototype-lightbox-fullscreen:hover,
+.prototype-lightbox-fullscreen:focus-visible {
+  background: #ffffff;
+  outline: none;
 }
 
 .gallery-lightbox-close {

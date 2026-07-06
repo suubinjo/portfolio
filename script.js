@@ -139,6 +139,34 @@ if ("IntersectionObserver" in window) {
   });
 }
 
+const eaHighlights = document.querySelectorAll(".ea-highlight");
+
+if (eaHighlights.length && "IntersectionObserver" in window) {
+  const eaHighlightObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const highlight = entry.target;
+
+        if (entry.isIntersecting) {
+          highlight.classList.remove("is-highlight-visible");
+          void highlight.offsetWidth;
+          highlight.classList.add("is-highlight-visible");
+        } else {
+          highlight.classList.remove("is-highlight-visible");
+        }
+      });
+    },
+    {
+      threshold: 0.65,
+      rootMargin: "0px 0px -12% 0px",
+    }
+  );
+
+  eaHighlights.forEach((highlight) => eaHighlightObserver.observe(highlight));
+} else {
+  eaHighlights.forEach((highlight) => highlight.classList.add("is-highlight-visible"));
+}
+
 document.querySelectorAll(".email-copy").forEach((wrapper) => {
   const button = wrapper.querySelector(".email-copy-button");
   const popup = wrapper.querySelector(".email-copy-popup");
@@ -295,6 +323,11 @@ document.querySelectorAll(".milestone-solution-prototype").forEach((button) => {
 
     lightbox.innerHTML = `
       <button class="prototype-lightbox-close" type="button" aria-label="Close prototype">×</button>
+      <button class="prototype-lightbox-fullscreen" type="button" aria-label="View prototype fullscreen">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M8 4H4v4M4 4l6 6M16 4h4v4M20 4l-6 6M8 20H4v-4M4 20l6-6M16 20h4v-4M20 20l-6-6" />
+        </svg>
+      </button>
       <iframe
         src="${prototypeSrc}"
         allowfullscreen
@@ -314,8 +347,23 @@ document.querySelectorAll(".milestone-solution-prototype").forEach((button) => {
     lightbox.addEventListener("click", (event) => {
       if (event.target === lightbox) closeLightbox();
     });
+    const requestFullscreen = () => {
+      const iframe = lightbox.querySelector("iframe");
+      const fullscreenTarget = iframe || lightbox;
+
+      if (fullscreenTarget.requestFullscreen) {
+        fullscreenTarget.requestFullscreen();
+      } else if (fullscreenTarget.webkitRequestFullscreen) {
+        fullscreenTarget.webkitRequestFullscreen();
+      }
+    };
+
     lightbox.querySelector("iframe")?.addEventListener("click", (event) => event.stopPropagation());
     lightbox.querySelector(".prototype-lightbox-close")?.addEventListener("click", closeLightbox);
+    lightbox.querySelector(".prototype-lightbox-fullscreen")?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      requestFullscreen();
+    });
     document.addEventListener("keydown", handleKeydown);
     document.body.style.overflow = "hidden";
     document.body.appendChild(lightbox);
