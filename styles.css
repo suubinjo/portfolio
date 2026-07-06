@@ -3398,6 +3398,26 @@ a.project-card {
     max-height: none;
   }
 
+  .ea-case-page .case-hero-content {
+    width: min(760px, calc(100vw - (var(--page-gutter) * 2)));
+    grid-template-columns: 1fr;
+    gap: 56px;
+    justify-items: center;
+    transform: none;
+  }
+
+  .ea-case-page .case-hero-media {
+    width: 100%;
+    justify-content: center;
+    order: -1;
+  }
+
+  .ea-case-page .case-hero-copy {
+    justify-self: center;
+    order: 1;
+    text-align: left;
+  }
+
   .milestone-overview-section,
   .milestone-problem-section,
   .milestone-research-section,
@@ -3946,8 +3966,8 @@ a.project-card {
 }
 
 .prototype-lightbox-mobile iframe {
-  width: min(92vw, 430px);
-  height: min(86vh, 900px);
+  width: min(92vw, 500px);
+  height: min(88vh, 940px);
 }
 
 .prototype-lightbox-wide iframe {
