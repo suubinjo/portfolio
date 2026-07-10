@@ -2033,11 +2033,12 @@ a.project-card {
   margin: 0 0 25px;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: clamp(25px, 3vw, 33px);
+  font-size: 25px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.05em;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-wrap: balance;
 }
 
 .ea-competitor-strip {
@@ -2133,10 +2134,6 @@ a.project-card {
   line-height: 1.15;
 }
 
-.ea-initial-direction-block {
-  margin-top: 50px;
-}
-
 .ea-initial-direction-image {
   margin: 0 0 25px;
 }
@@ -2206,8 +2203,13 @@ a.project-card {
   line-height: 1.7;
 }
 
-.ea-research-section strong {
+.ea-research-section p strong {
   font-weight: 600;
+}
+
+.ea-research-stat strong {
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
 }
 
 .ea-highlight {

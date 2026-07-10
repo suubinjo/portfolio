@@ -141,28 +141,32 @@ if ("IntersectionObserver" in window) {
 
 const eaHighlights = document.querySelectorAll(".ea-highlight");
 
-if (eaHighlights.length && "IntersectionObserver" in window) {
-  const eaHighlightObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const highlight = entry.target;
+if (eaHighlights.length) {
+  const syncEaHighlights = () => {
+    eaHighlights.forEach((highlight) => {
+      const rect = highlight.getBoundingClientRect();
+      const shouldPlay =
+        rect.top <= window.innerHeight * 0.72 &&
+        rect.bottom >= window.innerHeight * 0.18;
+      const isActive = highlight.dataset.highlightActive === "true";
 
-        if (entry.isIntersecting) {
-          highlight.classList.remove("is-highlight-visible");
-          void highlight.offsetWidth;
-          highlight.classList.add("is-highlight-visible");
-        } else {
-          highlight.classList.remove("is-highlight-visible");
-        }
-      });
-    },
-    {
-      threshold: 0.65,
-      rootMargin: "0px 0px -12% 0px",
-    }
-  );
+      if (shouldPlay && !isActive) {
+        highlight.classList.remove("is-highlight-visible");
+        void highlight.offsetWidth;
+        highlight.classList.add("is-highlight-visible");
+        highlight.dataset.highlightActive = "true";
+      }
 
-  eaHighlights.forEach((highlight) => eaHighlightObserver.observe(highlight));
+      if (!shouldPlay && isActive) {
+        highlight.classList.remove("is-highlight-visible");
+        highlight.dataset.highlightActive = "false";
+      }
+    });
+  };
+
+  window.addEventListener("scroll", syncEaHighlights, { passive: true });
+  window.addEventListener("resize", syncEaHighlights);
+  requestAnimationFrame(syncEaHighlights);
 } else {
   eaHighlights.forEach((highlight) => highlight.classList.add("is-highlight-visible"));
 }
