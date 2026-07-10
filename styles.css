@@ -7,6 +7,7 @@
   --serif: "Instrument Serif", Georgia, serif;
   --sans: "Instrument Sans", Arial, sans-serif;
   --mono: "Reddit Mono", "SFMono-Regular", Consolas, monospace;
+  --watch: "PP Watch", "PPWatch", "Reddit Mono", "SFMono-Regular", monospace;
   --page-gutter: clamp(40px, 7vw, 80px);
   --case-nav-space: clamp(178px, 14vw, 252px);
   --content-width: min(1480px, calc(100vw - (var(--page-gutter) * 2)));
@@ -1857,17 +1858,18 @@ a.project-card {
 
 .identifit-reflection-callout {
   display: inline-flex;
-  min-width: 214px;
-  height: 48px;
+  min-width: 0;
+  height: auto;
   margin-top: 25px;
-  padding: 0 24px;
+  padding: 0;
   align-items: center;
   justify-content: center;
-  background: #f7f7f7;
+  background: transparent;
   color: #666;
   font-family: var(--mono);
   font-size: 14px;
   letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .identifit-reflection-section .identifit-reflection-callout + p {
@@ -1875,10 +1877,7 @@ a.project-card {
 }
 
 .identifit-reflection-divider {
-  width: 100%;
-  height: 2px;
-  margin: 25px 0;
-  background: #eeeeee;
+  display: none;
 }
 
 .jump-solution-button {
@@ -2240,6 +2239,87 @@ a.project-card {
   margin-bottom: 50px;
 }
 
+.ea-mode-compare {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 26px;
+  align-items: center;
+}
+
+.ea-mode-card {
+  position: relative;
+  min-height: 218px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #111;
+}
+
+.ea-mode-card img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: block;
+  object-fit: cover;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ea-mode-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.82) 100%);
+  transform: translateY(62%);
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ea-mode-overlay {
+  position: absolute;
+  inset: auto 20px 20px;
+  z-index: 1;
+  color: #fff;
+  transform: translateY(calc(100% - 24px));
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ea-mode-overlay h3 {
+  margin: 0;
+  color: inherit;
+  font-family: var(--watch);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.ea-mode-overlay p {
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.ea-mode-card:hover img,
+.ea-mode-card:focus-within img {
+  transform: scale(1.04);
+}
+
+.ea-mode-card:hover::after,
+.ea-mode-card:focus-within::after,
+.ea-mode-card:hover .ea-mode-overlay,
+.ea-mode-card:focus-within .ea-mode-overlay {
+  transform: translateY(0);
+}
+
+.ea-mode-versus {
+  color: #666;
+  font-family: var(--sans);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .ea-validation-section {
   min-height: 0;
 }
@@ -2327,21 +2407,21 @@ a.project-card {
 .ea-reflection-callout {
   width: max-content;
   max-width: 100%;
-  height: 48px;
+  height: auto;
   margin: 0 0 25px;
-  padding: 0 24px;
-  background: #f7f7f7;
+  padding: 0;
+  background: transparent;
   color: #5f5f5f;
   font-family: var(--mono);
   font-size: 15px;
   line-height: 1;
+  text-transform: uppercase;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 .ea-reflection-next {
-  min-width: 222px;
   text-align: center;
 }
 
@@ -2368,10 +2448,7 @@ a.project-card {
 }
 
 .ea-reflection-divider {
-  width: 100%;
-  height: 2px;
-  margin: 25px 0;
-  background: #eeeeee;
+  display: none;
 }
 
 .ea-video-embed {
