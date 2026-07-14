@@ -2244,95 +2244,55 @@ a.project-card {
   }
 }
 
-.ea-placeholder-section {
+.ea-pivot-section {
   min-height: 0;
   margin-bottom: 50px;
 }
 
-.ea-mode-compare {
-  margin-top: 25px;
+.ea-pivot-brief {
+  margin: 25px 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: 26px;
-  align-items: center;
+  gap: 14px;
 }
 
-.ea-mode-card {
-  position: relative;
-  min-height: 218px;
-  border-radius: 4px;
-  overflow: hidden;
-  background: #111;
+.ea-pivot-brief-row {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
 }
 
-.ea-mode-card img {
-  width: 100%;
-  height: 100%;
-  min-height: inherit;
-  display: block;
-  object-fit: cover;
-  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.ea-mode-card::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.82) 100%);
-  transform: translateY(62%);
-  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.ea-mode-overlay {
-  position: absolute;
-  inset: auto 20px 20px;
-  z-index: 1;
-  color: #fff;
-  transform: translateY(calc(100% - 24px));
-  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.ea-mode-overlay h3 {
-  margin: 0;
-  color: inherit;
-  font-family: var(--watch);
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
+.ea-pivot-brief dt {
+  color: #4f4f4f;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
   text-transform: uppercase;
 }
 
-.ea-mode-overlay p {
-  margin: 14px 0 0;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 15px;
-  line-height: 1.45;
-}
-
-.case-study-section .ea-mode-overlay p {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.ea-mode-card:hover img,
-.ea-mode-card:focus-within img {
-  transform: scale(1.04);
-}
-
-.ea-mode-card:hover::after,
-.ea-mode-card:focus-within::after,
-.ea-mode-card:hover .ea-mode-overlay,
-.ea-mode-card:focus-within .ea-mode-overlay {
-  transform: translateY(0);
-}
-
-.ea-mode-versus {
-  color: #666;
+.ea-pivot-brief dd {
+  margin: 0;
+  color: var(--ink);
   font-family: var(--sans);
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.ea-pivot-figure {
+  width: 100%;
+  margin: 25px 0;
+}
+
+.ea-pivot-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ea-pivot-section p + h2 {
+  margin-top: 50px;
 }
 
 .ea-validation-section {
@@ -3940,6 +3900,7 @@ a.project-card {
   .ea-overview-section,
   .ea-problem-section,
   .ea-research-section,
+  .ea-pivot-section,
   .ea-validation-section,
   .ea-reflection-section {
     width: min(100% - 28px, 440px);
@@ -3970,6 +3931,11 @@ a.project-card {
   .ea-inline-fc-logo {
     margin: 8px 6px 0;
     vertical-align: middle;
+  }
+
+  .ea-pivot-brief-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .ea-validation-media {
