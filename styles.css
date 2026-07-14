@@ -1296,7 +1296,7 @@ a.project-card {
 
 .milestone-jump-solution {
   position: absolute;
-  top: 277px;
+  top: 236px;
   left: 0;
   margin-top: 0;
   transition:
@@ -3956,6 +3956,12 @@ a.project-card {
   .ea-solution-row {
     grid-template-columns: 1fr;
     gap: 18px;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .ea-solution-flow {
+    width: 100%;
   }
 
   .ea-solution-gif-frame,
@@ -3964,12 +3970,12 @@ a.project-card {
     width: 100%;
     height: auto;
     min-height: 0;
-    aspect-ratio: 463 / 574;
+    aspect-ratio: 371 / 482;
   }
 
   .ea-solution-text h3,
   .case-study-section .ea-solution-text p {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .ea-ai-note {
@@ -4247,8 +4253,8 @@ a.project-card {
 }
 
 .ea-solution-section {
-  width: min(1150px, calc(100vw - 96px));
-  max-width: none;
+  width: min(698px, calc(100vw - 48px));
+  max-width: 698px;
   min-height: 0;
   margin-bottom: 50px;
 }
@@ -4274,19 +4280,22 @@ a.project-card {
 .ea-solution-flow {
   display: grid;
   gap: 30px;
+  width: min(850px, calc(100vw - 48px));
+  max-width: none;
 }
 
 .ea-solution-row {
   display: grid;
-  grid-template-columns: 463px minmax(0, 625px);
+  grid-template-columns: 371px minmax(0, 418px);
   column-gap: 60px;
   align-items: end;
-  width: 100%;
+  width: min(850px, calc(100vw - 48px));
+  min-height: 482px;
 }
 
 .ea-solution-gif-frame {
-  width: 463px;
-  height: 574px;
+  width: 371px;
+  height: 482px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -4317,7 +4326,7 @@ a.project-card {
 .ea-solution-text {
   display: grid;
   gap: 12px;
-  width: min(625px, 100%);
+  width: min(418px, 100%);
   align-self: end;
   justify-self: end;
 }
@@ -4326,7 +4335,7 @@ a.project-card {
   margin: 0;
   color: #4f4f4f;
   font-family: var(--sans);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -4337,9 +4346,9 @@ a.project-card {
   margin: 0;
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.03em;
 }
 
@@ -4399,7 +4408,7 @@ a.project-card {
 }
 
 .milestone-reflection-section h2 + .milestone-reflection-callout {
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 .milestone-reflection-section .milestone-reflection-callout + p {
@@ -4407,7 +4416,7 @@ a.project-card {
 }
 
 .milestone-reflection-spacer {
-  display: block;
+  display: none;
   width: 100%;
   height: 25px;
 }
@@ -4511,7 +4520,7 @@ a.project-card {
   width: 100%;
   margin-top: 44px;
   padding: 28px;
-  border: 2px dashed #e8e8e8;
+  border: 0;
   background: transparent;
 }
 
