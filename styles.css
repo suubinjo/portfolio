@@ -2254,6 +2254,10 @@ a.project-card {
   margin-bottom: 15px;
 }
 
+.ea-pivot-section .project-type + h2 {
+  margin-top: 0;
+}
+
 .ea-pivot-section h2 + .ea-pivot-brief {
   margin-top: 25px;
 }
@@ -3957,7 +3961,10 @@ a.project-card {
   .ea-solution-gif-frame,
   .ea-solution-gif-frame img,
   .ea-solution-gif-frame video {
-    min-height: 240px;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 463 / 574;
   }
 
   .ea-solution-text h3,
@@ -4246,6 +4253,20 @@ a.project-card {
   margin-bottom: 50px;
 }
 
+.ea-solution-prototype {
+  width: 100vw;
+  margin: 0 0 50px;
+  margin-left: calc(50% - 50vw);
+  border-radius: 0;
+}
+
+.ea-solution-prototype img {
+  width: 100%;
+  min-height: clamp(420px, 58vw, 760px);
+  display: block;
+  object-fit: cover;
+}
+
 .ea-solution-section h2 {
   margin-bottom: 30px;
 }
@@ -4257,14 +4278,14 @@ a.project-card {
 
 .ea-solution-row {
   display: grid;
-  grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
+  grid-template-columns: 463px minmax(0, 1fr);
   gap: 30px;
   align-items: end;
 }
 
 .ea-solution-gif-frame {
-  width: 100%;
-  min-height: 290px;
+  width: 463px;
+  height: 574px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -4275,7 +4296,6 @@ a.project-card {
 .ea-solution-gif-frame img {
   width: 100%;
   height: 100%;
-  min-height: 290px;
   display: block;
   object-fit: contain;
 }
@@ -4283,7 +4303,6 @@ a.project-card {
 .ea-solution-gif-frame video {
   width: 100%;
   height: 100%;
-  min-height: 290px;
   display: block;
   object-fit: contain;
 }
@@ -4331,12 +4350,20 @@ a.project-card {
   text-transform: uppercase;
 }
 
-.ea-ai-note p {
+.ea-ai-note h4::before {
+  content: "✦";
+  margin-right: 8px;
+  color: #828282;
+}
+
+.case-study-section .ea-solution-text .ea-ai-note p {
+  margin: 0;
   color: #828282;
   font-family: var(--mono);
   font-size: 15px;
   font-weight: 400;
   line-height: 1.35;
+  letter-spacing: normal;
 }
 
 .milestone-solution-prototype img {
