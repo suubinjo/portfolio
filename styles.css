@@ -1194,6 +1194,14 @@ a.project-card {
   width: min(698px, calc(100vw - 48px));
 }
 
+.milestone-page .milestone-problem-section {
+  margin-bottom: 50px;
+}
+
+.milestone-page .milestone-problem-section + .milestone-research-section {
+  margin-top: 0;
+}
+
 .milestone-research-section h2 {
   max-width: 820px;
 }
@@ -1307,12 +1315,12 @@ a.project-card {
 
 .milestone-jump-solution:hover,
 .milestone-jump-solution:focus-visible {
-  transform: translateY(8px);
+  transform: none;
 }
 
 .milestone-jump-solution:hover .jump-solution-arrow,
 .milestone-jump-solution:focus-visible .jump-solution-arrow {
-  transform: translateY(3px);
+  transform: translateY(5px);
 }
 
 .term-tooltip {
@@ -1926,7 +1934,7 @@ a.project-card {
 
 .jump-solution-button:hover .jump-solution-arrow,
 .jump-solution-button:focus-visible .jump-solution-arrow {
-  transform: translateY(3px);
+  transform: translateY(5px);
 }
 
 .case-section-image {
@@ -3962,6 +3970,8 @@ a.project-card {
 
   .ea-solution-flow {
     width: 100%;
+    margin-left: 0;
+    transform: none;
   }
 
   .ea-solution-gif-frame,
@@ -3973,7 +3983,10 @@ a.project-card {
     aspect-ratio: 371 / 482;
   }
 
-  .ea-solution-text h3,
+  .ea-solution-text h3 {
+    font-size: 20px;
+  }
+
   .case-study-section .ea-solution-text p {
     font-size: 15px;
   }
@@ -4282,6 +4295,9 @@ a.project-card {
   gap: 30px;
   width: min(850px, calc(100vw - 48px));
   max-width: none;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  justify-items: center;
 }
 
 .ea-solution-row {
@@ -4309,8 +4325,8 @@ a.project-card {
   max-width: 100%;
   max-height: 100%;
   display: block;
-  object-fit: contain;
-  object-position: center;
+  object-fit: contain !important;
+  object-position: center center !important;
 }
 
 .ea-solution-gif-frame video {
@@ -4319,8 +4335,8 @@ a.project-card {
   max-width: 100%;
   max-height: 100%;
   display: block;
-  object-fit: contain;
-  object-position: center;
+  object-fit: contain !important;
+  object-position: center center !important;
 }
 
 .ea-solution-text {
@@ -4335,7 +4351,7 @@ a.project-card {
   margin: 0;
   color: #4f4f4f;
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -4363,7 +4379,7 @@ a.project-card {
   margin: 0 0 8px;
   color: #828282;
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 11px;
   font-weight: 500;
   line-height: 1.2;
   text-transform: uppercase;
@@ -4379,7 +4395,7 @@ a.project-card {
   margin: 0;
   color: #828282;
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 11px;
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: normal;
@@ -4394,7 +4410,7 @@ a.project-card {
   width: max-content;
   max-width: 100%;
   height: auto;
-  margin: 0 0 15px;
+  margin: 0 0 25px;
   padding: 0;
   background: transparent;
   color: #5f5f5f;
@@ -4408,7 +4424,7 @@ a.project-card {
 }
 
 .milestone-reflection-section h2 + .milestone-reflection-callout {
-  margin-top: 0;
+  margin-top: 25px;
 }
 
 .milestone-reflection-section .milestone-reflection-callout + p {
@@ -4427,12 +4443,13 @@ a.project-card {
   }
 
   .ea-solution-row {
-    grid-template-columns: minmax(320px, 463px) minmax(0, 1fr);
+    grid-template-columns: 371px minmax(0, 418px);
     column-gap: 32px;
+    width: min(850px, calc(100vw - 48px));
   }
 
   .ea-solution-text {
-    width: 100%;
+    width: min(418px, 100%);
   }
 }
 
@@ -4445,17 +4462,17 @@ a.project-card {
   .ea-solution-row {
     grid-template-columns: 1fr;
     gap: 18px;
+    width: 100%;
   }
 
   .ea-solution-gif-frame {
     width: 100%;
     height: auto;
-    aspect-ratio: 463 / 574;
+    aspect-ratio: 371 / 482;
   }
 
-  .ea-solution-text h3,
-  .case-study-section .ea-solution-text p {
-    font-size: 17px;
+  .ea-solution-text h3 {
+    font-size: 20px;
   }
 
   .ea-ai-note {
@@ -4646,8 +4663,8 @@ a.project-card {
 .milestone-delivery-gallery {
   box-sizing: border-box;
   width: 100%;
-  margin-top: 44px;
-  padding: 28px;
+  margin-top: 25px;
+  padding: 0;
   border: 0;
   background: transparent;
 }
@@ -4673,7 +4690,7 @@ a.project-card {
 }
 
 .milestone-gallery-blueprint {
-  margin-bottom: 28px;
+  margin-bottom: 25px;
 }
 
 .milestone-flyer-row {
@@ -4874,7 +4891,7 @@ a.project-card {
   }
 
   .milestone-delivery-gallery {
-    padding: 18px;
+    padding: 0;
   }
 
   .milestone-flyer-row {
