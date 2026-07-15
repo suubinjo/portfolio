@@ -327,15 +327,17 @@ document.querySelectorAll(".milestone-solution-prototype").forEach((button) => {
 
     lightbox.innerHTML = `
       <button class="prototype-lightbox-close" type="button" aria-label="Close prototype">×</button>
-      <button class="prototype-lightbox-fullscreen" type="button" aria-label="View prototype fullscreen">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M8 4H4v4M4 4l6 6M16 4h4v4M20 4l-6 6M8 20H4v-4M4 20l6-6M16 20h4v-4M20 20l-6-6" />
-        </svg>
-      </button>
-      <iframe
-        src="${prototypeSrc}"
-        allowfullscreen
-      ></iframe>
+      <div class="prototype-lightbox-stage">
+        <button class="prototype-lightbox-fullscreen" type="button" aria-label="View prototype fullscreen">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M8 4H4v4M4 4l6 6M16 4h4v4M20 4l-6 6M8 20H4v-4M4 20l6-6M16 20h4v-4M20 20l-6-6" />
+          </svg>
+        </button>
+        <iframe
+          src="${prototypeSrc}"
+          allowfullscreen
+        ></iframe>
+      </div>
     `;
 
     const closeLightbox = () => {
