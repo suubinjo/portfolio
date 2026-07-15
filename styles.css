@@ -1896,6 +1896,90 @@ a.project-card {
   background: transparent;
 }
 
+.identifit-solution-hero {
+  margin: 0 0 25px;
+}
+
+.identifit-solution-hero img {
+  width: 100%;
+  display: block;
+}
+
+.identifit-solution-flow {
+  margin-top: 50px;
+  display: grid;
+  gap: 30px;
+}
+
+.identifit-solution-step-label {
+  margin: 0 0 25px;
+  color: #acacac;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.identifit-solution-step h3 {
+  margin: 0 0 25px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.identifit-solution-media {
+  box-sizing: border-box;
+  width: 698px;
+  max-width: 100%;
+  height: 436px;
+  margin: 0 0 25px;
+  display: grid;
+  place-items: center;
+  background: #2c2c2c;
+}
+
+.identifit-solution-media-frame {
+  box-sizing: border-box;
+  width: min(499px, calc(100% - 48px));
+  height: min(465px, calc(100% - 24px));
+  aspect-ratio: 499 / 465;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #f7f7f7;
+}
+
+.identifit-solution-media-frame video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.identifit-solution-step-body {
+  display: grid;
+  gap: 0;
+}
+
+.identifit-solution-step-body p + p {
+  margin-top: 1em;
+}
+
+.case-study-section .identifit-solution-step-body p {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.03em;
+}
+
 .jump-solution-button {
   display: inline-flex;
   margin-top: 25px;
@@ -3995,6 +4079,19 @@ a.project-card {
     margin-bottom: 10px;
   }
 
+  .identifit-solution-media {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 698 / 436;
+  }
+
+  .identifit-solution-media-frame {
+    width: min(499px, calc(100% - 32px));
+    height: auto;
+    aspect-ratio: 499 / 465;
+  }
+
   .ea-validation-media {
     min-height: 0;
     grid-template-columns: 1fr;
@@ -4325,8 +4422,8 @@ a.project-card {
   max-width: 100%;
   max-height: 100%;
   display: block;
-  object-fit: contain !important;
-  object-position: center center !important;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .ea-solution-gif-frame video {
@@ -4335,8 +4432,8 @@ a.project-card {
   max-width: 100%;
   max-height: 100%;
   display: block;
-  object-fit: contain !important;
-  object-position: center center !important;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .ea-solution-text {
@@ -4501,7 +4598,7 @@ a.project-card {
   content: "";
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: calc(730px + 25px);
   left: 75px;
   width: 2px;
   background: #f7f7f7;
@@ -4537,6 +4634,7 @@ a.project-card {
 
 .milestone-solution-step-label {
   margin: 0 0 25px;
+  padding: 0;
   color: #acacac;
   font-family: var(--mono);
   font-size: 13px;
@@ -4557,7 +4655,11 @@ a.project-card {
 
 .milestone-solution-step-body {
   display: grid;
-  gap: 25px;
+  gap: 0;
+}
+
+.milestone-solution-step-body p + p {
+  margin-top: 1em;
 }
 
 .case-study-section .milestone-solution-step-body p {
@@ -4585,12 +4687,24 @@ a.project-card {
   height: 100%;
   display: block;
   object-fit: contain;
+  object-position: center center;
 }
 
 .milestone-solution-step-wide {
   width: min(1027px, 100%);
   min-height: auto;
   display: block;
+}
+
+.milestone-solution-step-wide::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 74px;
+  z-index: 2;
+  width: 4px;
+  height: calc(100% - 7px);
+  background: #ffffff;
 }
 
 .milestone-solution-copy-label-only {
@@ -4604,7 +4718,7 @@ a.project-card {
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: #f7f7f7;
+  background: #ffffff;
 }
 
 .milestone-solution-media-wide img {
@@ -4907,6 +5021,7 @@ a.project-card {
 
   .milestone-solution-timeline::before {
     left: 14px;
+    bottom: auto;
   }
 
   .milestone-solution-step,
