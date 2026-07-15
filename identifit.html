@@ -13,7 +13,7 @@ permalink: /identifit/
       href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=solution-media-fix-20260714" />
+    <link rel="stylesheet" href="/styles.css?v=identifit-prototype-insights-20260714" />
   </head>
   <body>
     <main class="case-study-shell">
@@ -193,11 +193,37 @@ permalink: /identifit/
           <div class="research-led">
             <h2>What this led us to</h2>
             <p>
-              Based on what we found from both our research and existing apps, we identified four key pain points and translated each of them into a corresponding opportunity area.
+              Based on what we found from both our research and existing apps, we identified three key pain points and translated each of them into a corresponding opportunity area.
             </p>
             <p>
               Our goal isn't just to 'organize' clothes, but create a more visible, guided process that helps users save time, explore different styles and feel more confident in finding their own.
             </p>
+            <div class="identifit-insights-grid" aria-label="Research pain points and opportunity areas">
+              <article class="identifit-insight identifit-insight-pain">
+                <p class="identifit-insight-label">Pain Point 1</p>
+                <p class="identifit-insight-copy">No visibility into wardrobe</p>
+              </article>
+              <article class="identifit-insight identifit-insight-opportunity">
+                <p class="identifit-insight-label">Opportunity Area 1</p>
+                <p class="identifit-insight-copy">Make the wardrobe visible and easy to organize</p>
+              </article>
+              <article class="identifit-insight identifit-insight-pain">
+                <p class="identifit-insight-label">Pain Point 2</p>
+                <p class="identifit-insight-copy">No time and no guidance</p>
+              </article>
+              <article class="identifit-insight identifit-insight-opportunity">
+                <p class="identifit-insight-label">Opportunity Area 2</p>
+                <p class="identifit-insight-copy">Provide guidance while saving time in decision making</p>
+              </article>
+              <article class="identifit-insight identifit-insight-pain">
+                <p class="identifit-insight-label">Pain Point 3</p>
+                <p class="identifit-insight-copy">Limited ways to explore personal style</p>
+              </article>
+              <article class="identifit-insight identifit-insight-opportunity">
+                <p class="identifit-insight-label">Opportunity Area 3</p>
+                <p class="identifit-insight-copy">Help users discover style preferences through their existing wardrobe</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -253,9 +279,19 @@ permalink: /identifit/
       </section>
       <section id="solution" class="case-study-section identifit-solution-section">
         <p class="project-type">Solution</p>
-        <figure class="identifit-solution-hero">
+        <button
+          class="milestone-solution-prototype identifit-solution-prototype"
+          type="button"
+          aria-label="Open Identifit Figma prototype"
+          data-prototype-label="Identifit Figma prototype"
+          data-prototype-size="mobile"
+          data-prototype-src="https://embed.figma.com/proto/0Fw9UkZrL7fN8SRpOp8N0F/identifit?page-id=0%3A1&amp;node-id=1-2278&amp;viewport=2396%2C1594%2C0.24&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=1%3A2278&amp;show-proto-sidebar=0&amp;hide-ui=1&amp;embed-host=share"
+        >
           <img src="/assets/identifit/solution.svg" alt="Identifit app screens across Home, Virtual Closet, Explore, and Outfit Recommendations" />
-        </figure>
+          <span class="milestone-prototype-overlay" aria-hidden="true">
+            <span>Click to view full prototype</span>
+          </span>
+        </button>
         <h2>Capture your identity in every fit</h2>
         <p>
           Identifit is a personalized virtual closet that helps you organize what you own, track what you wear, and build outfits from pieces already in your closet.
@@ -270,8 +306,7 @@ permalink: /identifit/
               </div>
             </div>
             <div class="identifit-solution-step-body">
-              <p>Instead of asking users to define their style upfront, Home is designed around what they actually wear. A weekly calendar tracks daily outfits and surfaces recurring patterns over time.</p>
-              <p>This helps users recognize their style through behavior, not guesswork.</p>
+              <p>Rather than asking users to define their style upfront, I designed Home around what they actually wear. Daily outfit logs gradually surface recurring patterns, helping users reflect on their style through their own behavior.</p>
             </div>
           </article>
           <article class="identifit-solution-step">
@@ -283,8 +318,7 @@ permalink: /identifit/
               </div>
             </div>
             <div class="identifit-solution-step-body">
-              <p>When it is time to get dressed, recommendations present one outfit at a time based on occasion, weather, and personal preferences.</p>
-              <p>By narrowing the decision to a single option, we help users move forward without the fatigue of browsing endless combinations.</p>
+              <p>Too many outfit suggestions can create another layer of decision-making. I designed recommendations to present one outfit at a time, allowing users to quickly accept or move past each suggestion without sorting through multiple options.</p>
             </div>
           </article>
           <article class="identifit-solution-step">
@@ -296,8 +330,7 @@ permalink: /identifit/
               </div>
             </div>
             <div class="identifit-solution-step-body">
-              <p>The closet view uses collapsible categories to keep the full wardrobe visible without overwhelming the screen.</p>
-              <p>Users can quickly scan what they own while drilling into specific item types when they need more detail.</p>
+              <p>Showing the full wardrobe improves visibility, but displaying every category and item at once can quickly become overwhelming. The closet uses collapsible categories and flexible views to keep clothing accessible without overloading the screen.</p>
             </div>
           </article>
           <article class="identifit-solution-step">

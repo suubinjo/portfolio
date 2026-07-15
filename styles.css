@@ -1202,6 +1202,11 @@ a.project-card {
   margin-top: 0;
 }
 
+.milestone-page .milestone-problem-section,
+.milestone-page .milestone-research-section {
+  min-height: 0;
+}
+
 .milestone-research-section h2 {
   max-width: 820px;
 }
@@ -1896,11 +1901,12 @@ a.project-card {
   background: transparent;
 }
 
-.identifit-solution-hero {
+.identifit-solution-prototype {
+  width: 100%;
   margin: 0 0 25px;
 }
 
-.identifit-solution-hero img {
+.identifit-solution-prototype img {
   width: 100%;
   display: block;
 }
@@ -1963,7 +1969,7 @@ a.project-card {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #f7f7f7;
+  background: #2c2c2c;
 }
 
 .identifit-solution-media-frame video {
@@ -2732,6 +2738,62 @@ a.project-card {
   font-weight: 400;
   line-height: 1.7;
   text-wrap: pretty;
+}
+
+.identifit-insights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.identifit-insight {
+  box-sizing: border-box;
+  min-height: 120px;
+  padding: 18px 20px 20px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.identifit-insight-pain {
+  background: #f7f7f7;
+}
+
+.identifit-insight-opportunity {
+  background: #595959;
+}
+
+.identifit-insight-label {
+  margin: 0;
+  color: #9c9c9c;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.identifit-insight-copy {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.03em;
+}
+
+.identifit-insight-pain .identifit-insight-copy {
+  color: var(--ink);
+}
+
+.identifit-insight-opportunity .identifit-insight-copy {
+  color: #ffffff;
+}
+
+.case-study-section .identifit-insight-label,
+.case-study-section .identifit-insight-copy {
+  margin: 0;
 }
 
 .ideation-assets {
@@ -4117,6 +4179,10 @@ a.project-card {
     aspect-ratio: 499 / 465;
   }
 
+  .identifit-insights-grid {
+    grid-template-columns: 1fr;
+  }
+
   .ea-validation-media {
     min-height: 0;
     grid-template-columns: 1fr;
@@ -4552,10 +4618,11 @@ a.project-card {
 
 .milestone-reflection-section .milestone-reflection-callout + p {
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .milestone-reflection-spacer {
-  display: none;
+  display: block;
   width: 100%;
   height: 25px;
 }
@@ -4624,7 +4691,7 @@ a.project-card {
   content: "";
   position: absolute;
   top: 0;
-  bottom: calc(730px + 25px);
+  bottom: calc(730px + 25px + 25px + 13px);
   left: 75px;
   width: 2px;
   background: #f7f7f7;
@@ -4751,6 +4818,7 @@ a.project-card {
   width: 4px;
   height: calc(100% - 7px);
   background: #ffffff;
+  pointer-events: none;
 }
 
 .milestone-solution-copy-label-only {
