@@ -1194,17 +1194,22 @@ a.project-card {
   width: min(698px, calc(100vw - 48px));
 }
 
+.milestone-page .case-study-section {
+  margin-bottom: 0;
+}
+
+.milestone-page .case-study-section + .case-study-section {
+  margin-top: 50px;
+}
+
+.milestone-page .case-study-hero + .case-study-section {
+  margin-top: 100px;
+}
+
 .milestone-page .milestone-overview-section,
 .milestone-page .milestone-problem-section,
 .milestone-page .milestone-research-section {
   min-height: 0;
-  margin-top: 0;
-  margin-bottom: 50px;
-}
-
-.milestone-page .milestone-overview-section + .milestone-problem-section,
-.milestone-page .milestone-problem-section + .milestone-research-section {
-  margin-top: 0;
 }
 
 .milestone-research-section h2 {
@@ -1840,24 +1845,7 @@ a.project-card {
 }
 
 .identifit-quotes-label {
-  margin: 25px 0 0;
-  color: #9c9c9c;
-  font-family: var(--mono);
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.case-study-section p.identifit-quotes-label {
-  margin: 25px 0 0;
-  color: #9c9c9c;
-  font-family: var(--mono);
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0;
-  text-transform: uppercase;
+  display: none;
 }
 
 .validation-quotes {
@@ -2772,9 +2760,11 @@ a.project-card {
   box-sizing: border-box;
   width: 334px;
   height: 108px;
-  padding: 18px 20px;
-  display: grid;
-  align-content: start;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
@@ -2844,6 +2834,10 @@ a.project-card {
 .ideation-assets {
   display: grid;
   gap: 25px;
+  margin-top: 25px;
+}
+
+.case-study-section h2 + .ideation-assets {
   margin-top: 25px;
 }
 
@@ -4125,6 +4119,10 @@ a.project-card {
     min-height: 52vh;
   }
 
+  .milestone-page .case-study-section {
+    min-height: 0;
+  }
+
   .milestone-overview-section,
   .milestone-problem-section,
   .milestone-research-section,
@@ -4867,7 +4865,7 @@ a.project-card {
 }
 
 .milestone-solution-step-wide {
-  width: min(1027px, 100%);
+  width: min(951px, 100%);
   min-height: auto;
   display: block;
 }
@@ -4877,13 +4875,14 @@ a.project-card {
 }
 
 .milestone-solution-media-wide {
-  width: min(1027px, 100%);
-  height: 730px;
+  width: min(951px, 100%);
+  height: auto;
+  aspect-ratio: 1027 / 730;
   margin-top: 25px;
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: #ffffff;
+  background: #f7f7f7;
 }
 
 .milestone-solution-media-wide img {
