@@ -1919,6 +1919,18 @@ a.project-card {
   font-weight: 500;
   line-height: 1;
   text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.case-study-section p.identifit-solution-step-label {
+  margin: 0 0 25px;
+  color: #acacac;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .identifit-solution-step h3 {
@@ -1947,16 +1959,19 @@ a.project-card {
   width: min(499px, calc(100% - 48px));
   height: min(465px, calc(100% - 24px));
   aspect-ratio: 499 / 465;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   background: #f7f7f7;
 }
 
 .identifit-solution-media-frame video {
-  width: 100%;
-  height: 100%;
   display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   object-position: center center;
 }
@@ -1967,6 +1982,10 @@ a.project-card {
 }
 
 .identifit-solution-step-body p + p {
+  margin-top: 1em;
+}
+
+.case-study-section .identifit-solution-step-body p + p {
   margin-top: 1em;
 }
 
@@ -4058,13 +4077,19 @@ a.project-card {
     transform: none;
   }
 
-  .ea-solution-gif-frame,
-  .ea-solution-gif-frame img,
-  .ea-solution-gif-frame video {
+  .ea-solution-gif-frame {
     width: 100%;
     height: auto;
     min-height: 0;
     aspect-ratio: 371 / 482;
+  }
+
+  .ea-solution-gif-frame img,
+  .ea-solution-gif-frame video {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
   }
 
   .ea-solution-text h3 {
@@ -4409,29 +4434,30 @@ a.project-card {
 .ea-solution-gif-frame {
   width: 371px;
   height: 482px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   border-radius: 2px;
   background: #000;
 }
 
 .ea-solution-gif-frame img {
-  width: 100%;
-  height: 100%;
+  display: block;
   max-width: 100%;
   max-height: 100%;
-  display: block;
+  width: auto;
+  height: auto;
   object-fit: contain;
   object-position: center center;
 }
 
 .ea-solution-gif-frame video {
-  width: 100%;
-  height: 100%;
+  display: block;
   max-width: 100%;
   max-height: 100%;
-  display: block;
+  width: auto;
+  height: auto;
   object-fit: contain;
   object-position: center center;
 }
@@ -4641,6 +4667,19 @@ a.project-card {
   font-weight: 500;
   line-height: 1;
   text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.case-study-section p.milestone-solution-step-label {
+  margin: 0 0 25px;
+  padding: 0;
+  color: #acacac;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .milestone-solution-copy h3 {
@@ -4662,6 +4701,10 @@ a.project-card {
   margin-top: 1em;
 }
 
+.case-study-section .milestone-solution-step-body p + p {
+  margin-top: 1em;
+}
+
 .case-study-section .milestone-solution-step-body p {
   margin: 0;
   color: var(--ink);
@@ -4675,17 +4718,20 @@ a.project-card {
 .milestone-solution-media {
   width: 499px;
   height: 465px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   background: #f7f7f7;
 }
 
 .milestone-solution-media img,
 .milestone-solution-media video {
-  width: 100%;
-  height: 100%;
   display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   object-position: center center;
 }
