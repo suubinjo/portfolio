@@ -2760,20 +2760,11 @@ a.project-card {
   box-sizing: border-box;
   width: 334px;
   height: 108px;
-  padding: 16px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-content: start;
   gap: 10px;
-}
-
-.identifit-insight-pain {
-  background: #f7f7f7;
-}
-
-.identifit-insight-opportunity {
-  background: #595959;
 }
 
 .identifit-insight-label {
@@ -2788,11 +2779,20 @@ a.project-card {
 
 .identifit-insight-copy {
   margin: 0;
+  align-self: center;
   font-family: var(--sans);
   font-size: 15px;
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: -0.03em;
+}
+
+.identifit-insight-pain {
+  background: #f7f7f7;
+}
+
+.identifit-insight-opportunity {
+  background: #595959;
 }
 
 .identifit-insight-pain .identifit-insight-copy {
@@ -4865,7 +4865,7 @@ a.project-card {
 }
 
 .milestone-solution-step-wide {
-  width: min(951px, 100%);
+  width: min(1027px, 100%);
   min-height: auto;
   display: block;
 }
@@ -4875,14 +4875,14 @@ a.project-card {
 }
 
 .milestone-solution-media-wide {
-  width: min(951px, 100%);
+  width: min(1027px, 100%);
   height: auto;
   aspect-ratio: 1027 / 730;
-  margin-top: 25px;
+  margin: 25px auto 0;
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: #f7f7f7;
+  background: #ffffff;
 }
 
 .milestone-solution-media-wide img {
