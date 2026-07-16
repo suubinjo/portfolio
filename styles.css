@@ -2075,6 +2075,41 @@ a.project-card {
   background: transparent;
 }
 
+.case-study-tdlr-box {
+  box-sizing: border-box;
+  padding: 28px 24px 24px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  background: transparent;
+}
+
+.case-study-tdlr-box .project-type {
+  margin-top: 0;
+}
+
+.case-study-tdlr-box h2 {
+  margin: 0;
+}
+
+.case-study-tdlr-box .jump-solution-button {
+  margin-top: 25px;
+}
+
+.case-study-preview-section .project-type {
+  margin-top: 0;
+}
+
+.identifit-validation-user-test {
+  margin-top: 25px;
+  border: 0;
+  background: transparent;
+}
+
+.identifit-validation-user-test img {
+  width: 100%;
+  display: block;
+}
+
 .case-study-preview-section {
   width: min(698px, calc(100vw - 48px));
 }
@@ -2089,18 +2124,6 @@ a.project-card {
 .case-study-preview-media img {
   width: 100%;
   display: block;
-}
-
-.ea-case-page .case-study-preview-section {
-  width: 100vw;
-  max-width: none;
-  margin-left: calc(50% - 50vw);
-}
-
-.ea-case-page .case-study-preview-media img {
-  width: 100%;
-  min-height: clamp(420px, 58vw, 760px);
-  object-fit: cover;
 }
 
 .ea-tdlr-section,
