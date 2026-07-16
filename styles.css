@@ -1182,7 +1182,7 @@ a.project-card {
   margin-top: 25px;
 }
 
-.milestone-overview-section {
+.milestone-tdlr-section {
   width: min(698px, calc(100vw - 48px));
 }
 
@@ -1206,7 +1206,7 @@ a.project-card {
   margin-top: 100px;
 }
 
-.milestone-page .milestone-overview-section,
+.milestone-page .milestone-tdlr-section,
 .milestone-page .milestone-problem-section,
 .milestone-page .milestone-research-section {
   min-height: 0;
@@ -1292,7 +1292,7 @@ a.project-card {
 
 .milestone-problem-copy {
   position: relative;
-  min-height: 334px;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -2075,7 +2075,35 @@ a.project-card {
   background: transparent;
 }
 
-.ea-overview-section,
+.case-study-preview-section {
+  width: min(698px, calc(100vw - 48px));
+}
+
+.case-study-preview-media {
+  margin: 0;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.case-study-preview-media img {
+  width: 100%;
+  display: block;
+}
+
+.ea-case-page .case-study-preview-section {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+}
+
+.ea-case-page .case-study-preview-media img {
+  width: 100%;
+  min-height: clamp(420px, 58vw, 760px);
+  object-fit: cover;
+}
+
+.ea-tdlr-section,
 .ea-problem-section,
 .ea-validation-section {
   width: min(698px, calc(100vw - 48px));
@@ -4004,7 +4032,7 @@ a.project-card {
     text-align: left;
   }
 
-  .milestone-overview-section,
+  .milestone-tdlr-section,
   .milestone-problem-section,
   .milestone-research-section,
   .milestone-opportunity-section {
@@ -4123,11 +4151,11 @@ a.project-card {
     min-height: 0;
   }
 
-  .milestone-overview-section,
+  .milestone-tdlr-section,
   .milestone-problem-section,
   .milestone-research-section,
   .milestone-opportunity-section,
-  .ea-overview-section,
+  .ea-tdlr-section,
   .ea-problem-section,
   .ea-research-section,
   .ea-pivot-section,
@@ -4232,7 +4260,7 @@ a.project-card {
     min-height: 108px;
   }
 
-  .milestone-page .milestone-overview-section,
+  .milestone-page .milestone-tdlr-section,
   .milestone-page .milestone-problem-section,
   .milestone-page .milestone-research-section {
     min-height: 0;
