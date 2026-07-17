@@ -2095,6 +2095,34 @@ a.project-card {
   margin-top: 25px;
 }
 
+.ea-screen-highlights {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ea-screen-highlights .project-type {
+  margin: 0 0 25px;
+}
+
+.ea-screen-highlights-media {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ea-screen-highlight-media {
+  margin: 0;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.ea-screen-highlight-media img {
+  width: 100%;
+  display: block;
+}
+
 .case-study-preview-section .project-type {
   margin-top: 0;
 }
