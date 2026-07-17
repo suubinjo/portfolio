@@ -518,31 +518,6 @@ function syncEaValidationVideoHeight() {
   });
 }
 
-function initYoutubeFacades() {
-  document.querySelectorAll(".ea-youtube-facade").forEach((button) => {
-    button.addEventListener("click", () => {
-      const videoId = button.dataset.youtubeId;
-      if (!videoId) return;
-
-      const embed = button.closest(".ea-video-embed");
-      if (!embed) return;
-
-      const iframe = document.createElement("iframe");
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-      iframe.title = "YouTube video player";
-      iframe.allow =
-        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-      iframe.referrerPolicy = "strict-origin-when-cross-origin";
-      iframe.allowFullscreen = true;
-
-      embed.replaceChildren(iframe);
-      syncEaValidationVideoHeight();
-    });
-  });
-}
-
-initYoutubeFacades();
-
 window.addEventListener("load", syncEaValidationVideoHeight);
 window.addEventListener("resize", syncEaValidationVideoHeight);
 

@@ -2929,51 +2929,6 @@ a.project-card {
   border: 0;
 }
 
-.ea-youtube-facade {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: 0;
-  background: #000;
-  cursor: pointer;
-  display: block;
-  overflow: hidden;
-  border-radius: 3px;
-}
-
-.ea-youtube-facade img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.ea-youtube-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 68px;
-  height: 48px;
-  border: 0;
-  border-radius: 12px;
-  background: rgba(255, 0, 0, 0.9);
-  transform: translate(-50%, -50%);
-}
-
-.ea-youtube-play::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 54%;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 16px solid #fff;
-  transform: translate(-50%, -50%);
-}
-
 .research-image-placeholder {
   border: 0;
   background: transparent;
