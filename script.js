@@ -288,7 +288,7 @@ function getPrototypeAssetCursor() {
   if (!prototypeAssetCursor) {
     prototypeAssetCursor = document.createElement("img");
     prototypeAssetCursor.className = "prototype-asset-cursor";
-    prototypeAssetCursor.src = "/assets/cursor.svg?v=cursor-white-pill-20260704";
+    prototypeAssetCursor.src = "/assets/cursor.svg";
     prototypeAssetCursor.alt = "";
     prototypeAssetCursor.setAttribute("aria-hidden", "true");
     document.body.appendChild(prototypeAssetCursor);

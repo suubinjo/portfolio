@@ -1611,9 +1611,6 @@ a.project-card {
   width: min(877px, calc(100vw - 48px));
   margin: 25px auto 0;
   transform: none;
-}
-
-.milestone-wide-image {
   border: 0;
   background: transparent;
   display: flex;
