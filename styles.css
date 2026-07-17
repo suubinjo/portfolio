@@ -4424,6 +4424,19 @@ a.project-card {
     min-height: 108px;
   }
 
+  .identifit-validation-copy {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .identifit-validation-screens {
+    min-height: 260px;
+  }
+
+  .identifit-validation-interactive {
+    padding: 16px 16px 24px;
+  }
+
   .milestone-page .milestone-tdlr-section,
   .milestone-page .milestone-problem-section,
   .milestone-page .milestone-research-section {
