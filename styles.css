@@ -2109,11 +2109,21 @@ a.project-card {
 .identifit-validation-item {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 .identifit-validation-item-label {
-  margin: 0;
+  margin: 0 0 25px;
+  color: #acacac;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.case-study-section p.identifit-validation-item-label {
+  margin: 0 0 25px;
   color: #acacac;
   font-family: var(--mono);
   font-size: 13px;
@@ -2134,6 +2144,7 @@ a.project-card {
   background: #fafafa;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease;
@@ -2146,6 +2157,15 @@ a.project-card {
 }
 
 .identifit-validation-toggle {
+  margin: 0 0 24px;
+  color: #acacac;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.case-study-section .identifit-validation-interactive p.identifit-validation-toggle {
   margin: 0 0 24px;
   color: #acacac;
   font-family: var(--sans);
@@ -2178,18 +2198,50 @@ a.project-card {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  overflow: hidden;
 }
 
 .identifit-validation-screen {
   margin: 0;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .identifit-validation-screen-center {
   position: relative;
   z-index: 1;
+}
+
+.identifit-validation-center-videos {
+  display: grid;
+  place-items: end center;
+}
+
+.identifit-validation-center-videos video {
+  grid-area: 1 / 1;
+}
+
+.identifit-validation-center-after {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.identifit-validation-center-before {
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+.identifit-validation-interactive:hover .identifit-validation-center-before,
+.identifit-validation-interactive:focus-within .identifit-validation-center-before {
+  opacity: 0;
+}
+
+.identifit-validation-interactive:hover .identifit-validation-center-after,
+.identifit-validation-interactive:focus-within .identifit-validation-center-after {
+  opacity: 1;
 }
 
 .identifit-validation-screen-side {
@@ -2201,11 +2253,11 @@ a.project-card {
 }
 
 .identifit-validation-screen-side:first-of-type {
-  left: 0;
+  left: 24px;
 }
 
 .identifit-validation-screen-side:last-of-type {
-  right: 0;
+  right: 24px;
 }
 
 .identifit-validation-interactive:hover .identifit-validation-screen-side,
@@ -2215,9 +2267,11 @@ a.project-card {
 
 .identifit-validation-screen video {
   display: block;
-  width: 208px;
-  max-width: 100%;
+  width: auto;
   height: auto;
+  max-width: 168px;
+  max-height: 300px;
+  object-fit: contain;
 }
 
 .identifit-validation-screen-caption {
@@ -2235,10 +2289,19 @@ a.project-card {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
-  margin: 0;
+  margin: 25px 0 0;
 }
 
 .identifit-validation-copy-label {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.case-study-section p.identifit-validation-copy-label {
   margin: 0 0 10px;
   color: var(--ink);
   font-family: var(--sans);
@@ -2256,12 +2319,23 @@ a.project-card {
   line-height: 1.3;
 }
 
+.case-study-section p.identifit-validation-copy-body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.identifit-validation-overview,
 .identifit-validation-user-test {
   margin: 0;
   border: 0;
   background: transparent;
 }
 
+.identifit-validation-overview img,
 .identifit-validation-user-test img {
   width: 100%;
   max-width: 753px;
@@ -2269,6 +2343,15 @@ a.project-card {
 }
 
 .identifit-validation-quotes-lead {
+  margin: 25px 0 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.case-study-section p.identifit-validation-quotes-lead {
   margin: 25px 0 0;
   color: var(--ink);
   font-family: var(--sans);
@@ -4457,13 +4540,21 @@ a.project-card {
 
   .identifit-validation-interactive {
     width: 100%;
-    height: auto;
-    aspect-ratio: 753 / 445;
+    height: 445px;
     padding: 16px 16px 24px;
   }
 
   .identifit-validation-screen video {
-    width: min(208px, 28vw);
+    max-width: min(168px, 22vw);
+    max-height: 260px;
+  }
+
+  .identifit-validation-screen-side:first-of-type {
+    left: 12px;
+  }
+
+  .identifit-validation-screen-side:last-of-type {
+    right: 12px;
   }
 
   .milestone-page .milestone-tdlr-section,
