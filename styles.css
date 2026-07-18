@@ -221,12 +221,7 @@ a.meta-title:focus-visible {
   justify-items: stretch;
 }
 
-/* Temporary: hide identifit/milestone previews and footer email on homepage only */
-.home-page .project-card[href="/identifit/"] .project-image-wrap,
-.home-page .project-card[href="/milestone/"] .project-image-wrap {
-  display: none;
-}
-
+/* Temporary: hide footer email icon */
 .email-copy {
   display: none;
 }
