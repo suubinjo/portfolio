@@ -1,5 +1,5 @@
 const SITE_EMAIL = "suubinjo@gmail.com";
-const RESUME_URL = "/assets/subin-jo-resume.pdf";
+const RESUME_URL = "/resume/";
 const LINKEDIN_URL = "https://www.linkedin.com/in/subinjo68/";
 
 const FALLBACK_UPDATED_DATE = formatMonthDay(new Date());
