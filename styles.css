@@ -5632,3 +5632,214 @@ a.project-card {
 .hcde-tooltip span {
   color: #ececec !important;
 }
+
+/* ─── Homepage redesign ─────────────────────────────── */
+.home-page {
+  --home-accent: #ff5b6e;
+  --home-bg: #fafafa;
+  --home-pill-bg: #f4f4f4;
+  background: var(--home-bg);
+}
+
+.home-page .site-shell {
+  gap: 40px;
+  padding-top: 48px;
+}
+
+.home-header {
+  width: var(--content-width);
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.home-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  color: var(--ink);
+  transition: opacity 180ms ease;
+}
+
+.home-brand:hover,
+.home-brand:focus-visible {
+  opacity: 0.72;
+  outline: none;
+}
+
+.home-brand-flower {
+  color: var(--home-accent);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.home-brand-name {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.home-tagline {
+  max-width: 520px;
+  margin: 0;
+  color: var(--body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.home-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+.home-nav-link {
+  color: var(--body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 180ms ease, text-decoration-style 180ms ease;
+}
+
+.home-nav-link:hover,
+.home-nav-link:focus-visible {
+  color: var(--home-accent);
+  text-decoration-style: solid;
+  outline: none;
+}
+
+.home-projects {
+  width: var(--content-width);
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.home-project-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  min-height: 280px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-project-card:hover,
+.home-project-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.04), 0 10px 18px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.home-project-media {
+  min-height: 280px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.home-project-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+}
+
+.home-project-card:not([href="/ea-games/"]) .home-project-media img {
+  object-fit: contain;
+  padding: 18px;
+  background: #ffffff;
+}
+
+.home-project-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 36px 40px;
+}
+
+.home-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.home-project-tags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 24px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--home-pill-bg);
+  color: var(--home-accent);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.home-project-tag-award::before {
+  content: "🏆";
+  font-size: 11px;
+  line-height: 1;
+}
+
+.home-project-title {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.home-project-description {
+  max-width: 420px;
+  margin: 0;
+  color: var(--body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .home-project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .home-project-media,
+  .home-project-media img {
+    min-height: 220px;
+  }
+
+  .home-project-body {
+    padding: 28px 24px 32px;
+  }
+}
+
+@media (max-width: 680px) {
+  .home-page .site-shell {
+    padding-top: 32px;
+  }
+
+  .home-nav {
+    gap: 14px;
+  }
+
+  .home-project-title {
+    font-size: 26px;
+  }
+}

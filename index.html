@@ -35,133 +35,69 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=20260718" />
+    <link rel="stylesheet" href="/styles.css?v=20260724" />
   </head>
-  <body>
+  <body class="home-page">
     <main class="site-shell">
-      <header class="topbar" aria-label="Portfolio overview">
-        <section class="intro">
-          <a class="brand animate-letters" href="#home" aria-label="Subin Jo home">© Subin Jo</a>
-          <p class="intro-copy">
-            <span class="intro-line animate-letters">UX Designer who designs meaningful experience</span>
-            <span class="intro-line animate-letters">that connects people and ideas worldwide</span>
-          </p>
-        </section>
-
-        <nav class="meta-nav" aria-label="Profile links">
-          <div class="meta-group">
-            <a class="meta-title" href="/about-me/">About Me</a>
-            <p>
-              <a class="meta-link meta-link-education" href="https://www.hcde.washington.edu/" target="_blank" rel="noreferrer">
-                <span>UW HCDE '26</span>
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M3 8.5 12 4l9 4.5-9 4.5-9-4.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
-                  <path d="M6.5 10.5v4.2c1.7 1.7 3.6 2.5 5.5 2.5s3.8-.8 5.5-2.5v-4.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M20.5 9v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
-                </svg>
-              </a>
-              <span>based in Seattle</span>
-            </p>
-          </div>
-          <div class="meta-group">
-            <span class="meta-title">Currently I Am</span>
-            <p>
-              <span>building this site</span>
-              <a class="meta-link meta-link-history" href="/journey/">
-                <span>with Codex</span>
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4.3 19.7 14.9 9.1l2.2 2.2L6.5 21.9a1.6 1.6 0 0 1-2.2 0h0a1.6 1.6 0 0 1 0-2.2Z" fill="currentColor" />
-                  <path d="m13.7 10.3 2.2 2.2" stroke="#fff" stroke-width="1.1" stroke-linecap="round" />
-                  <path d="M17.4 2.8 18.5 6l3.1 1.1-3.1 1.1-1.1 3.1-1.1-3.1-3.1-1.1 3.1-1.1 1.1-3.2ZM7.6 3.1l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2ZM18.9 14.2l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6.6-1.7Z" fill="currentColor" />
-                </svg>
-              </a>
-            </p>
-          </div>
-          <div class="meta-group">
-            <span class="meta-title">Contact</span>
-            <div class="meta-contact-links">
-              <a class="meta-link meta-link-resume" href="/assets/subin-jo-resume-naver.pdf" target="_blank" rel="noreferrer">
-                <span>Resumé</span>
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M7 3h7.5L19 7.5V21H7V3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
-                  <path d="M14 3v5h5M10 12h6M10 15h6M10 18h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </a>
-              <a class="meta-link meta-link-linkedin" href="https://www.linkedin.com/in/subinjo68/" target="_blank" rel="noreferrer">
-                <span>Linkedin</span>
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M6.7 8.8H3.8V20h2.9V8.8ZM5.3 4a1.7 1.7 0 1 0 0 3.4A1.7 1.7 0 0 0 5.3 4Zm6.1 4.8H8.6V20h2.9v-5.9c0-1.6.7-2.6 2.1-2.6 1.2 0 1.8.8 1.8 2.6V20h2.9v-6.5c0-3.1-1.6-4.8-4.1-4.8-1.4 0-2.3.7-2.8 1.5V8.8Z" />
-                </svg>
-              </a>
-            </div>
-          </div>
+      <header class="home-header" aria-label="Portfolio overview">
+        <a class="home-brand" href="#home" aria-label="Subin Jo home">
+          <span class="home-brand-flower" aria-hidden="true">❀</span>
+          <span class="home-brand-name">Subin Jo</span>
+        </a>
+        <p class="home-tagline">
+          UX Designer who design meaningful experience that connects people and ideas worldwide
+        </p>
+        <nav class="home-nav" aria-label="Profile links">
+          <a class="home-nav-link" href="/about-me/">About Me</a>
+          <a class="home-nav-link" href="/journey/">Portfolio History</a>
+          <a class="home-nav-link" href="/assets/subin-jo-resume-naver.pdf" target="_blank" rel="noreferrer">Resume</a>
         </nav>
       </header>
 
-      <section class="project-grid" id="home" aria-label="Selected work">
-        <a class="project-card ea-card" style="--image-scale: 1.22" href="/ea-games/" data-page="ea-games">
-          <div class="project-tags" aria-label="Project tags">
-            <span>AI</span>
-            <span>Gaming</span>
+      <section class="home-projects" id="home" aria-label="Selected work">
+        <a class="home-project-card" href="/ea-games/">
+          <div class="home-project-media" aria-hidden="true">
+            <img src="/assets/ea/home-thumbnail.png" alt="" loading="lazy" decoding="async" />
           </div>
-          <div class="project-image-wrap" aria-hidden="true">
-            <img class="project-image" src="/assets/ea/hero.gif" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div class="project-footer">
-            <div class="project-text">
-              <h1 class="project-title">FC 26 Manager +</h1>
-              <p class="project-description">Enhancing gameplay with an AI-powered second-screen app</p>
+          <div class="home-project-body">
+            <div class="home-project-tags" aria-label="Project tags">
+              <span>Electronic Arts</span>
+              <span>AI</span>
+              <span>Gaming</span>
             </div>
-            <div class="project-icon" aria-hidden="true">
-              <svg class="arrow-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-                <path d="m12 5 7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
+            <h2 class="home-project-title">FC 26 Manager +</h2>
+            <p class="home-project-description">
+              Enhancing gameplay experience with AI powered second screen app
+            </p>
           </div>
         </a>
 
-        <a class="project-card" style="--image-scale: 1.15" href="/identifit/">
-          <div class="project-tags" aria-label="Project tags">
-            <span>0-1</span>
-            <span>Fashion</span>
+        <a class="home-project-card" href="/identifit/">
+          <div class="home-project-media" aria-hidden="true">
+            <img src="/assets/identifit-preview.svg" alt="" loading="lazy" decoding="async" />
           </div>
-          <div class="project-image-wrap" aria-hidden="true">
-            <img class="project-image" src="/assets/identifit-preview.svg" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div class="project-footer">
-            <div class="project-text">
-              <h1 class="project-title">Identifit</h1>
-              <p class="project-description">Building a virtual wardrobe for daily outfit decisions</p>
+          <div class="home-project-body">
+            <div class="home-project-tags" aria-label="Project tags">
+              <span class="home-project-tag-award">Best Overall Design Awarded</span>
+              <span>0-1</span>
+              <span>Fashion</span>
             </div>
-            <div class="project-icon" aria-hidden="true">
-              <svg class="arrow-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-                <path d="m12 5 7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
+            <h2 class="home-project-title">Identifit</h2>
+            <p class="home-project-description">Building a virtual wardrobe for daily outfit decisions</p>
           </div>
         </a>
 
-        <a class="project-card" style="--image-scale: 1.3" href="/milestone/">
-          <div class="project-tags" aria-label="Project tags">
-            <span>Service</span>
-            <span>Fin Tech</span>
+        <a class="home-project-card" href="/milestone/">
+          <div class="home-project-media" aria-hidden="true">
+            <img src="/assets/milestone-preview.svg" alt="" loading="lazy" decoding="async" />
           </div>
-          <div class="project-image-wrap" aria-hidden="true">
-            <img class="project-image" src="/assets/milestone-preview.svg" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div class="project-footer">
-            <div class="project-text">
-              <h1 class="project-title">Milestone Seed</h1>
-              <p class="project-description">Navigating Singapore's financial life transitions</p>
+          <div class="home-project-body">
+            <div class="home-project-tags" aria-label="Project tags">
+              <span>Service</span>
+              <span>Fin Tech</span>
             </div>
-            <div class="project-icon" aria-hidden="true">
-              <svg class="arrow-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-                <path d="m12 5 7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
+            <h2 class="home-project-title">Milestone Seed</h2>
+            <p class="home-project-description">Navigating Singapore's financial life transitions</p>
           </div>
         </a>
       </section>
