@@ -20,6 +20,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
+  background: #ffffff;
 }
 
 body {
@@ -52,7 +53,6 @@ img {
   display: grid;
   grid-template-rows: auto auto auto;
   gap: 34px;
-  animation: page-rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .site-footer,
@@ -162,21 +162,20 @@ img {
 .email-copy-popup {
   position: absolute;
   left: 50%;
-  bottom: 40px;
-  padding: 10px;
-  border-radius: 999px;
-  background: #f2f2f2;
-  color: #030303;
-  font-family: var(--mono);
-  font-size: 11px;
+  bottom: calc(100% + 8px);
+  padding: 0;
+  background: transparent;
+  color: var(--body);
+  font-family: var(--sans);
+  font-size: 15px;
   font-weight: 300;
-  letter-spacing: 0.1px;
-  line-height: 1;
+  letter-spacing: 0;
+  line-height: 1.4;
   white-space: nowrap;
   opacity: 0;
-  transform: translateX(-50%) translateY(6px);
+  transform: translateX(-50%) translateY(4px);
   pointer-events: none;
-  transition: opacity 200ms ease, transform 200ms ease, background 200ms ease, color 200ms ease;
+  transition: opacity 180ms ease, transform 180ms ease, color 180ms ease, font-weight 180ms ease;
 }
 
 .email-copy:not(.hide-popup):hover .email-copy-popup,
@@ -187,14 +186,13 @@ img {
 }
 
 .email-copy.is-copied .email-copy-popup {
-  background: #5e5e5e;
-  color: #f2f2f2;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #ff5b6e;
+  font-weight: 500;
 }
 
 .email-copy.hide-popup .email-copy-popup {
   opacity: 0;
-  transform: translateX(-50%) translateY(6px);
+  transform: translateX(-50%) translateY(4px);
 }
 
 .date-stamp {
@@ -233,7 +231,6 @@ img {
   font-family: var(--sans);
   font-size: 15px;
   font-weight: 400;
-  animation: case-fade 520ms ease both;
 }
 
 @keyframes case-fade {
@@ -2869,7 +2866,6 @@ img {
   display: grid;
   grid-template-rows: auto auto auto;
   gap: 34px;
-  animation: page-rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .history-page {
@@ -2889,7 +2885,6 @@ img {
   grid-template-rows: auto minmax(0, 1fr) auto;
   gap: clamp(18px, 3vh, 28px);
   background: #ffffff;
-  animation: page-rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .history-content {
@@ -4830,7 +4825,7 @@ img {
 
 .home-page .site-shell {
   gap: 40px;
-  padding-top: 56px;
+  padding-top: 40px;
   padding-left: 10px;
 }
 
@@ -4934,6 +4929,7 @@ img {
 }
 
 .home-nav-link--wip {
+  position: relative;
   cursor: default;
   text-decoration: none;
 }
@@ -4947,13 +4943,29 @@ img {
 }
 
 .home-nav-wip {
-  margin-left: 0.35em;
+  position: absolute;
+  left: calc(100% + 0.35em);
+  top: 0;
+  opacity: 0;
+  color: var(--body);
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 180ms ease, color 180ms ease;
 }
 
 .home-nav-link--wip:hover .home-nav-link-label,
 .home-nav-link--wip:focus-visible .home-nav-link-label {
   color: var(--home-accent);
   text-decoration-color: var(--home-accent);
+}
+
+.home-nav-link--wip:hover .home-nav-wip,
+.home-nav-link--wip:focus-visible .home-nav-wip {
+  opacity: 1;
+  color: var(--home-accent);
 }
 
 .home-projects {

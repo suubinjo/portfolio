@@ -2,6 +2,19 @@ const SITE_EMAIL = "suubinjo@gmail.com";
 const RESUME_URL = "/resume/";
 const LINKEDIN_URL = "https://www.linkedin.com/in/subinjo68/";
 
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+function resetScrollPosition() {
+  window.scrollTo(0, 0);
+}
+
+resetScrollPosition();
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) resetScrollPosition();
+});
+
 const FALLBACK_UPDATED_DATE = formatMonthDay(new Date());
 const GITHUB_REPO = "suubinjo/portfolio";
 
