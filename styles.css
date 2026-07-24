@@ -65,11 +65,6 @@ img {
   line-height: 1.4;
 }
 
-/* Temporary: hide footer email icon */
-.email-copy {
-  display: none;
-}
-
 .arrow-icon {
   transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
 }
