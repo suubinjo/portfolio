@@ -5638,19 +5638,25 @@ a.project-card {
   --home-accent: #ff5b6e;
   --home-bg: #fafafa;
   --home-pill-bg: #f4f4f4;
+  --home-content-width: min(1140px, calc(100vw - clamp(104px, 16vw, 220px)));
   background: var(--home-bg);
 }
 
 .home-page .site-shell {
   gap: 40px;
-  padding-top: 48px;
+  padding-top: 56px;
+  padding-left: 10px;
 }
 
 .home-header {
-  width: var(--content-width);
+  width: var(--home-content-width);
   margin: 0 auto;
   display: grid;
   gap: 14px;
+}
+
+.home-page .site-footer {
+  width: var(--home-content-width);
 }
 
 .home-brand {
@@ -5664,15 +5670,15 @@ a.project-card {
 .home-brand-flower {
   color: var(--home-accent);
   font-family: var(--serif);
-  font-size: 25px;
-  font-style: italic;
+  font-size: 20px;
+  font-style: normal;
   font-weight: 400;
   line-height: 1.1;
 }
 
 .home-brand-name {
   font-family: var(--serif);
-  font-size: 25px;
+  font-size: 20px;
   font-style: italic;
   font-weight: 400;
   line-height: 1.1;
@@ -5719,7 +5725,7 @@ a.project-card {
 }
 
 .home-projects {
-  width: var(--content-width);
+  width: var(--home-content-width);
   margin: 0 auto;
   display: grid;
   gap: 24px;
@@ -5759,6 +5765,7 @@ a.project-card {
 .home-project-card[href="/ea-games/"] .home-project-media {
   padding-top: 18px;
   box-sizing: border-box;
+  background: #ffffff;
 }
 
 .home-project-card[href="/ea-games/"] .home-project-media img {
