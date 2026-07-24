@@ -5676,8 +5676,8 @@ a.project-card {
 
 .home-brand-name {
   font-family: var(--serif);
-  font-size: 20px;
-  font-style: normal;
+  font-size: 25px;
+  font-style: italic;
   font-weight: 400;
   line-height: 1.1;
 }
@@ -5687,8 +5687,12 @@ a.project-card {
   margin: 0;
   color: var(--body);
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.4;
+}
+
+.home-tagline-line {
+  display: block;
 }
 
 .home-nav {
@@ -5701,19 +5705,20 @@ a.project-card {
 .home-nav-link {
   color: var(--body);
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.4;
   text-decoration-line: underline;
-  text-decoration-style: dashed;
+  text-decoration-style: solid;
+  text-decoration-color: var(--body);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  transition: color 180ms ease, text-decoration-style 180ms ease;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
 }
 
 .home-nav-link:hover,
 .home-nav-link:focus-visible {
   color: var(--home-accent);
-  text-decoration-style: solid;
+  text-decoration-color: var(--home-accent);
   outline: none;
 }
 
@@ -5727,7 +5732,7 @@ a.project-card {
 .home-project-card {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  min-height: 280px;
+  height: 300px;
   overflow: hidden;
   border-radius: 14px;
   background: #ffffff;
@@ -5743,7 +5748,8 @@ a.project-card {
 }
 
 .home-project-media {
-  min-height: 280px;
+  height: 100%;
+  min-height: 0;
   overflow: hidden;
   background: #f0f0f0;
 }
@@ -5751,13 +5757,12 @@ a.project-card {
 .home-project-media img {
   width: 100%;
   height: 100%;
-  min-height: 280px;
   object-fit: cover;
 }
 
 .home-project-card:not([href="/ea-games/"]) .home-project-media img {
   object-fit: contain;
-  padding: 18px;
+  padding: 20px;
   background: #ffffff;
 }
 
@@ -5818,11 +5823,11 @@ a.project-card {
 @media (max-width: 900px) {
   .home-project-card {
     grid-template-columns: 1fr;
+    height: auto;
   }
 
-  .home-project-media,
-  .home-project-media img {
-    min-height: 220px;
+  .home-project-media {
+    height: 220px;
   }
 
   .home-project-body {
