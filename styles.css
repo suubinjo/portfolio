@@ -4980,7 +4980,7 @@ img {
 .home-project-card[href="/ea-games/"] .home-project-media img {
   height: 100%;
   object-fit: cover;
-  object-position: center bottom;
+  object-position: 58% bottom;
   border-top-right-radius: 6px;
 }
 
