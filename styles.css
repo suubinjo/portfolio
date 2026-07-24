@@ -5697,6 +5697,29 @@ a.project-card {
   display: block;
 }
 
+.home-intro-animate .char {
+  opacity: 0;
+  transform: none;
+  animation: about-char-fade 520ms ease forwards;
+  animation-delay: calc(var(--char-index) * 42ms + var(--home-intro-delay, 120ms));
+}
+
+.home-intro-animate .char-space {
+  width: 0.25em;
+}
+
+.home-brand-name.home-intro-animate {
+  --home-intro-delay: 120ms;
+}
+
+.home-tagline-line:nth-child(1).home-intro-animate {
+  --home-intro-delay: 480ms;
+}
+
+.home-tagline-line:nth-child(2).home-intro-animate {
+  --home-intro-delay: 1180ms;
+}
+
 .home-nav {
   display: flex;
   flex-wrap: wrap;
