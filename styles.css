@@ -294,7 +294,7 @@ img {
   font-family: var(--sans);
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -3032,7 +3032,7 @@ img {
   font-family: var(--sans);
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -4986,6 +4986,7 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: center bottom;
+  border-top-right-radius: 6px;
 }
 
 .home-project-card:not([href="/ea-games/"]) .home-project-media img {
