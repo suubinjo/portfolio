@@ -4934,34 +4934,26 @@ img {
 }
 
 .home-nav-link--wip {
-  position: relative;
   cursor: default;
+  text-decoration: none;
 }
 
-.home-nav-tooltip {
-  position: absolute;
-  left: 50%;
-  top: calc(100% + 10px);
-  padding: 8px 10px;
-  border-radius: 999px;
-  background: #f2f2f2;
-  color: #030303;
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.1px;
-  line-height: 1;
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateX(-50%) translateY(-4px);
-  pointer-events: none;
-  transition: opacity 200ms ease, transform 200ms ease;
+.home-nav-link-label {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: var(--body);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
-.home-nav-link--wip:hover .home-nav-tooltip,
-.home-nav-link--wip:focus-visible .home-nav-tooltip {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+.home-nav-wip {
+  margin-left: 0.35em;
+}
+
+.home-nav-link--wip:hover .home-nav-link-label,
+.home-nav-link--wip:focus-visible .home-nav-link-label {
+  color: var(--home-accent);
+  text-decoration-color: var(--home-accent);
 }
 
 .home-projects {
