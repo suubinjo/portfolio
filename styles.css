@@ -5024,18 +5024,7 @@ img {
   border-top-right-radius: 6px;
 }
 
-.home-project-card[href="/identifit/"] .home-project-media {
-  background: #dde8fc;
-}
-
-.home-project-card[href="/identifit/"] .home-project-media img {
-  object-fit: contain;
-  padding: 20px;
-  background: transparent;
-  box-sizing: border-box;
-}
-
-.home-project-card[href="/milestone/"] .home-project-media img {
+.home-project-card:not([href="/ea-games/"]) .home-project-media img {
   object-fit: contain;
   padding: 20px;
   background: #ffffff;
