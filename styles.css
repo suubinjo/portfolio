@@ -4084,6 +4084,12 @@ img {
   font-weight: 400;
   line-height: 1;
   text-align: left;
+  text-transform: none;
+  font-variant: normal;
+}
+
+.other-works .other-work-card h3 {
+  text-transform: none;
 }
 
 .other-work-image-wrap {
