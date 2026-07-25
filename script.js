@@ -44,7 +44,7 @@ function formatMonthDay(dateString) {
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
   }
 
-  return `${month}, ${getOrdinal(day)}`;
+  return `${month} ${getOrdinal(day)} ${date.getFullYear()}`;
 }
 
 async function updateFooterDate() {
@@ -96,7 +96,7 @@ function createFooter() {
     </div>
     <div class="date-stamp">
       <span class="js-last-updated">Last updated: ${FALLBACK_UPDATED_DATE}</span>
-      <span>©2026 Subin Jo</span>
+      <span>Built with Cursor and &lt;3</span>
     </div>
   `;
   return footer;
