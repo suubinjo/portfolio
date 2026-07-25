@@ -3251,8 +3251,9 @@ img {
 .about-caption {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: minmax(250px, 1.45fr) minmax(0, 0.55fr);
-  column-gap: 40px;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
+  column-gap: 16px;
   row-gap: 2px;
   margin-top: 34px;
   color: #858585;
@@ -3263,14 +3264,14 @@ img {
   text-transform: uppercase;
 }
 
+.about-caption span {
+  white-space: nowrap;
+}
+
 .about-caption span:nth-child(2),
 .about-caption span:nth-child(4) {
   justify-self: end;
   text-align: right;
-}
-
-.about-caption span:nth-child(3) {
-  white-space: nowrap;
 }
 
 .about-letter {
