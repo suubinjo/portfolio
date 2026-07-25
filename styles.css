@@ -4576,14 +4576,15 @@ img {
   min-height: 52px;
   padding: 16px 24px;
   border-radius: 12px;
-  background: rgba(16, 16, 16, 0.62);
+  background: rgba(16, 16, 16, 0.28);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
-  opacity: 1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  opacity: 0;
   pointer-events: none;
-  transform: translateY(0);
+  transform: translateY(6px);
   transition:
+    opacity 220ms ease,
     background 220ms ease,
     box-shadow 220ms ease,
     transform 220ms ease;
@@ -4608,9 +4609,10 @@ img {
 
 .milestone-solution-prototype:hover .milestone-prototype-overlay,
 .milestone-solution-prototype:focus-visible .milestone-prototype-overlay {
-  background: rgba(16, 16, 16, 0.78);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
-  transform: translateY(-2px);
+  opacity: 1;
+  background: rgba(16, 16, 16, 0.34);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+  transform: translateY(0);
 }
 
 .milestone-solution-prototype:focus-visible,
