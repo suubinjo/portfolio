@@ -35,10 +35,11 @@ function formatMonthDay(dateString) {
     return FALLBACK_UPDATED_DATE;
   }
 
-  const month = date.toLocaleDateString("en-US", { month: "long" });
   const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear() % 100;
 
-  return `${month} ${day}, ${date.getFullYear()}`;
+  return `${day}/${month}/${year}`;
 }
 
 async function updateFooterDate() {
