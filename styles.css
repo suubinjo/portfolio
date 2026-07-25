@@ -1576,9 +1576,10 @@ img {
   font-weight: 500;
   line-height: 1.2;
   text-decoration: none;
-  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   white-space: nowrap;
-  transition: color 180ms ease;
+  transition: color 180ms ease, background 180ms ease;
 }
 
 .jump-solution-arrow {
@@ -1593,7 +1594,7 @@ img {
 
 .jump-solution-button:hover,
 .jump-solution-button:focus-visible {
-  background: #f4f4f4;
+  background: #ececec;
   color: #ff5b6e;
   outline: none;
 }
@@ -4593,8 +4594,9 @@ img {
   font-family: var(--sans);
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
   line-height: 1;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
