@@ -3257,8 +3257,8 @@ img {
 .about-caption {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 28px;
+  grid-template-columns: minmax(250px, 1.45fr) minmax(0, 0.55fr);
+  column-gap: 40px;
   row-gap: 2px;
   margin-top: 34px;
   color: #858585;
@@ -3267,6 +3267,16 @@ img {
   font-weight: 400;
   line-height: 1.25;
   text-transform: uppercase;
+}
+
+.about-caption span:nth-child(2),
+.about-caption span:nth-child(4) {
+  justify-self: end;
+  text-align: right;
+}
+
+.about-caption span:nth-child(3) {
+  white-space: nowrap;
 }
 
 .about-letter {
@@ -4160,7 +4170,7 @@ img {
   background: transparent;
   display: block;
   overflow: hidden;
-  cursor: default;
+  cursor: pointer;
   text-decoration: none;
   color: inherit;
 }
@@ -4554,19 +4564,24 @@ img {
   left: 20px;
   right: 20px;
   bottom: 20px;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: auto;
-  padding: 14px 20px;
-  border-radius: 0;
-  background: rgba(0, 0, 0, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  opacity: 0;
+  min-height: 52px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: rgba(16, 16, 16, 0.62);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  opacity: 1;
   pointer-events: none;
-  transform: translateY(6px);
-  transition: opacity 220ms ease, transform 220ms ease;
+  transform: translateY(0);
+  transition:
+    background 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
 }
 
 .milestone-prototype-overlay span {
@@ -4574,7 +4589,7 @@ img {
   font-family: var(--sans);
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
@@ -4588,8 +4603,9 @@ img {
 
 .milestone-solution-prototype:hover .milestone-prototype-overlay,
 .milestone-solution-prototype:focus-visible .milestone-prototype-overlay {
-  opacity: 1;
-  transform: translateY(0);
+  background: rgba(16, 16, 16, 0.78);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+  transform: translateY(-2px);
 }
 
 .milestone-solution-prototype:focus-visible,
