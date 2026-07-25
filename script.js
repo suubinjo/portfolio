@@ -75,13 +75,13 @@ function createFooter() {
         </svg>
       </a>
       <div class="email-copy" data-email="${SITE_EMAIL}">
-        <button class="email-copy-button" type="button" aria-label="Copy email">
+        <button class="email-copy-button" type="button" aria-label="Copy Email">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M16.5 12C16.5 14.7614 14.4853 17 12 17C9.51472 17 7.5 14.7614 7.5 12C7.5 9.23858 9.51472 7 12 7C14.4853 7 16.5 9.23858 16.5 12Z" stroke="currentColor" stroke-width="1.8" />
             <path d="M16.5 12V14C16.5 15.1046 17.1716 16 18 16C18.8284 16 19.5 15.1046 19.5 14V12C19.5 7.85786 16.1421 4.5 12 4.5C7.85786 4.5 4.5 7.85786 4.5 12C4.5 16.1421 7.85786 19.5 12 19.5H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </button>
-        <div class="email-copy-popup">Copy email</div>
+        <div class="email-copy-popup">Copy Email</div>
       </div>
       <a class="footer-icon" href="${LINKEDIN_URL}" target="_blank" rel="noreferrer" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -199,7 +199,7 @@ document.querySelectorAll(".email-copy").forEach((wrapper) => {
         wrapper.classList.add("hide-popup");
         button.classList.remove("is-copied");
         window.setTimeout(() => {
-          if (popup) popup.textContent = "Copy email";
+          if (popup) popup.textContent = "Copy Email";
         }, 220);
       }, 1600);
     } catch (error) {
