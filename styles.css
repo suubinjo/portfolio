@@ -1564,13 +1564,13 @@ img {
 .jump-solution-button {
   display: inline-flex;
   margin-top: 25px;
-  padding: 9px 16px;
+  padding: 12px 20px;
   border: 0;
   border-radius: 3px;
-  background: #444444;
-  color: #b8b8b8;
+  background: #ececec;
+  color: #9a9a9a;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-family: var(--sans);
   font-size: 12px;
   font-weight: 400;
@@ -1586,7 +1586,7 @@ img {
   width: 12px;
   height: 14px;
   flex: 0 0 auto;
-  background: #b8b8b8;
+  background: #9a9a9a;
   -webkit-mask: url("data:image/svg+xml,%3Csvg width='12' height='14' viewBox='0 0 12 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1V12M1.5 7.5L6 12L10.5 7.5' stroke='black' stroke-width='1.55' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg width='12' height='14' viewBox='0 0 12 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 1V12M1.5 7.5L6 12L10.5 7.5' stroke='black' stroke-width='1.55' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
   transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), background 180ms ease;
@@ -1594,14 +1594,14 @@ img {
 
 .jump-solution-button:hover,
 .jump-solution-button:focus-visible {
-  background: #444444;
+  background: #ececec;
   color: #ff5b6e;
   outline: none;
 }
 
 .jump-solution-button:hover .jump-solution-arrow,
 .jump-solution-button:focus-visible .jump-solution-arrow {
-  background: #b8b8b8;
+  background: #9a9a9a;
   transform: translateY(5px);
 }
 
