@@ -361,7 +361,7 @@ img {
   border-radius: 6px;
   color: #b8b8b8;
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   letter-spacing: -0.01em;
   line-height: 1.4;
@@ -725,7 +725,7 @@ img {
 }
 
 .case-study-section p:not(.project-type) + p:not(.project-type) {
-  margin-top: 25px;
+  margin-top: 1.7em;
 }
 
 .milestone-tdlr-section {
@@ -2630,8 +2630,8 @@ img {
 .identifit-insight {
   box-sizing: border-box;
   width: 334px;
-  height: 108px;
-  padding: 18px 20px;
+  height: 118px;
+  padding: 18px 20px 22px;
   display: grid;
   grid-template-rows: auto 1fr;
   align-content: start;
@@ -2650,7 +2650,7 @@ img {
 
 .identifit-insight-copy {
   margin: 0;
-  align-self: center;
+  align-self: start;
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
@@ -2736,6 +2736,19 @@ img {
 
 .ideation-assets > .ideation-flow-note {
   margin: 0;
+}
+
+.ideation-lofi-group {
+  display: grid;
+  gap: 0;
+}
+
+.ideation-lofi-group .ideation-flow-note {
+  margin: 0;
+}
+
+.ideation-lofi-group .ideation-flow-note + .ideation-flow-note {
+  margin-top: 1.7em;
 }
 
 .user-flow-image {
@@ -3770,7 +3783,7 @@ img {
   .identifit-insight {
     width: 100%;
     height: auto;
-    min-height: 108px;
+    min-height: 118px;
   }
 
   .identifit-validation-copy {
@@ -4465,21 +4478,21 @@ img {
 
 .milestone-prototype-overlay {
   position: absolute;
-  left: 50%;
-  bottom: 28px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: max-content;
-  max-width: calc(100% - 48px);
-  padding: 12px 22px;
-  border-radius: 4px;
+  width: auto;
+  padding: 14px 20px;
+  border-radius: 0;
   background: rgba(0, 0, 0, 0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   opacity: 0;
   pointer-events: none;
-  transform: translateX(-50%) translateY(6px);
+  transform: translateY(6px);
   transition: opacity 220ms ease, transform 220ms ease;
 }
 
@@ -4503,7 +4516,7 @@ img {
 .milestone-solution-prototype:hover .milestone-prototype-overlay,
 .milestone-solution-prototype:focus-visible .milestone-prototype-overlay {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 
 .milestone-solution-prototype:focus-visible,
