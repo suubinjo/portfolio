@@ -38,13 +38,7 @@ function formatMonthDay(dateString) {
   const month = date.toLocaleDateString("en-US", { month: "long" });
   const day = date.getDate();
 
-  function getOrdinal(n) {
-    const s = ["th", "st", "nd", "rd"];
-    const v = n % 100;
-    return n + (s[(v - 20) % 10] || s[v] || s[0]);
-  }
-
-  return `${month} ${getOrdinal(day)} ${date.getFullYear()}`;
+  return `${month} ${day}, ${date.getFullYear()}`;
 }
 
 async function updateFooterDate() {
@@ -95,8 +89,8 @@ function createFooter() {
       </a>
     </div>
     <div class="date-stamp">
-      <span class="js-last-updated">Last updated: ${FALLBACK_UPDATED_DATE}</span>
       <span>Built with Cursor and &lt;3</span>
+      <span class="js-last-updated">Last updated: ${FALLBACK_UPDATED_DATE}</span>
     </div>
   `;
   return footer;
