@@ -3336,6 +3336,15 @@ img {
   border-bottom: 0;
 }
 
+.about-hcde-tooltip-wrap {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.about-hcde-link {
+  display: inline;
+}
+
 .hcde-link {
   color: #777;
   text-decoration: underline;
@@ -5042,6 +5051,15 @@ img {
   display: block;
 }
 
+.home-tagline-prev {
+  margin-top: 6px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: var(--body);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .home-intro-animate .char {
   opacity: 0;
   transform: none;
@@ -5096,6 +5114,10 @@ img {
   position: relative;
   cursor: default;
   text-decoration: none;
+}
+
+.home-nav-link--wip.is-nav-hidden {
+  display: none;
 }
 
 .home-nav-link-label {
