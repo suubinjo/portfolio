@@ -3414,6 +3414,10 @@ img {
   cursor: default;
 }
 
+.hcde-tooltip-wrap.about-hcde-tooltip-wrap {
+  display: inline;
+}
+
 .term-tooltip,
 .hcde-link {
   color: #777;
