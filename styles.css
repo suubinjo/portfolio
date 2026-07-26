@@ -5053,11 +5053,6 @@ img {
 
 .home-tagline-prev {
   margin-top: 6px;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-color: var(--body);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
 }
 
 .home-intro-animate .char {
