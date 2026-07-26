@@ -3336,11 +3336,6 @@ img {
   border-bottom: 0;
 }
 
-.about-hcde-tooltip-wrap {
-  display: inline;
-  vertical-align: baseline;
-}
-
 .about-hcde-second-line {
   display: block;
 }
@@ -3412,10 +3407,6 @@ img {
   border-bottom: 0;
   outline: none;
   cursor: default;
-}
-
-.hcde-tooltip-wrap.about-hcde-tooltip-wrap {
-  display: inline;
 }
 
 .term-tooltip,
