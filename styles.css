@@ -3337,12 +3337,12 @@ img {
 }
 
 .about-hcde-tooltip-wrap {
-  display: inline-block;
+  display: inline;
   vertical-align: baseline;
 }
 
-.about-hcde-link {
-  display: inline;
+.about-hcde-second-line {
+  display: block;
 }
 
 .hcde-link {
