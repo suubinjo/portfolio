@@ -5249,7 +5249,7 @@ img {
 }
 
 .home-project-description {
-  max-width: 420px;
+  max-width: 500px;
   margin: 0;
   color: var(--body);
   font-size: 16px;
