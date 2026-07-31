@@ -1567,8 +1567,8 @@ img {
   padding: 12px 20px;
   border: 0;
   border-radius: 3px;
-  background: #f4f4f4;
-  color: #9a9a9a;
+  background: var(--ink);
+  color: #ffffff;
   align-items: center;
   gap: 10px;
   font-family: var(--sans);
@@ -1579,7 +1579,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   white-space: nowrap;
-  transition: color 180ms ease, background 180ms ease;
+  transition: background 180ms ease, transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .jump-solution-arrow {
@@ -1594,8 +1594,8 @@ img {
 
 .jump-solution-button:hover,
 .jump-solution-button:focus-visible {
-  background: #ececec;
-  color: #ff5b6e;
+  background: #222222;
+  color: #ffffff;
   outline: none;
 }
 
@@ -5048,6 +5048,14 @@ img {
 
 .home-tagline-prev {
   margin-top: 6px;
+}
+
+.home-tagline-prev > span {
+  display: inline;
+}
+
+.home-tagline-company .char {
+  color: var(--ink);
 }
 
 .home-intro-animate .char {
