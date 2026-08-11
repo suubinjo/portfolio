@@ -3240,6 +3240,13 @@ img {
   left: auto;
 }
 
+.about-photo-4 .photo-number {
+  top: auto;
+  bottom: -24px;
+  right: 0;
+  left: auto;
+}
+
 .about-photo-3 .photo-number {
   top: auto;
   bottom: -24px;
