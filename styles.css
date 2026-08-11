@@ -3235,9 +3235,7 @@ img {
   font-weight: 400;
 }
 
-.about-photo-4 .photo-number {
-  top: auto;
-  bottom: -24px;
+.about-photo-2 .photo-number {
   right: 0;
   left: auto;
 }
@@ -3480,6 +3478,14 @@ img {
   margin-top: 8px;
   transform: rotate(8deg);
   transform-origin: left center;
+}
+
+.about-listening {
+  margin: 28px 0 0;
+  color: #858585;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 @media (max-width: 1180px) {
