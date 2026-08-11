@@ -3487,12 +3487,104 @@ img {
   transform-origin: left center;
 }
 
-.about-listening {
+.about-listening-player {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   margin: 28px 0 0;
+}
+
+.about-listening-vinyl {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, transparent 0 16%, rgba(255, 255, 255, 0.08) 16% 17%, transparent 17% 24%, rgba(255, 255, 255, 0.06) 24% 25%, transparent 25% 32%, rgba(255, 255, 255, 0.05) 32% 33%, transparent 33% 100%),
+    #171717;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: transform 180ms ease;
+}
+
+.about-listening-player.is-playing .about-listening-vinyl {
+  animation: about-vinyl-spin 5.5s linear infinite;
+}
+
+.about-listening-disc {
+  position: absolute;
+  inset: 11px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.about-listening-disc img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.about-listening-copy {
+  margin: 0;
   color: #858585;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.02em;
+}
+
+.about-listening-volume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #858585;
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.about-listening-volume:hover,
+.about-listening-volume:focus-visible {
+  color: var(--ink);
+  background: #f2f2f2;
+  outline: none;
+}
+
+.about-listening-volume-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.about-listening-volume-icon-unmuted {
+  display: none;
+}
+
+.about-listening-player.is-playing .about-listening-volume-icon-muted {
+  display: none;
+}
+
+.about-listening-player.is-playing .about-listening-volume-icon-unmuted {
+  display: block;
+}
+
+.about-listening-player audio {
+  display: none;
+}
+
+@keyframes about-vinyl-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 1180px) {
