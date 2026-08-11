@@ -3491,7 +3491,12 @@ img {
   display: flex;
   align-items: center;
   gap: 14px;
+  width: fit-content;
+  max-width: 100%;
   margin: 28px 0 0;
+  padding: 12px 16px 12px 12px;
+  border-radius: 3px;
+  background: rgba(17, 17, 17, 0.78);
 }
 
 .about-listening-vinyl {
@@ -3530,10 +3535,11 @@ img {
 
 .about-listening-copy {
   margin: 0;
-  color: #858585;
+  color: rgba(255, 255, 255, 0.78);
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .about-listening-volume {
@@ -3542,12 +3548,12 @@ img {
   justify-content: center;
   width: 32px;
   height: 32px;
-  margin-left: auto;
+  margin-left: 4px;
   padding: 0;
   border: 0;
   border-radius: 50%;
   background: transparent;
-  color: #858585;
+  color: rgba(255, 255, 255, 0.72);
   cursor: pointer;
   flex: 0 0 auto;
   transition: color 180ms ease, background 180ms ease;
@@ -3555,8 +3561,8 @@ img {
 
 .about-listening-volume:hover,
 .about-listening-volume:focus-visible {
-  color: var(--ink);
-  background: #f2f2f2;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
   outline: none;
 }
 
