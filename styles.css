@@ -5324,21 +5324,7 @@ img {
   border-top-right-radius: 6px;
 }
 
-.home-project-card[href="/identifit/"] .home-project-media {
-  padding-top: 18px;
-  box-sizing: border-box;
-  background: #ffffff;
-}
-
-.home-project-card[href="/identifit/"] .home-project-media img {
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  border-top-right-radius: 6px;
-  padding: 0;
-}
-
-.home-project-card:not([href="/ea-games/"]):not([href="/identifit/"]) .home-project-media img {
+.home-project-card:not([href="/ea-games/"]) .home-project-media img {
   object-fit: contain;
   padding: 20px;
   background: #ffffff;
