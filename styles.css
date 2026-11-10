@@ -5395,7 +5395,7 @@ img {
 
 .home-work-card[href="/ea-games/"] .home-work-media img {
   object-fit: cover;
-  object-position: 78% 5%;
+  object-position: right top;
   padding: 0;
   background: transparent;
 }
