@@ -5301,7 +5301,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
@@ -5309,13 +5309,13 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 120px;
-  min-height: 40px;
-  padding: 0 22px;
-  border-radius: 999px;
+  min-width: 0;
+  min-height: 28px;
+  padding: 0 12px;
+  border-radius: 4px;
   font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 400;
   line-height: 1;
   text-decoration: none;
   transition: opacity 180ms ease, background 180ms ease;
@@ -5426,7 +5426,7 @@ img {
 .home-work-media {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 2px;
   background: #efefef;
@@ -5454,30 +5454,36 @@ img {
 
 .home-work-tag {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 10px;
+  left: 10px;
   z-index: 1;
-  max-width: calc(100% - 24px);
-  padding: 6px 12px;
-  border-radius: 999px;
+  max-width: calc(100% - 20px);
+  padding: 4px 8px;
+  border-radius: 3px;
   background: rgba(255, 255, 255, 0.92);
   color: #8d8d8d;
   font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 10px;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .home-work-title {
+  width: 100%;
   margin: 0;
   color: var(--ink);
   font-family: var(--sans);
-  font-size: clamp(15px, 1.45vw, 18px);
-  font-weight: 500;
-  line-height: 1.35;
-  letter-spacing: -0.03em;
-  text-wrap: balance;
+  font-size: clamp(11px, 1.05vw, 13px);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .home-footer {
