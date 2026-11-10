@@ -5406,7 +5406,7 @@ img {
 }
 
 .home-work {
-  --home-work-gap: 5px;
+  --home-work-gap: 8px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--home-work-gap);
@@ -5442,8 +5442,10 @@ img {
   }
 
   .home-page .home-work {
-    --home-work-gap: 5px;
-    gap: 5px;
+    --home-work-gap: 8px;
+    gap: 8px;
+    column-gap: 8px;
+    row-gap: 8px;
     box-sizing: border-box;
     width: 100%;
     max-width: none;
