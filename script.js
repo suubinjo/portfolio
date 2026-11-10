@@ -46,17 +46,20 @@ function getUnifiedFooterHTML() {
   return `
     <div class="footer-grid">
       <div class="footer-row">
-        <span class="footer-meta">2026 ©unostd</span>
-        <span class="footer-meta footer-meta-right">Thanks for stopping by ₍^. .^₎⟆</span>
+        <span class="footer-meta">Thanks for stopping by ₍^. .^₎⟆</span>
+        <span class="footer-meta footer-meta-right">2026 ©unostd</span>
       </div>
       <div class="footer-row">
-        <span class="footer-meta">
-          built with cursor <span class="js-last-updated">last updated: ${FALLBACK_UPDATED_DATE}</span>
-        </span>
-        <span class="footer-meta footer-meta-right footer-links">
+        <span class="footer-meta footer-links">
           <a href="${RESUME_URL}" target="_blank" rel="noreferrer">Resume</a>
           <a href="${LINKEDIN_URL}" target="_blank" rel="noreferrer">LinkedIn</a>
-          <button type="button" class="footer-text-link" data-footer-copy-email>Email</button>
+          <span class="footer-email-wrap">
+            <span class="footer-copy-toast" role="status" aria-live="polite" hidden>email copied</span>
+            <button type="button" class="footer-text-link" data-footer-copy-email>Email</button>
+          </span>
+        </span>
+        <span class="footer-meta footer-meta-right">
+          built with cursor <span class="js-last-updated">last updated: ${FALLBACK_UPDATED_DATE}</span>
         </span>
       </div>
     </div>
@@ -465,9 +468,6 @@ const homeClock = document.getElementById("home-clock");
 const homeCopyToast = document.getElementById("home-copy-toast");
 const homeCopyEmailButton = document.querySelector("[data-home-copy-email]");
 
-let homeCopyToastTimer = 0;
-let homeCopyToastHideTimer = 0;
-
 async function writeTextToClipboard(text) {
   if (navigator.clipboard?.writeText) {
     try {
@@ -498,26 +498,38 @@ async function writeTextToClipboard(text) {
   return copied;
 }
 
-function showEmailCopiedFeedback() {
-  if (!homeCopyToast) return;
+const homeCopyToastTimers = { show: 0, hide: 0 };
+const footerCopyToastTimers = { show: 0, hide: 0 };
 
-  window.clearTimeout(homeCopyToastTimer);
-  window.clearTimeout(homeCopyToastHideTimer);
+function revealCopyToast(toast, timers) {
+  if (!toast) return;
 
-  homeCopyToast.hidden = false;
-  homeCopyToast.classList.remove("is-leaving");
+  window.clearTimeout(timers.show);
+  window.clearTimeout(timers.hide);
+
+  toast.hidden = false;
+  toast.classList.remove("is-leaving");
   requestAnimationFrame(() => {
-    homeCopyToast.classList.add("is-visible");
+    toast.classList.add("is-visible");
   });
 
-  homeCopyToastTimer = window.setTimeout(() => {
-    homeCopyToast.classList.remove("is-visible");
-    homeCopyToast.classList.add("is-leaving");
-    homeCopyToastHideTimer = window.setTimeout(() => {
-      homeCopyToast.classList.remove("is-leaving");
-      homeCopyToast.hidden = true;
+  timers.show = window.setTimeout(() => {
+    toast.classList.remove("is-visible");
+    toast.classList.add("is-leaving");
+    timers.hide = window.setTimeout(() => {
+      toast.classList.remove("is-leaving");
+      toast.hidden = true;
     }, 280);
   }, 1600);
+}
+
+function showEmailCopiedFeedback() {
+  revealCopyToast(homeCopyToast, homeCopyToastTimers);
+}
+
+function showFooterEmailCopiedFeedback(button) {
+  const toast = button.closest(".footer-email-wrap")?.querySelector(".footer-copy-toast");
+  revealCopyToast(toast, footerCopyToastTimers);
 }
 
 async function copySiteEmail() {
@@ -535,8 +547,14 @@ homeCopyEmailButton?.addEventListener("click", () => {
 });
 
 document.querySelectorAll("[data-footer-copy-email]").forEach((button) => {
-  button.addEventListener("click", () => {
-    void copySiteEmail();
+  button.addEventListener("click", async () => {
+    const copied = await writeTextToClipboard(SITE_EMAIL);
+    if (copied) {
+      showFooterEmailCopiedFeedback(button);
+      return;
+    }
+
+    window.location.href = `mailto:${SITE_EMAIL}`;
   });
 });
 

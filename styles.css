@@ -73,7 +73,7 @@ img {
 .footer-grid {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
   width: 100%;
 }
 
@@ -98,7 +98,7 @@ img {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .footer-meta-right {
@@ -107,10 +107,59 @@ img {
 
 .footer-links {
   display: inline-flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px 14px;
+}
+
+.footer-email-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-copy-toast {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  z-index: 2;
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: rgba(120, 120, 120, 0.88);
+  color: #f5f5f5;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 6px);
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition:
+    opacity 220ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0ms linear 220ms;
+}
+
+.footer-copy-toast.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition:
+    opacity 220ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0ms;
+}
+
+.footer-copy-toast.is-leaving {
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-50%, 6px);
 }
 
 .footer-links a,
@@ -121,9 +170,7 @@ img {
   font-weight: inherit;
   line-height: inherit;
   letter-spacing: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  text-decoration: none;
   appearance: none;
   background: none;
   border: 0;
