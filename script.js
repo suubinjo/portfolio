@@ -15,7 +15,7 @@ window.addEventListener("pageshow", (event) => {
   if (event.persisted) resetScrollPosition();
 });
 
-const FALLBACK_UPDATED_DATE = formatMonthDay(new Date());
+const FALLBACK_UPDATED_DATE = formatFooterDate(new Date());
 const GITHUB_REPO = "suubinjo/portfolio";
 
 if (window.location.protocol.startsWith("http")) {
@@ -28,24 +28,48 @@ if (window.location.protocol.startsWith("http")) {
   }
 }
 
-function formatMonthDay(dateString) {
-  const date = new Date(dateString);
+function formatFooterDate(dateInput) {
+  const date = dateInput instanceof Date ? dateInput : new Date(dateInput);
 
   if (Number.isNaN(date.getTime())) {
-    return FALLBACK_UPDATED_DATE;
+    return "00/00/00";
   }
 
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear() % 100;
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  const year = String(date.getFullYear() % 100).padStart(2, "0");
 
-  return `${day}/${month}/${year}`;
+  return `${month}/${day}/${year}`;
+}
+
+function getUnifiedFooterHTML() {
+  return `
+    <div class="footer-grid">
+      <p class="footer-meta footer-meta-left">2026 ©unostd</p>
+      <p class="footer-meta footer-meta-right">Thanks for stopping by ₍^. .^₎⟆</p>
+      <p class="footer-meta footer-meta-left footer-meta-secondary">
+        built with cursor <span class="js-last-updated">last updated: ${FALLBACK_UPDATED_DATE}</span>
+      </p>
+      <p class="footer-meta footer-meta-right footer-links footer-meta-secondary">
+        <a href="${RESUME_URL}" target="_blank" rel="noreferrer">Resume</a>
+        <a href="${LINKEDIN_URL}" target="_blank" rel="noreferrer">LinkedIn</a>
+        <button type="button" class="footer-text-link" data-footer-copy-email>Email</button>
+      </p>
+    </div>
+  `;
 }
 
 async function updateFooterDate() {
-  const dateElement = document.querySelector(".js-last-updated");
+  const dateElements = document.querySelectorAll(".js-last-updated");
 
-  if (!dateElement) return;
+  if (!dateElements.length) return;
+
+  const applyDate = (value) => {
+    dateElements.forEach((dateElement) => {
+      dateElement.textContent = `last updated: ${value}`;
+      dateElement.dataset.loaded = dateElement.dataset.loaded || "true";
+    });
+  };
 
   try {
     const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/commits?per_page=1&_=${Date.now()}`);
@@ -55,52 +79,34 @@ async function updateFooterDate() {
     const commits = await response.json();
     const latestCommitDate = commits?.[0]?.commit?.committer?.date;
 
-    dateElement.textContent = `Last updated: ${formatMonthDay(latestCommitDate)}`;
-    dateElement.dataset.loaded = "true";
+    applyDate(formatFooterDate(latestCommitDate));
   } catch (error) {
-    dateElement.textContent = `Last updated: ${FALLBACK_UPDATED_DATE}`;
-    dateElement.dataset.loaded = "fallback";
+    applyDate(FALLBACK_UPDATED_DATE);
+    dateElements.forEach((dateElement) => {
+      dateElement.dataset.loaded = "fallback";
+    });
   }
 }
 
 function createFooter() {
   const footer = document.createElement("footer");
-  footer.className = "site-footer";
-  footer.innerHTML = `
-    <div class="connect">
-      <span>Thanks for stopping by ₍^. .^₎⟆ Let's connect:</span>
-      <a class="footer-icon" href="${RESUME_URL}" target="_blank" rel="noreferrer" aria-label="Resume">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M7 3h8.2L19 6.8V21H7V3Zm7.5 1.8v2.7H17.2L14.5 4.8ZM9.7 10.2h6.1v1.5H9.7v-1.5Zm0 3.2h6.1v1.5H9.7v-1.5Zm0 3.2h4.3v1.5H9.7v-1.5Z" />
-        </svg>
-      </a>
-      <div class="email-copy" data-email="${SITE_EMAIL}">
-        <button class="email-copy-button" type="button" aria-label="Copy Email">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M16.5 12C16.5 14.7614 14.4853 17 12 17C9.51472 17 7.5 14.7614 7.5 12C7.5 9.23858 9.51472 7 12 7C14.4853 7 16.5 9.23858 16.5 12Z" stroke="currentColor" stroke-width="1.8" />
-            <path d="M16.5 12V14C16.5 15.1046 17.1716 16 18 16C18.8284 16 19.5 15.1046 19.5 14V12C19.5 7.85786 16.1421 4.5 12 4.5C7.85786 4.5 4.5 7.85786 4.5 12C4.5 16.1421 7.85786 19.5 12 19.5H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
-        <div class="email-copy-popup">Copy Email</div>
-      </div>
-      <a class="footer-icon" href="${LINKEDIN_URL}" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M6.7 8.8H3.8V20h2.9V8.8ZM5.3 4a1.7 1.7 0 1 0 0 3.4A1.7 1.7 0 0 0 5.3 4Zm6.1 4.8H8.6V20h2.9v-5.9c0-1.6.7-2.6 2.1-2.6 1.2 0 1.8.8 1.8 2.6V20h2.9v-6.5c0-3.1-1.6-4.8-4.1-4.8-1.4 0-2.3.7-2.8 1.5V8.8Z" />
-        </svg>
-      </a>
-    </div>
-    <div class="date-stamp">
-      <span>Built with Cursor and &lt;3</span>
-      <span class="js-last-updated">Last updated: ${FALLBACK_UPDATED_DATE}</span>
-    </div>
-  `;
+  footer.className = "site-footer home-footer";
+  footer.innerHTML = getUnifiedFooterHTML();
   return footer;
 }
 
-document.querySelectorAll("site-footer").forEach((placeholder) => {
-  placeholder.replaceWith(createFooter());
-});
+function initSiteFooters() {
+  document.querySelectorAll("site-footer").forEach((placeholder) => {
+    placeholder.replaceWith(createFooter());
+  });
 
+  document.querySelectorAll(".home-footer").forEach((footer) => {
+    footer.classList.add("site-footer");
+    footer.innerHTML = getUnifiedFooterHTML();
+  });
+}
+
+initSiteFooters();
 updateFooterDate();
 
 document.querySelectorAll(".animate-letters").forEach((element) => {
@@ -176,37 +182,6 @@ if (eaHighlights.length) {
   window.addEventListener("resize", syncEaHighlights);
   requestAnimationFrame(syncEaHighlights);
 }
-
-document.querySelectorAll(".email-copy").forEach((wrapper) => {
-  const button = wrapper.querySelector(".email-copy-button");
-  const popup = wrapper.querySelector(".email-copy-popup");
-  const email = wrapper.dataset.email || SITE_EMAIL;
-
-  wrapper.addEventListener("mouseenter", () => {
-    wrapper.classList.remove("hide-popup");
-  });
-
-  button?.addEventListener("click", async () => {
-    try {
-      wrapper.classList.remove("hide-popup");
-      await navigator.clipboard.writeText(email);
-      wrapper.classList.add("is-copied");
-      button.classList.add("is-copied");
-      if (popup) popup.textContent = "Copied!";
-
-      window.setTimeout(() => {
-        wrapper.classList.remove("is-copied");
-        wrapper.classList.add("hide-popup");
-        button.classList.remove("is-copied");
-        window.setTimeout(() => {
-          if (popup) popup.textContent = "Copy Email";
-        }, 220);
-      }, 1600);
-    } catch (error) {
-      window.location.href = `mailto:${email}`;
-    }
-  });
-});
 
 document.querySelectorAll(".case-nav-top").forEach((link) => {
   link.addEventListener("click", (event) => {
@@ -553,6 +528,12 @@ async function copySiteEmail() {
 
 homeCopyEmailButton?.addEventListener("click", () => {
   void copySiteEmail();
+});
+
+document.querySelectorAll("[data-footer-copy-email]").forEach((button) => {
+  button.addEventListener("click", () => {
+    void copySiteEmail();
+  });
 });
 
 if (homeClock) {
