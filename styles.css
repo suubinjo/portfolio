@@ -5306,7 +5306,7 @@ img {
 
 .home-name-logo {
   display: block;
-  width: min(168px, 58vw);
+  width: min(206px, 72vw);
   height: auto;
   margin: 0 auto;
 }
