@@ -5055,19 +5055,27 @@ img {
 }
 
 .home-topbar {
-  display: flex;
-  justify-content: flex-end;
   width: 100%;
+  min-height: 1.25rem;
   margin-bottom: clamp(40px, 8vh, 88px);
+  pointer-events: none;
 }
 
 .home-clock {
+  position: fixed;
+  top: clamp(28px, 4vw, 56px);
+  right: clamp(20px, 5vw, 72px);
+  z-index: 6;
   margin: 0;
   color: var(--home-muted);
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.02em;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .home-intro {
