@@ -535,20 +535,56 @@ const homeClock = document.getElementById("home-clock");
 const homeCopyHint = document.getElementById("home-copy-hint");
 const homeCopyEmailButton = document.querySelector("[data-home-copy-email]");
 
-async function copySiteEmail() {
-  try {
-    await navigator.clipboard.writeText(SITE_EMAIL);
-    if (homeCopyHint) {
-      homeCopyHint.textContent = "email copied";
-      homeCopyHint.classList.add("is-copied");
-      window.setTimeout(() => {
-        homeCopyHint.innerHTML = 'Press <kbd>c</kbd> to copy email';
-        homeCopyHint.classList.remove("is-copied");
-      }, 1800);
+const HOME_COPY_HINT_DEFAULT = 'Press <kbd>c</kbd> to copy email';
+
+async function writeTextToClipboard(text) {
+  if (navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (error) {
+      /* fall through to legacy copy */
     }
-  } catch (error) {
-    window.location.href = `mailto:${SITE_EMAIL}`;
   }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.top = "0";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.select();
+
+  let copied = false;
+  try {
+    copied = document.execCommand("copy");
+  } catch (error) {
+    copied = false;
+  }
+
+  textarea.remove();
+  return copied;
+}
+
+function showEmailCopiedFeedback() {
+  if (!homeCopyHint) return;
+  homeCopyHint.textContent = "email copied";
+  homeCopyHint.classList.add("is-copied");
+  window.setTimeout(() => {
+    homeCopyHint.innerHTML = HOME_COPY_HINT_DEFAULT;
+    homeCopyHint.classList.remove("is-copied");
+  }, 1800);
+}
+
+async function copySiteEmail() {
+  const copied = await writeTextToClipboard(SITE_EMAIL);
+  if (copied) {
+    showEmailCopiedFeedback();
+    return;
+  }
+
+  window.location.href = `mailto:${SITE_EMAIL}`;
 }
 
 homeCopyEmailButton?.addEventListener("click", () => {
@@ -577,14 +613,21 @@ if (homeClock) {
 }
 
 if (document.body.classList.contains("home-page")) {
-  document.addEventListener("keydown", (event) => {
-    if (event.defaultPrevented) return;
-    if (event.metaKey || event.ctrlKey || event.altKey) return;
-    if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
+  window.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.defaultPrevented) return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (event.isComposing) return;
+      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
+      if (event.target instanceof HTMLElement && event.target.isContentEditable) return;
 
-    if (event.key === "c" || event.key === "C") {
+      const isCopyKey = event.key === "c" || event.key === "C" || event.code === "KeyC";
+      if (!isCopyKey) return;
+
       event.preventDefault();
       void copySiteEmail();
-    }
-  });
+    },
+    true,
+  );
 }
