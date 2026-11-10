@@ -479,6 +479,7 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 if (!prefersReducedMotion) {
   document.querySelector(".home-intro")?.classList.add("home-intro--enter");
   document.querySelector(".home-work")?.classList.add("home-work--intro");
+  document.querySelector(".about-content")?.classList.add("about-intro--enter");
 }
 
 if (document.body.classList.contains("home-page")) {

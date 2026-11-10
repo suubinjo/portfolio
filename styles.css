@@ -2838,14 +2838,160 @@ img {
   animation: page-rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.about-page.home-page .about-shell {
-  min-height: 0;
-  flex: 1;
-  padding: 0 0 clamp(28px, 4vw, 56px);
+.about-page.home-page {
+  overflow: hidden;
+  height: 100svh;
+}
+
+.about-page.home-page .home-layout {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  min-height: 100svh;
+  max-height: 100svh;
+  overflow: hidden;
 }
 
 .about-page.home-page .home-main {
   width: 100%;
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
+}
+
+.about-page.home-page .home-main-inner {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  max-width: none;
+  width: 100%;
+  align-items: stretch;
+}
+
+.about-page.home-page .home-topbar {
+  flex-shrink: 0;
+  margin-bottom: 0;
+  min-height: clamp(28px, 4vw, 56px);
+}
+
+.about-page.home-page .about-shell {
+  --about-fit-scale: min(
+    1,
+    calc((100svh - 210px) / 800),
+    calc((100vw - 240px) / 1080)
+  );
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.about-page.home-page .about-content {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  width: var(--about-body-width);
+  max-width: calc(100vw - 48px);
+  max-height: 100%;
+  margin: 0 auto;
+  padding-top: 0;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  overflow: hidden;
+  zoom: var(--about-fit-scale);
+}
+
+@supports not (zoom: 1) {
+  .about-page.home-page .about-content {
+    transform: scale(var(--about-fit-scale));
+    transform-origin: center center;
+  }
+}
+
+.about-page.home-page .about-collage {
+  justify-content: center;
+  justify-self: center;
+}
+
+.about-page.home-page .about-letter {
+  align-self: center;
+  justify-self: center;
+}
+
+.about-page.home-page .about-title {
+  margin-top: clamp(20px, 3.5vh, 40px);
+}
+
+.about-page.home-page .about-letter p {
+  margin-block: clamp(0.35em, 1.1vh, 0.6em);
+}
+
+.about-page.home-page .home-main-inner > .about-home-footer,
+.about-page.home-page .home-main-inner > .home-footer {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  margin-top: auto;
+  padding: clamp(6px, 1.2vh, 14px) 0 0;
+  justify-content: flex-end;
+}
+
+.about-page.home-page .home-main-inner > .about-home-footer p,
+.about-page.home-page .home-main-inner > .home-footer p {
+  text-align: right;
+}
+
+@media (min-width: 961px) {
+  .about-page.home-page .home-main-inner {
+    align-items: stretch;
+  }
+
+  .about-page.home-page .home-main-inner > .about-home-footer,
+  .about-page.home-page .home-main-inner > .home-footer {
+    align-self: stretch;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-page.home-page .about-content {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 3vh, 36px);
+    width: min(var(--about-body-width), calc(100vw - 40px));
+    max-width: 100%;
+  }
+
+  .about-page.home-page .about-shell {
+    --about-fit-scale: min(
+      1,
+      calc((100svh - 200px) / 920),
+      calc((100vw - 48px) / 520)
+    );
+  }
+}
+
+@media (max-width: 960px) {
+  .about-page.home-page .home-layout {
+    height: 100svh;
+    max-height: 100svh;
+    overflow: hidden;
+    padding-bottom: clamp(20px, 4vw, 32px);
+  }
+
+  .about-page.home-page .home-main {
+    min-height: 0;
+  }
 }
 
 .history-page {
@@ -3000,7 +3146,7 @@ img {
   display: grid;
   grid-template-columns: 463px 571px;
   gap: clamp(54px, 6vw, 86px);
-  align-items: end;
+  align-items: center;
   align-content: center;
   justify-content: center;
   align-self: center;
@@ -3453,6 +3599,15 @@ img {
     gap: 56px;
     align-items: start;
     justify-items: center;
+  }
+
+  .about-page.home-page .about-content {
+    grid-template-columns: min(420px, 42vw) min(520px, 48vw);
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+    justify-items: center;
+    width: max-content;
+    max-width: calc(100vw - 48px);
   }
 
   .about-collage {
@@ -5085,7 +5240,7 @@ img {
 .home-topbar {
   width: 100%;
   min-height: 1.25rem;
-  margin-bottom: clamp(28px, 5.5vh, 64px);
+  margin-bottom: clamp(8px, 1.8vh, 24px);
   pointer-events: none;
 }
 
@@ -5151,6 +5306,58 @@ img {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .about-page.home-page .about-shell {
+    animation: none;
+  }
+
+  .about-intro--enter .about-collage,
+  .about-intro--enter .about-title,
+  .about-intro--enter .about-letter > p,
+  .about-intro--enter .about-signature,
+  .about-page.home-page .home-main-inner:has(.about-intro--enter) > .about-home-footer,
+  .about-page.home-page .home-main-inner:has(.about-intro--enter) > .home-footer {
+    animation: home-intro-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .about-intro--enter .about-collage {
+    animation-delay: 0ms;
+  }
+
+  .about-intro--enter .about-title {
+    animation-delay: 90ms;
+  }
+
+  .about-intro--enter .about-letter > p:nth-child(2) {
+    animation-delay: 160ms;
+  }
+
+  .about-intro--enter .about-letter > p:nth-child(3) {
+    animation-delay: 200ms;
+  }
+
+  .about-intro--enter .about-letter > p:nth-child(4) {
+    animation-delay: 240ms;
+  }
+
+  .about-intro--enter .about-letter > p:nth-child(5) {
+    animation-delay: 280ms;
+  }
+
+  .about-intro--enter .about-letter > p:nth-child(6) {
+    animation-delay: 320ms;
+  }
+
+  .about-intro--enter .about-signature {
+    animation-delay: 360ms;
+  }
+
+  .about-page.home-page .home-main-inner:has(.about-intro--enter) > .about-home-footer,
+  .about-page.home-page .home-main-inner:has(.about-intro--enter) > .home-footer {
+    animation-delay: 420ms;
   }
 }
 
@@ -5425,7 +5632,7 @@ img {
   row-gap: var(--home-work-gap);
   width: 100%;
   max-width: 100%;
-  margin: clamp(24px, 4vh, 40px) auto 0;
+  margin: clamp(10px, 1.8vh, 22px) auto 0;
 }
 
 @media (min-width: 961px) {
@@ -5460,7 +5667,7 @@ img {
     box-sizing: border-box;
     width: 100%;
     max-width: none;
-    margin: clamp(24px, 4vh, 40px) 0 0;
+    margin: clamp(10px, 1.8vh, 22px) 0 0;
     padding: 0;
   }
 

@@ -12,11 +12,62 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=202611110049" />
+    <link rel="stylesheet" href="/styles.css?v=202611110054" />
     <style>
       .about-page .about-greeting {
         animation: none !important;
         transform: rotate(-3deg) !important;
+      }
+
+      html:has(body.about-page.home-page) {
+        overflow: hidden;
+        height: 100%;
+      }
+
+      body.about-page.home-page {
+        overflow: hidden;
+        height: 100svh;
+      }
+
+      @media (min-width: 961px) {
+        body.about-page.home-page {
+          --home-edge-inline: clamp(28px, 4.2vw, 52px);
+        }
+
+        body.about-page.home-page .home-layout {
+          padding-left: var(--home-edge-inline) !important;
+          padding-right: var(--home-edge-inline) !important;
+        }
+
+        body.about-page.home-page .home-sidebar {
+          left: var(--home-edge-inline) !important;
+        }
+
+        body.about-page.home-page .home-clock {
+          right: var(--home-edge-inline) !important;
+          text-align: right !important;
+        }
+
+        body.about-page.home-page .home-main {
+          align-items: stretch !important;
+        }
+
+        body.about-page.home-page .home-main-inner {
+          width: 100% !important;
+          max-width: none !important;
+          align-items: stretch !important;
+        }
+
+        body.about-page.home-page .about-home-footer {
+          align-self: stretch !important;
+          width: 100% !important;
+          justify-content: flex-end !important;
+          padding-right: 0 !important;
+        }
+
+        body.about-page.home-page .about-home-footer p {
+          text-align: right !important;
+        }
       }
     </style>
   </head>
@@ -145,15 +196,15 @@
 
         </article>
       </section>
-
-      <footer class="home-footer">
-        <p>2026 ©unostd</p>
-      </footer>
         </div>
+
+        <footer class="home-footer about-home-footer">
+          <p>2026 ©unostd</p>
+        </footer>
         </div>
       </main>
     </div>
 
-    <script src="/script.js?v=202611110049"></script>
+    <script src="/script.js?v=202611110054"></script>
   </body>
 </html>
