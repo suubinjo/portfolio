@@ -476,12 +476,9 @@ if (homeClock) {
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const homeIntroPlayed = sessionStorage.getItem("portfolioHomeIntroPlayed");
-
-if (!prefersReducedMotion && !homeIntroPlayed) {
+if (!prefersReducedMotion) {
   document.querySelector(".home-intro")?.classList.add("home-intro--enter");
   document.querySelector(".home-work")?.classList.add("home-work--intro");
-  sessionStorage.setItem("portfolioHomeIntroPlayed", "1");
 }
 
 if (document.body.classList.contains("home-page")) {
