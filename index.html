@@ -38,11 +38,12 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=202611110037" />
+    <link rel="stylesheet" href="/styles.css?v=202611110041" />
+    <!-- home layout v202611110041 -->
     <style>
       @media (min-width: 961px) {
         body.home-page {
-          --home-edge-inline: clamp(20px, 3.2vw, 40px);
+          --home-edge-inline: clamp(28px, 4.2vw, 52px);
         }
 
         body.home-page .home-layout {
@@ -50,8 +51,13 @@
           padding-right: var(--home-edge-inline) !important;
         }
 
+        body.home-page .home-sidebar {
+          left: var(--home-edge-inline) !important;
+        }
+
         body.home-page .home-clock {
           right: var(--home-edge-inline) !important;
+          text-align: right !important;
         }
 
         body.home-page .home-main {
@@ -227,6 +233,6 @@
       </main>
     </div>
 
-    <script src="/script.js?v=202611110037"></script>
+    <script src="/script.js?v=202611110041"></script>
   </body>
 </html>

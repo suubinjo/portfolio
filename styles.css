@@ -4918,7 +4918,7 @@ img {
 .home-page {
   --home-muted: #bdbdbd;
   --home-border: #e6e6e6;
-  --home-edge-inline: clamp(20px, 3.2vw, 40px);
+  --home-edge-inline: clamp(28px, 4.2vw, 52px);
   background: #ffffff;
 }
 
@@ -5083,6 +5083,8 @@ img {
   top: clamp(28px, 4vw, 56px);
   right: clamp(20px, 5vw, 72px);
   z-index: 6;
+  text-align: right;
+  white-space: nowrap;
   margin: 0;
   color: var(--home-muted);
   font-family: var(--sans);
@@ -5440,6 +5442,7 @@ img {
   .home-page .home-work {
     --home-work-gap: 5px;
     gap: 5px;
+    box-sizing: border-box;
     width: 100%;
     max-width: none;
     margin: clamp(24px, 4vh, 40px) 0 0;
