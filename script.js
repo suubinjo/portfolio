@@ -474,6 +474,20 @@ if (homeClock) {
   window.setInterval(updateHomeClock, 1000);
 }
 
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const homeWorkSection = document.querySelector(".home-work");
+if (homeWorkSection && !prefersReducedMotion && !sessionStorage.getItem("portfolioHomeIntroPlayed")) {
+  homeWorkSection.classList.add("home-work--intro");
+  sessionStorage.setItem("portfolioHomeIntroPlayed", "1");
+}
+
+const aboutGreeting = document.querySelector(".about-greeting");
+if (aboutGreeting && !prefersReducedMotion && !sessionStorage.getItem("portfolioAboutGreetingWiggled")) {
+  aboutGreeting.classList.add("is-wiggle");
+  sessionStorage.setItem("portfolioAboutGreetingWiggled", "1");
+}
+
 if (document.body.classList.contains("home-page")) {
   window.addEventListener(
     "keydown",

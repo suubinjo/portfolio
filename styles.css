@@ -3142,6 +3142,43 @@ img {
   transform-origin: left center;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .about-greeting.is-wiggle {
+    animation: about-greeting-wiggle 1.05s ease-in-out both;
+  }
+}
+
+@keyframes about-greeting-wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg) translateX(0);
+  }
+
+  15% {
+    transform: rotate(-3deg) translateX(-7px);
+  }
+
+  30% {
+    transform: rotate(-3deg) translateX(7px);
+  }
+
+  45% {
+    transform: rotate(-3deg) translateX(-5px);
+  }
+
+  60% {
+    transform: rotate(-3deg) translateX(5px);
+  }
+
+  75% {
+    transform: rotate(-3deg) translateX(-3px);
+  }
+
+  90% {
+    transform: rotate(-3deg) translateX(2px);
+  }
+}
+
 .about-letter > p:first-of-type {
   margin-top: 0;
 }
@@ -5363,12 +5400,46 @@ img {
 }
 
 .home-work {
+  --home-work-gap: clamp(6px, 0.75vw, 10px);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(6px, 0.75vw, 10px);
+  gap: var(--home-work-gap);
   width: 100%;
   max-width: 100%;
   margin: clamp(24px, 4vh, 40px) auto 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-work--intro .home-work-card {
+    will-change: transform;
+    animation: home-work-card-spread 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .home-work--intro .home-work-card:nth-child(1) {
+    --home-work-spread-x: calc(100% + var(--home-work-gap));
+    animation-delay: 140ms;
+  }
+
+  .home-work--intro .home-work-card:nth-child(2) {
+    --home-work-spread-x: 0px;
+    animation-delay: 0ms;
+    animation-duration: 1ms;
+  }
+
+  .home-work--intro .home-work-card:nth-child(3) {
+    --home-work-spread-x: calc(-100% - var(--home-work-gap));
+    animation-delay: 180ms;
+  }
+}
+
+@keyframes home-work-card-spread {
+  from {
+    transform: translateX(var(--home-work-spread-x, 0px));
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .home-work-card {
@@ -5508,6 +5579,11 @@ img {
     max-width: min(420px, 100%);
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .home-work--intro .home-work-card {
+    animation: none !important;
+    transform: none !important;
   }
 
   .home-work-card .home-work-title {
