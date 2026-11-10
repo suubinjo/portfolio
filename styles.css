@@ -4918,6 +4918,7 @@ img {
 .home-page {
   --home-muted: #bdbdbd;
   --home-border: #e6e6e6;
+  --home-edge-inline: clamp(20px, 3.2vw, 40px);
   background: #ffffff;
 }
 
@@ -4930,12 +4931,16 @@ img {
 
 @media (min-width: 961px) {
   .home-page .home-layout {
-    padding-left: clamp(12px, 2vw, 28px);
-    padding-right: clamp(12px, 2vw, 28px);
+    padding-left: var(--home-edge-inline);
+    padding-right: var(--home-edge-inline);
   }
 
   .home-page .home-sidebar {
-    left: clamp(12px, 2vw, 28px);
+    left: var(--home-edge-inline);
+  }
+
+  .home-page .home-clock {
+    right: var(--home-edge-inline);
   }
 }
 
@@ -5088,19 +5093,6 @@ img {
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-}
-
-@media (min-width: 961px) {
-  .home-clock {
-    right: calc(
-      50vw -
-        min(
-          1480px,
-          min(calc(100vw - clamp(96px, 14vw, 220px)), calc(100vw - 2 * clamp(20px, 5vw, 72px)))
-        ) /
-        2
-    );
-  }
 }
 
 .home-intro {
@@ -5446,7 +5438,8 @@ img {
   }
 
   .home-page .home-work {
-    --home-work-gap: 2px;
+    --home-work-gap: 5px;
+    gap: 5px;
     width: 100%;
     max-width: none;
     margin: clamp(24px, 4vh, 40px) 0 0;
