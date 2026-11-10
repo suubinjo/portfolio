@@ -208,6 +208,13 @@ document.querySelectorAll(".email-copy").forEach((wrapper) => {
   });
 });
 
+document.querySelectorAll(".case-nav-top").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    scrollToSection("top");
+  });
+});
+
 function scrollToSection(id) {
   const element = document.getElementById(id);
   if (!element) return;
@@ -275,6 +282,7 @@ if (navInvertTargets.length && sectionIndexes.length) {
     });
 
     sectionIndexes.forEach((nav) => nav.classList.toggle("is-light", shouldInvert));
+    document.querySelectorAll(".case-nav-top").forEach((link) => link.classList.toggle("is-light", shouldInvert));
   };
 
   updateNavTone();

@@ -273,7 +273,7 @@ img {
 }
 
 .case-nav-back,
-.about-nav-back {
+.case-nav-top {
   display: inline-block;
   width: fit-content;
   color: #bdbdbd;
@@ -289,17 +289,33 @@ img {
 
 .case-nav-back:hover,
 .case-nav-back:focus-visible,
-.about-nav-back:hover,
-.about-nav-back:focus-visible {
+.case-nav-top:hover,
+.case-nav-top:focus-visible {
   color: #4a4a4a;
   outline: none;
 }
 
-.about-nav-back {
+.case-nav-back-fixed {
   position: fixed;
   top: clamp(28px, 4vw, 56px);
   left: clamp(20px, 5vw, 72px);
   z-index: 50;
+}
+
+.case-nav-top {
+  position: fixed;
+  top: clamp(28px, 4vw, 56px);
+  right: clamp(20px, 5vw, 72px);
+  z-index: 50;
+}
+
+.case-nav-top.is-light {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.case-nav-top.is-light:hover,
+.case-nav-top.is-light:focus-visible {
+  color: #ffffff;
 }
 
 .section-index {
@@ -3621,9 +3637,15 @@ img {
     font-size: 14px;
   }
 
-  .about-nav-back {
+  .case-nav-back-fixed {
     top: clamp(20px, 3vw, 32px);
     left: clamp(16px, 4vw, 24px);
+    font-size: 14px;
+  }
+
+  .case-nav-top {
+    top: clamp(20px, 3vw, 32px);
+    right: clamp(16px, 4vw, 24px);
     font-size: 14px;
   }
 
@@ -5501,8 +5523,11 @@ img {
   }
 }
 
-.about-page .site-footer,
-.about-page .site-footer .connect > span,
-.about-page .site-footer .date-stamp {
-  font-size: 16px;
+.case-study-shell .home-footer,
+.about-shell .home-footer {
+  --home-muted: #bdbdbd;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 0;
+  padding: clamp(48px, 8vh, 72px) clamp(20px, 5vw, 72px) clamp(28px, 4vw, 56px);
 }
