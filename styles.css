@@ -374,6 +374,12 @@ img {
   transition: color 180ms ease;
 }
 
+.section-index .case-nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .section-index a:hover,
 .section-index a:focus-visible {
   color: #4a4a4a;
