@@ -36,88 +36,103 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=20260846" />
+    <link rel="stylesheet" href="/styles.css?v=20261110" />
   </head>
   <body class="home-page">
-    <main class="site-shell">
-      <header class="home-header" aria-label="Portfolio overview">
-        <div class="home-brand">
-          <span class="home-brand-flower" aria-hidden="true">❀</span>
-          <span class="home-brand-name home-intro-animate animate-letters">Subin Jo</span>
-        </div>
-        <p class="home-tagline">
-          <span class="home-tagline-line home-intro-animate animate-letters">Product designer simplifying complex problems into intuitive experiences</span>
-          <span class="home-tagline-line home-tagline-prev">
-            <span class="home-intro-animate animate-letters">Previously @ </span><span class="home-tagline-company home-intro-animate animate-letters">Electronic Arts</span><span class="home-intro-animate animate-letters"> &amp; </span><span class="home-tagline-company home-intro-animate animate-letters">PwC Korea</span>
-          </span>
-        </p>
-        <nav class="home-nav" aria-label="Profile links">
-          <a class="home-nav-link" href="/about-me/">About Me</a>
-          <span class="home-nav-link home-nav-link--wip is-nav-hidden" tabindex="0">
-            <span class="home-nav-link-label">Portfolio History</span>
-            <span class="home-nav-wip" role="tooltip">Work in progress</span>
-          </span>
-          <a class="home-nav-link" href="/resume/" target="_blank" rel="noreferrer">Resume</a>
-          <a class="home-nav-link" href="https://www.linkedin.com/in/subinjo68/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+    <div class="home-layout">
+      <aside class="home-sidebar" aria-label="Site navigation">
+        <nav class="home-sidebar-nav">
+          <ul class="home-sidebar-list">
+            <li>
+              <a class="home-sidebar-link is-active" href="/" aria-current="page">Home</a>
+            </li>
+            <li>
+              <a class="home-sidebar-link" href="/about-me/">About</a>
+            </li>
+            <li class="home-sidebar-group">
+              <span class="home-sidebar-label">Contact</span>
+              <ul class="home-sidebar-sublist">
+                <li>
+                  <button class="home-sidebar-link home-sidebar-button" type="button" data-home-copy-email>Email</button>
+                </li>
+                <li>
+                  <a
+                    class="home-sidebar-link is-muted"
+                    href="https://www.linkedin.com/in/subinjo68/"
+                    target="_blank"
+                    rel="noreferrer"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li>
+                  <a class="home-sidebar-link is-muted" href="/resume/" target="_blank" rel="noreferrer">Resume</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </nav>
-      </header>
+      </aside>
 
-      <section class="home-projects" id="home" aria-label="Selected work">
-        <a class="home-project-card" href="/ea-games/">
-          <div class="home-project-media" aria-hidden="true">
-            <img src="/assets/home/ea-preview.svg" alt="" loading="lazy" decoding="async" />
+      <main class="home-main" id="home">
+        <header class="home-topbar">
+          <p class="home-clock" id="home-clock" aria-live="polite">Seoul, KR —:—:—</p>
+        </header>
+
+        <section class="home-intro" aria-label="Introduction">
+          <img class="home-avatar" src="/assets/about/about-2.jpeg" alt="Subin Jo" width="56" height="56" />
+          <h1 class="home-name">Subin Jo</h1>
+          <p class="home-prev">Previously @ <span>Electronic Arts</span> &amp; <span>PwC Korea</span></p>
+          <p class="home-bio">
+            I’m a product designer blending research, creativity, and human-centered thinking to turn complex problems into
+            simple, meaningful digital experiences.
+          </p>
+          <div class="home-cta">
+            <a class="home-cta-button home-cta-button-primary" href="/resume/" target="_blank" rel="noreferrer">Resume</a>
+            <a
+              class="home-cta-button home-cta-button-secondary"
+              href="https://www.linkedin.com/in/subinjo68/"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
           </div>
-          <div class="home-project-body">
-            <div class="home-project-tags" aria-label="Project tags">
-              <span>Electronic Arts</span>
-              <span>AI</span>
-              <span>Gaming</span>
+          <p class="home-copy-hint" id="home-copy-hint">
+            Press <kbd>c</kbd> to copy email
+          </p>
+        </section>
+
+        <section class="home-work" aria-label="Selected work">
+          <a class="home-work-card" href="/ea-games/">
+            <div class="home-work-media" aria-hidden="true">
+              <span class="home-work-tag">Gaming</span>
+              <img src="/assets/home/ea-preview.svg" alt="" loading="lazy" decoding="async" />
             </div>
-            <h2 class="home-project-title">FC 26 Manager +</h2>
-            <p class="home-project-description">
-              Helping Career Mode players make faster, more informed<br />decisions with an AI-powered second-screen companion
-            </p>
-          </div>
-        </a>
+            <h2 class="home-work-title">AI Powered Second Screen Experience</h2>
+          </a>
 
-        <a class="home-project-card" href="/identifit/">
-          <div class="home-project-media" aria-hidden="true">
-            <img src="/assets/home/identifit-preview.svg" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div class="home-project-body">
-            <div class="home-project-tags" aria-label="Project tags">
-              <span class="home-project-tag-award">Best Overall Design Awarded</span>
-              <span>0-1</span>
-              <span>Fashion</span>
+          <a class="home-work-card" href="/identifit/">
+            <div class="home-work-media" aria-hidden="true">
+              <span class="home-work-tag">Best Overall Design Awarded</span>
+              <img src="/assets/home/identifit-preview.svg" alt="" loading="lazy" decoding="async" />
             </div>
-            <h2 class="home-project-title">Identifit</h2>
-            <p class="home-project-description">
-              Reimagined the wardrobe experience to help users<br />rediscover their clothes and simplify outfit planning
-            </p>
-          </div>
-        </a>
+            <h2 class="home-work-title">Digital Closet &amp; Outfit Planning</h2>
+          </a>
 
-        <a class="home-project-card" href="/milestone/">
-          <div class="home-project-media" aria-hidden="true">
-            <img src="/assets/home/milestone-preview.svg" alt="" loading="lazy" decoding="async" />
-          </div>
-          <div class="home-project-body">
-            <div class="home-project-tags" aria-label="Project tags">
-              <span>Maybank Singapore</span>
-              <span>Service</span>
-              <span>Fin Tech</span>
+          <a class="home-work-card" href="/milestone/">
+            <div class="home-work-media" aria-hidden="true">
+              <span class="home-work-tag">Fin Tech</span>
+              <img src="/assets/home/milestone-preview.svg" alt="" loading="lazy" decoding="async" />
             </div>
-            <h2 class="home-project-title">Milestone Seed</h2>
-            <p class="home-project-description">
-              Turning complex financial milestones into a<br />personalized planning experience for young adults
-            </p>
-          </div>
-        </a>
-      </section>
+            <h2 class="home-work-title">Goal-Based Financial Planning</h2>
+          </a>
+        </section>
 
-      <site-footer></site-footer>
-    </main>
+        <footer class="home-footer">
+          <p>2026 ©unostd</p>
+        </footer>
+      </main>
+    </div>
 
-    <script src="/script.js?v=20260823"></script>
+    <script src="/script.js?v=20261110"></script>
   </body>
 </html>

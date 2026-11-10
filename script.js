@@ -530,3 +530,61 @@ if (aboutListeningPlayer) {
 
   syncListeningUi();
 }
+
+const homeClock = document.getElementById("home-clock");
+const homeCopyHint = document.getElementById("home-copy-hint");
+const homeCopyEmailButton = document.querySelector("[data-home-copy-email]");
+
+async function copySiteEmail() {
+  try {
+    await navigator.clipboard.writeText(SITE_EMAIL);
+    if (homeCopyHint) {
+      homeCopyHint.textContent = "Email copied";
+      homeCopyHint.classList.add("is-copied");
+      window.setTimeout(() => {
+        homeCopyHint.innerHTML = 'Press <kbd>c</kbd> to copy email';
+        homeCopyHint.classList.remove("is-copied");
+      }, 1800);
+    }
+  } catch (error) {
+    window.location.href = `mailto:${SITE_EMAIL}`;
+  }
+}
+
+homeCopyEmailButton?.addEventListener("click", () => {
+  void copySiteEmail();
+});
+
+if (homeClock) {
+  const updateHomeClock = () => {
+    const parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Seoul",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    }).formatToParts(new Date());
+
+  const hour = parts.find((part) => part.type === "hour")?.value ?? "00";
+  const minute = parts.find((part) => part.type === "minute")?.value ?? "00";
+  const second = parts.find((part) => part.type === "second")?.value ?? "00";
+
+    homeClock.textContent = `Seoul, KR ${hour}:${minute}:${second}`;
+  };
+
+  updateHomeClock();
+  window.setInterval(updateHomeClock, 1000);
+}
+
+if (document.body.classList.contains("home-page")) {
+  document.addEventListener("keydown", (event) => {
+    if (event.defaultPrevented) return;
+    if (event.metaKey || event.ctrlKey || event.altKey) return;
+    if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
+
+    if (event.key === "c" || event.key === "C") {
+      event.preventDefault();
+      void copySiteEmail();
+    }
+  });
+}
