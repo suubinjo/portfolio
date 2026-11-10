@@ -5057,7 +5057,7 @@ img {
 .home-topbar {
   width: 100%;
   min-height: 1.25rem;
-  margin-bottom: clamp(40px, 8vh, 88px);
+  margin-bottom: clamp(28px, 5.5vh, 64px);
   pointer-events: none;
 }
 
@@ -5502,7 +5502,7 @@ img {
 
 @media (max-width: 680px) {
   .home-topbar {
-    margin-bottom: 32px;
+    margin-bottom: 22px;
   }
 }
 
