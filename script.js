@@ -208,13 +208,6 @@ document.querySelectorAll(".email-copy").forEach((wrapper) => {
   });
 });
 
-document.querySelectorAll(".case-top-link").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    scrollToSection("top");
-  });
-});
-
 function scrollToSection(id) {
   const element = document.getElementById(id);
   if (!element) return;
@@ -480,56 +473,6 @@ document.querySelectorAll(".section-index").forEach((nav) => {
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", updateActiveSection);
 });
-
-const aboutListeningPlayer = document.querySelector("[data-about-listening]");
-
-if (aboutListeningPlayer) {
-  const audio = aboutListeningPlayer.querySelector("audio");
-  const vinylButton = aboutListeningPlayer.querySelector(".about-listening-vinyl");
-  const volumeButton = aboutListeningPlayer.querySelector(".about-listening-volume");
-  let isMuted = true;
-
-  const syncListeningUi = () => {
-    const isPlaying = !isMuted && !audio.paused;
-    aboutListeningPlayer.classList.toggle("is-playing", isPlaying);
-    volumeButton.setAttribute("aria-pressed", String(!isMuted));
-    volumeButton.setAttribute("aria-label", isMuted ? "Unmute" : "Mute");
-    vinylButton.setAttribute("aria-label", isPlaying ? "Pause Bansanka by Tuki" : "Play Bansanka by Tuki");
-  };
-
-  const setListeningMuted = (muted) => {
-    isMuted = muted;
-    audio.muted = muted;
-
-    if (muted) {
-      audio.pause();
-      syncListeningUi();
-      return;
-    }
-
-    audio
-      .play()
-      .then(syncListeningUi)
-      .catch(() => {
-        isMuted = true;
-        audio.muted = true;
-        syncListeningUi();
-      });
-  };
-
-  volumeButton.addEventListener("click", () => {
-    setListeningMuted(!isMuted);
-  });
-
-  vinylButton.addEventListener("click", () => {
-    setListeningMuted(!isMuted);
-  });
-
-  audio.addEventListener("play", syncListeningUi);
-  audio.addEventListener("pause", syncListeningUi);
-
-  syncListeningUi();
-}
 
 const homeClock = document.getElementById("home-clock");
 const homeCopyToast = document.getElementById("home-copy-toast");
