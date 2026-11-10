@@ -5476,10 +5476,42 @@ img {
   object-fit: cover;
 }
 
-.home-work-card[href="/ea-games/"] .home-work-media img {
+.home-work-media-layer {
+  position: absolute;
+  inset: 0;
+  transition: opacity 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-work-media-layer-default {
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-work-media-layer-hover {
+  opacity: 0;
   object-fit: cover;
   object-position: 84% bottom;
-  background: #f6f6f6;
+}
+
+.home-work-card-ea:hover .home-work-media-layer-default,
+.home-work-card-ea:focus-visible .home-work-media-layer-default {
+  opacity: 0;
+}
+
+.home-work-card-ea:hover .home-work-media-layer-hover,
+.home-work-card-ea:focus-visible .home-work-media-layer-hover {
+  opacity: 1;
+}
+
+.home-work-tags {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: calc(100% - 20px);
 }
 
 .home-work-card[href="/identifit/"] .home-work-media img,
@@ -5490,11 +5522,8 @@ img {
 }
 
 .home-work-tag {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 1;
-  max-width: calc(100% - 20px);
+  position: relative;
+  max-width: 100%;
   padding: 4px 8px;
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.92);
