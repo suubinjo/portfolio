@@ -484,12 +484,6 @@ if (!prefersReducedMotion && !homeIntroPlayed) {
   sessionStorage.setItem("portfolioHomeIntroPlayed", "1");
 }
 
-const aboutGreeting = document.querySelector(".about-greeting");
-if (aboutGreeting && !prefersReducedMotion && !sessionStorage.getItem("portfolioAboutGreetingWiggled")) {
-  aboutGreeting.classList.add("is-wiggle");
-  sessionStorage.setItem("portfolioAboutGreetingWiggled", "1");
-}
-
 if (document.body.classList.contains("home-page")) {
   window.addEventListener(
     "keydown",
