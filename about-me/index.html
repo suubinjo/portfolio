@@ -9,10 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=202611110037" />
+    <link rel="stylesheet" href="/styles.css?v=202611110049" />
     <style>
       .about-page .about-greeting {
         animation: none !important;
@@ -20,10 +20,54 @@
       }
     </style>
   </head>
-  <body class="about-page">
-    <main class="about-shell">
-      <a class="case-nav-back case-nav-back-fixed" href="/" aria-label="Back to home">Back</a>
+  <body class="about-page home-page">
+  <div class="home-layout">
+      <aside class="home-sidebar" aria-label="Site navigation">
+        <nav class="home-sidebar-nav">
+          <ul class="home-sidebar-list">
+            <li>
+              <a class="home-sidebar-link" href="/">Home</a>
+            </li>
+            <li>
+              <a class="home-sidebar-link is-active" href="/about-me/" aria-current="page">About</a>
+            </li>
+            <li class="home-sidebar-group" tabindex="0">
+              <span class="home-sidebar-label home-sidebar-contact">Contact</span>
+              <ul class="home-sidebar-sublist">
+                <li class="home-sidebar-email-item">
+                  <span class="home-sidebar-sub-arrow" aria-hidden="true">↳</span>
+                  <button class="home-sidebar-link home-sidebar-button is-muted" type="button" data-home-copy-email>
+                    Email
+                  </button>
+                  <span class="home-copy-flash home-sidebar-copy-flash" role="status" aria-live="polite" hidden
+                    >copied!</span
+                  >
+                </li>
+                <li>
+                  <a
+                    class="home-sidebar-link is-muted"
+                    href="https://www.linkedin.com/in/subinjo68/"
+                    target="_blank"
+                    rel="noreferrer"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li>
+                  <a class="home-sidebar-link is-muted" href="/resume/" target="_blank" rel="noreferrer">Resume</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
+      <main class="home-main">
+        <div class="home-main-inner">
+        <header class="home-topbar">
+          <p class="home-clock" id="home-clock" aria-live="polite">Seoul, KR —:—:—</p>
+        </header>
+
+        <div class="about-shell">
       <section class="about-content" aria-label="About Subin Jo">
         <div class="about-collage" aria-label="Personal photo collage">
           <figure class="about-photo about-photo-1">
@@ -105,8 +149,11 @@
       <footer class="home-footer">
         <p>2026 ©unostd</p>
       </footer>
-    </main>
+        </div>
+        </div>
+      </main>
+    </div>
 
-    <script src="/script.js?v=202611110037"></script>
+    <script src="/script.js?v=202611110049"></script>
   </body>
 </html>

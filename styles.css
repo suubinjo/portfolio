@@ -2838,6 +2838,16 @@ img {
   animation: page-rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.about-page.home-page .about-shell {
+  min-height: 0;
+  flex: 1;
+  padding: 0 0 clamp(28px, 4vw, 56px);
+}
+
+.about-page.home-page .home-main {
+  width: 100%;
+}
+
 .history-page {
   overflow: hidden;
   background: #ffffff;
@@ -4939,7 +4949,8 @@ img {
     left: var(--home-edge-inline);
   }
 
-  .home-page .home-clock {
+  .home-page .home-clock,
+  .about-page.home-page .home-clock {
     right: var(--home-edge-inline);
   }
 }
