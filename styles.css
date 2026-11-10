@@ -2928,17 +2928,37 @@ img {
   justify-self: center;
 }
 
+.about-page.home-page .about-content {
+  --about-letter-width: 418px;
+  width: max-content;
+  max-width: calc(100vw - 48px);
+  grid-template-columns: 463px var(--about-letter-width);
+  gap: clamp(44px, 5vw, 72px);
+  align-items: start;
+  align-content: start;
+}
+
 .about-page.home-page .about-letter {
-  align-self: center;
-  justify-self: center;
+  align-self: start;
+  justify-self: start;
+  width: 100%;
+  max-width: var(--about-letter-width);
+  min-height: 461px;
+  line-height: 1.62;
+  box-sizing: border-box;
 }
 
 .about-page.home-page .about-title {
-  margin-top: clamp(20px, 3.5vh, 40px);
+  margin: 0 0 6px;
+}
+
+.about-page.home-page .about-greeting {
+  width: min(100%, 360px);
+  margin-bottom: -12px;
 }
 
 .about-page.home-page .about-letter p {
-  margin-block: clamp(0.35em, 1.1vh, 0.6em);
+  margin-block: clamp(0.5em, 1.5vh, 0.82em);
 }
 
 .about-page.home-page .home-main-inner > .about-home-footer,
@@ -3608,10 +3628,11 @@ img {
   }
 
   .about-page.home-page .about-content {
-    grid-template-columns: min(420px, 42vw) min(520px, 48vw);
+    --about-letter-width: min(400px, 40vw);
+    grid-template-columns: min(420px, 42vw) var(--about-letter-width);
     gap: clamp(28px, 4vw, 56px);
-    align-items: center;
-    justify-items: center;
+    align-items: start;
+    justify-items: start;
     width: max-content;
     max-width: calc(100vw - 48px);
   }
