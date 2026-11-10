@@ -5163,6 +5163,13 @@ img {
   color: var(--home-muted);
 }
 
+.home-sidebar-sublist .home-sidebar-link.is-muted:hover,
+.home-sidebar-sublist .home-sidebar-link.is-muted:focus-visible,
+.home-sidebar-sublist .home-sidebar-button.is-muted:hover,
+.home-sidebar-sublist .home-sidebar-button.is-muted:focus-visible {
+  color: #4a4a4a;
+}
+
 .home-sidebar-sub-arrow {
   flex: 0 0 auto;
   color: #9a9a9a;
@@ -5336,8 +5343,41 @@ img {
   outline: none;
 }
 
-.home-copy-hint {
+.home-copy-wrap {
+  position: relative;
   margin: 16px 0 0;
+}
+
+.home-copy-toast {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.88);
+  color: #ffffff;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-50%) translateY(6px);
+  pointer-events: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.home-copy-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.home-copy-hint {
+  margin: 0;
   color: var(--home-muted);
   font-size: 13px;
   font-weight: 400;
@@ -5355,10 +5395,6 @@ img {
   font-family: var(--mono);
   font-size: 12px;
   font-weight: 500;
-}
-
-.home-copy-hint.is-copied {
-  color: var(--ink);
 }
 
 .home-work {

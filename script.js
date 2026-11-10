@@ -532,10 +532,11 @@ if (aboutListeningPlayer) {
 }
 
 const homeClock = document.getElementById("home-clock");
-const homeCopyHint = document.getElementById("home-copy-hint");
+const homeCopyToast = document.getElementById("home-copy-toast");
 const homeCopyEmailButton = document.querySelector("[data-home-copy-email]");
 
-const HOME_COPY_HINT_DEFAULT = 'Press <kbd>c</kbd> to copy email';
+let homeCopyToastTimer = 0;
+let homeCopyToastHideTimer = 0;
 
 async function writeTextToClipboard(text) {
   if (navigator.clipboard?.writeText) {
@@ -568,13 +569,20 @@ async function writeTextToClipboard(text) {
 }
 
 function showEmailCopiedFeedback() {
-  if (!homeCopyHint) return;
-  homeCopyHint.textContent = "email copied";
-  homeCopyHint.classList.add("is-copied");
-  window.setTimeout(() => {
-    homeCopyHint.innerHTML = HOME_COPY_HINT_DEFAULT;
-    homeCopyHint.classList.remove("is-copied");
-  }, 1800);
+  if (!homeCopyToast) return;
+
+  window.clearTimeout(homeCopyToastTimer);
+  window.clearTimeout(homeCopyToastHideTimer);
+
+  homeCopyToast.hidden = false;
+  homeCopyToast.classList.add("is-visible");
+
+  homeCopyToastTimer = window.setTimeout(() => {
+    homeCopyToast.classList.remove("is-visible");
+    homeCopyToastHideTimer = window.setTimeout(() => {
+      homeCopyToast.hidden = true;
+    }, 200);
+  }, 1600);
 }
 
 async function copySiteEmail() {

@@ -36,7 +36,7 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=20261110c" />
+    <link rel="stylesheet" href="/styles.css?v=20261110d" />
   </head>
   <body class="home-page">
     <div class="home-layout">
@@ -100,9 +100,12 @@
               >LinkedIn</a
             >
           </div>
-          <p class="home-copy-hint" id="home-copy-hint">
-            Press <kbd>c</kbd> to copy email
-          </p>
+          <div class="home-copy-wrap">
+            <p class="home-copy-toast" id="home-copy-toast" role="status" aria-live="polite" hidden>email copied</p>
+            <p class="home-copy-hint" id="home-copy-hint">
+              Press <kbd>c</kbd> to copy email
+            </p>
+          </div>
         </section>
 
         <section class="home-work" aria-label="Selected work">
@@ -138,6 +141,6 @@
       </main>
     </div>
 
-    <script src="/script.js?v=20261110c"></script>
+    <script src="/script.js?v=20261110d"></script>
   </body>
 </html>
