@@ -15,9 +15,6 @@ window.addEventListener("pageshow", (event) => {
   if (event.persisted) resetScrollPosition();
 });
 
-const FALLBACK_UPDATED_DATE = formatFooterDate(new Date());
-const GITHUB_REPO = "suubinjo/portfolio";
-
 if (window.location.protocol.startsWith("http")) {
   const cleanPath = window.location.pathname
     .replace(/\/index\.html$/, "/")
@@ -27,94 +24,6 @@ if (window.location.protocol.startsWith("http")) {
     window.history.replaceState(null, "", `${cleanPath}${window.location.search}${window.location.hash}`);
   }
 }
-
-function formatFooterDate(dateInput) {
-  const date = dateInput instanceof Date ? dateInput : new Date(dateInput);
-
-  if (Number.isNaN(date.getTime())) {
-    return "00/00/00";
-  }
-
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  const year = String(date.getFullYear() % 100).padStart(2, "0");
-
-  return `${month}/${day}/${year}`;
-}
-
-function getUnifiedFooterHTML() {
-  return `
-    <div class="footer-grid">
-      <div class="footer-row">
-        <span class="footer-meta">Thanks for stopping by ₍^. .^₎⟆</span>
-        <span class="footer-meta footer-meta-right">2026 ©unostd</span>
-      </div>
-      <div class="footer-row">
-        <span class="footer-meta footer-links">
-          <a href="${RESUME_URL}" target="_blank" rel="noreferrer">Resume</a>
-          <a href="${LINKEDIN_URL}" target="_blank" rel="noreferrer">LinkedIn</a>
-          <span class="footer-email-wrap">
-            <span class="footer-copy-toast" role="status" aria-live="polite" hidden>email copied</span>
-            <button type="button" class="footer-text-link" data-footer-copy-email>Email</button>
-          </span>
-        </span>
-        <span class="footer-meta footer-meta-right">
-          built with cursor <span class="js-last-updated">last updated: ${FALLBACK_UPDATED_DATE}</span>
-        </span>
-      </div>
-    </div>
-  `;
-}
-
-async function updateFooterDate() {
-  const dateElements = document.querySelectorAll(".js-last-updated");
-
-  if (!dateElements.length) return;
-
-  const applyDate = (value) => {
-    dateElements.forEach((dateElement) => {
-      dateElement.textContent = `last updated: ${value}`;
-      dateElement.dataset.loaded = dateElement.dataset.loaded || "true";
-    });
-  };
-
-  try {
-    const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/commits?per_page=1&_=${Date.now()}`);
-
-    if (!response.ok) throw new Error("Could not fetch latest commit date");
-
-    const commits = await response.json();
-    const latestCommitDate = commits?.[0]?.commit?.committer?.date;
-
-    applyDate(formatFooterDate(latestCommitDate));
-  } catch (error) {
-    applyDate(FALLBACK_UPDATED_DATE);
-    dateElements.forEach((dateElement) => {
-      dateElement.dataset.loaded = "fallback";
-    });
-  }
-}
-
-function createFooter() {
-  const footer = document.createElement("footer");
-  footer.className = "site-footer home-footer";
-  footer.innerHTML = getUnifiedFooterHTML();
-  return footer;
-}
-
-function initSiteFooters() {
-  document.querySelectorAll("site-footer").forEach((placeholder) => {
-    placeholder.replaceWith(createFooter());
-  });
-
-  document.querySelectorAll(".home-footer").forEach((footer) => {
-    footer.classList.add("site-footer");
-    footer.innerHTML = getUnifiedFooterHTML();
-  });
-}
-
-initSiteFooters();
-updateFooterDate();
 
 document.querySelectorAll(".animate-letters").forEach((element) => {
   const text = element.textContent || "";
@@ -499,7 +408,6 @@ async function writeTextToClipboard(text) {
 }
 
 const homeCopyToastTimers = { show: 0, hide: 0 };
-const footerCopyToastTimers = { show: 0, hide: 0 };
 
 function revealCopyToast(toast, timers) {
   if (!toast) return;
@@ -527,11 +435,6 @@ function showEmailCopiedFeedback() {
   revealCopyToast(homeCopyToast, homeCopyToastTimers);
 }
 
-function showFooterEmailCopiedFeedback(button) {
-  const toast = button.closest(".footer-email-wrap")?.querySelector(".footer-copy-toast");
-  revealCopyToast(toast, footerCopyToastTimers);
-}
-
 async function copySiteEmail() {
   const copied = await writeTextToClipboard(SITE_EMAIL);
   if (copied) {
@@ -544,18 +447,6 @@ async function copySiteEmail() {
 
 homeCopyEmailButton?.addEventListener("click", () => {
   void copySiteEmail();
-});
-
-document.querySelectorAll("[data-footer-copy-email]").forEach((button) => {
-  button.addEventListener("click", async () => {
-    const copied = await writeTextToClipboard(SITE_EMAIL);
-    if (copied) {
-      showFooterEmailCopiedFeedback(button);
-      return;
-    }
-
-    window.location.href = `mailto:${SITE_EMAIL}`;
-  });
 });
 
 if (homeClock) {
