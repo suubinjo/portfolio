@@ -37,7 +37,7 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=20261110r" />
+    <link rel="stylesheet" href="/styles.css?v=20261110s" />
   </head>
   <body class="home-page">
     <div class="home-layout">
@@ -53,11 +53,14 @@
             <li class="home-sidebar-group" tabindex="0">
               <span class="home-sidebar-label home-sidebar-contact">Contact</span>
               <ul class="home-sidebar-sublist">
-                <li>
+                <li class="home-sidebar-email-item">
                   <span class="home-sidebar-sub-arrow" aria-hidden="true">↳</span>
                   <button class="home-sidebar-link home-sidebar-button is-muted" type="button" data-home-copy-email>
                     Email
                   </button>
+                  <span class="home-copy-flash home-sidebar-copy-flash" role="status" aria-live="polite" hidden
+                    >copied!</span
+                  >
                 </li>
                 <li>
                   <a
@@ -123,7 +126,6 @@
             simple, meaningful digital experiences.
           </p>
           <div class="home-actions">
-            <p class="home-copy-toast" id="home-copy-toast" role="status" aria-live="polite" hidden>email copied</p>
             <div class="home-cta">
               <a class="home-cta-button home-cta-button-primary" href="/resume/" target="_blank" rel="noreferrer">Resume</a>
               <a
@@ -134,16 +136,21 @@
                 >LinkedIn</a
               >
             </div>
-            <p class="home-copy-hint" id="home-copy-hint">
-              Press <kbd>c</kbd> to copy email
-            </p>
+            <div class="home-copy-hint-row">
+              <p class="home-copy-hint" id="home-copy-hint">
+                Press <kbd>c</kbd> to copy email
+              </p>
+              <span class="home-copy-flash" id="home-copy-flash" role="status" aria-live="polite" hidden>copied!</span>
+            </div>
           </div>
         </section>
 
         <section class="home-work" aria-label="Selected work">
           <a class="home-work-card" href="/ea-games/">
             <div class="home-work-media" aria-hidden="true">
-              <span class="home-work-tag">Gaming</span>
+              <div class="home-work-tags">
+                <span class="home-work-tag">Gaming</span>
+              </div>
               <img src="/assets/home/ea-preview.svg" alt="" loading="lazy" decoding="async" />
             </div>
             <h2 class="home-work-title">AI Powered Second Screen Experience</h2>
@@ -151,7 +158,9 @@
 
           <a class="home-work-card" href="/identifit/">
             <div class="home-work-media" aria-hidden="true">
-              <span class="home-work-tag">Best Overall Design Awarded</span>
+              <div class="home-work-tags">
+                <span class="home-work-tag">Best Overall Design Awarded</span>
+              </div>
               <img src="/assets/home/identifit-preview.svg" alt="" loading="lazy" decoding="async" />
             </div>
             <h2 class="home-work-title">Digital Closet &amp; Outfit Planning</h2>
@@ -159,7 +168,9 @@
 
           <a class="home-work-card" href="/milestone/">
             <div class="home-work-media" aria-hidden="true">
-              <span class="home-work-tag">Fin Tech</span>
+              <div class="home-work-tags">
+                <span class="home-work-tag">Fin Tech</span>
+              </div>
               <img src="/assets/home/milestone-preview.svg" alt="" loading="lazy" decoding="async" />
             </div>
             <h2 class="home-work-title">Goal-Based Financial Planning</h2>
@@ -173,6 +184,6 @@
       </main>
     </div>
 
-    <script src="/script.js?v=20261110r"></script>
+    <script src="/script.js?v=20261110s"></script>
   </body>
 </html>

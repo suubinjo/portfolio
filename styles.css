@@ -5268,52 +5268,12 @@ img {
   outline: none;
 }
 
-.home-copy-toast {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  z-index: 3;
-  display: inline-flex;
+.home-copy-hint-row {
+  display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 28px;
-  margin: 0;
-  padding: 0 14px;
-  border-radius: 4px;
-  background: rgba(130, 130, 130, 0.72);
-  color: #ffffff;
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(-50%, 16px);
-  pointer-events: none;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  transition:
-    opacity 260ms ease,
-    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
-    visibility 0ms linear 260ms;
-}
-
-.home-copy-toast.is-visible {
-  visibility: visible;
-  opacity: 1;
-  transform: translate(-50%, 0);
-  transition:
-    opacity 260ms ease,
-    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
-    visibility 0ms;
-}
-
-.home-copy-toast.is-leaving {
-  visibility: hidden;
-  opacity: 0;
-  transform: translate(-50%, 16px);
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .home-copy-hint {
@@ -5322,6 +5282,50 @@ img {
   font-size: 13px;
   font-weight: 400;
   line-height: 1.4;
+}
+
+.home-copy-flash {
+  font-family: "Caveat", cursive;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-6px);
+  transition:
+    opacity 220ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0ms linear 220ms;
+}
+
+.home-copy-flash.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 220ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0ms;
+}
+
+.home-copy-flash.is-leaving {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-4px);
+}
+
+.home-sidebar-email-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.home-sidebar-copy-flash {
+  font-size: 15px;
 }
 
 .home-copy-hint kbd {
@@ -5389,12 +5393,21 @@ img {
   background: #f6f6f6;
 }
 
-.home-work-tag {
+.home-work-tags {
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 1;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   max-width: calc(100% - 20px);
+  pointer-events: none;
+}
+
+.home-work-tag {
+  position: relative;
+  max-width: 100%;
   padding: 4px 8px;
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.92);

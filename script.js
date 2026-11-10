@@ -374,7 +374,8 @@ document.querySelectorAll(".section-index").forEach((nav) => {
 });
 
 const homeClock = document.getElementById("home-clock");
-const homeCopyToast = document.getElementById("home-copy-toast");
+const homeCopyFlash = document.getElementById("home-copy-flash");
+const sidebarCopyFlash = document.querySelector(".home-sidebar-copy-flash");
 const homeCopyEmailButton = document.querySelector("[data-home-copy-email]");
 
 async function writeTextToClipboard(text) {
@@ -407,38 +408,41 @@ async function writeTextToClipboard(text) {
   return copied;
 }
 
-const homeCopyToastTimers = { show: 0, hide: 0 };
+const homeCopyFlashTimers = { show: 0, hide: 0 };
+const sidebarCopyFlashTimers = { show: 0, hide: 0 };
 
-function revealCopyToast(toast, timers) {
-  if (!toast) return;
+function revealCopyFlash(flash, timers) {
+  if (!flash) return;
 
   window.clearTimeout(timers.show);
   window.clearTimeout(timers.hide);
 
-  toast.hidden = false;
-  toast.classList.remove("is-leaving");
+  flash.hidden = false;
+  flash.classList.remove("is-leaving");
   requestAnimationFrame(() => {
-    toast.classList.add("is-visible");
+    flash.classList.add("is-visible");
   });
 
   timers.show = window.setTimeout(() => {
-    toast.classList.remove("is-visible");
-    toast.classList.add("is-leaving");
+    flash.classList.remove("is-visible");
+    flash.classList.add("is-leaving");
     timers.hide = window.setTimeout(() => {
-      toast.classList.remove("is-leaving");
-      toast.hidden = true;
-    }, 280);
-  }, 1600);
+      flash.classList.remove("is-leaving");
+      flash.hidden = true;
+    }, 220);
+  }, 1200);
 }
 
-function showEmailCopiedFeedback() {
-  revealCopyToast(homeCopyToast, homeCopyToastTimers);
+function showEmailCopiedFeedback(source = "hint") {
+  const flash = source === "sidebar" ? sidebarCopyFlash : homeCopyFlash;
+  const timers = source === "sidebar" ? sidebarCopyFlashTimers : homeCopyFlashTimers;
+  revealCopyFlash(flash, timers);
 }
 
-async function copySiteEmail() {
+async function copySiteEmail(source = "hint") {
   const copied = await writeTextToClipboard(SITE_EMAIL);
   if (copied) {
-    showEmailCopiedFeedback();
+    showEmailCopiedFeedback(source);
     return;
   }
 
@@ -446,7 +450,7 @@ async function copySiteEmail() {
 }
 
 homeCopyEmailButton?.addEventListener("click", () => {
-  void copySiteEmail();
+  void copySiteEmail("sidebar");
 });
 
 if (homeClock) {
