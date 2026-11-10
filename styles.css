@@ -5406,10 +5406,12 @@ img {
 }
 
 .home-work {
-  --home-work-gap: clamp(6px, 0.75vw, 10px);
+  --home-work-gap: 5px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--home-work-gap);
+  column-gap: var(--home-work-gap);
+  row-gap: var(--home-work-gap);
   width: 100%;
   max-width: 100%;
   margin: clamp(24px, 4vh, 40px) auto 0;
