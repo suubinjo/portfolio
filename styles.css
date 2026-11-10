@@ -5155,14 +5155,71 @@ img {
   max-width: 520px;
 }
 
-.home-avatar {
+.home-avatar-wrap {
+  position: relative;
   width: 56px;
   height: 56px;
   margin-bottom: 20px;
+  outline: none;
+}
+
+.home-avatar-disk {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   border-radius: 50%;
   background: #f6f6f6;
+  pointer-events: none;
+}
+
+.home-avatar {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: transparent;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 18%;
+  transform-origin: center center;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-avatar-greeting {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  z-index: 2;
+  color: #4a4a4a;
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-50%) translateY(4px);
+  pointer-events: none;
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.home-avatar-wrap:hover .home-avatar,
+.home-avatar-wrap:focus-visible .home-avatar {
+  transform: scale(1.22);
+}
+
+.home-avatar-wrap:hover .home-avatar-greeting,
+.home-avatar-wrap:focus-visible .home-avatar-greeting {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.home-avatar-wrap:focus-visible {
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
 }
 
 .home-name {
