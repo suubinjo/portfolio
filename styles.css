@@ -71,20 +71,34 @@ img {
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 8px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
 }
 
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: clamp(16px, 4vw, 40px);
+  width: 100%;
+}
+
+.footer-row > .footer-meta {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
 .footer-meta {
+  display: block;
   margin: 0;
   color: var(--footer-muted);
   font-family: var(--sans);
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .footer-meta-right {
@@ -92,7 +106,7 @@ img {
 }
 
 .footer-links {
-  display: flex;
+  display: inline-flex;
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
@@ -102,14 +116,20 @@ img {
 .footer-links a,
 .footer-text-link {
   color: inherit;
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
   letter-spacing: inherit;
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
+  appearance: none;
   background: none;
   border: 0;
+  border-radius: 0;
   padding: 0;
+  margin: 0;
   cursor: pointer;
 }
 
@@ -122,8 +142,9 @@ img {
 }
 
 @media (max-width: 640px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 8px;
   }
 
@@ -3201,10 +3222,10 @@ img {
 }
 
 .about-title {
-  margin: 48px 0 6px;
+  margin: 48px 0 0;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 51px;
+  font-size: 0;
   font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 0;
@@ -3216,9 +3237,13 @@ img {
   display: block;
   width: min(100%, 520px);
   height: auto;
-  margin: 0;
+  margin: 0 0 -20px;
   transform: rotate(-3deg);
   transform-origin: left center;
+}
+
+.about-letter > p:first-of-type {
+  margin-top: 0;
 }
 
 .about-title .char {
@@ -5516,6 +5541,7 @@ img {
 .home-footer {
   --footer-muted: var(--home-muted);
   display: block;
+  align-self: stretch;
   width: 100%;
   max-width: 100%;
   margin-top: auto;

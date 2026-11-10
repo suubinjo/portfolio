@@ -45,16 +45,20 @@ function formatFooterDate(dateInput) {
 function getUnifiedFooterHTML() {
   return `
     <div class="footer-grid">
-      <p class="footer-meta footer-meta-left">2026 ©unostd</p>
-      <p class="footer-meta footer-meta-right">Thanks for stopping by ₍^. .^₎⟆</p>
-      <p class="footer-meta footer-meta-left footer-meta-secondary">
-        built with cursor <span class="js-last-updated">last updated: ${FALLBACK_UPDATED_DATE}</span>
-      </p>
-      <p class="footer-meta footer-meta-right footer-links footer-meta-secondary">
-        <a href="${RESUME_URL}" target="_blank" rel="noreferrer">Resume</a>
-        <a href="${LINKEDIN_URL}" target="_blank" rel="noreferrer">LinkedIn</a>
-        <button type="button" class="footer-text-link" data-footer-copy-email>Email</button>
-      </p>
+      <div class="footer-row">
+        <span class="footer-meta">2026 ©unostd</span>
+        <span class="footer-meta footer-meta-right">Thanks for stopping by ₍^. .^₎⟆</span>
+      </div>
+      <div class="footer-row">
+        <span class="footer-meta">
+          built with cursor <span class="js-last-updated">last updated: ${FALLBACK_UPDATED_DATE}</span>
+        </span>
+        <span class="footer-meta footer-meta-right footer-links">
+          <a href="${RESUME_URL}" target="_blank" rel="noreferrer">Resume</a>
+          <a href="${LINKEDIN_URL}" target="_blank" rel="noreferrer">LinkedIn</a>
+          <button type="button" class="footer-text-link" data-footer-copy-email>Email</button>
+        </span>
+      </div>
     </div>
   `;
 }
