@@ -38,35 +38,38 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=202611110029" />
+    <link rel="stylesheet" href="/styles.css?v=202611110032" />
     <style>
       @media (min-width: 961px) {
         body.home-page .home-layout {
-          padding-left: clamp(12px, 2vw, 28px);
-          padding-right: clamp(12px, 2vw, 28px);
+          padding-left: clamp(12px, 2vw, 28px) !important;
+          padding-right: clamp(12px, 2vw, 28px) !important;
         }
 
         body.home-page .home-main {
-          align-items: stretch;
+          align-items: stretch !important;
         }
 
         body.home-page .home-main-inner {
-          width: 100%;
-          max-width: none;
-          align-items: stretch;
+          width: 100% !important;
+          max-width: none !important;
+          align-items: stretch !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
         }
 
         body.home-page .home-work {
           --home-work-gap: 2px;
-          width: 100%;
-          max-width: none;
-          margin-left: 0;
-          margin-right: 0;
-          padding: 0;
+          gap: 2px !important;
+          width: 100% !important;
+          max-width: none !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          padding: 0 !important;
         }
 
         body.home-page .home-work-media {
-          aspect-ratio: 16 / 10;
+          aspect-ratio: 16 / 10 !important;
         }
       }
     </style>
