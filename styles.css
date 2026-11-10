@@ -3285,6 +3285,13 @@ img {
   animation: none;
 }
 
+.about-greeting {
+  display: block;
+  width: min(100%, 520px);
+  height: auto;
+  margin: 0;
+}
+
 .about-title .char {
   opacity: 0;
   transform: none;
