@@ -5442,8 +5442,10 @@ img {
 @media (min-width: 961px) {
   .home-page .home-main-inner {
     align-items: stretch;
-    max-width: none;
-    width: 100%;
+    width: min(calc(100vw - clamp(32px, 5vw, 72px) * 2), 1840px);
+    max-width: min(calc(100vw - clamp(32px, 5vw, 72px) * 2), 1840px);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .home-page .home-intro {
@@ -5458,20 +5460,16 @@ img {
   }
 
   .home-page .home-work {
-    --home-work-gap: 2px;
-    --home-work-edge-right: clamp(8px, 1.2vw, 16px);
-    --home-work-edge-left: clamp(88px, 9vw, 128px);
-    box-sizing: border-box;
-    width: 100vw;
-    max-width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding-left: var(--home-work-edge-left);
-    padding-right: var(--home-work-edge-right);
+    --home-work-gap: 3px;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
   }
 
   .home-page .home-work-media {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 5 / 4;
   }
 }
 
