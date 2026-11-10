@@ -476,9 +476,11 @@ if (homeClock) {
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const homeWorkSection = document.querySelector(".home-work");
-if (homeWorkSection && !prefersReducedMotion && !sessionStorage.getItem("portfolioHomeIntroPlayed")) {
-  homeWorkSection.classList.add("home-work--intro");
+const homeIntroPlayed = sessionStorage.getItem("portfolioHomeIntroPlayed");
+
+if (!prefersReducedMotion && !homeIntroPlayed) {
+  document.querySelector(".home-intro")?.classList.add("home-intro--enter");
+  document.querySelector(".home-work")?.classList.add("home-work--intro");
   sessionStorage.setItem("portfolioHomeIntroPlayed", "1");
 }
 

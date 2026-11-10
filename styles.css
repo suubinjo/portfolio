@@ -5137,6 +5137,43 @@ img {
   max-width: 520px;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .home-intro--enter .home-identity,
+  .home-intro--enter .home-prev,
+  .home-intro--enter .home-bio,
+  .home-intro--enter .home-actions {
+    animation: home-intro-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .home-intro--enter .home-identity {
+    animation-delay: 0ms;
+  }
+
+  .home-intro--enter .home-prev {
+    animation-delay: 90ms;
+  }
+
+  .home-intro--enter .home-bio {
+    animation-delay: 160ms;
+  }
+
+  .home-intro--enter .home-actions {
+    animation-delay: 230ms;
+  }
+}
+
+@keyframes home-intro-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .home-identity {
   --home-avatar-hover-scale: 1.22;
   --home-name-hover-scale: 1.1;
