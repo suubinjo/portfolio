@@ -2970,9 +2970,10 @@ img {
   box-sizing: border-box;
   width: 100%;
   min-height: 100svh;
-  padding: clamp(28px, 4vw, 56px) 0 clamp(28px, 4vw, 56px);
-  display: flex;
-  flex-direction: column;
+  padding: 0 clamp(20px, 5vw, 40px) clamp(28px, 4vw, 56px);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: stretch;
   animation: page-rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -3123,14 +3124,15 @@ img {
 
 .about-content {
   width: var(--about-body-width);
-  flex: 1;
   margin: 0 auto;
+  padding-top: clamp(56px, 8vh, 88px);
   display: grid;
   grid-template-columns: 463px 571px;
   gap: clamp(54px, 6vw, 86px);
   align-items: center;
   align-content: center;
   justify-content: center;
+  align-self: center;
   justify-self: center;
 }
 
@@ -5239,22 +5241,22 @@ img {
   left: 50%;
   top: 50%;
   z-index: 2;
-  width: 118px;
-  height: 118px;
-  margin: -59px 0 0 -59px;
+  width: 136px;
+  height: 136px;
+  margin: -68px 0 0 -68px;
   overflow: visible;
   opacity: 0;
   pointer-events: none;
-  transform: rotate(-6deg);
+  transform: rotate(-5deg);
   transition: opacity 220ms ease;
 }
 
 .home-avatar-greeting text {
   fill: #4a4a4a;
   font-family: "Caveat", cursive;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 
 .home-avatar-wrap:hover .home-avatar,
@@ -5592,7 +5594,7 @@ img {
   box-sizing: border-box;
   width: 100%;
   max-width: var(--about-body-width);
-  margin: 0 auto 0;
-  padding: clamp(48px, 8vh, 96px) 0 0;
-  margin-top: auto;
+  margin: 0 auto;
+  padding: clamp(24px, 4vh, 40px) 0 0;
+  justify-self: center;
 }
