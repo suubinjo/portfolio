@@ -539,7 +539,7 @@ async function copySiteEmail() {
   try {
     await navigator.clipboard.writeText(SITE_EMAIL);
     if (homeCopyHint) {
-      homeCopyHint.textContent = "Email copied";
+      homeCopyHint.textContent = "email copied";
       homeCopyHint.classList.add("is-copied");
       window.setTimeout(() => {
         homeCopyHint.innerHTML = 'Press <kbd>c</kbd> to copy email';

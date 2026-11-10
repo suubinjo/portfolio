@@ -36,7 +36,7 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=20261110" />
+    <link rel="stylesheet" href="/styles.css?v=20261110b" />
   </head>
   <body class="home-page">
     <div class="home-layout">
@@ -49,13 +49,15 @@
             <li>
               <a class="home-sidebar-link" href="/about-me/">About</a>
             </li>
-            <li class="home-sidebar-group">
-              <span class="home-sidebar-label">Contact</span>
+            <li class="home-sidebar-group" tabindex="0">
+              <span class="home-sidebar-label home-sidebar-contact">Contact</span>
               <ul class="home-sidebar-sublist">
                 <li>
+                  <span class="home-sidebar-sub-arrow" aria-hidden="true">↳</span>
                   <button class="home-sidebar-link home-sidebar-button" type="button" data-home-copy-email>Email</button>
                 </li>
                 <li>
+                  <span class="home-sidebar-sub-arrow" aria-hidden="true">↳</span>
                   <a
                     class="home-sidebar-link is-muted"
                     href="https://www.linkedin.com/in/subinjo68/"
@@ -65,6 +67,7 @@
                   >
                 </li>
                 <li>
+                  <span class="home-sidebar-sub-arrow" aria-hidden="true">↳</span>
                   <a class="home-sidebar-link is-muted" href="/resume/" target="_blank" rel="noreferrer">Resume</a>
                 </li>
               </ul>
@@ -74,6 +77,7 @@
       </aside>
 
       <main class="home-main" id="home">
+        <div class="home-main-inner">
         <header class="home-topbar">
           <p class="home-clock" id="home-clock" aria-live="polite">Seoul, KR —:—:—</p>
         </header>
@@ -130,9 +134,10 @@
         <footer class="home-footer">
           <p>2026 ©unostd</p>
         </footer>
+        </div>
       </main>
     </div>
 
-    <script src="/script.js?v=20261110"></script>
+    <script src="/script.js?v=20261110b"></script>
   </body>
 </html>
