@@ -5123,7 +5123,7 @@ img {
 .home-main-inner {
   display: flex;
   width: 100%;
-  max-width: 980px;
+  max-width: min(1320px, calc(100vw - clamp(120px, 18vw, 280px)));
   flex: 1;
   flex-direction: column;
   align-items: center;
@@ -5188,11 +5188,13 @@ img {
 }
 
 .home-bio {
-  margin: 0 0 24px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 24px;
   color: #6e6e6e;
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.55;
   letter-spacing: -0.02em;
 }
 
@@ -5299,36 +5301,34 @@ img {
 .home-work {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(16px, 2.5vw, 28px);
+  gap: clamp(14px, 1.8vw, 24px);
   width: 100%;
-  max-width: 920px;
+  max-width: 100%;
   margin: clamp(56px, 10vh, 120px) auto 0;
 }
 
 .home-work-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 14px;
+  align-items: stretch;
+  gap: 0;
   color: inherit;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
-  transition: opacity 180ms ease;
 }
 
 .home-work-card:hover,
 .home-work-card:focus-visible {
-  opacity: 0.92;
   outline: none;
 }
 
 .home-work-media {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: 2px;
-  background: #efefef;
+  border-radius: 10px;
+  background: #f6f6f6;
 }
 
 .home-work-media img {
@@ -5341,14 +5341,14 @@ img {
 .home-work-card[href="/ea-games/"] .home-work-media img {
   object-fit: cover;
   object-position: 84% bottom;
-  background: #ffffff;
+  background: #f6f6f6;
 }
 
 .home-work-card[href="/identifit/"] .home-work-media img,
 .home-work-card[href="/milestone/"] .home-work-media img {
   object-fit: contain;
-  padding: 16px;
-  background: #ffffff;
+  padding: clamp(12px, 2vw, 20px);
+  background: #f6f6f6;
 }
 
 .home-work-tag {
@@ -5374,22 +5374,38 @@ img {
 .home-work-title {
   width: 100%;
   margin: 0;
+  padding: 0;
+  max-height: 0;
   color: var(--ink);
   font-family: var(--sans);
-  font-size: clamp(11px, 1.05vw, 13px);
+  font-size: clamp(12px, 1.1vw, 14px);
   font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.35;
   letter-spacing: -0.02em;
+  text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 200ms ease,
+    max-height 220ms ease,
+    padding 220ms ease;
+}
+
+.home-work-card:hover .home-work-title,
+.home-work-card:focus-visible .home-work-title {
+  max-height: 2.5em;
+  padding: 12px 2px 0;
+  opacity: 1;
 }
 
 .home-footer {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  max-width: 920px;
+  max-width: 100%;
   margin-top: auto;
   padding-top: clamp(48px, 8vh, 96px);
 }
@@ -5415,9 +5431,15 @@ img {
 
   .home-work {
     grid-template-columns: 1fr;
-    max-width: 420px;
+    max-width: min(420px, 100%);
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .home-work-card .home-work-title {
+    max-height: 2.5em;
+    padding: 12px 2px 0;
+    opacity: 1;
   }
 }
 
