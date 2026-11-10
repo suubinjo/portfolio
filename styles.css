@@ -5227,16 +5227,25 @@ img {
   border-radius: 50%;
   background: #f6f6f6;
   pointer-events: none;
+  transform: none;
 }
 
-.home-avatar {
+.home-avatar-photo {
   position: relative;
   z-index: 1;
   display: block;
   width: 64px;
   height: 64px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.home-avatar {
+  display: block;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: #f6f6f6;
+  background: transparent;
   object-fit: cover;
   object-position: center 22%;
   transform-origin: center center;
@@ -5248,9 +5257,9 @@ img {
   left: 50%;
   top: 50%;
   z-index: 2;
-  width: 136px;
-  height: 136px;
-  margin: -68px 0 0 -68px;
+  width: 118px;
+  height: 118px;
+  margin: -59px 0 0 -59px;
   overflow: visible;
   opacity: 0;
   pointer-events: none;
@@ -5266,8 +5275,8 @@ img {
   letter-spacing: 0.02em;
 }
 
-.home-avatar-wrap:hover .home-avatar,
-.home-avatar-wrap:focus-visible .home-avatar {
+.home-avatar-wrap:hover .home-avatar-photo .home-avatar,
+.home-avatar-wrap:focus-visible .home-avatar-photo .home-avatar {
   transform: scale(1.22);
 }
 
