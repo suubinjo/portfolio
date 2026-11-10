@@ -5219,6 +5219,7 @@ img {
 }
 
 .home-avatar-wrap {
+  --home-avatar-hover-scale: 1.22;
   position: relative;
   z-index: 2;
   width: 64px;
@@ -5284,7 +5285,7 @@ img {
 
 .home-avatar-wrap:hover .home-avatar-photo .home-avatar,
 .home-avatar-wrap:focus-visible .home-avatar-photo .home-avatar {
-  transform: scale(1.22);
+  transform: scale(var(--home-avatar-hover-scale));
 }
 
 .home-avatar-wrap:hover .home-avatar-greeting,
@@ -5314,8 +5315,8 @@ img {
 }
 
 .home-avatar-wrap:hover + .home-name .home-name-logo,
-.home-avatar-wrap:focus-within + .home-name .home-name-logo {
-  transform: rotate(-5deg);
+.home-avatar-wrap:focus-visible + .home-name .home-name-logo {
+  transform: rotate(10deg) scale(var(--home-avatar-hover-scale));
 }
 
 .home-prev {
