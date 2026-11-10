@@ -4918,8 +4918,6 @@ img {
 .home-page {
   --home-muted: #bdbdbd;
   --home-border: #e6e6e6;
-  --home-edge-inline: clamp(20px, 5vw, 72px);
-  --home-edge-sidebar: clamp(96px, 14vw, 220px);
   background: #ffffff;
 }
 
@@ -4927,14 +4925,14 @@ img {
   box-sizing: border-box;
   position: relative;
   min-height: 100vh;
-  padding: clamp(28px, 4vw, 56px) var(--home-edge-inline);
+  padding: clamp(28px, 4vw, 56px) clamp(20px, 5vw, 72px);
 }
 
 .home-sidebar {
   position: fixed;
   z-index: 5;
   top: clamp(28px, 4vw, 56px);
-  left: var(--home-edge-inline);
+  left: clamp(20px, 5vw, 72px);
 }
 
 .home-sidebar-list,
@@ -5041,7 +5039,7 @@ img {
   display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   min-width: 0;
   min-height: calc(100vh - clamp(56px, 8vw, 112px));
 }
@@ -5049,12 +5047,11 @@ img {
 .home-main-inner {
   display: flex;
   width: 100%;
-  max-width: min(1480px, calc(100vw - var(--home-edge-sidebar) - var(--home-edge-inline)));
+  max-width: min(1480px, calc(100vw - clamp(96px, 14vw, 220px)));
   flex: 1;
   flex-direction: column;
   align-items: center;
-  margin-left: auto;
-  margin-right: 0;
+  margin: 0 auto;
 }
 
 .home-topbar {
@@ -5067,7 +5064,7 @@ img {
 .home-clock {
   position: fixed;
   top: clamp(28px, 4vw, 56px);
-  right: var(--home-edge-inline);
+  right: clamp(20px, 5vw, 72px);
   z-index: 6;
   margin: 0;
   color: var(--home-muted);
@@ -5490,14 +5487,7 @@ img {
   }
 
   .home-main {
-    align-items: center;
     min-height: auto;
-  }
-
-  .home-main-inner {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
   }
 
   .home-work {
