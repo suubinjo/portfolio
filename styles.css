@@ -3142,35 +3142,6 @@ img {
   transform-origin: left center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .about-page .about-greeting {
-    animation: about-greeting-wiggle 1.2s ease-in-out both;
-  }
-}
-
-@keyframes about-greeting-wiggle {
-  0%,
-  100% {
-    transform: rotate(-3deg);
-  }
-
-  20% {
-    transform: rotate(calc(-3deg - 3deg));
-  }
-
-  40% {
-    transform: rotate(calc(-3deg + 3deg));
-  }
-
-  60% {
-    transform: rotate(calc(-3deg - 3deg));
-  }
-
-  80% {
-    transform: rotate(calc(-3deg + 3deg));
-  }
-}
-
 .about-letter > p:first-of-type {
   margin-top: 0;
 }
