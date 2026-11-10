@@ -3142,7 +3142,7 @@ img {
   display: grid;
   grid-template-columns: 463px 571px;
   gap: clamp(54px, 6vw, 86px);
-  align-items: center;
+  align-items: end;
   align-content: center;
   justify-content: center;
   align-self: center;
@@ -3274,13 +3274,13 @@ img {
 }
 
 .about-title {
-  margin: 0 0 34px;
+  margin: 0 0 14px;
   font-family: var(--serif);
   font-style: italic;
   font-size: 51px;
   font-weight: 300;
   letter-spacing: -0.03em;
-  line-height: 0.9;
+  line-height: 0;
   color: var(--ink);
   animation: none;
 }
@@ -3290,6 +3290,8 @@ img {
   width: min(100%, 520px);
   height: auto;
   margin: 0;
+  transform: rotate(-5deg);
+  transform-origin: left center;
 }
 
 .about-title .char {
