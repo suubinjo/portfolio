@@ -3144,7 +3144,7 @@ img {
 
 @media (prefers-reduced-motion: no-preference) {
   .about-page .about-greeting {
-    animation: about-greeting-wiggle 1.15s ease-in-out both;
+    animation: about-greeting-wiggle 1.2s ease-in-out both;
   }
 }
 
@@ -3155,19 +3155,19 @@ img {
   }
 
   20% {
-    transform: rotate(-6deg);
+    transform: rotate(calc(-3deg - 3deg));
   }
 
   40% {
-    transform: rotate(0deg);
+    transform: rotate(calc(-3deg + 3deg));
   }
 
   60% {
-    transform: rotate(-6deg);
+    transform: rotate(calc(-3deg - 3deg));
   }
 
   80% {
-    transform: rotate(0deg);
+    transform: rotate(calc(-3deg + 3deg));
   }
 }
 
@@ -5479,43 +5479,39 @@ img {
   .home-work--intro .home-work-card {
     z-index: 1;
     will-change: transform, opacity;
-    animation: home-work-card-fan 920ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: home-work-card-fan 1320ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   .home-work--intro .home-work-card:nth-child(1) {
-    --home-work-fan-x: calc(100% + var(--home-work-gap) - 18px);
-    --home-work-fan-scale: 0.96;
-    --home-work-fan-rotate: 3deg;
-    animation-delay: 120ms;
+    --home-work-fan-x: calc(100% + var(--home-work-gap) - 34px);
+    --home-work-fan-scale: 0.945;
+    --home-work-fan-rotate: 3.5deg;
+    animation-delay: 160ms;
   }
 
   .home-work--intro .home-work-card:nth-child(2) {
     z-index: 3;
-    --home-work-fan-x: 10px;
-    --home-work-fan-scale: 0.99;
-    --home-work-fan-rotate: -1.5deg;
+    --home-work-fan-x: 14px;
+    --home-work-fan-scale: 0.985;
+    --home-work-fan-rotate: -2deg;
     animation-delay: 0ms;
   }
 
   .home-work--intro .home-work-card:nth-child(3) {
     z-index: 2;
-    --home-work-fan-x: calc(-100% - var(--home-work-gap) + 18px);
-    --home-work-fan-scale: 0.96;
-    --home-work-fan-rotate: -3deg;
-    animation-delay: 160ms;
+    --home-work-fan-x: calc(-100% - var(--home-work-gap) + 34px);
+    --home-work-fan-scale: 0.945;
+    --home-work-fan-rotate: -3.5deg;
+    animation-delay: 200ms;
   }
 }
 
 @keyframes home-work-card-fan {
-  0% {
-    opacity: 0.9;
+  0%,
+  34% {
+    opacity: 1;
     transform: translateX(var(--home-work-fan-x, 0px)) scale(var(--home-work-fan-scale, 1))
       rotate(var(--home-work-fan-rotate, 0deg));
-  }
-
-  22% {
-    opacity: 1;
-    transform: translateX(calc(var(--home-work-fan-x, 0px) * 0.08)) scale(0.995) rotate(0.5deg);
   }
 
   100% {
