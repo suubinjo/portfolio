@@ -5078,6 +5078,19 @@ img {
   -webkit-backdrop-filter: blur(6px);
 }
 
+@media (min-width: 961px) {
+  .home-clock {
+    right: calc(
+      50vw -
+        min(
+          1480px,
+          min(calc(100vw - clamp(96px, 14vw, 220px)), calc(100vw - 2 * clamp(20px, 5vw, 72px)))
+        ) /
+        2
+    );
+  }
+}
+
 .home-intro {
   display: flex;
   flex-direction: column;
