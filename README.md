@@ -36,7 +36,7 @@ http://localhost:4173
 
 ## Deployment
 
-The site deploys through GitHub Pages from the `main` branch. Clean URLs use per-route `index.html` files (for example `about-me/index.html` serves `/about-me/`).
+The site deploys through GitHub Pages from the `main` branch (static; `.nojekyll` is required). Page source lives in route folders such as `ea-games/index.html` for `/ea-games/`. Root `*.html` files only redirect to those clean URLs.
 
 ## Notes
 
