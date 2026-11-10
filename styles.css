@@ -5083,6 +5083,12 @@ img {
   margin: 0 auto;
 }
 
+@media (min-width: 961px) {
+  .home-page .home-main-inner {
+    max-width: calc(100vw - clamp(96px, 14vw, 220px) - clamp(10px, 1.6vw, 20px));
+  }
+}
+
 .home-topbar {
   width: 100%;
   min-height: 1.25rem;
@@ -5436,6 +5442,12 @@ img {
   width: 100%;
   max-width: 100%;
   margin: clamp(24px, 4vh, 40px) auto 0;
+}
+
+@media (min-width: 961px) {
+  .home-page .home-work {
+    --home-work-gap: 3px;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
