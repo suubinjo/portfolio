@@ -36,7 +36,7 @@ http://localhost:4173
 
 ## Deployment
 
-The site deploys through GitHub Pages from the `main` branch. Clean URLs are handled with page permalinks, so public routes do not need `.html` in the address.
+The site deploys through GitHub Pages from the `main` branch. Clean URLs use per-route `index.html` files (for example `about-me/index.html` serves `/about-me/`).
 
 ## Notes
 
