@@ -5393,9 +5393,14 @@ img {
   background: #f6f6f6;
 }
 
+.home-work-card--ea .home-work-media {
+  aspect-ratio: 532 / 239;
+}
+
+.home-work-card--ea .home-work-media img,
 .home-work-card[href="/ea-games/"] .home-work-media img {
   object-fit: cover;
-  object-position: right top;
+  object-position: center top;
   padding: 0;
   background: transparent;
 }
