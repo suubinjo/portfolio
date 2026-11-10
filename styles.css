@@ -5440,19 +5440,38 @@ img {
 }
 
 @media (min-width: 961px) {
+  .home-page .home-main-inner {
+    align-items: stretch;
+    max-width: none;
+    width: 100%;
+  }
+
+  .home-page .home-intro {
+    align-self: center;
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .home-page .home-footer {
+    align-self: flex-end;
+    width: 100%;
+  }
+
   .home-page .home-work {
-    --home-work-gap: 3px;
-    --home-work-side-pad: clamp(8px, 1.2vw, 16px);
-    --home-work-sidebar: clamp(96px, 14vw, 220px);
-    --home-layout-inline: clamp(20px, 5vw, 72px);
-    width: calc(100vw - var(--home-work-sidebar) - var(--home-work-side-pad));
-    max-width: calc(100vw - var(--home-work-sidebar) - var(--home-work-side-pad));
-    margin-left: calc(var(--home-work-sidebar) - var(--home-layout-inline));
-    margin-right: calc(var(--home-work-side-pad) - var(--home-layout-inline));
+    --home-work-gap: 2px;
+    --home-work-edge-right: clamp(8px, 1.2vw, 16px);
+    --home-work-edge-left: clamp(88px, 9vw, 128px);
+    box-sizing: border-box;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: var(--home-work-edge-left);
+    padding-right: var(--home-work-edge-right);
   }
 
   .home-page .home-work-media {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 4 / 3;
   }
 }
 
