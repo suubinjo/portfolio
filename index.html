@@ -36,7 +36,7 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=20261110i" />
+    <link rel="stylesheet" href="/styles.css?v=20261110k" />
   </head>
   <body class="home-page">
     <div class="home-layout">
@@ -85,8 +85,15 @@
         <section class="home-intro" aria-label="Introduction">
           <div class="home-avatar-wrap" tabindex="0" aria-label="Subin Jo">
             <span class="home-avatar-greeting" aria-hidden="true">hi there!</span>
-            <span class="home-avatar-disk" aria-hidden="true"></span>
-            <img class="home-avatar" src="/assets/home/home-avatar.png" alt="" width="56" height="56" decoding="async" />
+            <img
+              class="home-avatar"
+              src="/assets/home/home-avatar.jpg"
+              srcset="/assets/home/home-avatar.jpg 546w"
+              alt=""
+              width="64"
+              height="64"
+              decoding="async"
+            />
           </div>
           <h1 class="home-name">Subin Jo</h1>
           <p class="home-prev">Previously @ <span>Electronic Arts</span> &amp; <span>PwC Korea</span></p>
@@ -94,18 +101,18 @@
             I’m a product designer blending research, creativity, and human-centered thinking to turn complex problems into
             simple, meaningful digital experiences.
           </p>
-          <div class="home-cta">
-            <a class="home-cta-button home-cta-button-primary" href="/resume/" target="_blank" rel="noreferrer">Resume</a>
-            <a
-              class="home-cta-button home-cta-button-secondary"
-              href="https://www.linkedin.com/in/subinjo68/"
-              target="_blank"
-              rel="noreferrer"
-              >LinkedIn</a
-            >
-          </div>
-          <div class="home-copy-wrap">
+          <div class="home-actions">
             <p class="home-copy-toast" id="home-copy-toast" role="status" aria-live="polite" hidden>email copied</p>
+            <div class="home-cta">
+              <a class="home-cta-button home-cta-button-primary" href="/resume/" target="_blank" rel="noreferrer">Resume</a>
+              <a
+                class="home-cta-button home-cta-button-secondary"
+                href="https://www.linkedin.com/in/subinjo68/"
+                target="_blank"
+                rel="noreferrer"
+                >LinkedIn</a
+              >
+            </div>
             <p class="home-copy-hint" id="home-copy-hint">
               Press <kbd>c</kbd> to copy email
             </p>
@@ -145,6 +152,6 @@
       </main>
     </div>
 
-    <script src="/script.js?v=20261110f"></script>
+    <script src="/script.js?v=20261110k"></script>
   </body>
 </html>

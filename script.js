@@ -526,13 +526,18 @@ function showEmailCopiedFeedback() {
   window.clearTimeout(homeCopyToastHideTimer);
 
   homeCopyToast.hidden = false;
-  homeCopyToast.classList.add("is-visible");
+  homeCopyToast.classList.remove("is-leaving");
+  requestAnimationFrame(() => {
+    homeCopyToast.classList.add("is-visible");
+  });
 
   homeCopyToastTimer = window.setTimeout(() => {
     homeCopyToast.classList.remove("is-visible");
+    homeCopyToast.classList.add("is-leaving");
     homeCopyToastHideTimer = window.setTimeout(() => {
+      homeCopyToast.classList.remove("is-leaving");
       homeCopyToast.hidden = true;
-    }, 200);
+    }, 280);
   }, 1600);
 }
 
