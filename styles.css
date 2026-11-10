@@ -5360,8 +5360,9 @@ img {
 
 .home-work-card {
   position: relative;
-  display: block;
-  padding-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   color: inherit;
   text-align: left;
   text-decoration: none;
@@ -5388,13 +5389,13 @@ img {
   display: block;
   object-fit: contain;
   object-position: center top;
-  padding: clamp(16px, 2.2vw, 24px) clamp(10px, 1.6vw, 16px) clamp(8px, 1.2vw, 12px);
+  padding: clamp(10px, 1.4vw, 14px) 0 clamp(4px, 0.6vw, 6px);
   background: #f6f6f6;
 }
 
 .home-work-card[href="/ea-games/"] .home-work-media img {
-  object-position: 72% top;
-  padding-top: clamp(18px, 2.4vw, 26px);
+  object-position: 56% top;
+  padding-top: clamp(12px, 1.6vw, 16px);
 }
 
 .home-work-tags {
@@ -5433,11 +5434,8 @@ img {
 }
 
 .home-work-title {
-  position: absolute;
-  left: 2px;
-  right: 0;
-  bottom: 0;
-  margin: 0;
+  position: relative;
+  margin: 10px 0 0 2px;
   padding: 0;
   color: var(--ink);
   font-family: var(--sans);
