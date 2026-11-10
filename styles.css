@@ -3274,7 +3274,7 @@ img {
 }
 
 .about-title {
-  margin: 0 0 14px;
+  margin: 14px 0 6px;
   font-family: var(--serif);
   font-style: italic;
   font-size: 51px;
@@ -3290,7 +3290,7 @@ img {
   width: min(100%, 520px);
   height: auto;
   margin: 0;
-  transform: rotate(-5deg);
+  transform: rotate(-3deg);
   transform-origin: left center;
 }
 
@@ -5229,6 +5229,7 @@ img {
 
 .home-identity {
   --home-avatar-hover-scale: 1.22;
+  --home-name-hover-scale: 1.1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5332,7 +5333,7 @@ img {
 
 .home-identity:hover .home-name-logo,
 .home-identity:focus-within .home-name-logo {
-  transform: rotate(10deg) scale(var(--home-avatar-hover-scale));
+  transform: rotate(5deg) scale(var(--home-name-hover-scale));
 }
 
 .home-prev {
