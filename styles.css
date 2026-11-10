@@ -2944,12 +2944,12 @@ img {
 
 .about-shell {
   --about-body-width: min(1120px, calc(100vw - 120px));
+  box-sizing: border-box;
   width: 100%;
   min-height: 100svh;
-  padding: 40px 0 18px;
-  display: grid;
-  grid-template-rows: auto auto auto;
-  gap: 34px;
+  padding: clamp(28px, 4vw, 56px) 0 clamp(28px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
   animation: page-rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -3100,12 +3100,15 @@ img {
 
 .about-content {
   width: var(--about-body-width);
+  flex: 1;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 463px 571px;
   gap: clamp(54px, 6vw, 86px);
   align-items: center;
+  align-content: center;
   justify-content: center;
+  justify-self: center;
 }
 
 .about-collage {
@@ -3558,7 +3561,7 @@ img {
   .about-shell {
     --about-body-width: calc(100vw - 40px);
     padding-top: 32px;
-    gap: 30px;
+    padding-bottom: 32px;
   }
 
   .about-content {
@@ -5185,6 +5188,15 @@ img {
   outline: none;
 }
 
+.home-avatar-disk {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 50%;
+  background: #f6f6f6;
+  pointer-events: none;
+}
+
 .home-avatar {
   position: relative;
   z-index: 1;
@@ -5192,7 +5204,7 @@ img {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: transparent;
+  background: #f6f6f6;
   object-fit: cover;
   object-position: center 22%;
   transform-origin: center center;
@@ -5202,21 +5214,24 @@ img {
 .home-avatar-greeting {
   position: absolute;
   left: 50%;
-  bottom: calc(100% + 6px);
+  top: 50%;
   z-index: 2;
-  color: #4a4a4a;
-  font-family: "Caveat", cursive;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
+  width: 118px;
+  height: 118px;
+  margin: -59px 0 0 -59px;
+  overflow: visible;
   opacity: 0;
-  transform: translateX(-50%) translateY(4px);
   pointer-events: none;
-  transition:
-    opacity 200ms ease,
-    transform 200ms ease;
+  transform: rotate(-6deg);
+  transition: opacity 220ms ease;
+}
+
+.home-avatar-greeting text {
+  fill: #4a4a4a;
+  font-family: "Caveat", cursive;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .home-avatar-wrap:hover .home-avatar,
@@ -5227,7 +5242,6 @@ img {
 .home-avatar-wrap:hover .home-avatar-greeting,
 .home-avatar-wrap:focus-visible .home-avatar-greeting {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
 }
 
 .home-avatar-wrap:focus-visible {
@@ -5542,11 +5556,20 @@ img {
   }
 }
 
-.case-study-shell .home-footer,
-.about-shell .home-footer {
+.case-study-shell .home-footer {
   --home-muted: #bdbdbd;
   box-sizing: border-box;
   width: 100%;
   margin-top: 0;
   padding: clamp(48px, 8vh, 72px) clamp(20px, 5vw, 72px) clamp(28px, 4vw, 56px);
+}
+
+.about-shell .home-footer {
+  --home-muted: #bdbdbd;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--about-body-width);
+  margin: 0 auto 0;
+  padding: clamp(48px, 8vh, 96px) 0 0;
+  margin-top: auto;
 }

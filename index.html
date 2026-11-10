@@ -36,7 +36,7 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=20261110k" />
+    <link rel="stylesheet" href="/styles.css?v=20261110m" />
   </head>
   <body class="home-page">
     <div class="home-layout">
@@ -84,7 +84,15 @@
 
         <section class="home-intro" aria-label="Introduction">
           <div class="home-avatar-wrap" tabindex="0" aria-label="Subin Jo">
-            <span class="home-avatar-greeting" aria-hidden="true">hi there!</span>
+            <svg class="home-avatar-greeting" viewBox="0 0 100 100" aria-hidden="true">
+              <defs>
+                <path id="home-avatar-greeting-arc" d="M 14 56 A 36 36 0 1 1 86 56" />
+              </defs>
+              <text>
+                <textPath href="#home-avatar-greeting-arc" startOffset="50%" text-anchor="middle">hi there!</textPath>
+              </text>
+            </svg>
+            <span class="home-avatar-disk" aria-hidden="true"></span>
             <img
               class="home-avatar"
               src="/assets/home/home-avatar.jpg"
