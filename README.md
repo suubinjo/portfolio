@@ -7,10 +7,10 @@ Live site: [subinjo.com](https://subinjo.com)
 ## Pages
 
 - `/` - Home and selected work
-- `/about-me.html` - About page
-- `/identifit.html` - Identifit case study
-- `/milestone.html` - Milestone Seed case study
-- `/ea-games.html` - EA Games case study preview
+- `/about-me/` - About page
+- `/identifit/` - Identifit case study
+- `/milestone/` - Milestone Seed case study
+- `/ea-games/` - EA Games case study preview
 
 ## Stack
 
@@ -35,18 +35,18 @@ http://localhost:4173
 
 ## Repository layout
 
-This is a **static** site (no build step). Each page is one HTML file next to `index.html`:
+This is a **static** site (no build step). About and the case studies use a folder so the public URL has no `.html`:
 
 | Public URL | Source file |
 | --- | --- |
 | `/` | `index.html` |
-| `/about-me.html` | `about-me.html` |
-| `/ea-games.html` | `ea-games.html` |
-| `/identifit.html` | `identifit.html` |
-| `/milestone.html` | `milestone.html` |
+| `/about-me/` | `about-me/index.html` |
+| `/ea-games/` | `ea-games/index.html` |
+| `/identifit/` | `identifit/index.html` |
+| `/milestone/` | `milestone/index.html` |
 | `/resume.html` | `resume.html` |
 
-`404.html` sends old folder addresses such as `/identifit/` to the matching file. Shared assets stay in `styles.css`, `script.js`, and `assets/`.
+`404.html` sends an old `.html` address, such as `/identifit.html`, to the folder URL. Shared assets stay in `styles.css`, `script.js`, and `assets/`.
 
 ## Deployment
 

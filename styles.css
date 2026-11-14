@@ -5729,7 +5729,7 @@ img {
 }
 
 .home-work-card--ea .home-work-media img,
-.home-work-card[href="/ea-games.html"] .home-work-media img {
+.home-work-card[href="/ea-games/"] .home-work-media img {
   object-fit: cover;
   object-position: right top;
   padding: 0;
