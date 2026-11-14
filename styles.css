@@ -74,7 +74,7 @@ img {
 .case-study-shell {
   width: 100%;
   min-height: 100svh;
-  padding: 0 0 18px;
+  padding: 0;
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
@@ -516,7 +516,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f4f4f4;
+  background: transparent;
 }
 
 .case-hero-media img,
@@ -4120,7 +4120,7 @@ img {
 
 .case-more {
   width: min(698px, calc(100vw - 48px));
-  margin: 56px auto 0;
+  margin: 56px auto 72px;
 }
 
 .case-more-label {
@@ -5949,7 +5949,7 @@ img {
   width: 100%;
   max-width: none;
   margin-top: 0;
-  padding: 32px clamp(20px, 5vw, 72px) clamp(28px, 4vw, 56px);
+  padding: 0 clamp(20px, 5vw, 72px) 16px;
 }
 
 .home-footer-updated {
