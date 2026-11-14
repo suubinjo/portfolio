@@ -25,10 +25,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build clean URLs
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude _site \
+            --exclude .git \
+            --exclude .github \
+            --exclude .cursor \
+            --exclude README.md \
+            ./ _site/
+          for page in about-me ea-games identifit milestone; do
+            mkdir -p "_site/$page"
+            mv "_site/$page.html" "_site/$page/index.html"
+          done
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Deploy
         id: deployment
