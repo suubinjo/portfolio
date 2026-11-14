@@ -230,9 +230,9 @@ img {
 
 .case-award {
   margin: 0 0 18px;
-  color: #6a6a6a;
+  color: #4a4a4a;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.35;
 }
@@ -263,8 +263,8 @@ img {
 
 .case-award-badge {
   display: inline-flex;
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   margin-left: 4px;
   border-radius: 5px;
   background: #5a3c93;
@@ -364,7 +364,7 @@ img {
   border: 0;
   border-radius: 4px;
   background: #f2f2f2;
-  color: #6a6a6a;
+  color: #4a4a4a;
   align-items: center;
   justify-content: center;
   font-family: var(--mono);
@@ -3398,14 +3398,14 @@ img {
 
   .case-award {
     margin-bottom: 16px;
-    font-size: 11px;
+    font-size: 15px;
   }
 
   .milestone-award {
     width: max-content;
     max-width: none;
     gap: 7px;
-    font-size: clamp(9px, 2.85vw, 10px);
+    font-size: clamp(12px, 3.85vw, 15px);
   }
 
   .milestone-award .case-award-pill {
@@ -3415,8 +3415,8 @@ img {
   }
 
   .case-award-badge {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     font-size: 9px;
   }
 
