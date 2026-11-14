@@ -1,0 +1,15 @@
+---
+description: Commit and push portfolio edits from this chat to GitHub Pages
+alwaysApply: true
+---
+
+# Push chat edits
+
+When a request in this repo changes files, finish the edit, then commit and push to `origin` `main` in the same turn. Do not ask first.
+
+- Stage only files that belong to the request.
+- Use a short commit message that says why the change exists.
+- Push with `git push origin HEAD`. Never force-push.
+- Skip the commit when there is nothing to commit.
+- Do not commit secrets (`.env`, credentials, keys).
+- If the commit or push fails, fix it and try once more, then say what blocked it.
