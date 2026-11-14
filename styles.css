@@ -230,16 +230,20 @@ img {
 
 .case-award {
   margin: 0 0 18px;
-  color: #999999;
+  color: #808080;
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.35;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .case-award a {
   display: inline;
-  padding: 0 3px 1px;
+  padding: 0 0 1px;
   border-radius: 3px;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -303,14 +307,13 @@ img {
 .ea-case-page .case-award {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
-.ea-award-client {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.ea-award-client,
+.case-award-client {
+  display: inline;
   white-space: nowrap;
 }
 
@@ -327,21 +330,14 @@ img {
 .milestone-award {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   white-space: nowrap;
 }
 
+.ea-case-page .case-award-pill,
 .milestone-award .case-award-pill {
   flex: 0 0 auto;
   margin-right: 0;
-}
-
-.case-award-client {
-  min-width: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
 }
 
 .case-award-client .case-award-badge {
@@ -359,12 +355,12 @@ img {
 .case-award-pill {
   display: inline-flex;
   height: 22px;
-  margin-right: 8px;
+  margin-right: 0;
   padding: 0 8px;
   border: 0;
   border-radius: 4px;
   background: #f2f2f2;
-  color: #999999;
+  color: #808080;
   align-items: center;
   justify-content: center;
   font-family: var(--sans);
@@ -3398,14 +3394,14 @@ img {
 
   .case-award {
     margin-bottom: 16px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .milestone-award {
     width: max-content;
     max-width: none;
     gap: 7px;
-    font-size: clamp(10px, 3.4vw, 13px);
+    font-size: clamp(11px, 3.4vw, 14px);
   }
 
   .milestone-award .case-award-pill {

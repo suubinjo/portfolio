@@ -39,6 +39,17 @@ jobs:
             mkdir -p "_site/$page"
             mv "_site/$page.html" "_site/$page/index.html"
           done
+          day=$(TZ=Asia/Seoul date +%-d)
+          month=$(TZ=Asia/Seoul date +%b)
+          year=$(TZ=Asia/Seoul date +%Y)
+          case $day in
+            11|12|13) suffix=th ;;
+            *1) suffix=st ;;
+            *2) suffix=nd ;;
+            *3) suffix=rd ;;
+            *) suffix=th ;;
+          esac
+          find _site -name '*.html' -print0 | xargs -0 sed -i -E "s/Last updated: [^<]*/Last updated: ${month} ${day}${suffix} ${year}/"
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
