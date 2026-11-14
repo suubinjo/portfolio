@@ -4120,7 +4120,7 @@ img {
 
 .case-more {
   width: min(698px, calc(100vw - 48px));
-  margin: 56px auto 96px;
+  margin: 56px auto 0;
 }
 
 .case-more-label {
@@ -5949,7 +5949,11 @@ img {
   width: 100%;
   max-width: none;
   margin-top: 0;
-  padding: clamp(48px, 8vh, 72px) clamp(20px, 5vw, 72px) clamp(28px, 4vw, 56px);
+  padding: 32px clamp(20px, 5vw, 72px) clamp(28px, 4vw, 56px);
+}
+
+.home-footer-updated {
+  margin-left: 16px;
 }
 
 .about-shell .home-footer {
