@@ -390,8 +390,40 @@ img {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .case-hero-content {
+  .case-hero-content .case-award,
+  .case-hero-content h1,
+  .case-hero-content .case-deck,
+  .case-hero-content .case-facts > div,
+  .case-hero-content .case-hero-media {
     animation: home-intro-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .case-hero-content .case-award {
+    animation-delay: 0ms;
+  }
+
+  .case-hero-content h1 {
+    animation-delay: 90ms;
+  }
+
+  .case-hero-content .case-deck {
+    animation-delay: 160ms;
+  }
+
+  .case-hero-content .case-facts > div:nth-child(1) {
+    animation-delay: 200ms;
+  }
+
+  .case-hero-content .case-facts > div:nth-child(2) {
+    animation-delay: 240ms;
+  }
+
+  .case-hero-content .case-facts > div:nth-child(3) {
+    animation-delay: 280ms;
+  }
+
+  .case-hero-content .case-hero-media {
+    animation-delay: 320ms;
   }
 }
 
