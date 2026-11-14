@@ -5376,10 +5376,15 @@ img {
   .about-intro--enter .about-collage,
   .about-intro--enter .about-title,
   .about-intro--enter .about-letter > p,
-  .about-intro--enter .about-signature,
-  .about-page.home-page .home-main-inner:has(.about-intro--enter) > .about-home-footer,
-  .about-page.home-page .home-main-inner:has(.about-intro--enter) > .home-footer {
+  .about-intro--enter .about-signature {
     animation: home-intro-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .about-page.home-page .home-main-inner > .about-home-footer,
+  .about-page.home-page .home-main-inner > .home-footer {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 
   .about-intro--enter .about-collage {
@@ -5412,11 +5417,6 @@ img {
 
   .about-intro--enter .about-signature {
     animation-delay: 360ms;
-  }
-
-  .about-page.home-page .home-main-inner:has(.about-intro--enter) > .about-home-footer,
-  .about-page.home-page .home-main-inner:has(.about-intro--enter) > .home-footer {
-    animation-delay: 420ms;
   }
 }
 
