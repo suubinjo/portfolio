@@ -938,8 +938,9 @@ img {
 .milestone-direction-head,
 .milestone-direction-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  column-gap: 40px;
+  grid-template-columns: 13em 110px;
+  column-gap: 210px;
+  justify-content: center;
   align-items: start;
 }
 
@@ -2081,7 +2082,7 @@ img {
 
 .ea-research-insight {
   padding: 0 0 24px;
-  border-bottom: 2px solid #eeeeee;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .ea-research-insight + .ea-research-insight {
@@ -2245,7 +2246,7 @@ img {
 }
 
 .research-image-placeholder .case-photo-caption {
-  margin-top: 18px;
+  margin-top: 32px;
 }
 
 .case-photo-caption,
@@ -2377,7 +2378,7 @@ img {
 
 .research-insights article {
   padding: 0 0 20px;
-  border-bottom: 2px solid #eeeeee;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .research-insights article + article {
