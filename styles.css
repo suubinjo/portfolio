@@ -313,12 +313,13 @@ img {
 .case-award-client {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   white-space: nowrap;
 }
 
-.ea-award-client .case-award-badge {
-  margin-left: 0;
+.ea-award-client .case-award-badge,
+.case-award-client .case-award-badge {
+  margin-left: 5px;
   flex: 0 0 auto;
 }
 
