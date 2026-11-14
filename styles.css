@@ -138,21 +138,18 @@ img {
   transition: color 180ms ease;
 }
 
-.case-nav-back::before,
+.case-nav-back svg {
+  width: 16px;
+  height: 11px;
+  display: block;
+  flex: 0 0 auto;
+}
+
 .case-nav-top::before {
   content: "";
   flex: 0 0 auto;
   display: block;
   background-color: currentColor;
-}
-
-.case-nav-back::before {
-  width: 15px;
-  height: 13px;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 15 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.4 3.3C8.6 2.6 4.69 6.34 2.15 6.9M4.47 7.82L2.15 6.9L3.87 5.09' stroke='black' stroke-width='1.15' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
-    center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 15 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.4 3.3C8.6 2.6 4.69 6.34 2.15 6.9M4.47 7.82L2.15 6.9L3.87 5.09' stroke='black' stroke-width='1.15' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
-    center / contain no-repeat;
 }
 
 .case-nav-top::before {
@@ -796,11 +793,13 @@ img {
 
 .milestone-research-quote {
   box-sizing: border-box;
-  padding: 10px 18px 8px;
-  border: none !important;
-  border-radius: 3px;
+  padding: 0;
+  border: 0 !important;
+  border-radius: 0;
   background: transparent !important;
-  overflow: hidden;
+  box-shadow: none;
+  outline: none;
+  overflow: visible;
 }
 
 .case-section-image.milestone-research-quote {
@@ -1745,13 +1744,14 @@ img {
 }
 
 .identifit-validation-screen-caption {
-  margin: 8px 0 0;
-  color: #acacac;
-  font-family: var(--sans);
-  font-size: 13px;
+  margin: 12px 0 0;
+  color: #ababab;
+  font-family: var(--mono);
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
   text-align: center;
+  text-transform: uppercase;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -1840,7 +1840,7 @@ img {
 .ea-problem-section .ea-hmw-title {
   width: 100%;
   max-width: 100%;
-  text-wrap: balance;
+  text-wrap: wrap;
 }
 
 .case-section-image.ea-problem-image {
@@ -2244,11 +2244,14 @@ img {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 6v20M6 16h20' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, zoom-in;
 }
 
-.ea-validation-media figcaption {
-  margin-top: 12px;
+.case-photo-caption,
+.ea-validation-media figcaption,
+.ea-reflection-post figcaption {
+  margin: 12px 0 0;
   color: #ababab;
   font-family: var(--mono);
   font-size: 14px;
+  font-weight: 400;
   line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
@@ -2278,15 +2281,18 @@ img {
   display: block;
 }
 
-.ea-reflection-post figcaption {
-  margin-top: 14px;
-  color: #ababab;
-  font-family: var(--mono);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.2;
-  text-align: center;
-  text-transform: uppercase;
+.case-caption-stack figure {
+  margin: 0;
+}
+
+.case-caption-stack figure + figure {
+  margin-top: 12px;
+}
+
+.case-caption-stack img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .ea-reflection-callout {
@@ -2682,9 +2688,11 @@ img {
 }
 
 .case-study-section .ideation-assets > .ideation-flow-note + .ideation-image,
+.case-study-section .ideation-assets > .ideation-flow-note + .case-caption-stack,
 .case-study-section .ideation-assets > .ideation-image + .ideation-flow-note,
 .case-study-section .ideation-assets > .ideation-flow-copy + .ideation-image,
 .case-study-section .ideation-assets > .ideation-image + .ideation-flow-copy,
+.case-study-section .ideation-assets > .case-caption-stack + .ideation-flow-copy,
 .case-study-section .ideation-assets > .ideation-flow-note + .ideation-lofi-group,
 .case-study-section .ideation-assets > .ideation-lofi-group + .ideation-image,
 .case-study-section .ideation-lofi-group > .ideation-image + .ideation-flow-note {
