@@ -2,14 +2,485 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0;url=/identifit/" />
-    <link rel="canonical" href="https://subinjo.com/identifit/" />
-    <title>Redirecting…</title>
-    <script>
-      location.replace("/identifit/" + location.search + location.hash);
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subin Jo • Product designer</title>
+    <link rel="icon" href="/assets/home/sj.svg?v=2" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/home/sj-touch.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=202611150038" />
   </head>
   <body>
-    <p><a href="/identifit/">Continue to Identifit</a></p>
+    <main class="case-study-shell">
+      <a class="case-nav-top" href="#top" aria-label="Back to top">Top</a>
+      <section id="top" class="case-study-hero">
+        <aside
+          class="section-index"
+          aria-label="Case study navigation"
+          data-sections="tdlr:Overview,problem:The problem,research:Research,ideation:Ideation,solution:Solution,validation:Validation,reflection:Reflection"
+        >
+          <a class="case-nav-back" href="/" aria-label="Back to home"><svg viewBox="1.2 0.2 15.4 12" aria-hidden="true" focusable="false"><path d="M15.6 11.2C15.6 7.6 13.4 4.6 9.8 4.2H2.5M5.4 1.3 2.3 4.2 5.4 7.1" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"/></svg>Back</a>
+        </aside>
+
+        <div class="case-hero-content">
+          <div class="case-hero-copy">
+            <p class="case-award">
+              <span class="case-award-pill">Club Project</span>
+              1st Winner of <a class="dfa-award-link" href="https://www.linkedin.com/company/design-for-america-uw/" target="_blank" rel="noreferrer">DFA UW</a> 24-25
+              <span class="case-award-badge" aria-hidden="true">
+                <img src="/assets/identifit/dfa-logo.svg" alt="" onerror="this.hidden=true; this.parentElement.dataset.fallback='DFA'" />
+              </span>
+            </p>
+            <h1 class="case-title-effect animate-letters">Identifit</h1>
+            <p class="case-deck">A virtual closet that brings clarity to what you own, helps you create outfits and explore new styles</p>
+
+            <dl class="case-facts">
+              <div>
+                <dt>Timeline</dt>
+                <dd>Jan - May 2025 (5 months)</dd>
+              </div>
+              <div>
+                <dt>Team</dt>
+                <dd>1 Project Lead, 2 UX Researchers, 2 UX Designers (Me)</dd>
+              </div>
+              <div>
+                <dt>Deliverables</dt>
+                <dd>Interactive Prototype, Presentation</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="case-hero-media" aria-label="Identifit mobile interface preview">
+            <img src="/assets/home/identifit-preview.svg" alt="Identifit mobile app screens" />
+          </div>
+        </div>
+      </section>
+
+      <section id="tdlr" class="case-study-section case-study-tdlr-section">
+        <div class="case-study-tdlr-box">
+          <p class="project-type">Overview</p>
+          <h2>When a full closet still feels empty</h2>
+          <p>
+            This project started from a simple frustration that everyone can relate: having a full closet but still not knowing what to wear. Especially with constant new trends and purchase, it became harder to figure out how to match pieces together, and even my own sense of style started to feel blurry.
+          </p>
+          <p>
+            So we decided to create a virtual closet that makes everything visible and easier to actually use!
+          </p>
+          <a class="jump-solution-button" href="#solution">
+            <span class="jump-solution-arrow" aria-hidden="true"></span>
+            JUMP TO FINAL SOLUTION
+          </a>
+        </div>
+      </section>
+      <section id="problem" class="case-study-section">
+        <p class="project-type">The Problem</p>
+        <h2>How might we streamline the process of organizing users’ existing clothing items to help users identify<br />and explore their styles?</h2>
+        <figure class="case-section-image problem-image-placeholder" aria-label="Problem section image">
+          <img src="/assets/identifit/problem.svg" alt="Closet usage diagram showing worn clothes and untouched items" />
+        </figure>
+        <p>
+          We only wear about 20% of our closet, while the rest goes unused (Pareto Principle). The issue isn’t having too less or many clothes, it’s that the closet doesn’t function as a system. Everything feels scattered, so you lose track of what you own and sometimes even buy things you already have.
+        </p>
+        <p>
+          It’s ultimately a lack of visibility and structure between your wardrobe and your everyday decisions. From there, we focused on turning that scattered closet into a clearer system for everyday outfit decisions.
+        </p>
+      </section>
+      <section id="research" class="case-study-section">
+        <p class="project-type">Research</p>
+        <h2>Looking closer at how people get dressed</h2>
+        <div class="research-stats" aria-label="Research participation summary">
+          <article>
+            <strong>112</strong>
+            <span>Survey responses</span>
+          </article>
+          <article>
+            <strong>17</strong>
+            <span>Interviews</span>
+          </article>
+          <article>
+            <strong>15–26</strong>
+            <span>Age range</span>
+          </article>
+        </div>
+        <p>
+          We wanted to look beyond just what people wear. To understand our users, we focused our research on key three areas: how they shop, how they organize their closet, and how they put outfits together.
+        </p>
+        <p>
+          By mapping out the patterns together, it gave us a clearer picture of how people actually use their clothes day to day.
+        </p>
+        <figure class="case-section-image research-image-placeholder" aria-label="Research section image">
+          <img src="/assets/identifit/research.svg?v=202611142350" alt="Identifit research findings" />
+          <figcaption class="case-photo-caption">Result from analyzing</figcaption>
+        </figure>
+        <div class="research-insights" aria-label="Research insights">
+          <article>
+            <h3><span>1.</span> Struggle to keep track of what’s in their closet</h3>
+            <p>When people can’t easily see what they have, it’s easy to forget about certain items. This lack of visibility often leads to them rebuying things they already own.</p>
+          </article>
+          <article>
+            <h3><span>2.</span> Lack of assurance with their current style</h3>
+            <p>Without clear guidance and with limited time, it’s tough for people to feel truly confident in how they dress and express themselves.</p>
+          </article>
+          <article>
+            <h3><span>3.</span> Overwhelmed by the effort needed to try new styles</h3>
+            <p>Even when they want to try something new, pairing outfits from what they already own feels like too much effort. So they fall back on the exact same “safe” outfits.</p>
+          </article>
+        </div>
+        <div class="research-competitive">
+          <h2>Most apps focus on separate features,<br />not a connected experience</h2>
+          <p>
+            While many apps help you organize your closet or find inspiration, they rarely connect those two. This leaves you with no real support when you're actually making style decisions in the moment.
+          </p>
+          <p>
+            So turning that inspiration into a real outfit using what you already own, or truly defining your personal style remains a frustrating challenge.
+          </p>
+          <div class="competitive-matrix" aria-label="Competitive feature matrix">
+            <div class="matrix-corner"></div>
+            <div class="matrix-brand">ACLOSET</div>
+            <div class="matrix-brand">STYLEBOOK</div>
+            <div class="matrix-brand">WHERING</div>
+            <div class="matrix-brand">PUREPLE</div>
+            <div class="matrix-brand">LOOKSCOPE</div>
+
+            <div class="matrix-feature">DIGITAL CLOSET</div>
+            <div><span class="matrix-circle"></span></div>
+            <div><span class="matrix-circle"></span></div>
+            <div><span class="matrix-circle"></span></div>
+            <div><span class="matrix-circle"></span></div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+
+            <div class="matrix-feature">OUTFIT PLANNING</div>
+            <div><span class="matrix-circle"></span></div>
+            <div><span class="matrix-circle"></span></div>
+            <div><span class="matrix-circle"></span></div>
+            <div><span class="matrix-circle"></span></div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+
+            <div class="matrix-feature">STYLE ANALYTIC</div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+            <div><span class="matrix-circle"></span></div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+
+            <div class="matrix-feature">EXPLORATION GUIDANCE</div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+            <div><span class="matrix-circle"></span></div>
+
+            <div class="matrix-feature">INSPIRATION MATCHING</div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+            <div><span class="matrix-circle"></span></div>
+            <div class="matrix-miss"><span class="matrix-x"></span></div>
+            <div><span class="matrix-circle"></span></div>
+          </div>
+          <div class="research-led">
+            <h2>What this led us to</h2>
+            <p>
+              Based on what we found from both our research and existing apps, we identified three key pain points and translated each of them into a corresponding opportunity area.
+            </p>
+            <p>
+              Our goal isn't just to 'organize' clothes, but create a more visible, guided process that helps users save time, explore different styles and feel more confident in finding their own.
+            </p>
+            <div class="identifit-insights-grid" aria-label="Research pain points and opportunity areas">
+              <article class="identifit-insight identifit-insight-pain">
+                <p class="identifit-insight-label">Pain Point 1</p>
+                <p class="identifit-insight-copy">No visibility into wardrobe</p>
+              </article>
+              <article class="identifit-insight identifit-insight-opportunity">
+                <p class="identifit-insight-label">Opportunity Area 1</p>
+                <p class="identifit-insight-copy">Make the wardrobe visible and easy to organize</p>
+              </article>
+              <article class="identifit-insight identifit-insight-pain">
+                <p class="identifit-insight-label">Pain Point 2</p>
+                <p class="identifit-insight-copy">No time and no guidance</p>
+              </article>
+              <article class="identifit-insight identifit-insight-opportunity">
+                <p class="identifit-insight-label">Opportunity Area 2</p>
+                <p class="identifit-insight-copy">Provide guidance while saving time in decision making</p>
+              </article>
+              <article class="identifit-insight identifit-insight-pain">
+                <p class="identifit-insight-label">Pain Point 3</p>
+                <p class="identifit-insight-copy">Limited ways to explore personal style</p>
+              </article>
+              <article class="identifit-insight identifit-insight-opportunity">
+                <p class="identifit-insight-label">Opportunity Area 3</p>
+                <p class="identifit-insight-copy">Help users discover style preferences through their existing wardrobe</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="ideation" class="case-study-section">
+        <p class="project-type">Ideation</p>
+        <h2>Shaping the product around a real closet journey</h2>
+        <div class="ideation-assets" aria-label="Ideation process visuals">
+          <p class="ideation-flow-note">
+            To ground our ideas, we created Jacqueline, a persona who embodies the frustration of feeling overwhelmed by a cluttered wardrobe.
+          </p>
+          <figure class="case-section-image ideation-image">
+            <img src="/assets/identifit/persona.svg" alt="Identifit persona" />
+          </figure>
+          <p class="ideation-flow-note">
+            Using her journey as our guide, we clustered our ideas into three core themes: organizing existing inventory, identifying personal style, and exploring new looks. We also added some fun, random features and inspirations whenever something interesting came up.
+          </p>
+          <p class="ideation-flow-note">
+            This led us to define a clear information architecture with five main sections: <strong>Home, Virtual Closet, Explore, Archive, and Stats</strong> <em>(which later integrated into ‘My Page’)</em>. With these pillars in place, we moved straight into sketching for each tab.
+          </p>
+          <div class="case-caption-stack">
+            <figure>
+              <img src="/assets/identifit/sketches-fig1.svg?v=202611142350" alt="Feature exploration sketches" />
+              <figcaption class="case-photo-caption">Fig 1. Feature Exploration</figcaption>
+            </figure>
+            <figure>
+              <img src="/assets/identifit/sketches-fig2.svg?v=202611142350" alt="Identifit interface sketches" />
+              <figcaption class="case-photo-caption">Fig 2. Sketches</figcaption>
+            </figure>
+          </div>
+          <div class="ideation-flow-copy">
+            <h2>Mapping the flow and framework</h2>
+            <p>
+              Since the Home page is the first thing users see, I focused on helping them decide today’s outfit quickly and with less effort. Whether they prefer selecting manually, picking from saved outfits, or getting AI-driven recommendations, the flow is designed to minimize cognitive load.
+            </p>
+            <p>
+              For recommendations, our research showed that users primarily consider occasion and weather when choosing outfits, so we tailored suggestions based on those factors, along with their preferred style.
+            </p>
+          </div>
+          <figure class="case-section-image ideation-image user-flow-image">
+            <button class="image-zoom-trigger" type="button" aria-label="Open Identifit user flow fullscreen">
+              <img src="/assets/identifit/user-flow.svg" alt="Identifit user flow" />
+            </button>
+          </figure>
+          <p class="ideation-flow-note">
+            In the low-fidelity prototypes, I surfaced the daily forecast at the top and added a weekly calendar on the bottom so users can track what they wore, recognize patterns over time, and plan ahead for special occasions.
+          </p>
+          <div class="ideation-lofi-group">
+            <figure class="case-section-image ideation-image">
+              <img src="/assets/identifit/lo-fi.svg" alt="Identifit low-fidelity prototype screens" />
+            </figure>
+            <p class="ideation-flow-note">
+              After putting together the low-fi in light mode, we felt like everything looked a bit flat and the clothes didn’t really stand out. Since the whole point of the app is to focus on outfits, we decided to switch to dark mode to make the clothing pop more.
+            </p>
+            <p class="ideation-flow-note">
+              We also chose blue as our primary color to make sure the UI feels like a natural extension of your clothes rather than a distraction, since blue is one of the most universal colors in any closet (outside of neutrals). With this visual direction set, we started building out our design system and moving into high-fidelity prototyping.
+            </p>
+          </div>
+          <figure class="case-section-image ideation-image">
+            <img src="/assets/identifit/design-system.svg" alt="Identifit design system" />
+          </figure>
+        </div>
+      </section>
+      <section id="solution" class="case-study-section identifit-solution-section">
+        <p class="project-type">Solution</p>
+        <a
+          class="milestone-solution-prototype identifit-solution-prototype"
+          href="https://www.figma.com/proto/0Fw9UkZrL7fN8SRpOp8N0F/identifit?page-id=0%3A1&amp;node-id=1-2278&amp;viewport=2396%2C1594%2C0.24&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=1%3A2278"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open Identifit Figma prototype"
+        >
+          <img src="/assets/identifit/solution.svg" alt="Identifit app screens across Home, Virtual Closet, Explore, and Outfit Recommendations" />
+          <span class="milestone-prototype-overlay" aria-hidden="true">
+            <span>View full prototype</span>
+          </span>
+        </a>
+        <h2>Capture your identity in every fit</h2>
+        <p>
+          Identifit is a personalized virtual closet that helps you organize what you own, track what you wear, and build outfits from pieces already in your closet.
+        </p>
+        <div class="identifit-solution-flow" aria-label="Identifit solution walkthrough">
+          <article class="identifit-solution-step">
+            <p class="identifit-solution-step-label">01 Home</p>
+            <h3>Tracking Outfits And Recognizing Style Patterns</h3>
+            <div class="identifit-solution-media">
+              <div class="identifit-solution-media-frame">
+                <video src="/assets/identifit/home.mov" autoplay muted loop playsinline preload="metadata" aria-label="Identifit Home screen"></video>
+              </div>
+            </div>
+            <div class="identifit-solution-step-body">
+              <p>Rather than asking users to define their style upfront, I designed Home around what they actually wear. Daily outfit logs gradually surface recurring patterns, helping users reflect on their style through their own behavior.</p>
+            </div>
+          </article>
+          <article class="identifit-solution-step">
+            <p class="identifit-solution-step-label">02 Get Outfit Recs</p>
+            <h3>Guiding Decisions Without Adding Choices</h3>
+            <div class="identifit-solution-media">
+              <div class="identifit-solution-media-frame">
+                <video src="/assets/identifit/rec.mov" autoplay muted loop playsinline preload="metadata" aria-label="Identifit outfit recommendations screen"></video>
+              </div>
+            </div>
+            <div class="identifit-solution-step-body">
+              <p>Too many outfit suggestions can create another layer of decision-making. I designed recommendations to present one outfit at a time, allowing users to quickly accept or move past each suggestion without sorting through multiple options.</p>
+            </div>
+          </article>
+          <article class="identifit-solution-step">
+            <p class="identifit-solution-step-label">03 Virtual Closet</p>
+            <h3>Balancing Visibility And Information Density</h3>
+            <div class="identifit-solution-media">
+              <div class="identifit-solution-media-frame">
+                <video src="/assets/identifit/vc.mov" autoplay muted loop playsinline preload="metadata" aria-label="Identifit virtual closet screen"></video>
+              </div>
+            </div>
+            <div class="identifit-solution-step-body">
+              <p>Showing the full wardrobe improves visibility, but displaying every category and item at once can quickly become overwhelming. The closet uses collapsible categories and flexible views to keep clothing accessible without overloading the screen.</p>
+            </div>
+          </article>
+          <article class="identifit-solution-step">
+            <p class="identifit-solution-step-label">04 Explore Styles</p>
+            <h3>Connecting Inspiration With What You Own</h3>
+            <div class="identifit-solution-media">
+              <div class="identifit-solution-media-frame">
+                <video src="/assets/identifit/explore.mov" autoplay muted loop playsinline preload="metadata" aria-label="Identifit explore styles screen"></video>
+              </div>
+            </div>
+            <div class="identifit-solution-step-body">
+              <p>Users often find inspiration visually, but recreating a look requires translating it into individual pieces. Explore bridges this gap by matching elements of an inspiration outfit with similar items already in the user's closet.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="validation" class="case-study-section">
+        <p class="project-type">Validation</p>
+        <h2>Validating our design decisions</h2>
+        <p>
+          After finishing our first iteration, we conducted two rounds of usability testing with a total of 10 participants to validate our design decisions. We used the
+          <span class="hcde-tooltip-wrap nasa-tooltip-wrap" tabindex="0">
+            <span class="hcde-link">NASA Task Load Index</span>
+            <span class="hcde-tooltip" role="tooltip">
+              <strong>What is NASA Task Load Index(NASA-TLX)?</strong>
+              <span>A method where people rate mental effort, stress, and performance of the task (1–10 scale)</span>
+            </span>
+          </span>
+          to measure how demanding the experience felt, and followed up with a post-test survey to gather additional feedback.
+        </p>
+        <p>
+          Here's what we saw from the results and how I improved things.
+        </p>
+        <div class="identifit-validation-items">
+          <figure class="case-section-image identifit-validation-overview" aria-label="Identifit user testing overview">
+            <img src="/assets/identifit/user-test.svg" alt="Identifit user testing overview" />
+          </figure>
+          <article class="identifit-validation-item identifit-validation-onboarding">
+            <p class="identifit-validation-item-label">Onboarding – Reducing Learning Curve</p>
+            <div class="identifit-validation-interactive" tabindex="0">
+              <p class="identifit-validation-toggle" aria-hidden="true">
+                <span class="identifit-validation-toggle-before">Before</span><span class="identifit-validation-toggle-sep"> / </span><span class="identifit-validation-toggle-after">After</span>
+              </p>
+              <div class="identifit-validation-screens">
+                <figure class="identifit-validation-screen identifit-validation-screen-side">
+                  <video src="/assets/identifit/onboarding-1.mov" autoplay muted loop playsinline preload="metadata" aria-label="Feature overview onboarding screen"></video>
+                  <figcaption class="identifit-validation-screen-caption">Feature Overview</figcaption>
+                </figure>
+                <figure class="identifit-validation-screen identifit-validation-screen-center">
+                  <div class="identifit-validation-center-videos">
+                    <video class="identifit-validation-center-before" src="/assets/identifit/onboarding-2-before.mov" autoplay muted loop playsinline preload="metadata" aria-label="Personalized questionnaire onboarding screen before"></video>
+                    <video class="identifit-validation-center-after" src="/assets/identifit/onboarding-2.mov" autoplay muted loop playsinline preload="metadata" aria-label="Personalized questionnaire onboarding screen after"></video>
+                  </div>
+                  <figcaption class="identifit-validation-screen-caption">Personalized Q</figcaption>
+                </figure>
+                <figure class="identifit-validation-screen identifit-validation-screen-side">
+                  <video src="/assets/identifit/onboarding-3.mov" autoplay muted loop playsinline preload="metadata" aria-label="Uploading OOTD onboarding screen"></video>
+                  <figcaption class="identifit-validation-screen-caption">Uploading OOTD</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="identifit-validation-copy">
+              <div class="identifit-validation-copy-col">
+                <p class="identifit-validation-copy-label">Before</p>
+                <p class="identifit-validation-copy-body">Onboarding focused on personalization but provided little context for how the app worked</p>
+              </div>
+              <div class="identifit-validation-copy-col">
+                <p class="identifit-validation-copy-label">After</p>
+                <p class="identifit-validation-copy-body">Added a feature walkthrough and a guided first task (uploading OOTD) to reduce learning curve</p>
+              </div>
+            </div>
+          </article>
+          <article class="identifit-validation-item">
+            <p class="identifit-validation-item-label">Virtual Closet – Reducing Information Overload</p>
+            <figure class="case-section-image identifit-validation-user-test" aria-label="Virtual Closet user testing results">
+              <img src="/assets/identifit/vc-user-test.svg" alt="Virtual Closet user testing — reducing information overload" />
+            </figure>
+            <div class="identifit-validation-copy">
+              <div class="identifit-validation-copy-col">
+                <p class="identifit-validation-copy-label">Before</p>
+                <p class="identifit-validation-copy-body">Displaying every category at once made the wardrobe feel visually dense and difficult to navigate</p>
+              </div>
+              <div class="identifit-validation-copy-col">
+                <p class="identifit-validation-copy-label">After</p>
+                <p class="identifit-validation-copy-body">Added collapsible categories (dropdown) and switchable grid and list views</p>
+              </div>
+            </div>
+          </article>
+          <article class="identifit-validation-item">
+            <p class="identifit-validation-item-label">Outfit Recs – Reducing Decision Fatigue</p>
+            <figure class="case-section-image identifit-validation-user-test" aria-label="Outfit recommendations user testing results">
+              <img src="/assets/identifit/outfit-rec-user-test.svg" alt="Outfit recommendations user testing — reducing decision fatigue" />
+            </figure>
+            <div class="identifit-validation-copy">
+              <div class="identifit-validation-copy-col">
+                <p class="identifit-validation-copy-label">Before</p>
+                <p class="identifit-validation-copy-body">Showing multiple recommendations encouraged comparison over decision-making</p>
+              </div>
+              <div class="identifit-validation-copy-col">
+                <p class="identifit-validation-copy-label">After</p>
+                <p class="identifit-validation-copy-body">Redesigned the UI into Tinder-like swipe with one large outfit at a time</p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="identifit-validation-quotes-lead">Beyond the tasks we tested, participants also shared direct feedback on their experience.</p>
+        <figure class="case-section-image validation-quotes" aria-label="Validation participant quotes">
+          <img src="/assets/identifit/quotes.svg?v=202611142358" alt="Validation participant quotes" />
+          <figcaption class="case-photo-caption">Quotes from users</figcaption>
+        </figure>
+      </section>
+      <section id="reflection" class="case-study-section identifit-reflection-section">
+        <p class="project-type">Reflection</p>
+        <h2>Yayy! Our team won Best Overall Design 🏆</h2>
+        <figure class="case-section-image identifit-reflection-media">
+          <img src="/assets/identifit/no-dash-reflection.svg?v=202611142350" alt="Identifit team presentation day and Best Overall Design certificate" />
+          <figcaption class="case-photo-caption">Team AG on the presentation day &lt;3</figcaption>
+        </figure>
+        <div class="identifit-reflection-callout">A Validated Outcome</div>
+        <p>
+          At the DFA (Design For America) UW Showcase in May 2025, our project was selected as Best Overall Design among six teams, judged and voted on by three industry professionals. It was such a meaningful moment for us because it felt like a recognition of both our solution and how clearly we communicated the problem and our design approach.
+        </p>
+        <div class="identifit-reflection-divider" aria-hidden="true"></div>
+        <div class="identifit-reflection-callout">Given More Time</div>
+        <p>
+          During our interviews, we noticed that outfit decisions can be shaped by race and culture. For some participants, factors like modesty played a big role in how they choose what to wear. We started a second round of interviews with a more diverse group but couldn't explore this further due to time constraints. This was something I hadn't fully considered, and I'd want to dive deeper to design a more inclusive experience.
+        </p>
+        <div class="identifit-reflection-divider" aria-hidden="true"></div>
+        <div class="identifit-reflection-callout">Possible Next Step</div>
+        <p>
+          Right now, the experience focuses on a relatively closed system (your own wardrobe). But in reality, people are constantly influenced by external trends and inspiration. As a next step, I'd be interested in exploring how to connect external sources like fashion communities or lookbooks with users' own wardrobe data. By showing how others style similar pieces, this could help users expand their style without needing to buy new clothes.
+        </p>
+        <div class="identifit-reflection-divider" aria-hidden="true"></div>
+      </section>
+      <nav class="case-more" aria-label="Other projects">
+        <p class="case-more-label">Other projects</p>
+        <div class="case-more-row">
+          <a class="case-more-link" href="/ea-games.html">
+            <span class="case-more-arrow" aria-hidden="true">←</span>
+            <span>FC 26 Manager +</span>
+          </a>
+          <a class="case-more-link case-more-link-next" href="/milestone.html">
+            <span>Milestone Seed</span>
+            <span class="case-more-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </nav>
+      <footer class="home-footer">
+        <p>2026 ©unostd<span class="home-footer-updated">Last updated: Nov 14th 2026</span></p>
+      </footer>
+    </main>
+    <script src="/script.js?v=202611142232"></script>
   </body>
 </html>

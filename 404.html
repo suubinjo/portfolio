@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page not found</title>
+    <script>
+      const path = location.pathname.replace(/\/+$/, "");
+      const pages = {
+        "/about-me": "/about-me.html",
+        "/ea-games": "/ea-games.html",
+        "/identifit": "/identifit.html",
+        "/milestone": "/milestone.html",
+        "/resume": "/resume.html"
+      };
+      const next = pages[path];
+      if (next) location.replace(next + location.search + location.hash);
+    </script>
+  </head>
+  <body>
+    <p><a href="/">Back to home</a></p>
+  </body>
+</html>

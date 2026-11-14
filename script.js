@@ -1,5 +1,5 @@
 const SITE_EMAIL = "suubinjo@gmail.com";
-const RESUME_URL = "/resume/";
+const RESUME_URL = "/resume.html";
 const LINKEDIN_URL = "https://www.linkedin.com/in/subinjo68/";
 
 if ("scrollRestoration" in history) {
@@ -14,16 +14,6 @@ resetScrollPosition();
 window.addEventListener("pageshow", (event) => {
   if (event.persisted) resetScrollPosition();
 });
-
-if (window.location.protocol.startsWith("http")) {
-  const cleanPath = window.location.pathname
-    .replace(/\/index\.html$/, "/")
-    .replace(/\/([^/]+)\.html$/, "/$1/");
-
-  if (cleanPath !== window.location.pathname) {
-    window.history.replaceState(null, "", `${cleanPath}${window.location.search}${window.location.hash}`);
-  }
-}
 
 document.querySelectorAll(".animate-letters").forEach((element) => {
   const text = element.textContent || "";
