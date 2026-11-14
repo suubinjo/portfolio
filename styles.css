@@ -977,11 +977,12 @@ img {
   font-weight: 400;
   letter-spacing: -0.04em;
   line-height: 1.5;
-  text-align: left;
+  text-align: center;
 }
 
 .case-study-section .milestone-direction-row p > span {
-  display: block;
+  display: inline-block;
+  width: 16.8em;
   max-width: 100%;
   text-align: left;
 }
@@ -1839,7 +1840,7 @@ img {
 .ea-problem-section .ea-hmw-title {
   width: 100%;
   max-width: 100%;
-  text-wrap: wrap;
+  text-wrap: balance;
 }
 
 .case-section-image.ea-problem-image {
@@ -4077,6 +4078,10 @@ img {
     width: auto;
     justify-self: stretch;
     text-align: left;
+  }
+
+  .case-study-section .milestone-direction-row p > span {
+    width: auto;
   }
 
   .milestone-problem-title br,
