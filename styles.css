@@ -1316,7 +1316,7 @@ img {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.2;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -2315,13 +2315,9 @@ img {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.2;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   display: block;
-}
-
-.ea-reflection-next {
-  text-align: center;
 }
 
 .ea-reflection-section .ea-reflection-callout + p {
@@ -4435,7 +4431,7 @@ img {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.2;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   display: block;
 }
