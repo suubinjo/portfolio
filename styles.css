@@ -977,11 +977,11 @@ img {
   font-weight: 400;
   letter-spacing: -0.04em;
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
 }
 
 .case-study-section .milestone-direction-row p > span {
-  display: inline-block;
+  display: block;
   max-width: 100%;
   text-align: left;
 }
@@ -2158,14 +2158,14 @@ img {
 .ea-pivot-brief {
   margin: 25px 0;
   display: grid;
-  gap: 14px;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 28px;
+  row-gap: 14px;
+  align-items: start;
 }
 
 .ea-pivot-brief-row {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  gap: 28px;
-  align-items: start;
+  display: contents;
 }
 
 .ea-pivot-brief dt {
@@ -2684,13 +2684,9 @@ img {
 .case-study-section .ideation-assets > .ideation-image + .ideation-flow-note,
 .case-study-section .ideation-assets > .ideation-flow-copy + .ideation-image,
 .case-study-section .ideation-assets > .ideation-image + .ideation-flow-copy,
-.case-study-section .ideation-assets > .ideation-image + .ideation-flow-note,
-.case-study-section .ideation-assets > .ideation-flow-note + .ideation-lofi-group {
-  margin-top: 0;
-}
-
-.case-study-section .ideation-assets > .ideation-image + .ideation-flow-copy,
-.case-study-section .ideation-assets > .ideation-lofi-group + .ideation-image {
+.case-study-section .ideation-assets > .ideation-flow-note + .ideation-lofi-group,
+.case-study-section .ideation-assets > .ideation-lofi-group + .ideation-image,
+.case-study-section .ideation-lofi-group > .ideation-image + .ideation-flow-note {
   margin-top: 25px;
 }
 
@@ -3927,7 +3923,13 @@ img {
     vertical-align: middle;
   }
 
+  .ea-pivot-brief {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
   .ea-pivot-brief-row {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 6px;
   }
@@ -4077,7 +4079,8 @@ img {
     text-align: left;
   }
 
-  .milestone-problem-title br {
+  .milestone-problem-title br,
+  .case-study-section h2 br {
     display: none;
   }
 
@@ -4390,7 +4393,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.36);
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
   transition: opacity 180ms ease;
