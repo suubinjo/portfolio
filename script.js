@@ -99,6 +99,55 @@ if (eaHighlights.length) {
   requestAnimationFrame(syncEaHighlights);
 }
 
+const directionLabels = document.querySelectorAll(".milestone-direction-row strong");
+
+if (directionLabels.length) {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    directionLabels.forEach((label) => label.classList.add("is-highlighted"));
+  } else {
+    const directionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-highlighted");
+          directionObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.7 }
+    );
+
+    directionLabels.forEach((label) => directionObserver.observe(label));
+  }
+}
+
+document.querySelectorAll(".milestone-solution-prototype").forEach((link) => {
+  const pill = link.querySelector(".milestone-prototype-overlay");
+  if (!pill) return;
+
+  document.body.appendChild(pill);
+
+  const place = (x, y) => {
+    pill.style.left = `${x}px`;
+    pill.style.top = `${y}px`;
+  };
+
+  const showAt = (x, y) => {
+    place(x, y);
+    pill.classList.add("is-visible");
+  };
+
+  link.addEventListener("mouseenter", (event) => showAt(event.clientX, event.clientY));
+  link.addEventListener("mousemove", (event) => showAt(event.clientX, event.clientY));
+  link.addEventListener("mouseleave", () => pill.classList.remove("is-visible"));
+  link.addEventListener("focus", () => {
+    const rect = link.getBoundingClientRect();
+    showAt(rect.left + rect.width / 2, rect.top + rect.height / 2);
+  });
+  link.addEventListener("blur", () => pill.classList.remove("is-visible"));
+});
+
 document.querySelectorAll(".case-nav-top").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
