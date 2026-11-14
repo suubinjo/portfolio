@@ -6,6 +6,7 @@
   --shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.1);
   --serif: "Instrument Serif", Georgia, serif;
   --sans: "Instrument Sans", Arial, sans-serif;
+  --display: "Schibsted Grotesk", "Instrument Sans", Arial, sans-serif;
   --mono: "Reddit Mono", "SFMono-Regular", Consolas, monospace;
   --page-gutter: clamp(40px, 7vw, 80px);
   --case-nav-space: clamp(148px, 11vw, 200px);
@@ -553,10 +554,10 @@ img {
   max-width: 100%;
   margin: 0;
   color: var(--ink);
-  font-family: var(--sans);
+  font-family: var(--display);
   font-size: 26px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.03em;
   text-wrap: wrap;
@@ -1934,10 +1935,10 @@ img {
 .ea-research-block h3 {
   margin: 0 0 25px;
   color: var(--ink);
-  font-family: var(--sans);
+  font-family: var(--display);
   font-size: 26px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.03em;
   text-wrap: wrap;
