@@ -938,8 +938,8 @@ img {
 .milestone-direction-head,
 .milestone-direction-row {
   display: grid;
-  grid-template-columns: 13em 110px;
-  column-gap: 210px;
+  grid-template-columns: 13em 131px;
+  column-gap: 160px;
   justify-content: center;
   align-items: start;
 }
@@ -992,7 +992,7 @@ img {
   z-index: 0;
   display: inline-block;
   color: #3e3e3e;
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 21px;
   font-weight: 400;
   letter-spacing: -0.04em;
