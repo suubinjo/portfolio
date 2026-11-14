@@ -8,7 +8,6 @@ Live site: [subinjo.com](https://subinjo.com)
 
 - `/` - Home and selected work
 - `/about-me/` - About page
-- `/journey/` - Portfolio journey page
 - `/identifit/` - Identifit case study
 - `/milestone/` - Milestone Seed case study
 - `/ea-games/` - EA Games case study preview
@@ -46,7 +45,6 @@ This is a **static** site (no build step). GitHub Pages maps URL paths to folder
 | `/identifit/` | `identifit/index.html` |
 | `/milestone/` | `milestone/index.html` |
 | `/resume/` | `resume/index.html` |
-| `/journey/` | `journey/index.html` |
 
 Each route is **one** `index.html` inside a folder (that is how `/path/` clean URLs work on GitHub Pages).
 
