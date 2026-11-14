@@ -107,7 +107,7 @@ img {
   font-family: var(--sans);
   font-size: 15px;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   text-transform: none;
 }
 
@@ -131,8 +131,8 @@ img {
   font-family: var(--sans);
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
+  line-height: 1.4;
+  letter-spacing: 0;
   text-decoration: none;
   white-space: nowrap;
   transition: color 180ms ease;
@@ -215,8 +215,8 @@ img {
   font-family: var(--sans);
   font-size: 15px;
   font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.35;
+  letter-spacing: 0;
+  line-height: 1.4;
   text-decoration: none;
   white-space: nowrap;
   transition: color 180ms ease;
@@ -278,9 +278,9 @@ img {
   margin: 0 0 18px;
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .case-award a {
@@ -467,8 +467,8 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: -0.015em;
-  line-height: 1.45;
+  letter-spacing: 0;
+  line-height: 1.65;
   text-wrap: pretty;
 }
 
@@ -571,8 +571,8 @@ img {
   font-family: var(--sans);
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  line-height: 1.4;
+  letter-spacing: 0;
   text-transform: none;
 }
 
@@ -583,7 +583,7 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
   text-wrap: pretty;
 }
 
@@ -666,9 +666,9 @@ img {
   width: 100%;
   color: #ababab;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.4;
   text-align: left;
 }
 
@@ -689,7 +689,7 @@ img {
   z-index: 1;
   color: #606060;
   font-family: var(--mono);
-  font-size: 25px;
+  font-size: 41px;
   font-weight: 400;
   line-height: 1;
 }
@@ -698,9 +698,9 @@ img {
   margin: 0;
   color: #5e5e5e;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .milestone-problem-copy {
@@ -717,7 +717,7 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
   text-wrap: pretty;
 }
 
@@ -771,10 +771,10 @@ img {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.08);
   color: #555555;
   font-family: var(--mono);
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.55;
-  letter-spacing: -0.03em;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
   text-align: left;
   white-space: normal;
   opacity: 0;
@@ -791,7 +791,7 @@ img {
 }
 
 .tooltip-panel span {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .milestone-research-quote {
@@ -853,8 +853,8 @@ img {
   color: #111111;
   font-family: var(--sans);
   font-size: 16px;
-  font-weight: 400;
-  line-height: 1.25;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .milestone-competitor-card ul {
@@ -871,8 +871,8 @@ img {
   color: #777777;
   font-family: var(--sans);
   font-size: 16px;
-  font-weight: 300;
-  line-height: 1.4;
+  font-weight: 400;
+  line-height: 1.65;
 }
 
 .milestone-competitor-card li::before {
@@ -912,7 +912,7 @@ img {
   color: var(--ink);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .milestone-competitor-pros li::before {
@@ -951,11 +951,12 @@ img {
 .milestone-direction-head span {
   color: var(--ink);
   font-family: var(--mono);
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: -0.04em;
-  line-height: 1.5;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .milestone-direction-row {
@@ -969,12 +970,12 @@ img {
 
 .case-study-section .milestone-direction-row p {
   margin: 0;
-  color: #3e3e3e;
-  font-family: var(--mono);
+  color: var(--ink);
+  font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: -0.04em;
-  line-height: 1.5;
+  letter-spacing: 0;
+  line-height: 1.65;
 }
 
 .milestone-direction-row strong {
@@ -983,10 +984,10 @@ img {
   display: inline-block;
   color: #3e3e3e;
   font-family: var(--mono);
-  font-size: 21px;
-  font-weight: 400;
-  letter-spacing: -0.04em;
-  line-height: 1.5;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
   text-transform: uppercase;
 }
 
@@ -1066,7 +1067,7 @@ img {
   border-right: 1px solid #ababab;
   color: #5e5e5e;
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1;
   writing-mode: vertical-rl;
@@ -1127,8 +1128,8 @@ img {
   font-family: var(--sans);
   font-size: 21px;
   font-weight: 500;
-  letter-spacing: -0.04em;
-  line-height: 1.7;
+  letter-spacing: -0.03em;
+  line-height: 1.35;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -1151,8 +1152,8 @@ img {
   font-family: var(--sans);
   font-size: 21px;
   font-weight: 500;
-  letter-spacing: -0.04em;
-  line-height: 1.7;
+  letter-spacing: -0.03em;
+  line-height: 1.35;
   text-transform: none;
 }
 
@@ -1162,7 +1163,8 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.65;
+  letter-spacing: 0;
 }
 
 .milestone-focus-grid ul {
@@ -1173,7 +1175,7 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.65;
 }
 
 .milestone-focus-grid li + li {
@@ -1240,9 +1242,9 @@ img {
   margin-top: 24px;
   color: #5e5e5e;
   font-family: var(--mono);
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .validation-stats span {
@@ -1299,8 +1301,10 @@ img {
   background: transparent;
   color: #666;
   font-family: var(--mono);
-  font-size: 15px;
-  letter-spacing: 0.02em;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
   text-transform: uppercase;
 }
 
@@ -1340,21 +1344,21 @@ img {
   margin: 0 0 25px;
   color: #acacac;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.3;
   text-transform: uppercase;
-  letter-spacing: 0;
+  letter-spacing: 0.04em;
 }
 
 .case-study-section p.identifit-solution-step-label {
   margin: 0 0 25px;
   color: #acacac;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -1364,7 +1368,7 @@ img {
   font-family: var(--sans);
   font-size: 21px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.35;
   letter-spacing: -0.03em;
 }
 
@@ -1420,8 +1424,8 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.45;
-  letter-spacing: -0.03em;
+  line-height: 1.65;
+  letter-spacing: 0;
 }
 
 .jump-solution-button {
@@ -1435,7 +1439,7 @@ img {
   align-items: center;
   gap: 10px;
   font-family: var(--sans);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   line-height: 1.2;
   text-decoration: none;
@@ -1559,10 +1563,10 @@ img {
   margin: 0 0 25px;
   color: #acacac;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -1570,10 +1574,10 @@ img {
   margin: 0 0 25px;
   color: #acacac;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -1782,7 +1786,7 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.65;
 }
 
 .identifit-validation-overview,
@@ -1881,7 +1885,7 @@ img {
 
 .ea-research-stat span {
   font-family: var(--mono);
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "wght" 400;
@@ -2078,11 +2082,11 @@ img {
   color: var(--ink);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .ea-research-section p strong {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .ea-research-stat strong {
@@ -2145,12 +2149,13 @@ img {
 }
 
 .ea-pivot-brief dt {
-  color: #4f4f4f;
+  color: #9a9a9a;
   font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.35;
-  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .ea-pivot-brief dd {
@@ -2159,7 +2164,7 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.65;
 }
 
 .ea-pivot-figure {
@@ -2222,8 +2227,10 @@ img {
   margin-top: 12px;
   color: #ababab;
   font-family: var(--mono);
-  font-size: 14px;
-  line-height: 1.2;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -2256,9 +2263,10 @@ img {
   margin-top: 14px;
   color: #ababab;
   font-family: var(--mono);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -2272,8 +2280,10 @@ img {
   background: transparent;
   color: #5f5f5f;
   font-family: var(--mono);
-  font-size: 16px;
-  line-height: 1;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
@@ -2354,8 +2364,8 @@ img {
   font-family: var(--sans);
   font-size: 21px;
   font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.04em;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
   text-wrap: balance;
 }
 
@@ -2370,7 +2380,7 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
   text-wrap: balance;
 }
 
@@ -2391,7 +2401,7 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
   text-wrap: pretty;
 }
 
@@ -2404,9 +2414,11 @@ img {
   background: #f7f7f7;
   color: #808080;
   font-family: var(--mono);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   overflow-x: auto;
 }
 
@@ -2492,7 +2504,7 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
   text-wrap: pretty;
 }
 
@@ -2534,9 +2546,10 @@ img {
   margin: 0;
   color: #9c9c9c;
   font-family: var(--mono);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -2546,8 +2559,8 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: -0.03em;
+  line-height: 1.65;
+  letter-spacing: 0;
 }
 
 .identifit-insight-pain {
@@ -2570,10 +2583,10 @@ img {
   margin: 0;
   color: #9c9c9c;
   font-family: var(--mono);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -2582,8 +2595,8 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: -0.03em;
+  line-height: 1.65;
+  letter-spacing: 0;
 }
 
 .case-study-section .identifit-insight-pain p.identifit-insight-copy {
@@ -2647,7 +2660,7 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
   text-wrap: pretty;
 }
 
@@ -3469,6 +3482,10 @@ img {
   font-weight: 300;
 }
 
+.tooltip-panel span {
+  font-weight: 400;
+}
+
 .term-tooltip:hover .tooltip-panel,
 .term-tooltip:focus-visible .tooltip-panel,
 .hcde-tooltip-wrap:hover .hcde-tooltip,
@@ -3810,9 +3827,9 @@ img {
   }
 
   .milestone-award .case-award-pill {
-    height: 24px;
-    padding: 0 10px;
-    font-size: clamp(9px, 2.85vw, 10px);
+    height: 22px;
+    padding: 0 8px;
+    font-size: 11px;
   }
 
   .case-award-badge {
@@ -3823,12 +3840,12 @@ img {
 
   .case-hero-copy h1 {
     margin-bottom: 8px;
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .case-deck {
     margin-bottom: 0;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .case-facts {
@@ -3843,7 +3860,7 @@ img {
 
   .case-facts dt,
   .case-facts dd {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .case-study-section {
@@ -3929,11 +3946,11 @@ img {
   }
 
   .ea-solution-text h3 {
-    font-size: 20px;
+    font-size: 21px;
   }
 
   .case-study-section .ea-solution-text p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .ea-ai-note {
@@ -4107,12 +4124,12 @@ img {
   }
 
   .milestone-research-stats strong {
-    font-size: 46px;
+    font-size: 41px;
   }
 
   .milestone-research-stats span {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 13px;
   }
 }
 
@@ -4129,8 +4146,8 @@ img {
   font-family: var(--sans);
   font-size: 15px;
   font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
+  letter-spacing: 0;
+  line-height: 1.4;
 }
 
 .case-more-row {
@@ -4151,8 +4168,8 @@ img {
   font-family: var(--sans);
   font-size: 15px;
   font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
+  letter-spacing: 0;
+  line-height: 1.4;
   text-decoration: none;
 }
 
@@ -4439,13 +4456,13 @@ img {
 
 .ea-solution-text h3 {
   margin: 0;
-  color: #4f4f4f;
+  color: var(--ink);
   font-family: var(--sans);
   font-size: 21px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.35;
   letter-spacing: -0.03em;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .case-study-section .ea-solution-text p {
@@ -4454,8 +4471,8 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
+  line-height: 1.65;
+  letter-spacing: 0;
 }
 
 .ea-ai-note {
@@ -4469,9 +4486,10 @@ img {
   margin: 0 0 8px;
   color: #828282;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -4485,10 +4503,10 @@ img {
   margin: 0;
   color: #828282;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: normal;
+  line-height: 1.4;
+  letter-spacing: 0;
 }
 
 .milestone-reflection-section {
@@ -4505,8 +4523,10 @@ img {
   background: transparent;
   color: #5f5f5f;
   font-family: var(--mono);
-  font-size: 16px;
-  line-height: 1;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
@@ -4637,11 +4657,11 @@ img {
   padding: 0;
   color: #acacac;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.3;
   text-transform: uppercase;
-  letter-spacing: 0;
+  letter-spacing: 0.04em;
 }
 
 .case-study-section p.milestone-solution-step-label {
@@ -4649,10 +4669,10 @@ img {
   padding: 0;
   color: #acacac;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -4662,7 +4682,7 @@ img {
   font-family: var(--sans);
   font-size: 21px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.35;
   letter-spacing: -0.03em;
 }
 
@@ -4685,8 +4705,8 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.45;
-  letter-spacing: -0.03em;
+  line-height: 1.65;
+  letter-spacing: 0;
 }
 
 .milestone-solution-media {
@@ -4767,9 +4787,9 @@ img {
 .milestone-prototype-overlay span {
   color: #ffffff;
   font-family: var(--sans);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
@@ -4860,9 +4880,9 @@ img {
   margin-top: 12px;
   color: #acacac;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -5950,6 +5970,13 @@ img {
   max-width: none;
   margin-top: 0;
   padding: 0 clamp(20px, 5vw, 72px) 16px;
+}
+
+.case-study-shell .home-footer p {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
 }
 
 .home-footer-updated {
