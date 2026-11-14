@@ -139,8 +139,8 @@ img {
 }
 
 .case-nav-back svg {
-  width: 16px;
-  height: 14px;
+  width: 15px;
+  height: 12px;
   display: block;
   flex: 0 0 auto;
 }
@@ -971,7 +971,7 @@ img {
   width: auto;
   justify-self: stretch;
   color: #3e3e3e;
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.04em;
@@ -981,7 +981,7 @@ img {
 
 .case-study-section .milestone-direction-row p > span {
   display: inline-block;
-  width: 16.8em;
+  width: 13em;
   max-width: 100%;
   text-align: left;
 }
@@ -2242,6 +2242,10 @@ img {
   overflow: hidden;
   border-radius: 3px;
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M16 6v20M6 16h20' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") 16 16, zoom-in;
+}
+
+.research-image-placeholder .case-photo-caption {
+  margin-top: 18px;
 }
 
 .case-photo-caption,
