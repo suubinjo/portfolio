@@ -15,23 +15,7 @@ window.addEventListener("pageshow", (event) => {
   if (event.persisted) resetScrollPosition();
 });
 
-document.querySelectorAll(".animate-letters").forEach((element) => {
-  const text = element.textContent || "";
-  element.setAttribute("aria-label", element.getAttribute("aria-label") || text);
-  element.textContent = "";
-
-  Array.from(text).forEach((letter, index) => {
-    const span = document.createElement("span");
-    span.className = letter === " " ? "char char-space" : "char";
-    span.style.setProperty("--char-index", index.toString());
-    span.textContent = letter === " " ? "\u00a0" : letter;
-    element.appendChild(span);
-  });
-});
-
-const animatedCaseElements = document.querySelectorAll(
-  ".case-study-shell .case-award, .case-study-shell .case-deck, .case-study-shell .case-facts > div, .case-study-shell .case-hero-media, .case-study-section"
-);
+const animatedCaseElements = document.querySelectorAll(".case-study-section");
 
 animatedCaseElements.forEach((element) => {
   element.classList.add("scroll-fade");
