@@ -112,9 +112,12 @@ img {
 }
 
 .case-study-hero {
+  --case-nav-top: clamp(28px, 4vw, 56px);
+  --case-nav-item: calc(15px * 1.35);
+  --case-nav-gap: 10px;
   position: relative;
   min-height: auto;
-  padding: 140px 0 8px;
+  padding: calc(var(--case-nav-top) + var(--case-nav-item) + var(--case-nav-gap)) 0 8px;
   display: block;
 }
 
@@ -464,6 +467,7 @@ img {
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
+  letter-spacing: -0.015em;
   line-height: 1.45;
   text-wrap: pretty;
 }
@@ -540,7 +544,6 @@ img {
 
 .ea-case-page .case-study-hero {
   min-height: auto;
-  padding-top: 140px;
   padding-bottom: 8px;
 }
 
@@ -3688,7 +3691,10 @@ img {
 
 @media (max-width: 1180px) {
   .case-study-hero {
-    padding: 124px 0 8px;
+    --case-nav-top: clamp(20px, 3vw, 32px);
+    --case-nav-item: calc(14px * 1.35);
+    --case-nav-gap: 8px;
+    padding-bottom: 8px;
   }
 
   .section-index {
