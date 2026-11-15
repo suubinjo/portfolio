@@ -38,7 +38,7 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Instrument+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Reddit+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=202611150100" />
+    <link rel="stylesheet" href="/styles.css?v=202611160002" />
     <!-- home layout v202611110048 -->
     <style>
       body.home-page .home-work {
@@ -79,12 +79,16 @@
           margin-right: auto !important;
         }
 
-        body.home-page .home-work {
-          width: 100% !important;
-          max-width: none !important;
-          margin-left: 0 !important;
-          margin-right: 0 !important;
-          padding: 0 !important;
+        body.home-page:not(.about-page) .home-work {
+          box-sizing: border-box !important;
+          width: 100vw !important;
+          max-width: 100vw !important;
+          margin-left: calc(50% - 50vw) !important;
+          margin-right: calc(50% - 50vw) !important;
+          padding: 0 12px !important;
+          gap: 12px !important;
+          column-gap: 12px !important;
+          row-gap: 12px !important;
         }
 
         body.home-page .home-work-media {
