@@ -4951,7 +4951,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
@@ -4960,20 +4960,19 @@ img {
   align-items: center;
   justify-content: center;
   min-width: 0;
-  min-height: 46px;
-  padding: 0 22px;
-  border-radius: 14px;
+  min-height: 28px;
+  padding: 0 12px;
+  border-radius: 4px;
   font-family: var(--sans);
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-size: 12px;
+  font-weight: 400;
   line-height: 1;
   text-decoration: none;
-  transition: background 180ms ease;
+  transition: opacity 180ms ease, background 180ms ease;
 }
 
 .home-cta-button-primary {
-  background: #111111;
+  background: var(--ink);
   color: #ffffff;
 }
 
@@ -4984,13 +4983,13 @@ img {
 }
 
 .home-cta-button-secondary {
-  background: #f3f3f3;
-  color: #111111;
+  background: #f0f0f0;
+  color: var(--ink);
 }
 
 .home-cta-button-secondary:hover,
 .home-cta-button-secondary:focus-visible {
-  background: #e8e8e8;
+  background: #e6e6e6;
   outline: none;
 }
 
@@ -5004,10 +5003,9 @@ img {
 
 .home-copy-hint {
   margin: 0;
-  color: #b0b0b0;
-  font-size: 15px;
+  color: var(--home-muted);
+  font-size: 13px;
   font-weight: 400;
-  letter-spacing: -0.01em;
   line-height: 1.4;
 }
 
@@ -5056,23 +5054,16 @@ img {
 }
 
 .home-copy-hint kbd {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 22px;
-  height: 22px;
-  margin: 0 3px;
-  padding: 0 5px;
-  border: 1px solid #e6e6e6;
-  border-radius: 6px;
-  background: #f3f3f3;
-  color: #9a9a9a;
-  font-family: var(--sans);
-  font-size: 13px;
+  display: inline-block;
+  min-width: 1.35em;
+  margin: 0 2px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #f0f0f0;
+  color: #8a8a8a;
+  font-family: var(--mono);
+  font-size: 12px;
   font-weight: 500;
-  line-height: 1;
-  vertical-align: -5px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
 }
 
 .home-work {
@@ -5199,8 +5190,8 @@ img {
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 20px;
-  background: #f3f3f3;
+  border-radius: 10px;
+  background: #f6f6f6;
 }
 
 .home-work-media img {
@@ -5208,16 +5199,16 @@ img {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
-  object-position: center;
-  padding: 0;
-  background: #f3f3f3;
+  object-fit: contain;
+  object-position: center top;
+  padding: clamp(10px, 1.4vw, 14px) 0 clamp(4px, 0.6vw, 6px);
+  background: #f6f6f6;
 }
 
 .home-work-card--ea .home-work-media img,
 .home-work-card[href="/ea-games/"] .home-work-media img {
   object-fit: cover;
-  object-position: center;
+  object-position: right top;
   padding: 0;
   background: transparent;
 }
@@ -5237,32 +5228,24 @@ img {
 .home-work-tag {
   position: relative;
   max-width: 100%;
-  padding: 5px 11px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
-  background: #e6e6e6;
-  color: #4a4a4a;
+  background: rgba(32, 32, 32, 0.52);
+  color: #f5f5f5;
   font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 10px;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.01em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.home-work-card--ea .home-work-tag,
-.home-work-card[href="/ea-games/"] .home-work-tag {
-  border-color: rgba(255, 255, 255, 0.28);
-  background: #b7cba0;
-  color: #1e2a16;
-}
-
-.home-work-card[href="/identifit/"] .home-work-tag {
-  border-color: rgba(42, 51, 72, 0.1);
-  background: #d3dbe9;
-  color: #2a3344;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
 }
 
 .home-work-title {
