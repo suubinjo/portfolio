@@ -4,7 +4,6 @@
   --soft: #9c9c9c;
   --line: rgba(0, 0, 0, 0.03);
   --shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.1);
-  --serif: "Instrument Serif", Georgia, serif;
   --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: "Reddit Mono", "SFMono-Regular", Consolas, monospace;
   --page-gutter: clamp(40px, 7vw, 80px);
@@ -3003,7 +3002,7 @@ img {
 
 .about-title {
   margin: 48px 0 0;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-style: italic;
   font-size: 0;
   font-weight: 300;
