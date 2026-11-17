@@ -4529,7 +4529,7 @@ img {
   background: #ffffff;
 }
 
-body.home-page:not(.about-page) {
+body.home-page {
   --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
