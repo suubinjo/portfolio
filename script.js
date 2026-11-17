@@ -72,6 +72,7 @@ if (eaHighlights.length) {
   };
 
   window.addEventListener("scroll", syncEaHighlights, { passive: true });
+  caseSheet?.addEventListener("scroll", syncEaHighlights, { passive: true });
   window.addEventListener("resize", syncEaHighlights);
   requestAnimationFrame(syncEaHighlights);
 }
@@ -132,13 +133,30 @@ document.querySelectorAll(".case-nav-top").forEach((link) => {
   });
 });
 
+function caseScroller() {
+  const sheet = document.querySelector(".case-page .case-sheet");
+  if (!sheet) return null;
+  return getComputedStyle(sheet).position === "fixed" ? sheet : null;
+}
+
 function scrollToSection(id) {
   const element = document.getElementById(id);
   if (!element) return;
 
   const offset = id === "top" ? 0 : 100;
-  const top = element.getBoundingClientRect().top + window.scrollY - offset;
+  const scroller = caseScroller();
 
+  if (scroller) {
+    const top =
+      element.getBoundingClientRect().top -
+      scroller.getBoundingClientRect().top +
+      scroller.scrollTop -
+      offset;
+    scroller.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    return;
+  }
+
+  const top = element.getBoundingClientRect().top + window.scrollY - offset;
   window.scrollTo({
     top,
     behavior: "smooth",

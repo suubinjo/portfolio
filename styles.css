@@ -564,21 +564,10 @@ html:has(body.case-page) {
   --sheet-top: calc(clamp(28px, 4vw, 56px) + 8px);
   width: min(calc(877px + (var(--sheet-gap) * 2)), calc(100vw - 24px));
   margin: var(--sheet-top) auto 36px;
-  padding: 0 var(--sheet-gap) 48px;
+  padding: 22px var(--sheet-gap) 48px;
   box-sizing: border-box;
   background: #ffffff;
   border-radius: 20px;
-}
-
-.case-sheet-cap {
-  position: sticky;
-  top: var(--sheet-top);
-  z-index: 4;
-  height: 22px;
-  margin: 0 calc(var(--sheet-gap) * -1);
-  background: #ffffff;
-  border-radius: 20px 20px 0 0;
-  pointer-events: none;
 }
 
 .case-sheet .case-study-hero {
@@ -590,18 +579,57 @@ html:has(body.case-page) {
   margin-bottom: 0;
 }
 
+@media (min-width: 681px) {
+  html:has(body.case-page),
+  body.case-page {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .case-sheet {
+    position: fixed;
+    z-index: 1;
+    top: var(--sheet-top);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding-bottom: 0;
+    border-radius: 20px 20px 0 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.22) transparent;
+    container-type: inline-size;
+  }
+
+  .case-sheet .ea-solution-prototype {
+    width: 100cqw;
+    margin-left: calc(50% - 50cqw);
+  }
+}
+
+.case-page .case-sheet > .home-footer {
+  box-sizing: border-box;
+  width: auto;
+  max-width: none;
+  margin: 36px calc(var(--sheet-gap) * -1) 0;
+  padding: 28px var(--sheet-gap) 32px;
+  background: #f9f9f9;
+}
+
 @media (max-width: 680px) {
   .case-sheet {
     --sheet-top: 16px;
     width: calc(100vw - 16px);
     margin: 16px auto 28px;
-    padding: 0 14px 32px;
+    padding: 16px 14px 0;
     border-radius: 16px;
   }
 
-  .case-sheet-cap {
-    height: 16px;
-    border-radius: 16px 16px 0 0;
+  .case-sheet .case-study-hero {
+    padding-top: 0;
   }
 }
 
