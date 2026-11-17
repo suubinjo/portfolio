@@ -552,11 +552,11 @@ img {
 }
 
 body.milestone-page {
-  background: #fcfcfc;
+  background: #f9f9f9;
 }
 
 html:has(body.milestone-page) {
-  background: #fcfcfc;
+  background: #f9f9f9;
 }
 
 .milestone-page .case-sheet {
@@ -4229,9 +4229,10 @@ html:has(body.milestone-page) {
 }
 
 .milestone-solution-step-wide {
-  width: min(1027px, 100%);
+  width: min(877px, 100%);
   min-height: auto;
   display: block;
+  justify-self: center;
 }
 
 .milestone-solution-copy-label-only {
@@ -4239,7 +4240,7 @@ html:has(body.milestone-page) {
 }
 
 .milestone-solution-media-wide {
-  width: min(1027px, 100%);
+  width: min(877px, 100%);
   height: auto;
   aspect-ratio: 1027 / 730;
   margin: 25px auto 0;
