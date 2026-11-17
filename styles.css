@@ -4530,7 +4530,7 @@ img {
 }
 
 body.home-page:not(.about-page) {
-  --sans: "Inter", Arial, sans-serif;
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .home-page .home-layout {
