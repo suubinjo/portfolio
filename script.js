@@ -8,7 +8,7 @@ if ("scrollRestoration" in history) {
 
 function resetScrollPosition() {
   window.scrollTo(0, 0);
-  document.querySelector(".case-sheet")?.scrollTo(0, 0);
+  document.querySelector(".case-scroll")?.scrollTo(0, 0);
 }
 
 resetScrollPosition();
@@ -16,7 +16,7 @@ window.addEventListener("pageshow", (event) => {
   if (event.persisted) resetScrollPosition();
 });
 
-const caseSheet = document.querySelector(".case-sheet");
+const caseSheet = document.querySelector(".case-scroll");
 
 const animatedCaseElements = document.querySelectorAll(".case-study-section");
 
@@ -134,9 +134,9 @@ document.querySelectorAll(".case-nav-top").forEach((link) => {
 });
 
 function caseScroller() {
-  const sheet = document.querySelector(".case-page .case-sheet");
-  if (!sheet) return null;
-  return getComputedStyle(sheet).position === "fixed" ? sheet : null;
+  const scroller = document.querySelector(".case-page .case-scroll");
+  if (!scroller) return null;
+  return getComputedStyle(scroller).position === "fixed" ? scroller : null;
 }
 
 function scrollToSection(id) {

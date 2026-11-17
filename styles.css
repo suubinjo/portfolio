@@ -552,6 +552,8 @@ img {
 }
 
 body.case-page {
+  --sheet-gap: 36px;
+  --sheet-top: calc(clamp(28px, 4vw, 56px) + 8px);
   background: #f9f9f9;
 }
 
@@ -560,14 +562,27 @@ html:has(body.case-page) {
 }
 
 .case-sheet {
-  --sheet-gap: 36px;
-  --sheet-top: calc(clamp(28px, 4vw, 56px) + 8px);
   width: min(calc(877px + (var(--sheet-gap) * 2)), calc(100vw - 24px));
   margin: var(--sheet-top) auto 36px;
-  padding: 22px var(--sheet-gap) 48px;
+  padding: 0 var(--sheet-gap) 48px;
   box-sizing: border-box;
   background: #ffffff;
   border-radius: 20px;
+}
+
+.case-sheet-cap {
+  height: 22px;
+  margin: 0 calc(var(--sheet-gap) * -1);
+  background: #f9f9f9;
+  pointer-events: none;
+}
+
+.case-sheet-cap::before {
+  content: "";
+  display: block;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 20px 20px 0 0;
 }
 
 .case-sheet .case-study-hero {
@@ -579,6 +594,11 @@ html:has(body.case-page) {
   margin-bottom: 0;
 }
 
+.case-page .case-scroll > .home-footer {
+  padding-top: 28px;
+  background: #f9f9f9;
+}
+
 @media (min-width: 681px) {
   html:has(body.case-page),
   body.case-page {
@@ -586,23 +606,31 @@ html:has(body.case-page) {
     overflow: hidden;
   }
 
-  .case-sheet {
+  .case-scroll {
     position: fixed;
     z-index: 1;
     top: var(--sheet-top);
-    --sheet-bottom: calc(clamp(28px, 4vw, 56px) + 32px);
-    bottom: var(--sheet-bottom);
-    left: 0;
     right: 0;
-    margin: 0 auto;
-    padding-bottom: 36px;
-    border-radius: 20px;
+    bottom: 0;
+    left: 0;
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 0, 0, 0.22) transparent;
+    background: #f9f9f9;
+  }
+
+  .case-scroll .case-sheet {
+    width: min(calc(877px + (var(--sheet-gap) * 2)), calc(100vw - 24px));
+    margin: 0 auto;
     container-type: inline-size;
+  }
+
+  .case-sheet-cap {
+    position: sticky;
+    top: 0;
+    z-index: 4;
   }
 
   .case-sheet .ea-solution-prototype {
@@ -611,24 +639,24 @@ html:has(body.case-page) {
   }
 }
 
-@media (min-width: 681px) {
-  .case-page .case-study-shell > .home-footer {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    background: #f9f9f9;
-  }
-}
-
 @media (max-width: 680px) {
-  .case-sheet {
+  body.case-page {
     --sheet-top: 16px;
+  }
+
+  .case-sheet {
     width: calc(100vw - 16px);
     margin: 16px auto 28px;
-    padding: 16px 14px 28px;
+    padding: 0 14px 28px;
     border-radius: 16px;
+  }
+
+  .case-sheet-cap {
+    height: 16px;
+  }
+
+  .case-sheet-cap::before {
+    border-radius: 16px 16px 0 0;
   }
 
   .case-sheet .case-study-hero {
