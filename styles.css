@@ -551,6 +551,41 @@ img {
   width: min(698px, calc(100vw - 48px));
 }
 
+body.milestone-page {
+  background: #f6f6f6;
+}
+
+html:has(body.milestone-page) {
+  background: #f6f6f6;
+}
+
+.milestone-page .case-sheet {
+  --sheet-gap: 36px;
+  width: min(calc(877px + (var(--sheet-gap) * 2)), calc(100vw - 24px));
+  margin: calc(clamp(28px, 4vw, 56px) + 8px) auto 36px;
+  padding: 20px var(--sheet-gap) 48px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.milestone-page .case-sheet .case-study-hero {
+  padding-top: 0;
+}
+
+.milestone-page .case-more {
+  margin-top: 0;
+}
+
+@media (max-width: 680px) {
+  .milestone-page .case-sheet {
+    width: calc(100vw - 16px);
+    margin: 12px auto 28px;
+    padding: 16px 14px 32px;
+    border-radius: 16px;
+  }
+}
+
 .milestone-page .case-study-section {
   margin-bottom: 0;
 }
