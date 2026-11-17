@@ -4529,6 +4529,10 @@ img {
   background: #ffffff;
 }
 
+body.home-page:not(.about-page) {
+  --sans: "Inter", Arial, sans-serif;
+}
+
 .home-page .home-layout {
   box-sizing: border-box;
   position: relative;
