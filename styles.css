@@ -552,53 +552,21 @@ img {
 }
 
 body.milestone-page {
-  height: 100svh;
-  overflow: hidden;
   background: #f9f9f9;
 }
 
 html:has(body.milestone-page) {
-  height: 100%;
-  overflow: hidden;
   background: #f9f9f9;
 }
 
 .milestone-page .case-sheet {
   --sheet-gap: 36px;
-  position: fixed;
-  z-index: 1;
-  top: calc(clamp(28px, 4vw, 56px) + 8px);
-  right: 0;
-  left: 0;
   width: min(calc(877px + (var(--sheet-gap) * 2)), calc(100vw - 24px));
-  height: calc(100svh - clamp(28px, 4vw, 56px) - 8px - 88px);
-  margin: 0 auto;
+  margin: calc(clamp(28px, 4vw, 56px) + 8px) auto 36px;
   padding: 20px var(--sheet-gap) 48px;
   box-sizing: border-box;
   background: #ffffff;
   border-radius: 20px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-}
-
-.milestone-page .case-sheet::-webkit-scrollbar {
-  width: 8px;
-}
-
-.milestone-page .case-sheet::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.milestone-page .home-footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
 }
 
 .milestone-page .case-sheet .case-study-hero {
@@ -611,20 +579,9 @@ html:has(body.milestone-page) {
 }
 
 @media (max-width: 680px) {
-  .milestone-page .section-index {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    left: 16px;
-    z-index: 60;
-    width: auto;
-    margin: 0;
-  }
-
   .milestone-page .case-sheet {
-    top: 88px;
     width: calc(100vw - 16px);
-    height: calc(100svh - 88px - 72px);
+    margin: 16px auto 28px;
     padding: 16px 14px 32px;
     border-radius: 16px;
   }
@@ -660,21 +617,24 @@ html:has(body.milestone-page) {
   display: grid;
   grid-template-columns: 277px minmax(320px, 1fr);
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
   margin-top: 34px;
 }
 
 .milestone-problem-visual {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .milestone-stat-card {
-  width: 277px;
-  height: 277px;
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
   margin: 0;
-  padding: 16px 18px 20px;
+  padding: 16px 18px 18px;
   background: #f7f7f7;
   color: #666666;
   display: flex;

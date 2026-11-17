@@ -34,7 +34,6 @@ if ("IntersectionObserver" in window) {
       });
     },
     {
-      root: caseSheet,
       threshold: 0.14,
       rootMargin: "0px 0px -8% 0px",
     }
@@ -93,7 +92,7 @@ if (directionLabels.length) {
           directionObserver.unobserve(entry.target);
         });
       },
-      { root: caseSheet, threshold: 0.7 }
+      { threshold: 0.7 }
     );
 
     directionLabels.forEach((label) => directionObserver.observe(label));
@@ -137,19 +136,9 @@ function scrollToSection(id) {
   const element = document.getElementById(id);
   if (!element) return;
 
-  const offset = id === "top" ? 0 : 28;
+  const offset = id === "top" ? 0 : 100;
+  const top = element.getBoundingClientRect().top + window.scrollY - offset;
 
-  if (caseSheet && caseSheet.contains(element)) {
-    const top =
-      element.getBoundingClientRect().top -
-      caseSheet.getBoundingClientRect().top +
-      caseSheet.scrollTop -
-      offset;
-    caseSheet.scrollTo({ top, behavior: "smooth" });
-    return;
-  }
-
-  const top = element.getBoundingClientRect().top + window.scrollY - (id === "top" ? 0 : 100);
   window.scrollTo({
     top,
     behavior: "smooth",
