@@ -143,8 +143,21 @@ function scrollToSection(id) {
   const element = document.getElementById(id);
   if (!element) return;
 
-  const offset = id === "top" ? 0 : 100;
   const scroller = caseScroller();
+
+  if (id === "top") {
+    if (scroller) {
+      scroller.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const sheet = document.querySelector(".case-page .case-sheet");
+    const top = sheet ? sheet.getBoundingClientRect().top + window.scrollY : 0;
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    return;
+  }
+
+  const offset = 100;
 
   if (scroller) {
     const top =
