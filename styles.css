@@ -552,21 +552,53 @@ img {
 }
 
 body.milestone-page {
+  height: 100svh;
+  overflow: hidden;
   background: #f9f9f9;
 }
 
 html:has(body.milestone-page) {
+  height: 100%;
+  overflow: hidden;
   background: #f9f9f9;
 }
 
 .milestone-page .case-sheet {
   --sheet-gap: 36px;
+  position: fixed;
+  z-index: 1;
+  top: calc(clamp(28px, 4vw, 56px) + 8px);
+  right: 0;
+  left: 0;
   width: min(calc(877px + (var(--sheet-gap) * 2)), calc(100vw - 24px));
-  margin: calc(clamp(28px, 4vw, 56px) + 8px) auto 36px;
+  height: calc(100svh - clamp(28px, 4vw, 56px) - 8px - 88px);
+  margin: 0 auto;
   padding: 20px var(--sheet-gap) 48px;
   box-sizing: border-box;
   background: #ffffff;
   border-radius: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.milestone-page .case-sheet::-webkit-scrollbar {
+  width: 8px;
+}
+
+.milestone-page .case-sheet::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.milestone-page .home-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .milestone-page .case-sheet .case-study-hero {
@@ -579,9 +611,20 @@ html:has(body.milestone-page) {
 }
 
 @media (max-width: 680px) {
+  .milestone-page .section-index {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    z-index: 60;
+    width: auto;
+    margin: 0;
+  }
+
   .milestone-page .case-sheet {
+    top: 88px;
     width: calc(100vw - 16px);
-    margin: 12px auto 28px;
+    height: calc(100svh - 88px - 72px);
     padding: 16px 14px 32px;
     border-radius: 16px;
   }
@@ -638,14 +681,14 @@ html:has(body.milestone-page) {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  font-family: var(--mono);
+  font-family: var(--sans);
   text-align: center;
 }
 
 .milestone-stat-card figcaption {
   width: 100%;
   color: #ababab;
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 11px;
   font-weight: 400;
   line-height: 1.2;
@@ -668,7 +711,7 @@ html:has(body.milestone-page) {
   bottom: 30px;
   z-index: 1;
   color: #606060;
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 25px;
   font-weight: 400;
   line-height: 1;
@@ -677,7 +720,7 @@ html:has(body.milestone-page) {
 .case-study-section .milestone-stat-card p {
   margin: 0;
   color: #5e5e5e;
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
@@ -4229,10 +4272,10 @@ html:has(body.milestone-page) {
 }
 
 .milestone-solution-step-wide {
-  width: min(877px, 100%);
+  width: min(951px, 100%);
   min-height: auto;
   display: block;
-  justify-self: center;
+  justify-self: start;
 }
 
 .milestone-solution-copy-label-only {
@@ -4243,7 +4286,7 @@ html:has(body.milestone-page) {
   width: min(877px, 100%);
   height: auto;
   aspect-ratio: 1027 / 730;
-  margin: 25px auto 0;
+  margin: 25px 0 0 80px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -4523,7 +4566,7 @@ html:has(body.milestone-page) {
     width: 100%;
     height: auto;
     aspect-ratio: 1027 / 730;
-    margin-top: 0;
+    margin: 0;
   }
 
   .gallery-lightbox {

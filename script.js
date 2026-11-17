@@ -8,12 +8,15 @@ if ("scrollRestoration" in history) {
 
 function resetScrollPosition() {
   window.scrollTo(0, 0);
+  document.querySelector(".case-sheet")?.scrollTo(0, 0);
 }
 
 resetScrollPosition();
 window.addEventListener("pageshow", (event) => {
   if (event.persisted) resetScrollPosition();
 });
+
+const caseSheet = document.querySelector(".case-sheet");
 
 const animatedCaseElements = document.querySelectorAll(".case-study-section");
 
@@ -31,6 +34,7 @@ if ("IntersectionObserver" in window) {
       });
     },
     {
+      root: caseSheet,
       threshold: 0.14,
       rootMargin: "0px 0px -8% 0px",
     }
@@ -89,7 +93,7 @@ if (directionLabels.length) {
           directionObserver.unobserve(entry.target);
         });
       },
-      { threshold: 0.7 }
+      { root: caseSheet, threshold: 0.7 }
     );
 
     directionLabels.forEach((label) => directionObserver.observe(label));
@@ -133,9 +137,19 @@ function scrollToSection(id) {
   const element = document.getElementById(id);
   if (!element) return;
 
-  const offset = id === "top" ? 0 : 100;
-  const top = element.getBoundingClientRect().top + window.scrollY - offset;
+  const offset = id === "top" ? 0 : 28;
 
+  if (caseSheet && caseSheet.contains(element)) {
+    const top =
+      element.getBoundingClientRect().top -
+      caseSheet.getBoundingClientRect().top +
+      caseSheet.scrollTop -
+      offset;
+    caseSheet.scrollTo({ top, behavior: "smooth" });
+    return;
+  }
+
+  const top = element.getBoundingClientRect().top + window.scrollY - (id === "top" ? 0 : 100);
   window.scrollTo({
     top,
     behavior: "smooth",
@@ -201,6 +215,7 @@ if (navInvertTargets.length && sectionIndexes.length) {
 
   updateNavTone();
   window.addEventListener("scroll", updateNavTone, { passive: true });
+  caseSheet?.addEventListener("scroll", updateNavTone, { passive: true });
   window.addEventListener("resize", updateNavTone);
 }
 
@@ -393,6 +408,7 @@ document.querySelectorAll(".section-index").forEach((nav) => {
 
   updateActiveSection();
   window.addEventListener("scroll", onScroll, { passive: true });
+  caseSheet?.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", updateActiveSection);
 });
 
